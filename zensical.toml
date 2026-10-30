@@ -1,0 +1,13 @@
+[project]
+site_name = "AGL 25 Documentation"
+site_description = "AutoGribLoader (AGL) for SailOnline"
+site_url = "https://alov1258.github.io/AGL-Release/"
+docs_dir = "docs-en"
+site_dir = "site"
+use_directory_urls = false
+extra_css = ["stylesheets.css"]
+nav = [ { "Home" = "index.md" }, { "Release Notes" = "release-notes.md" } ]
+
+[project.theme]
+language = "en"
+features = ["navigation.instant", "content.code.copy", "navigation.top"]
