@@ -1,8 +1,24 @@
-# AGL 25 Release Notes 25.4.0
+# AGL 25 Release Notes 25.4.1
 
-AGL 25.4.0 is a major release with a lot of new functionality. The focus of this release has been to provide tools that reduce stupid mistakes, get out of trouble before it happens and to improve the efficiency of using both qtVlm and AGL. There are many changes, read the release note as to what they are, and the User Manual on how to use them.
+AGL 25.4.1 is a major release with a lot of new functionality. The focus of this release has been to provide tools that reduce stupid mistakes, get out of trouble before it happens and to improve the efficiency of using both qtVlm and AGL. There are many changes, read the release note as to what they are, and the User Manual on how to use them.
 
-## Version 25.4.0
+## Version 25.4.1
+
+**IMPORTANT – updating to 25.4.1 on Linux:** On some Linux desktops (seen on Linux Mint) the update does not start when AGL is started from its desktop icon: you choose **Update Now**, nothing opens, and the next time you start AGL it says an update is in progress. This is fixed in 25.4.1, but earlier versions have it, so to get to 25.4.1:
+
+1. Open a Terminal window and start AGL from it, then choose **Update Now** as usual. The update window opens. For a Production install type
+
+    ```
+    sh -c "'$HOME/SOL/Java25/AGL_start.sh'"
+    ```
+
+    (use the folder AGL is installed in if it is not ~/SOL/Java25; for a Beta install use `Java25Beta` and add `--channel=beta` after the closing quote of the path). Or run the installer yourself, as described in section 2.1.3 of the User Manual.
+
+2. If AGL says an update is in progress and no update window is open, delete the update lock and start AGL again:
+
+    ```
+    find ~ -maxdepth 3 -path '*sessions*' -name update.lock -delete
+    ```
 
 ### Enhancements
 
@@ -40,11 +56,17 @@ AGL 25.4.0 is a major release with a lot of new functionality. The focus of this
 
 2. The linked qtVlm can be set up in Production mode, or in Test mode to try a new qtVlm release before upgrading. AGL offers to link it again if its set-up is broken, and checks that its map tiles are the set that goes with the SOL maps.
 
-3. AGL checks that it has enough memory for the NOAA grib. If it runs out, the grib already loaded stays in use.
+3. AGL plots isobars from the pressure in the grib (SOL and NOAA), and keeps them when a new NOAA download starts.
 
-4. The DC Data Table now starts watching the DC file when AGL starts, reloads it when it changes, and asks whether to switch if qtVlm saves a changed file in a different folder.
+4. AGL checks that it has enough memory for the NOAA grib. If it runs out, the grib already loaded stays in use.
 
-5. Manage qtVlm dialogs: the qtVlm windows Routing, Converting Routing to Route, Simplification result and Optimization results are brought to the front, one at a time, when they are hidden behind other windows.
+5. The DC Data Table now starts watching the DC file when AGL starts, reloads it when it changes, and asks whether to switch if qtVlm saves a changed file in a different folder.
+
+6. Manage qtVlm dialogs: the qtVlm windows Routing, Converting Routing to Route, Simplification result and Optimization results are brought to the front, one at a time, when they are hidden behind other windows.
+
+7. Races that start with a haulback are handled: AGL knows the boat does not move until the race starts, so waypoint conversion and the course commands wait for the start.
+
+8. Downloads from the SailOnline server (race information, gribs, DCs and boats) are compressed where the server allows, retried if they fail, and the login is renewed if it expires.
 
 #### The AGL Hub and starting AGL
 
@@ -62,6 +84,14 @@ AGL 25.4.0 is a major release with a lot of new functionality. The focus of this
 
 7. AGL starts in the hub and never starts a race or asks for a race folder by itself. Starting AGL again while the hub is open brings the hub to the front.
 
+#### Help, documentation and the Simulator
+
+1. A Help menu in the hub and in every race window: Documentation, Manual, Release notes and Mail logs. Mail logs gathers the logs needed to find a problem, removes passwords and tokens from them, and opens an email to the author with the zip ready to attach. Nothing is sent until you press Send.
+
+2. The User Manual and Release Notes are now web pages. They are installed with AGL and open from the Help menu without the internet, and they are also online at https://alov1258.github.io/AGL-Release/. The PDF versions and their desktop shortcuts are no longer installed, and the installer removes the old ones when you update.
+
+3. The Simulator (members only) stands in for the SailOnline server, so you can test AGL, and what you will see on your phone, without touching your real boat. It has its own Sim tab. Refer to section 9 of the User Manual.
+
 #### Windows, Parameters and logs
 
 1. Text Size and Icon Size on the Parameters tab: Font -/+ and Icon -/+ with a preview of the icon size, applied with Apply Font. The font is always Dialog, so the font choice is gone.
@@ -74,7 +104,7 @@ AGL 25.4.0 is a major release with a lot of new functionality. The focus of this
 
 5. Feedback now shows key information only. A new Logger tab holds the debug output. Logs are kept in `logger_<race>_current.txt` and rolled, and DC firing times can be logged to a file.
 
-### Bug fixes – 25.4.0
+### Bug fixes – 25.4.1
 
 1. General reliability and stability fixes
 
@@ -83,6 +113,8 @@ AGL 25.4.0 is a major release with a lot of new functionality. The focus of this
 3. Projection error when determining intersections with coastlines. Resulted in false intersections being determined
 
 4. Fixed lock up if DCs were checked exactly when the Wx download started.
+
+5. On Linux, the update window did not open when AGL was started from a desktop icon that runs in a terminal. It does now.
 
 
 ## Version 25.3.1

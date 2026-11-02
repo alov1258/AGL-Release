@@ -27,3 +27,9 @@ nav = [
 [project.theme]
 language = "en"
 features = ["navigation.sections", "navigation.instant", "content.code.copy", "navigation.top"]
+
+[project.extra]
+alternate = [
+  { name = "English", link = "/AGL-Release/", lang = "en" },
+  { name = "Italiano", link = "/AGL-Release/it/", lang = "it" },
+]

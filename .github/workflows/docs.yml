@@ -1,4 +1,4 @@
-# Builds the documentation (docs-en/) with Zensical and publishes it to GitHub Pages.
+# Builds the documentation (docs-en/ at the site root, docs-<code>/ under /<code>/) with Zensical and publishes it to GitHub Pages.
 # Runs when the documentation or its settings change; a release upload does not trigger it.
 name: Documentation
 
@@ -6,8 +6,8 @@ on:
   push:
     branches: [main, master]
     paths:
-      - "docs-en/**"
-      - "zensical.toml"
+      - "docs-*/**"
+      - "zensical*.toml"
       - ".github/workflows/docs.yml"
   workflow_dispatch:
 
@@ -34,6 +34,7 @@ jobs:
           python-version: "3.12"
       - run: pip install zensical==0.0.73
       - run: zensical build --clean
+      - run: for f in zensical-*.toml; do zensical build -f "$f"; done
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site

@@ -52,7 +52,7 @@ Press Enter to close the window.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Double click on it to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The installer also downloads the User Manual and Release Notes (in Italian if your computer is set to Italian) and puts a link to each on the desktop.
+Double click on it to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The User Manual and Release Notes are installed with AGL and open from its Help menu (see 2.3.4.3 The Help Menu); there are no separate document files or desktop links for them.
 
 #### 2.1.1.2 Beta
 
@@ -122,7 +122,7 @@ Press Enter to close the window.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Double-click the AGL25 icon on the Desktop (a link to AGL_Launcher.app in the Java25 folder) to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The installer also downloads the User Manual and Release Notes (in Italian if your computer is set to Italian) and puts a link to each on the desktop.
+Double-click the AGL25 icon on the Desktop (a link to AGL_Launcher.app in the Java25 folder) to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The User Manual and Release Notes are installed with AGL and open from its Help menu (see 2.3.4.3 The Help Menu); there are no separate document files or desktop links for them.
 
 #### 2.1.2.2 Beta
 
@@ -192,9 +192,23 @@ Press Enter to close the window.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Double click on it to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The installer also downloads the User Manual and Release Notes (in Italian if your computer is set to Italian) and puts a link to each on the desktop.
+Double click on it to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The User Manual and Release Notes are installed with AGL and open from its Help menu (see 2.3.4.3 The Help Menu); there are no separate document files or desktop links for them.
 
 ***Note*:** The installer runs install_AGL_linux.sh for you (it sets the permissions on the bundled Java), so there is nothing more to run. Some Linux desktops may ask you to trust the launcher the first time you double-click it (Linux Mint does not). If asked, choose the option to trust or allow launching it.
+
+***Potential Failure*:** On some Linux desktops (seen on Linux Mint) an update started from an AGL version before 25.4.1 does nothing: you choose **Update Now**, no update window opens, and the next time you start AGL it says an update is in progress. The cause is in the older version's launcher, so AGL 25.4.1 is the first that avoids it. To get past it:
+
+1.  Open a Terminal window and start AGL from it, then choose **Update Now** as usual. The update window opens. For a Production install type
+
+    **sh -c "'$HOME/SOL/Java25/AGL_start.sh'"**
+
+    If AGL is installed in a different folder, use that folder. For a Beta install use **Java25Beta** in the path and add **--channel=beta** after the closing quote of the path.
+
+2.  Or run the installer yourself, using steps 1 to 10 above. It updates the existing install.
+
+3.  If AGL says an update is in progress and no update window is open, delete the update lock, then start AGL again:
+
+    **find ~ -maxdepth 3 -path '\*sessions\*' -name update.lock -delete**
 
 #### 2.1.3.2 Beta
 
@@ -578,7 +592,7 @@ When a race is started from the hub, its AGL window opens, ready for configurati
 
 #### 2.3.4.1 Changing Scaling (Graphics Box)
 
-If the text is too small or large, you can adjust the font size and font for the text and buttons **before** you press **Save** or **Apply**.
+If the text is too small or large, you can adjust the font size and font for the text and buttons **before** you press **Apply**.
 
 - **Font +** will increase the font size by 1
 
@@ -592,7 +606,7 @@ Press **Apply Font** to apply those changes.
 
 You are also able to change the line spacing and number of columns to use. The **View** menu has four options as shown below
 
-<img src="../img/manual/image56.png" alt="" width="1200">
+<img src="../img/manual/image56.png" alt="" width="400">
 
 The **Boxed Sections** changes how the title boxes are shown. The **Columns** allows the user to choose how many columns to use to display the parameters. The **Rows** item adjusts how the row spacing is displayed. **Gui Field Names** displays the .ini file field names.
 
@@ -664,6 +678,6 @@ Occasionally a release needs AGL to be reset to a clean state before it is insta
 
 <img src="../img/manual/image59.png" alt="" width="900">
 
-The installer downloads the files that have changed and updates the User Manual and Release Notes. It finishes with *Update complete.* Press **Enter** to close the window, then start AGL from its desktop icon.
+The installer downloads the files that have changed, including the User Manual and Release Notes that open from the Help menu. It finishes with *Update complete.* Press **Enter** to close the window, then start AGL from its desktop icon.
 
 ***Note*:** Do not start AGL while the update window is open. If you do, AGL tells you an update is in progress and asks you to wait. On Linux and macOS the update window is a terminal window and works the same way.
