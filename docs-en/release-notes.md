@@ -225,7 +225,7 @@ Once you have upgraded to 25.2.7, the AGL launcher will manage upgrades as descr
 
 ### Enhancements
 
-1. Add boat polar diagram. Opened with <img src="img/polar.png" alt="Polar diagram icon" class="inline-icon"> icon.
+1. Add boat polar diagram. Opened with <img src="img/polar.png" alt="Polar diagram icon" class="inline-icon" height="18"> icon.
 
 2. Released version 2.4.7 maps in preparation for server upgrade.
 
@@ -325,7 +325,7 @@ Once you have upgraded to 25.2.7, the AGL launcher will manage upgrades as descr
 
 ### Enhancements
 
-1. Added workaround for OpenGL polygon rendering issues. A new icon (<img src="img/fillPoly.png" alt="Polygon fill icon" class="inline-icon">) has been added to the graphics window which toggles polygon fill on and off.
+1. Added workaround for OpenGL polygon rendering issues. A new icon (<img src="img/fillPoly.png" alt="Polygon fill icon" class="inline-icon" height="18">) has been added to the graphics window which toggles polygon fill on and off.
 
 ## Version 23.1.0
 

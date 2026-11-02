@@ -1,1 +1,5 @@
-.inline-icon { height: 1.2em; width: auto; vertical-align: text-bottom; }
+.md-typeset img.inline-icon, img.inline-icon { height: 1.2em !important; width: auto !important; max-width: none; vertical-align: text-bottom; }
+.md-typeset img { max-width: 100%; height: auto; float: none; }
+.md-typeset img[src*="screens/"], .md-typeset img[src*="/manual/"] { display: block !important; margin-left: 0 !important; margin-right: auto !important; }
+.md-typeset, .md-typeset p, .md-typeset figure, .md-typeset li, .md-typeset div { text-align: left !important; }
+.md-typeset figure { margin-left: 0; margin-right: auto; }
