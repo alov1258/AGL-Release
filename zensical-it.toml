@@ -9,6 +9,7 @@ extra_css = ["stylesheets.css"]
 nav = [
   { "Home" = "index.md" },
   { "Note di Rilascio" = "release-notes.md" },
+  { "Download" = "downloads.md" },
   { "Manuale Utente" = [
     { "1 Panoramica" = "manual/0100-overview.md" },
     { "2 Installazione di AGL" = "manual/0200-installing-agl.md" },
