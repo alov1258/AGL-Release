@@ -6,6 +6,7 @@ docs_dir = "docs-it"
 site_dir = "site/it"
 use_directory_urls = false
 extra_css = ["stylesheets.css"]
+extra_javascript = ["javascripts/lang.js"]
 nav = [
   { "Home" = "index.md" },
   { "Note di Rilascio" = "release-notes.md" },

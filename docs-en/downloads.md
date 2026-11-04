@@ -1,4 +1,4 @@
-# Downloads
+﻿# Downloads
 
 The AGL installers. Pick your system, then the channel. **Production** is the released version. **Beta** is a pre-release that may contain bugs; it installs beside Production, in its own Java25Beta folder, so you can keep both. The same installer also updates an existing install.
 
