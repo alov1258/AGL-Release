@@ -1,0 +1,37 @@
+[project]
+site_name = "AGL 25 Documentation (beta)"
+site_description = "AutoGribLoader (AGL) for SailOnline"
+site_url = "https://alov1258.github.io/AGL-Release/beta/"
+docs_dir = "docs-en"
+site_dir = "site"
+use_directory_urls = false
+extra_css = ["stylesheets.css"]
+extra_javascript = ["javascripts/lang.js"]
+nav = [
+  { "Home" = "index.md" },
+  { "Release Notes" = "release-notes.md" },
+  { "Downloads" = "downloads.md" },
+  { "User Manual" = [
+    { "1 Overview" = "manual/0100-overview.md" },
+    { "2 Installing AGL" = "manual/0200-installing-agl.md" },
+    { "3 Configuration" = "manual/0300-configuration.md" },
+    { "4 Initialisation" = "manual/0400-initialisation.md" },
+    { "5 Using AGL" = "manual/0500-using-agl.md" },
+    { "6 DC Data Table" = "manual/0600-dc-data-table.md" },
+    { "7 NOAA Server" = "manual/0700-noaa-server.md" },
+    { "8 Chats" = "manual/0800-chats.md" },
+    { "9 Simulator" = "manual/0900-simulator.md" },
+    { "10 Known Issues and Bugs" = "manual/1000-known-issues-and-bugs.md" },
+    { "11 Acknowledgements" = "manual/1100-acknowledgements.md" },
+  ] },
+]
+
+[project.theme]
+language = "en"
+features = ["navigation.sections", "navigation.instant", "content.code.copy", "navigation.top"]
+
+[project.extra]
+alternate = [
+  { name = "English", link = "/AGL-Release/beta/", lang = "en" },
+  { name = "Italiano", link = "/AGL-Release/beta/it/", lang = "it" },
+]

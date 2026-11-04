@@ -1,4 +1,5 @@
 # Builds the documentation (docs-en/ at the site root, docs-<code>/ under /<code>/) with Zensical and publishes it to GitHub Pages.
+# The beta channel's documentation (published by publish-docs.ps1 -Channel Beta) is the same layout in the folder beta/, built in there and put under /beta/.
 # Runs when the documentation or its settings change; a release upload does not trigger it.
 name: Documentation
 
@@ -8,6 +9,7 @@ on:
     paths:
       - "docs-*/**"
       - "zensical*.toml"
+      - "beta/**"
       - ".github/workflows/docs.yml"
   workflow_dispatch:
 
@@ -35,6 +37,15 @@ jobs:
       - run: pip install zensical==0.0.73
       - run: zensical build --clean
       - run: for f in zensical-*.toml; do zensical build -f "$f"; done
+      - name: Beta documentation (only when beta/ exists)
+        run: |
+          if [ -d beta ]; then
+            cd beta
+            zensical build --clean
+            for f in zensical-*.toml; do zensical build -f "$f"; done
+            cd ..
+            mv beta/site site/beta
+          fi
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
