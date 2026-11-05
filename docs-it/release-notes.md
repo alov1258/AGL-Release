@@ -24,29 +24,29 @@ AGL 25.4.1 è una release importante con molte nuove funzionalità. L'obiettivo 
 
 #### Controllare la rotta prima che vada al server
 
-1. AGL ora può pre-verificare i DC per BBQ, boe di mare mancate e linea di arrivo, proponendoti soluzioni prima che i DC vengano impostati. Non viene modificato nulla finché non accetti un suggerimento. Il Controllo DC segna inoltre con puntini rossi i BBQ che trova, e per evitare la terraferma è disponibile Tack/Gybe later.
+1. AGL ora può pre-verificare i DC per BBQ, boe di mare mancate e linea di arrivo, proponendoti soluzioni prima che i DC vengano impostati. Non viene modificato nulla finché non accetti un suggerimento. Il Controllo DC segna inoltre con puntini rossi i BBQ che trova, e per evitare la terraferma è disponibile Tack/Gybe later. Vedi [5.2 Verifica del Percorso](manual/0500-using-agl.md#52-verifica-del-percorso).
 
-2. Quando un DC cade fuori dal maxVMG, AGL ora condiziona l'intera lista dei DC, con Condiziona tutti e Imposta comunque.
+2. Quando un DC cade fuori dal maxVMG, AGL ora condiziona l'intera lista dei DC, con Condiziona tutti e Imposta comunque. Vedi [5.4.6 Condizionamento dei DC](manual/0500-using-agl.md#546-condizionamento-dei-dc).
 
-3. Un nuovo comando Segui nel menu popup della grafica aggiunge waypoint lungo una costa tra due waypoint.
+3. Un nuovo comando Segui nel menu popup della grafica aggiunge waypoint lungo una costa tra due waypoint. Vedi [5.4.2 Il Menu del Tasto Destro](manual/0500-using-agl.md#542-il-menu-del-tasto-destro).
 
 #### Messaggi sul telefono
 
-1. AGL ora può inviare messaggi in tempo reale al tuo telefono tramite Pushover e Telegram: arrivo del Wx, rischio di incaglio o incaglio avvenuto, boa che sta per essere mancata o mancata, regata che parte senza rotta, e DC del server che finiscono prima del prossimo Wx (No DCs). I messaggi di emergenza si ripetono finché non li confermi sul telefono.
+1. AGL ora può inviare messaggi in tempo reale al tuo telefono tramite Pushover e Telegram: arrivo del Wx, rischio di incaglio o incaglio avvenuto, boa che sta per essere mancata o mancata, regata che parte senza rotta, e DC del server che finiscono prima del prossimo Wx (No DCs). I messaggi di emergenza si ripetono finché non li confermi sul telefono. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
 
-2. Pushover si configura una sola volta nell'hub, per tutte le regate.
+2. Pushover si configura una sola volta nell'hub, per tutte le regate. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
 
-3. Telegram funziona con un solo bot nell'hub, con canali per ciascuna regata. AGL può proporti una variazione di rotta sul telefono, e viene applicata solo quando la confermi da lì. Un insieme di comandi permette di controllare lo stato e inviare variazioni di rotta dal telefono.
+3. Telegram funziona con un solo bot nell'hub, con canali per ciascuna regata. AGL può proporti una variazione di rotta sul telefono, e viene applicata solo quando la confermi da lì. Un insieme di comandi permette di controllare lo stato e inviare variazioni di rotta dal telefono. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
 
-4. Replica delle chat room del client SOL in una scheda chat staccabile.
+4. Replica delle chat room del client SOL in una scheda chat staccabile. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
 
-5. I messaggi inviati da AGL più lunghi di 187 caratteri vengono divisi in parti e trasmessi insieme, e AGL cerca di riunire i messaggi divisi in un unico messaggio.
+5. I messaggi inviati da AGL più lunghi di 187 caratteri vengono divisi in parti e trasmessi insieme, e AGL cerca di riunire i messaggi divisi in un unico messaggio. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
 
 #### Finestra grafica
 
-1. Un modulo Opzioni di vista nella finestra grafica sostituisce diverse icone della barra degli strumenti e aggiunge i campi delle etichette DC, una legenda, Riempi i poligoni della terra e Carattere -/+ per la grafica.
+1. Un modulo Opzioni di vista nella finestra grafica sostituisce diverse icone della barra degli strumenti e aggiunge i campi delle etichette DC, una legenda, Riempi i poligoni della terra e Carattere -/+ per la grafica. Vedi [5.3.2 Opzioni di vista](manual/0500-using-agl.md#532-opzioni-di-vista).
 
-2. Traccia DC grigia nella finestra grafica, alimentata direttamente dalla DC Data Table, con un pulsante on/off; i waypoint aggiuntivi non vengono più sovrascritti dai DC.
+2. Traccia DC grigia nella finestra grafica, alimentata direttamente dalla DC Data Table, con un pulsante on/off; i waypoint aggiuntivi non vengono più sovrascritti dai DC. Vedi [Capitolo 6, DC Data Table](manual/0600-dc-data-table.md).
 
 3. Le barche AIS ora vengono tracciate anche dopo la fine di una regata.
 
@@ -54,15 +54,15 @@ AGL 25.4.1 è una release importante con molte nuove funzionalità. L'obiettivo 
 
 1. AGL ti avvisa quando apri Routing settings in qtVlm e il grib non è stato aggiornato dopo l'ultimo download del Wx.
 
-2. Il qtVlm collegato può essere configurato in modalità Production, oppure in modalità Test per provare una nuova release di qtVlm prima di aggiornare. AGL propone di collegarlo di nuovo se la sua configurazione è danneggiata, e verifica che le sue tile delle mappe siano il set che corrisponde alle mappe SOL.
+2. Il qtVlm collegato può essere configurato in modalità Production, oppure in modalità Test per provare una nuova release di qtVlm prima di aggiornare. AGL propone di collegarlo di nuovo se la sua configurazione è danneggiata, e verifica che le sue tile delle mappe siano il set che corrisponde alle mappe SOL. Vedi [3.7 qtVlm](manual/0300-configuration.md).
 
-3. AGL traccia le isobare dalla pressione presente nel grib (SOL e NOAA), e le conserva quando parte un nuovo download NOAA.
+3. AGL traccia le isobare dalla pressione presente nel grib (SOL e NOAA), e le conserva quando parte un nuovo download NOAA. Vedi [5.3.2.1 Vista](manual/0500-using-agl.md#5321-vista).
 
 4. AGL verifica di avere memoria sufficiente per il grib NOAA. Se la memoria finisce, resta in uso il grib già caricato.
 
-5. La DC Data Table ora inizia a controllare il file dei DC all'avvio di AGL, lo ricarica quando cambia, e chiede se passare al nuovo file quando qtVlm salva un file modificato in una cartella diversa.
+5. La DC Data Table ora inizia a controllare il file dei DC all'avvio di AGL, lo ricarica quando cambia, e chiede se passare al nuovo file quando qtVlm salva un file modificato in una cartella diversa. Vedi [6.3 Rilevamento delle Modifiche al File DC](manual/0600-dc-data-table.md).
 
-6. Gestione delle finestre di dialogo di qtVlm: le finestre di qtVlm Routing, Converting Routing to Route, Simplification result e Optimization results vengono portate in primo piano, una alla volta, quando sono nascoste dietro altre finestre.
+6. Gestione delle finestre di dialogo di qtVlm: le finestre di qtVlm Routing, Converting Routing to Route, Simplification result e Optimization results vengono portate in primo piano, una alla volta, quando sono nascoste dietro altre finestre. Vedi [2.3.3.6 Gestione delle Finestre di Dialogo di qtVlm](manual/0200-installing-agl.md#2336-gestione-delle-finestre-di-dialogo-di-qtvlm).
 
 7. Sono gestite le regate che partono con un haulback: AGL sa che la barca non si muove fino alla partenza, quindi la conversione dei waypoint e i comandi di rotta attendono la partenza.
 
@@ -70,33 +70,33 @@ AGL 25.4.1 è una release importante con molte nuove funzionalità. L'obiettivo 
 
 #### L'AGL Hub e l'avvio di AGL
 
-1. L'AGL Hub: un'unica finestra nella barra delle applicazioni con una scheda per ogni regata, che mostra la console della regata e i suoi comandi (Mostra, Riponi, qtVlm Mostra, qtVlm Riponi, Ferma, Termina, Riavvia, Dump dei thread, Salva il registro). Sostituisce una finestra nella barra delle applicazioni per ciascuna regata.
+1. L'AGL Hub: un'unica finestra nella barra delle applicazioni con una scheda per ogni regata, che mostra la console della regata e i suoi comandi (Mostra, Riponi, qtVlm Mostra, qtVlm Riponi, Ferma, Termina, Riavvia, Dump dei thread, Salva il registro). Sostituisce una finestra nella barra delle applicazioni per ciascuna regata. Vedi [2.3.3 L'AGL Hub](manual/0200-installing-agl.md#233-lagl-hub).
 
-2. Aggiungi regata può avviare più cartelle di regata insieme. Apri avvia AGL in ciascuna; Avvia preme anche Applica al posto tuo. Le cartelle in cui AGL è già in esecuzione sono in grigio e vengono saltate.
+2. Aggiungi regata può avviare più cartelle di regata insieme. Apri avvia AGL in ciascuna; Avvia preme anche Applica al posto tuo. Le cartelle in cui AGL è già in esecuzione sono in grigio e vengono saltate. Vedi [2.3.3.5 Aggiungere una Regata](manual/0200-installing-agl.md#2335-aggiungere-una-regata).
 
-3. Chiudendo l'hub si possono lasciare le regate in esecuzione (Chiudi / Lascia / Annulla). L'hub successivo riprende in carico le regate in esecuzione.
+3. Chiudendo l'hub si possono lasciare le regate in esecuzione (Chiudi / Lascia / Annulla). L'hub successivo riprende in carico le regate in esecuzione. Vedi [2.3.3.8 Chiusura dell'Hub](manual/0200-installing-agl.md#2338-chiusura-dellhub).
 
-4. Riavvio delle regate dopo uno spegnimento: l'hub riavvia le regate dopo il riavvio per un aggiornamento di Windows, un crash o un'interruzione di corrente.
+4. Riavvio delle regate dopo uno spegnimento: l'hub riavvia le regate dopo il riavvio per un aggiornamento di Windows, un crash o un'interruzione di corrente. Vedi [2.3.3.7 Riavvio delle Regate dopo uno Spegnimento](manual/0200-installing-agl.md#2337-riavvio-delle-regate-dopo-uno-spegnimento).
 
-5. AGL_autostart.bat configura l'avvio di AGL all'accesso a Windows, l'accesso automatico a Windows e il blocco dello schermo dopo tale accesso.
+5. AGL_autostart.bat configura l'avvio di AGL all'accesso a Windows, l'accesso automatico a Windows e il blocco dello schermo dopo tale accesso. Vedi [2.3.3.7 Riavvio delle Regate dopo uno Spegnimento](manual/0200-installing-agl.md#2337-riavvio-delle-regate-dopo-uno-spegnimento).
 
-6. L'hub ha una propria dimensione del testo (Vista > Dimensione testo), una casella Sempre in primo piano, un orologio UTC con l'ora del computer tra parentesi, e un'icona dell'hub su ogni finestra di regata che porta l'hub in primo piano.
+6. L'hub ha una propria dimensione del testo (Vista > Dimensione testo), una casella Sempre in primo piano, un orologio UTC con l'ora del computer tra parentesi, e un'icona dell'hub su ogni finestra di regata che porta l'hub in primo piano. Vedi [2.3.3.1 La Finestra dell'Hub](manual/0200-installing-agl.md#2331-la-finestra-dellhub).
 
-7. AGL si avvia nell'hub e non avvia mai una regata né chiede da solo una cartella di regata. Avviando di nuovo AGL mentre l'hub è aperto, l'hub viene portato in primo piano.
+7. AGL si avvia nell'hub e non avvia mai una regata né chiede da solo una cartella di regata. Avviando di nuovo AGL mentre l'hub è aperto, l'hub viene portato in primo piano. Vedi [2.3.1 Avvio di AGL Launcher](manual/0200-installing-agl.md#231-avvio-di-agl-launcher).
 
 #### Guida, documentazione e Simulatore
 
-1. Un menu Aiuto nell'hub e in ogni finestra di regata: Documentazione, Manuale, Note di rilascio e Invia i log.... Invia i log... raccoglie i log necessari per individuare un problema, ne rimuove password e token, e apre un'email all'autore con lo zip pronto da allegare. Non viene inviato nulla finché non premi Invia.
+1. Un menu Aiuto nell'hub e in ogni finestra di regata: Documentazione, Manuale, Note di rilascio e Invia i log.... Invia i log... raccoglie i log necessari per individuare un problema, ne rimuove password e token, e apre un'email all'autore con lo zip pronto da allegare. Non viene inviato nulla finché non premi Invia. Vedi [2.3.4.3 Il Menu Aiuto](manual/0200-installing-agl.md#2343-il-menu-aiuto).
 
 2. Il Manuale Utente e le Note di Rilascio sono ora pagine web. Vengono installati con AGL e si aprono dal menu Aiuto senza internet, e sono anche online su https://alov1258.github.io/AGL-Release/. Le versioni PDF e i relativi collegamenti sul desktop non vengono più installati, e l'installer rimuove quelli vecchi quando aggiorni.
 
-3. Il Simulatore (solo per i membri) sostituisce il server SailOnline, così puoi provare AGL, e ciò che vedrai sul telefono, senza toccare la tua barca reale. Ha una propria scheda Simulatore. Fai riferimento alla sezione 9 del Manuale Utente.
+3. Il Simulatore (solo per i membri) sostituisce il server SailOnline, così puoi provare AGL, e ciò che vedrai sul telefono, senza toccare la tua barca reale. Ha una propria scheda Simulatore. Fai riferimento alla sezione 9 del Manuale Utente. Vedi [Capitolo 9, Simulatore](manual/0900-simulator.md).
 
 #### Finestre, Parametri e log
 
-1. Dimensione testo e Dimensione icone nella scheda Parametri: Carattere -/+ e Icone -/+ con un'anteprima della dimensione delle icone, applicate con Applica carattere. Il font è sempre Dialog, quindi la scelta del font non c'è più.
+1. Dimensione testo e Dimensione icone nella scheda Parametri: Carattere -/+ e Icone -/+ con un'anteprima della dimensione delle icone, applicate con Applica carattere. Il font è sempre Dialog, quindi la scelta del font non c'è più. Vedi [3.10 Grafica](manual/0300-configuration.md).
 
-2. I parametri vengono salvati nel file ini man mano che vengono modificati, quindi i pulsanti Save e Refresh non ci sono più. Un valore non valido non viene salvato, e Riscontro lo segnala.
+2. I parametri vengono salvati nel file ini man mano che vengono modificati, quindi i pulsanti Save e Refresh non ci sono più. Un valore non valido non viene salvato, e Riscontro lo segnala. Vedi [Capitolo 3, Configurazione](manual/0300-configuration.md).
 
 3. AGL ricorda le posizioni delle finestre dell'hub e di AGL e le ripristina all'avvio. Una finestra la cui dimensione risulta sbagliata dopo lo spostamento tra schermi con scala diversa viene riparata.
 
