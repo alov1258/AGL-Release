@@ -24,29 +24,29 @@ AGL 25.4.1 is a major release with a lot of new functionality. The focus of this
 
 #### Checking your course before it goes to the server
 
-1. AGL can now pre-check DCs for BBQs, missed sea marks and the finish line, with solutions offered to you before the DCs are set. Nothing is changed until you accept a suggestion. The DC Checker also marks the BBQs it finds with red dots, and Tack/Gybe later is available for land avoidance.
+1. AGL can now pre-check DCs for BBQs, missed sea marks and the finish line, with solutions offered to you before the DCs are set. Nothing is changed until you accept a suggestion. The DC Checker also marks the BBQs it finds with red dots, and Tack/Gybe later is available for land avoidance. See [5.2 Checking the Course](manual/0500-using-agl.md#52-checking-the-course).
 
-2. When a DC falls outside maxVMG, AGL now conditions the whole DC list, with Condition All and Set Anyway.
+2. When a DC falls outside maxVMG, AGL now conditions the whole DC list, with Condition All and Set Anyway. See [5.4.6 Conditioning DCs](manual/0500-using-agl.md#546-conditioning-dcs).
 
-3. A new Follow command in the graphics popup menu adds waypoints along a coastline between two waypoints.
+3. A new Follow command in the graphics popup menu adds waypoints along a coastline between two waypoints. See [5.4.2 The Right Click Menu](manual/0500-using-agl.md#542-the-right-click-menu).
 
 #### Messages to your phone
 
-1. AGL can now message your phone live through Pushover and Telegram: weather arrived, about to run aground or run aground, going to miss or missed a mark, a race starting with no course, and the server DCs running out before the next Wx (No DCs). Emergency messages repeat until you acknowledge them on the phone.
+1. AGL can now message your phone live through Pushover and Telegram: weather arrived, about to run aground or run aground, going to miss or missed a mark, a race starting with no course, and the server DCs running out before the next Wx (No DCs). Emergency messages repeat until you acknowledge them on the phone. See [Chapter 8, Chats](manual/0800-chats.md).
 
-2. Pushover is set up once in the hub for all races.
+2. Pushover is set up once in the hub for all races. See [Chapter 8, Chats](manual/0800-chats.md).
 
-3. Telegram runs from a single bot in the hub, with channels for each race. AGL can propose a course change on your phone, and it is applied only when you confirm it there. A set of commands lets you check status and send course changes from the phone.
+3. Telegram runs from a single bot in the hub, with channels for each race. AGL can propose a course change on your phone, and it is applied only when you confirm it there. A set of commands lets you check status and send course changes from the phone. See [Chapter 8, Chats](manual/0800-chats.md).
 
-4. Replication of the SOL client chat rooms in a tear off chat tab.
+4. Replication of the SOL client chat rooms in a tear off chat tab. See [Chapter 8, Chats](manual/0800-chats.md).
 
-5. Messages sent from AGL over 187 characters in length are split into parts and transmitted at once, and AGL attempts to join split messages into one message.
+5. Messages sent from AGL over 187 characters in length are split into parts and transmitted at once, and AGL attempts to join split messages into one message. See [Chapter 8, Chats](manual/0800-chats.md).
 
 #### Graphics window
 
-1. A View Options form in the graphics window replaces several toolbar icons, and adds DC label fields, a legend, Fill land polygons and Font -/+ for the graphics.
+1. A View Options form in the graphics window replaces several toolbar icons, and adds DC label fields, a legend, Fill land polygons and Font -/+ for the graphics. See [5.3.2 View Options](manual/0500-using-agl.md#532-view-options).
 
-2. Grey DC trace in the graphics window, fed directly by the DC Data Table, with an on/off button; the additional waypoints are no longer overwritten by the DCs.
+2. Grey DC trace in the graphics window, fed directly by the DC Data Table, with an on/off button; the additional waypoints are no longer overwritten by the DCs. See [Chapter 6, DC Data Table](manual/0600-dc-data-table.md).
 
 3. AIS boats are now plotted after a race has finished.
 
@@ -54,15 +54,15 @@ AGL 25.4.1 is a major release with a lot of new functionality. The focus of this
 
 1. AGL warns you when you open Routing settings in qtVlm and the grib has not been refreshed since the last Wx download.
 
-2. The linked qtVlm can be set up in Production mode, or in Test mode to try a new qtVlm release before upgrading. AGL offers to link it again if its set-up is broken, and checks that its map tiles are the set that goes with the SOL maps.
+2. The linked qtVlm can be set up in Production mode, or in Test mode to try a new qtVlm release before upgrading. AGL offers to link it again if its set-up is broken, and checks that its map tiles are the set that goes with the SOL maps. See [3.7 qtVlm](manual/0300-configuration.md).
 
-3. AGL plots isobars from the pressure in the grib (SOL and NOAA), and keeps them when a new NOAA download starts.
+3. AGL plots isobars from the pressure in the grib (SOL and NOAA), and keeps them when a new NOAA download starts. See [5.3.2.1 View](manual/0500-using-agl.md#5321-view).
 
 4. AGL checks that it has enough memory for the NOAA grib. If it runs out, the grib already loaded stays in use.
 
-5. The DC Data Table now starts watching the DC file when AGL starts, reloads it when it changes, and asks whether to switch if qtVlm saves a changed file in a different folder.
+5. The DC Data Table now starts watching the DC file when AGL starts, reloads it when it changes, and asks whether to switch if qtVlm saves a changed file in a different folder. See [6.3 DC File Change Detection](manual/0600-dc-data-table.md).
 
-6. Manage qtVlm dialogs: the qtVlm windows Routing, Converting Routing to Route, Simplification result and Optimization results are brought to the front, one at a time, when they are hidden behind other windows.
+6. Manage qtVlm dialogs: the qtVlm windows Routing, Converting Routing to Route, Simplification result and Optimization results are brought to the front, one at a time, when they are hidden behind other windows. See [2.3.3.6 Managing qtVlm Dialogs](manual/0200-installing-agl.md#2336-managing-qtvlm-dialogs).
 
 7. Races that start with a haulback are handled: AGL knows the boat does not move until the race starts, so waypoint conversion and the course commands wait for the start.
 
@@ -70,33 +70,33 @@ AGL 25.4.1 is a major release with a lot of new functionality. The focus of this
 
 #### The AGL Hub and starting AGL
 
-1. The AGL Hub: one window on the taskbar with a tab for each race, showing the race's console and its controls (Pop, Stow, qtVlm Pop, qtVlm Stow, Stop, Kill, Restart, Thread dump, Save log). It replaces a window on the taskbar for each race.
+1. The AGL Hub: one window on the taskbar with a tab for each race, showing the race's console and its controls (Pop, Stow, qtVlm Pop, qtVlm Stow, Stop, Kill, Restart, Thread dump, Save log). It replaces a window on the taskbar for each race. See [2.3.3 The AGL Hub](manual/0200-installing-agl.md#233-the-agl-hub).
 
-2. Add Race can start several race folders at once. Open starts AGL in each; Start also presses Apply for you. Folders that already have an AGL running are greyed and skipped.
+2. Add Race can start several race folders at once. Open starts AGL in each; Start also presses Apply for you. Folders that already have an AGL running are greyed and skipped. See [2.3.3.5 Adding a Race](manual/0200-installing-agl.md#2335-adding-a-race).
 
-3. Closing the hub can leave the races running (Close / Leave / Cancel). The next hub takes the running races up again.
+3. Closing the hub can leave the races running (Close / Leave / Cancel). The next hub takes the running races up again. See [2.3.3.8 Closing the Hub](manual/0200-installing-agl.md#2338-closing-the-hub).
 
-4. Restart races after a shutdown: the hub starts the races again after a Windows update restart, a crash or a power cut.
+4. Restart races after a shutdown: the hub starts the races again after a Windows update restart, a crash or a power cut. See [2.3.3.7 Restarting Races After a Shutdown](manual/0200-installing-agl.md#2337-restarting-races-after-a-shutdown).
 
-5. AGL_autostart.bat sets up AGL to start when you sign in to Windows, Windows signing in by itself, and locking the screen after that sign-in.
+5. AGL_autostart.bat sets up AGL to start when you sign in to Windows, Windows signing in by itself, and locking the screen after that sign-in. See [2.3.3.7 Restarting Races After a Shutdown](manual/0200-installing-agl.md#2337-restarting-races-after-a-shutdown).
 
-6. The hub has its own text size (View \> Text Size), an Always on top box, a UTC clock with the computer's time in brackets, and a hub icon on each race's window that brings the hub to the front.
+6. The hub has its own text size (View \> Text Size), an Always on top box, a UTC clock with the computer's time in brackets, and a hub icon on each race's window that brings the hub to the front. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
 
-7. AGL starts in the hub and never starts a race or asks for a race folder by itself. Starting AGL again while the hub is open brings the hub to the front.
+7. AGL starts in the hub and never starts a race or asks for a race folder by itself. Starting AGL again while the hub is open brings the hub to the front. See [2.3.1 Starting AGL Launcher](manual/0200-installing-agl.md#231-starting-agl-launcher).
 
 #### Help, documentation and the Simulator
 
-1. A Help menu in the hub and in every race window: Documentation, Manual, Release notes and Mail logs. Mail logs gathers the logs needed to find a problem, removes passwords and tokens from them, and opens an email to the author with the zip ready to attach. Nothing is sent until you press Send.
+1. A Help menu in the hub and in every race window: Documentation, Manual, Release notes and Mail logs. Mail logs gathers the logs needed to find a problem, removes passwords and tokens from them, and opens an email to the author with the zip ready to attach. Nothing is sent until you press Send. See [2.3.4.3 The Help Menu](manual/0200-installing-agl.md#2343-the-help-menu).
 
 2. The User Manual and Release Notes are now web pages. They are installed with AGL and open from the Help menu without the internet, and they are also online at https://alov1258.github.io/AGL-Release/. The PDF versions and their desktop shortcuts are no longer installed, and the installer removes the old ones when you update.
 
-3. The Simulator (members only) stands in for the SailOnline server, so you can test AGL, and what you will see on your phone, without touching your real boat. It has its own Sim tab. Refer to section 9 of the User Manual.
+3. The Simulator (members only) stands in for the SailOnline server, so you can test AGL, and what you will see on your phone, without touching your real boat. It has its own Sim tab. Refer to section 9 of the User Manual. See [Chapter 9, Simulator](manual/0900-simulator.md).
 
 #### Windows, Parameters and logs
 
-1. Text Size and Icon Size on the Parameters tab: Font -/+ and Icon -/+ with a preview of the icon size, applied with Apply Font. The font is always Dialog, so the font choice is gone.
+1. Text Size and Icon Size on the Parameters tab: Font -/+ and Icon -/+ with a preview of the icon size, applied with Apply Font. The font is always Dialog, so the font choice is gone. See [3.10 Graphics](manual/0300-configuration.md).
 
-2. Parameters are saved to the ini file as they are changed, so the Save and Refresh buttons are gone. A value that is not valid is not saved, and Feedback says so.
+2. Parameters are saved to the ini file as they are changed, so the Save and Refresh buttons are gone. A value that is not valid is not saved, and Feedback says so. See [Chapter 3, Configuration](manual/0300-configuration.md).
 
 3. AGL remembers the hub and AGL window positions, and restores them on startup. A window whose size is wrong after it moves between screens of different scaling is repaired.
 

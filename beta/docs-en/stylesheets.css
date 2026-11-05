@@ -3,3 +3,4 @@
 .md-typeset img[src*="screens/"], .md-typeset img[src*="/manual/"] { display: block !important; margin-left: 0 !important; margin-right: auto !important; }
 .md-typeset, .md-typeset p, .md-typeset figure, .md-typeset li, .md-typeset div { text-align: left !important; }
 .md-typeset figure { margin-left: 0; margin-right: auto; }
+.md-typeset p:has(> img:not(.inline-icon) ~ img:not(.inline-icon)) > img:not(.inline-icon) { display: inline-block !important; margin-right: 8px !important; vertical-align: top; }

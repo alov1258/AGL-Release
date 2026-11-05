@@ -6,4 +6,4 @@ AGL (AutoGribLoader) is a tool for SailOnline racing that works with qtVlm.
 - [User Manual](manual/0100-overview.md) - how to install and use AGL.
 - [Downloads](downloads.md) - the installers for Windows, Linux and macOS, Production and Beta.
 
-**Languages:** English | [Italiano](https://alov1258.github.io/AGL-Release/it/)
+**Languages:** English | [Italiano](it/index.html)

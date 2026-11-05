@@ -1,4 +1,4 @@
-// lang.js  --  REVISION 2026-11-04 r2  (r2: ?lang=xx in the address (the hub opening the online site) picks that language for this tab when it is published, otherwise stays in English, and does not change the saved choice; r1: the first visit opens the published language that matches the browser's languages, a language chosen in the header selector is remembered, the selector gets a tick, an Automatic line and a note about the browser's Translate; the hub's local copy (served by utils.DocServer) shows how to translate when the hub's language is not published)
+// lang.js  --  REVISION 2026-11-05 r4  (r4: a link in the page to another language's site (the home page's Languages line) saves that language as the choice, so the start-up check does not send the reader back; r3: the online site also shows the Translate banner when the hub's ?lang= language is not published; r2: ?lang=xx in the address (the hub opening the online site) picks that language for this tab when it is published, otherwise stays in English, and does not change the saved choice; r1: the first visit opens the published language that matches the browser's languages, a language chosen in the header selector is remembered, the selector gets a tick, an Automatic line and a note about the browser's Translate; the hub's local copy (served by utils.DocServer) shows how to translate when the hub's language is not published)
 // One copy per site (docs-en/javascripts and docs-it/javascripts must be identical). The published languages and their addresses are read from the
 // header selector itself (Zensical's extra.alternate), so adding a language to the toml needs no change here.
 (function () {
@@ -57,9 +57,11 @@
 		return find(rs, "en") ? "en" : rs[0].lang;
 	}
 	/** The hub's language for this tab (?lang=xx when it opened the page, kept for the tab's other pages), or null. Published: that language; not published: English. */
+	var hubRaw = null;   // the hub's language as given, published or not
 	function hubChoice(rs) {
 		var m = /[?&]lang=([a-zA-Z]{2,3})/.exec(location.search), v = m ? base(m[1]) : null;
 		if (v) store(function () { sessionStorage.setItem("agl-doc-hub-lang", v); }); else v = store(function () { return sessionStorage.getItem("agl-doc-hub-lang"); });
+		hubRaw = v || null;
 		if (!v) return null;
 		return find(rs, v) ? v : "en";
 	}
@@ -147,11 +149,32 @@
 		if (lang !== h.lang) go(rs, lang, false);
 	}, true);
 
+	/** A link in the page (not the header selector) that leads into another language's site, such as the Languages line of the home page: it is a choice of language too, so it is saved; otherwise start() sends the reader back to the saved language. */
+	document.addEventListener("click", function (e) {
+		var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+		if (!a || a.closest(".md-select__link") || e.button || e.ctrlKey || e.metaKey || e.shiftKey) return;
+		var rs = roots(), h = here(rs);
+		if (!h) return;
+		var p;
+		try { p = new URL(a.getAttribute("href"), location.href); } catch (x) { return; }
+		if (p.origin !== location.origin) return;
+		var t = null;
+		for (var i = 0; i < rs.length; i++)
+			if (p.pathname.indexOf(rs[i].root) === 0 && (!t || rs[i].root.length > t.root.length)) t = rs[i];
+		if (!t || t.lang === h.lang) return;
+		store(function () { sessionStorage.removeItem("agl-doc-hub-lang"); });
+		setPref(t.lang);
+		ticks();
+	}, true);
+
 	/** The hub's local copy: the hub has already chosen the language folder; tell the person how to translate when that language is not published. */
 	function hubBanner() {
-		var hub = base(window.aglHubLang);
 		var o = document.querySelector(".md-header__option");
 		if (o) o.style.display = "none";   // the selector points at the web site; the hub chooses the language here
+		showBanner(base(window.aglHubLang));
+	}
+	/** The bar telling how to use the browser's Translate, in that language (English when there is no text for it). */
+	function showBanner(hub) {
 		if (!hub || hub === base(document.documentElement.lang) || document.getElementById("agl-banner")) return;
 		if (store(function () { return sessionStorage.getItem(BANNER_KEY); })) return;
 		css();
@@ -170,6 +193,7 @@
 		var want = wanted(rs);
 		if (want !== h.lang) { go(rs, want, true); return; }   // first load only: a later page of the same site is already in the right language
 		decorate();
+		if (hubRaw && !find(rs, hubRaw)) showBanner(hubRaw);   // the hub is in a language with no published pages: say how to translate
 		var queued = false;
 		new MutationObserver(function () {
 			if (queued) return;
