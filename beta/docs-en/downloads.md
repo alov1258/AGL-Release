@@ -33,3 +33,11 @@ How to run them is in [Installing and Upgrading AGL 25](manual/0200-installing-a
 ### Beta
 
 [agl-install-macos-beta.sh](https://github.com/alov1258/AGL-Release/releases/download/beta/agl-install-macos-beta.sh) - the latest beta.
+
+## Rolling back
+
+If a new version gives you trouble, you can go back to the previous released version. The rollback script puts back the jar of an earlier **Production** release and changes nothing else: your races, settings and the other AGL files stay as they are. Save the script in your AGL version folder (the folder that holds `AGL_start.bat` or `AGL_start.sh`, for example `C:\SOL\Java25`), close AGL, and run it. It lists the released versions and offers the one before your newest. The newer jar is kept in a `rolled-back` folder, so you can move it back to undo. AGL will offer the newer version again at its next update check: choose **Remind Me in a Week**.
+
+- [agl-rollback-windows.bat](https://github.com/alov1258/AGL-Release/releases/latest/download/agl-rollback-windows.bat) - Windows: double-click it.
+- [agl-rollback-linux.sh](https://github.com/alov1258/AGL-Release/releases/latest/download/agl-rollback-linux.sh) - Linux: in a terminal, `bash ./agl-rollback-linux.sh`.
+- [agl-rollback-macos.sh](https://github.com/alov1258/AGL-Release/releases/latest/download/agl-rollback-macos.sh) - macOS: in Terminal, `bash ./agl-rollback-macos.sh`.
