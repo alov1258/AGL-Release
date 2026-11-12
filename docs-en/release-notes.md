@@ -1,6 +1,16 @@
-# AGL 25 Release Notes 25.4.1
+# AGL 25 Release Notes 25.4.3
 
-AGL 25.4.1 is a major release with a lot of new functionality. The focus of this release has been to provide tools that reduce stupid mistakes, get out of trouble before it happens and to improve the efficiency of using both qtVlm and AGL. There are many changes, read the release note as to what they are, and the User Manual on how to use them.
+AGL 25.4.X is a major release chain with a lot of new functionality. The focus of this release has been to provide tools that reduce stupid mistakes, get out of trouble before it happens and to improve the efficiency of using both qtVlm and AGL. There are many changes, read the release note as to what they are, and the User Manual on how to use them.
+
+## Version 25.4.3
+
+### Bug fixes – 25.4.3
+
+1. A race restarted from a folder that already has a DC Data Table file no longer hangs at "Waiting for the NOAA grib to load". It happened when some DCs in the file are dated beyond the SOL weather (more than about 7 days ahead), where only the NOAA weather has data. The DC Data Table file is now read without waiting, and the NOAA download starts as normal.
+
+2. PL blocks no longer drift away from the target PL causing PL DCs not to be recognised as such.
+
+3. The BBQ Checker handles PL blocks properly when it offers a correction. The checker now offers that fix and moves the whole block with it, instead of reporting "Unable to prevent BBQ". See [5.2 Checking the Course](manual/0500-using-agl.md#52-checking-the-course).
 
 ## Version 25.4.1
 
