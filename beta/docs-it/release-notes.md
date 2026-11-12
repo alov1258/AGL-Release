@@ -1,6 +1,16 @@
-# AGL 25 Note di Rilascio 25.4.1
+# AGL 25 Note di Rilascio 25.4.3
 
-AGL 25.4.1 è una release importante con molte nuove funzionalità. L'obiettivo di questa release è fornire strumenti che riducano gli errori banali, ti tirino fuori dai guai prima che si verifichino e rendano più efficiente l'uso di qtVlm e di AGL. Le modifiche sono molte: leggi le note di rilascio per sapere quali sono, e il Manuale Utente per sapere come usarle.
+AGL 25.4.X è una serie di release importante con molte nuove funzionalità. L'obiettivo di questa release è fornire strumenti che riducano gli errori banali, ti tirino fuori dai guai prima che si verifichino e rendano più efficiente l'uso di qtVlm e di AGL. Le modifiche sono molte: leggi le note di rilascio per sapere quali sono, e il Manuale Utente per sapere come usarle.
+
+## Versione 25.4.3
+
+### Correzioni di bug – 25.4.3
+
+1. Una gara riavviata da una cartella che contiene già un file della DC Data Table non si blocca più su "Waiting for the NOAA grib to load". Succedeva quando alcuni DC del file hanno una data oltre il meteo SOL (più di circa 7 giorni avanti), dove ci sono solo i dati meteo NOAA. Il file della DC Data Table ora viene letto senza attese e il download NOAA parte normalmente.
+
+2. I blocchi PL non si allontanano più dal PL obiettivo, evitando che i DC PL non vengano riconosciuti come tali.
+
+3. Il Controllo BBQ gestisce correttamente i blocchi PL quando propone una correzione. Ora propone la correzione e sposta con sé l'intero blocco, invece di segnalare "Unable to prevent BBQ". Vedi [5.2 Verifica del Percorso](manual/0500-using-agl.md#52-verifica-del-percorso).
 
 ## Versione 25.4.1
 
