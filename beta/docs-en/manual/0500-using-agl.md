@@ -46,6 +46,8 @@ The offending DC dates will be written back to the Feedback area as shown below.
 
 7.  Update with the current valid set.
 
+If the DCs include performance loss (PL) blocks, a DC that latency has made late (outside the **Recovery Time** setting) is sent again until its time is right, and the DCs on the server are checked against the DC area after the Set (up to 3 tries).
+
 **Note**: A DC record must be in this format:
 
 2016/05/27 01:51:00 twa 138.45
@@ -54,7 +56,7 @@ The offending DC dates will be written back to the Feedback area as shown below.
 
 The refresh button will request the list of current DCs from the server and display them.
 
-### 5.1.4 Delete Button <img src="../img/icons/delete.png" alt="" class="inline-icon" height="24">
+### 5.1.4 Delete Button <img src="../img/icons/dialog-cancel-3.png" alt="" class="inline-icon" height="24">
 
 To delete all DCs, click the delete button . To delete a subset, highlight those to be deleted.
 
@@ -90,7 +92,7 @@ This will open the alternate polar file chooser and set up AGL to use the select
 
 The diagram also shows the Max VMG lines for both beating and running. The max SPD line shows the TWA that will achieve the maximum boat speed at that wind strength. Hovering the mouse over the diagram will show the TWS, Boat Speed (BS), TWA and VMG at that point.
 
-### 5.1.9 DC Data Table <img src="../img/icons/table-add.png" alt="" class="inline-icon" height="24">
+### 5.1.9 DC Data Table <img src="../img/icons/dc-data-table.png" alt="" class="inline-icon" height="24">
 
 This will launch the DC Data Table. Operation is described in section [6 DC Data Table](0600-dc-data-table.md).
 
@@ -118,9 +120,9 @@ The same DCs conditioned for performance loss look like this. Notice that the pe
 
 <img src="../img/manual/image103.png" alt="" width="595">
 
-There are two icons for checking performance loss.
+With **Use Performance Loss** ticked there are two Check buttons. The plain **Check** <img src="../img/icons/emblem-important-3.png" alt="" class="inline-icon" height="18"> checks the DCs exactly as the server holds them and changes nothing in the DC area. **Check PL** <img src="../img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="18"> works out the performance loss manoeuvres and adds the PL DCs to the DC area. It writes to the DC area only after a real change: a move, an edit, an insert, a delete, Condition, Undo or Redo. With **Use Performance Loss** off there is just the one Check button.
 
-The <img src="../img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="18">will compute the performance loss manoeuvres and show them without changing the actual DCs. The <img src="../img/icons/checkDCPL16.png" alt="" class="inline-icon" height="18">will compute and modify/add DCs to achieve the PL result.
+The **DC Editor** button <img src="../img/icons/dc-edit-table.png" alt="" class="inline-icon" height="18"> opens the DC Editor, which lists the DCs of the DC area (see [6.6 The DC Editor](0600-dc-data-table.md#66-the-dc-editor)).
 
 #### 5.1.10.1 DC Parameters
 
@@ -136,13 +138,9 @@ When a DC is reached, it is named in full. 07/14 01:29:52/-165.0/98.7/4.3/9.5/89
 
 **Calculation duration (s):** This parameter (in seconds) determines how often the boat is advanced. Similar concept to the server jump. The points generated are not plotted, but are used to determine the coordinates of each waypoint, by sampling TWS and TWD after each advance and then using those numbers for the next advance.
 
-**Use race start time:** This allows the user to check DCs from the start. If checked, the checker will assume that the boat is at the start waypoint, and the time is the start time. Any DCs after that time will be processed in producing the route. If left unchecked, the start time will be now.
+**Use race start:** This allows the user to check DCs from the start. If checked, the checker will assume that the boat is at the start waypoint, and the time is the start time. Any DCs after that time will be processed in producing the route. If left unchecked, the start time will be now.
 
-**Display boat position:** This is used when the boat is a long way away from the DCs of interest. It will not be plotted or considered in producing the route. Most applicable when **Use these start coordinates** is checked.
-
-**Use these start coordinates:** The route will be calculated assuming the boat is at the **Start coords (lat, lon)**, and the time will be wound forward to the time of the first DC.
-
-**Start coords (lat, lon):** The start coordinates for the route. It is in the format that can be pasted directly from the SOL client. To pick up coordinates from the SOL client, hold the Alt key down, and then click the left mouse button. This copies the coordinates of the crosshairs into the copy/paste buffer.
+**Display boat position:** This is used when the boat is a long way away from the DCs of interest. It will not be plotted or considered in producing the route.
 
 **Note:** If the boat is currently TWA 0, it means it is not moving. The only action that can be taken is to advance the clock to the first DC time, and assume that the boat will start moving on that course at that time. The start point will therefore be the current boat position, and the time of the first DC.
 
@@ -156,14 +154,16 @@ AGL can check your course and your DCs before they reach the server, and keep ch
 
 When it finds a problem, AGL offers one or more fixes. You choose which to apply. Nothing is changed until you press **Fix** or **Apply**.
 
-These checks are for SOL members. They also need **In Control** to be ticked on the DC Checker tab for any the checks to work in real time. Leave it off if do not want the checks to happen, like in sprint races when you in control. You can also control what checks are made, just BBQ, marks (which includes the finish line) or both. 
+These checks are for SOL members only. For the checks to work in real time, **In Control** must be ticked on the DC Checker tab. Leave it off if you do not want the checks to run, for example in sprint races when you are in control yourself. You can also choose which checks are made with the BBQ Checker: BBQs only, marks (which includes the finish line) only, or both.
 
 ### 5.2.1 Switching the Checks On
 
 On the Parameters tab, under DC's (or the check boxes on the DC Checker toolbar):
 
-- **Check for BBQ** looks along the course and the DCs for land, sends the BBQ messages and offers fixes.
-- **Check mark roundings** warns when the boat is going to miss a mark.
+- **Check for BBQ** lets the BBQ Checker look along the course and the DCs for land and offer fixes.
+- **Check mark roundings** lets it also check the mark roundings, and warn when the boat is going to miss a mark.
+
+The real-time BBQ and missed-mark messages need **In Control** to be ticked. These two boxes do not switch them on or off; they decide whether the warning comes with a suggested fix.
 
 <img src="../img/screens/main.params-dcs-checks.png" alt="" width="350">
 
@@ -173,11 +173,9 @@ These can also be enabled and disabled on the DC Checker toolbar.
 
 <img src="../img/screens/gfx.bbq-checker-buttons.png" alt="" width="300">
 
-
-
 ### 5.2.2 The BBQ Checker
 
-The BBQ Checker looks at the DCs in the DC area for coastal collisions and deals with them one at a time. The **Check** <img src="../img/icons/shipwreck_48X48.png" alt="" class="inline-icon" height="18"> button runs it; **Check PL** <img src="../img/icons/shipwreck_pl.png" alt="" class="inline-icon" height="18"> runs it with performance loss.
+The BBQ Checker looks at the DCs in the DC area for coastal collisions and deals with them one at a time. The BBQ Checker button <img src="../img/icons/shipwreck_48X48.png" alt="" class="inline-icon" height="18"> runs it. With **Use Performance Loss** ticked the button shows <img src="../img/icons/shipwreck_pl.png" alt="" class="inline-icon" height="18"> instead, and runs the check with performance loss.
 
 For each collision AGL shows where it happens, for example "Potential collision after DC 0", and lists the fixes it has found. The suggested fix is ticked. You can tick another, or none, then press:
 
@@ -187,7 +185,9 @@ For each collision AGL shows where it happens, for example "Potential collision 
 
 <img src="../img/screens/dlg.fix-report-two-fixes-check-boxes-apply-apply-pl-cancel.png" alt="" width="440">
 
-A fix can set a DC to a new time, move a DC, add a DC before the collision, or give a new course. Where the collision depends on the server firing a DC a second or two early, the heading says so ("with 1 s early server hop") and the fixes allow for it.
+A fix can set a DC to a new time, move a DC, add a DC before the collision, or give a new course.
+
+A fix never changes the DCs inside a performance loss (PL) block on its own. The one DC of a PL block it may move is the entry DC, and then the rest of the block moves with it, keeping its spacing and values. Where the collision depends on the server firing a DC a second or two early, the heading says so ("with 1 s early server hop") and the fixes allow for it.
 
 If the boat's present course runs into land, AGL offers a turn to port or to starboard that clears it, with the course and the number of degrees.
 
@@ -278,19 +278,11 @@ The zoom function is only enabled by the use of a mouse with a wheel (on its bac
 
 #### 5.3.1.2 Mouse Click
 
-A **left** mouse click will copy the current mouse coordinates to the paste buffer in the format
-
-,CP,&lt;lat&gt;,&lt;lon&gt;
-
-e.g. ,*CP,38.681941,-9.201922*
-
-This allows a simple paste into a waypoint file where all is required is the name to make a valid waypoint.
-
-e.g. *WP01,CP,38.671979,-9.196492*
-
-A **right (**standard graphics**)** or **&lt;Shift&gt; left** (OpenGL graphics) mouse click will copy the current mouse coordinates to the paste buffer in the same format as the SOL client, that is
+A **Shift + left** mouse click copies the current mouse coordinates to the paste buffer in the same format as the SOL client, that is
 
 *38.605778,-9.485908*
+
+A plain left click no longer copies the coordinates.
 
 ### 5.3.2 View Options
 
@@ -310,7 +302,7 @@ Each check box switches one thing on or off in the graphics.
 - **Wind speed** shows the wind speed numbers.
 - **Isotachs** shows lines of equal wind speed.
 - **Isobars** shows lines of equal pressure. **Isobar spacing (hPa)** sets the pressure between the lines, from 1 to 50.
-- **Additional waypoints** shows the additional waypoints (see [5.6 Additional Waypoints](0500-using-agl.md#56-additional-waypoints)).
+- **Race DC Trace** shows the DCs that have fired in this race (see [5.3.3.3 Race DC Trace](0500-using-agl.md#5333-race-dc-trace)).
 - **Labels** shows the DC labels, set up below.
 - **Fill land polygons** fills the land shapes.
 
@@ -321,6 +313,10 @@ The display below shows AIS boats and their traces, and the predictor line. The 
 Also, if your boat is in the AIS list, it will be shown in black in the position that it was when all the other AIS boats were updated. This is the actual position of your boat relative to the others shown on the screen.
 
 <img src="../img/manual/image121.png" alt="" width="532">
+
+**Wind barb size and spacing:** the **Wind barbs** box sets how big the barbs are (**Barb size**, 10 to 300 pixels) and how far apart they are (**Barb spacing**, 20 to 1000 pixels). The **-** and **+** buttons make the value 1.1 times smaller or larger with each click, or you can type a value. The graphics change at once, and the values are saved. They are also on the Parameters tab (see [Graphics](0300-configuration.md#310-graphics)).
+
+**Other boats:** a boat that has finished the race is drawn as a small grey dot at its last position, with no name. The boats that are named (the AIS list, or **Show other boat names**) show their ranking in brackets under the name. Hold the mouse over any boat to see its details, and its trace is drawn as a line in the colour of its name until the mouse moves away.
 
 #### 5.3.2.2 Graphics Font
 
@@ -335,6 +331,56 @@ This sets what is written on each DC label in the graphics.
 - The **Date** group chooses which parts of the date are shown. If a part is ticked it is shown at every point; if it is not ticked it is shown only where it changes. The parts are **Year**, **Month**, **Day** and **Time HH:MM:SS**.
 - **Second line: waypoint and command with its value** adds a second line to the label with the waypoint and the command and its value.
 
+The **PL** field shows the performance loss the boat arrives at the DC with and, in brackets, the performance loss after the turn, for example 97.4 (95.7). The labels of PL DCs are grey.
+
+### 5.3.3 Traces
+
+Whenever you check, change or set the DCs, AGL draws the result in the graphics as a trace. The **Traces** button on the graphics toolbar opens the Traces form, where you choose which traces to show.
+
+#### 5.3.3.1 The Traces Form
+
+<img src="../img/screens/gfx.traces.png" alt="" width="450">
+
+- The bold first row is the **current** trace, the latest thing done. It has a **Show** tick like the others. It is ticked again for every new current trace, so it is never left hidden by mistake. Untick it to look at an earlier trace more closely.
+- The other rows are earlier traces. Tick **Show** to compare them with the current one. **Event** says what was done, and **Time (UTC)** when. **Set** is the time of a Set. **Colour** is the colour of the trace.
+- **Text** shows the labels on the trace. When it is ticked the labels show the fields chosen in [DC Labels](0500-using-agl.md#5323-dc-labels), and when it is not ticked they show only the times.
+- **Show the ticked traces with the current one** switches the compared traces on and off. It does not affect the current trace.
+- **Reset** removes all the traces except the current one and the Sets. **Clear** removes the traces that are ticked **Show**. The current trace always stays. Click a row to select it (it is highlighted, one row at a time, and stays selected when the list refreshes).
+- **Export GPX...** saves the selected trace as a GPX file in the race folder, in the same layout as the Stored Sets export: one route, with the DC number as the name of each point. Only the DCs are written. The file is named "Trace &lt;race&gt; &lt;event&gt; &lt;time&gt;.gpx".
+
+A trace is made only for what you do: Send, an edit (Move, Change Sign, Condition, Delete, Insert, or an edit in the DC Editor), Undo or Redo, a Check or BBQ check, and a Set. A check that AGL makes by itself is shown only while it is the last thing done, and goes as soon as you make a real trace. A Set that AGL makes by itself (Condition DCs after new weather, or Set Anyway) is labelled **Set AGL**; a Set you make is labelled **Set**.
+
+Each trace starts at the boat as it was when the trace was made, marked with a boat icon (port or starboard, like the other boats). The current trace starts at the boat's live position and has no icon.
+
+#### 5.3.3.2 Stored Sets
+
+Every Set you make is kept with the race: for each DC its position, the wind, the speed, the PL, and the boat. The **Stored Sets...** button on the Traces form opens the Stored Sets form.
+
+<img src="../img/screens/gfx.stored-sets.png" alt="" width="700">
+
+- Tick the **Selected** boxes of the Sets you want (drag down the column to tick several), and press **Show selected** to draw them as traces.
+- Click a Set to see its DCs. The table shows the Value in degrees and Lat and Lon in degrees, minutes and seconds.
+- **Export GPX** writes the selected Sets to a GPX file, one route for each Set. AGL can read the file again. Each DC keeps the id the server gave it, and the file carries it as `agl:serverId` in the extensions and as `id N` in the description. A DC the server has not listed yet has no id until the next list; Sets made before this version have none unless they are the newest Set and their DCs are still on the server.
+- **Delete** deletes the selected Sets, after asking. **Clear Selected** unticks them, and **Clear All** unticks every Set.
+
+<img src="../img/screens/dlg.stored-sets-delete-the-selected-sets.png" alt="" width="300">
+
+A Set made before positions were kept has none, and AGL says so. A DC without a kept position is left out of the drawing.
+
+The Sets are kept in the race database, `db/dc_<race id>.db`, in the race folder. There is one file for each race, so Sets from one race never show in another. Only the Sets are kept between sessions. The file is not cleaned up automatically, and it can be deleted after the race.
+
+#### 5.3.3.3 Race DC Trace
+
+Tick **Race DC Trace** in View Options to see the DCs that have fired in this race. Each is a dark red dot with its time in UTC. The DCs that fired in earlier races of the same name are orange dots with no label. The record is kept in the hub with the race. Use **Info** on the right click menu to read the details of a dot.
+
+<img src="../img/screens/gfx.race-dc-trace.png" alt="" width="600">
+
+A DC that fires while a Set is being sent (a Set can take minutes) is recorded once the Set has finished, placed from the boat's own updates. A DC that the Set deletes from the server is never recorded as fired.
+
+#### 5.3.3.4 Boat Traces
+
+The traces of the AIS boats and of your own boat are kept for the whole race, in `db/traces_<race id>.db` in the race folder. The server cuts the old part of long traces, but AGL keeps what it has had, and adds what the server sends each time it loads the traces. The whole trace is drawn, also after AGL has been closed and started again. A stretch with no points, because AGL was off and the server had already cut it, is drawn as a gap and filled in when the server's traces arrive. The record is for viewing only. It can be deleted after the race.
+
 ## 5.4 OpenGL Graphics Specific Commands
 
 The OpenGL Engine has several keyboard commands that are specific to the OpenGL Engine only.
@@ -345,57 +391,55 @@ The OpenGL Engine has several keyboard commands that are specific to the OpenGL 
 
 **B** – Centres the display on the boat
 
-**W** – Wipes the screen
+**C** – Starts the course setter (see [5.4.3 Setting a Course](0500-using-agl.md#543-setting-a-course))
+
+**W** – Clears the traces, the DC points and the routes that are not active (the same as **Clear** on the right click menu)
 
 ### 5.4.1 Toolbar Icons
 
+The graphics toolbar has these buttons, from the left.
+
 The <img src="../img/icons/agl.png" alt="" class="inline-icon" height="18"> button pops the AGL window to the top.
 
-The <img src="../img/icons/table-add.png" alt="" class="inline-icon" height="18"> pops the boat data table.
+The <img src="../img/icons/boat-data-table.png" alt="" class="inline-icon" height="18"> pops the boat data table.
 
 The <img src="../img/icons/polar.png" alt="" class="inline-icon" height="18"> launches the alternative polar file chooser.
 
 The <img src="../img/icons/show_boat_polar.png" alt="" class="inline-icon" height="18"> opens the polar diagram.
 
-The <img src="../img/icons/applications-internet.png" alt="" class="inline-icon" height="18"> button pops the graphics window to the top.
-
 The <img src="../img/icons/selection.png" alt="" class="inline-icon" height="18"> creates a subset of the current grib. The file will be placed in the grib folder with the prefix SUB\_. The message below pops up when the creation of the subset is complete.
 
 <img src="../img/screens/dlg.subset-grib-written.png" alt="" width="379">
 
-The <img src="../img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="18"> button selects the current waypoint file.
+The <img src="../img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="18"> button drops a list of the routes of the race, with the active one ticked. The route you click becomes the active route (see [5.5.2 The Active Route](0500-using-agl.md#552-the-active-route)).
+
+The <img src="../img/icons/set_wp_date.png" alt="" class="inline-icon" height="18"> sets the grib date to the date of a waypoint, as **Set Grib Date** does on the right click menu.
 
 The <img src="../img/icons/go-next.png" alt="" class="inline-icon" height="18"> applies the current DC list. Greyed out if no changes have been made.
 
-The <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> writes the current DCs to a waypoint file.
+The <img src="../img/icons/arrow-refresh.png" alt="" class="inline-icon" height="18"> reloads the DCs from the server.
 
-When <img src="../img/icons/waypoint-icon-ok.png" alt="" class="inline-icon" height="18"> is selected and a set of waypoints is loaded, the following editing keyboard commands are invoked.
+The <img src="../img/icons/dc-edit-table.png" alt="" class="inline-icon" height="18"> opens the DC Editor, the <img src="../img/icons/emblem-important-3.png" alt="" class="inline-icon" height="18"> checks the DCs, and with **Use Performance Loss** ticked the <img src="../img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="18"> checks them with performance loss. The <img src="../img/icons/shipwreck_48X48.png" alt="" class="inline-icon" height="18"> runs the BBQ Checker (<img src="../img/icons/shipwreck_pl.png" alt="" class="inline-icon" height="18"> with performance loss). See [5.1.10 Check DCs Button](0500-using-agl.md#5110-check-dcs-button) and [5.2.2 The BBQ Checker](0500-using-agl.md#522-the-bbq-checker).
 
-**D** – Deletes a waypoint
+The <img src="../img/icons/wheel.png" alt="" class="inline-icon" height="18"> starts the course setter (see [5.4.3 Setting a Course](0500-using-agl.md#543-setting-a-course)).
 
-**E** – Edits a waypoint values
+The <img src="../img/icons/kgpg_edit.png" alt="" class="inline-icon" height="18"> conditions a DC, the <img src="../img/icons/ConditionAll.png" alt="" class="inline-icon" height="18"> conditions all the DCs, and the <img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="18"> sets a DC to max VMG. See [5.4.4 Conditioning DCs](0500-using-agl.md#544-conditioning-dcs).
 
-**I** – Inserts / Appends waypoints
+The <img src="../img/icons/filter.png" alt="" class="inline-icon" height="18"> shows the active route with any redundant waypoints left out, using a filter tolerance. It changes nothing. The next <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> does the same, and then takes the redundant waypoints out of the active route.
 
-**M** – Moves a waypoint
+The <img src="../img/icons/view-options-eye-blue-48.png" alt="" class="inline-icon" height="18"> button opens the View Options form, where the predictor line, AIS boats and traces, wind barbs, race DC trace, DC labels, land fill and the graphics font are set. See [5.3.2 View Options](0500-using-agl.md#532-view-options).
 
-The <img src="../img/icons/filter.png" alt="" class="inline-icon" height="18"> filters out any redundant waypoints, using a filter tolerance.
+The <img src="../img/icons/zoom-plus.png" alt="" class="inline-icon" height="18"> and <img src="../img/icons/zoom-minus.png" alt="" class="inline-icon" height="18"> buttons zoom in and out about the middle of the graphics view, by the **Zoom step** set on the Parameters tab. The <img src="../img/icons/zoom-fit-best.png" alt="" class="inline-icon" height="18"> fits the view to the trace of the last check, and the <img src="../img/icons/zoom-reset.png" alt="" class="inline-icon" height="18"> fits it to the race area (the pink box).
 
-The next <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> filters out any redundant waypoints, using a filter tolerance and saves them to a file.
-
-The <img src="../img/icons/view-options-eye-blue-48.png" alt="" class="inline-icon" height="18"> button opens the View Options form, where the predictor line, AIS boats and traces, wind barbs, additional waypoints, DC labels, land fill and the graphics font are set. See [5.3.2 View Options](0500-using-agl.md#532-view-options).
+The **Traces** button opens the Traces form (see [5.3.3 Traces](0500-using-agl.md#533-traces)).
 
 The <img src="../img/icons/DCtrace.png" alt="" class="inline-icon" height="18"> button turns the grey DC trace on and off. See [6.3.1 How it works](0600-dc-data-table.md#631-how-it-works).
 
-The Append <img src="../img/icons/append-trace.png" alt="" class="inline-icon" height="18"> button turns appending of DC plots on or off. Use **W** to clear the display.
-
-The <img src="../img/icons/edit-redo-3.png" alt="" class="inline-icon" height="18"> button reloads the additional course waypoint file.
-
 The <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> toggles between working with DCs and waypoints.
 
-The <img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> undoes any waypoint edits one at a time.
+The <img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> undoes DC and waypoint edits one at a time, and the same icon turned over puts the edit back.
 
-The <img src="../img/icons/wp_to_gpx.png" alt="" class="inline-icon" height="18"> writes the current waypoints out as a gpx file.
+The **Routes** button opens the Routes and Waypoints form (see [5.5.1 The Routes and Waypoints Form](0500-using-agl.md#551-the-routes-and-waypoints-form)).
 
 The <img src="../img/icons/waypoint-icon-ok-v.png" alt="" class="inline-icon" height="18"> computes waypoints and DCs into a route using maxVMG for waypoints.
 
@@ -403,11 +447,9 @@ The <img src="../img/icons/waypoint-icon16-vmc.png" alt="" class="inline-icon" h
 
 The <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="18"> converts waypoints and DCs into DCs only using maxVMG for waypoints.
 
-The <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> converts maxVMG waypoints and DCs into a waypoint file.
-
 The toolbars can also be undocked and re-docked by clicking and holding the grey stippled area of the toolbar next to the first icon as shown below.
 
-<img src="../img/manual/image130.png" alt="" width="38">
+<img src="../img/manual/image130.png" alt="" width="100">
 
 Undocked toolbars are shown below
 
@@ -415,9 +457,30 @@ Undocked toolbars are shown below
 
 ### 5.4.2 The Right Click Menu
 
-A mouse right click in the graphics window will invoke a quick menu of options, which changes depending on whether DCs or waypoints are being worked on. Some commands are waypoint only. The one on the left is for waypoints and the one on the right is for DCs.
+A mouse right click in the graphics window will invoke a quick menu of options. The items shown depend on what is on the chart and on whether you are working on DCs or on waypoints.
 
-<img src="../img/screens/gfx.popup-wp.png" alt="" width="105"> <img src="../img/screens/gfx.popup-dc.png" alt="" width="106">
+<img src="../img/screens/gfx.popup-dc-edit.png" alt="" width="110"> <img src="../img/screens/gfx.popup-route.png" alt="" width="110"> <img src="../img/screens/gfx.popup-none.png" alt="" width="110">
+
+*The menu with DCs Active, Routes Active and Neither Active.*
+
+Some items are always shown: Steer, Tack, Gybe, Max Up, Max Down, Set Grib Date, VMG, Undo, Redo, Centre Boat, Fit Screen, Info, Clear and Cancel. **Set DC Active / Set WP Active** and **Switch CMD** are shown only when a DC trace is on the chart. With no DC trace on the chart the DC edit button is greyed.
+
+The other items depend on what you are working on. A dash means the item is not shown, and "greyed" means it is shown but cannot be chosen.
+
+| **Item**       | DCs Active | Routes Active | Neither Active |
+|----------------|:--:|:--:|:--:|
+| Set Active     | –  | ✓  | greyed |
+| New            | –  | ✓  | ✓  |
+| Add            | –  | ✓  | greyed |
+| Remove         | –  | ✓  | greyed |
+| Edit           | –  | ✓  | greyed |
+| Follow (members) | – | ✓ | greyed |
+| Insert         | ✓ (DCs) | ✓ | greyed |
+| Move           | ✓ (DCs) | ✓ | greyed |
+| Delete         | ✓ (DCs) | ✓ | greyed |
+| WP On/Off, Condition, Condition All, maxVMG | ✓ | – | – |
+
+**Switch CMD** can be chosen when DCs are Active or there is an active route. The active route always shows its waypoints.
 
 <img src="../img/icons/wheel.png" alt="" class="inline-icon" height="18"> **Steer:** Invokes Setting a Course
 
@@ -437,49 +500,17 @@ A mouse right click in the graphics window will invoke a quick menu of options, 
 
 <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> **Set DC Active / Set WP Active:** Toggles between working on DCs and waypoints
 
-<img src="../img/icons/Insert_Vertex.png" alt="" class="inline-icon" height="18"> **Insert:** Inserts a waypoint / DC. Follow the prompts in the top right corner. If a waypoint, the editor will pop this form.
+**Set Active** (no icon), <img src="../img/icons/add-wp.png" alt="" class="inline-icon" height="18"> **New**, <img src="../img/icons/increase.png" alt="" class="inline-icon" height="18"> **Add**, <img src="../img/icons/Insert_Vertex.png" alt="" class="inline-icon" height="18"> **Insert**, <img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Follow**, <img src="../img/icons/move_wp.png" alt="" class="inline-icon" height="18"> **Move**, <img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="18"> **Edit**, <img src="../img/icons/go-next-red.png" alt="" class="inline-icon" height="18"> **Remove** and <img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> **Delete** work on waypoints and routes. They are described in [5.5.3 Editing Waypoints on the Graphics](0500-using-agl.md#553-editing-waypoints-on-the-graphics) and [5.5.4 Follow](0500-using-agl.md#554-follow).
 
-<img src="../img/screens/gfx.waypoint-values.png" alt="" width="294">
-
-Select the control type from the drop-down, and change the other values if so desired.
-
-<img src="../img/manual/image137.png" alt="" width="190">
-
-<img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Follow:** Inserts waypoints that go round the coast between two waypoints, so that a route that crosses an island or headland is taken round it. It is for waypoints only, not DCs, and it is available to SOL members. You need at least two waypoints.
-
-1. Choose **Follow** from the right click menu. The prompt at the top right says **Select segment to insert ( right click cancel)**.
-
-2. Click the line between the two waypoints that crosses the land. Inactive waypoints (those with a ! at the start of the name) are skipped: the segment is between the two active waypoints either side of your click. The waypoint editor pops up, as it does for **Insert**. The new waypoints take the name and command of the first waypoint of the segment, so change the control type there if you want something else.
-
-   <img src="../img/manual/image138.png" alt="" width="698">
-
-3. The prompt now says **Click the side of the segment to pass on ( right click cancel)**, and a thin line follows the mouse from the segment. Click on the side of the segment that you want to pass the first island on. That side applies to the first island only. If there are more islands on the segment, each takes whichever side gives the shortest route.
-
-   <img src="../img/manual/image139.png" alt="" width="698">
-
-4. AGL finds the coast that the segment crosses and inserts a waypoint at each corner of the coast that the route must go round (the convex hull), between where the segment first enters the coast and where it last leaves it. The Feedback area says how many waypoints were inserted. If there is nothing to insert, it says why, for example **The segment does not enter and leave any coastline**, and you can click another segment.
-
-   <img src="../img/manual/image140.png" alt="" width="698">
-
-5. Right click cancels at either step. **Undo** and **Redo** on the menu and toolbar take the new waypoints out and put them back.
-
-Two values on the **Parameters** tab, in the **Course & waypoints** box, set where the waypoints go. **Follow: offset from coast (m)** (10 to start with) moves each point that many metres out from the shore. **Follow: offset along track (m)** (0 to start with) then moves each point along the direction of travel. AGL then checks once more, and adds a point wherever the moved route would still cross the coast.
-
-<img src="../img/icons/move_wp.png" alt="" class="inline-icon" height="18"> **Move:** Moves a waypoint / DC. Follow the prompts in the top right corner. Note with DCs:
+With DCs Active, **Insert**, **Move** and **Delete** work on DCs instead. Follow the prompts in the top right corner. Note with DCs:
 
 1.  If the DC type is TWA, the move will not set the twa to outside the optimal maxVMG range
 
 2.  If the DC is moved over land, it will be moved back so as not to BBQ
 
-<img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="18"> **Edit:** Edits a waypoint. Follow the prompts in the top right corner. The editor will pop this form, where the date and control type can be modified.
+3.  A DC inside a PL block is not moved on its own. The entry DC of the block carries the DC's number, and moving it moves the whole block. The PL DCs and the exit DC are labelled PL and cannot be picked.
 
-<img src="../img/manual/image141.png" alt="" width="201">
-
-<img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> **Delete:** Deletes a waypoint or DC. Follow the prompts in the top right corner
-
-**WP On/Off:** Toggles waypoints on or off. If off, the waypoint is not used. Follow the prompts in the top right corner.
-
-**Switch sign:** Switches the sign on a TWA DC. Follow the prompts in the top right corner
+**WP On/Off:** Shown with DCs Active. It switches the sign on a TWA DC. Follow the prompts in the top right corner
 
 **Switch CMD:** DC only. Toggles CC and TWA and updates value accordingly. Follow the prompts in the top right corner.
 
@@ -491,15 +522,19 @@ Two values on the **Parameters** tab, in the **Course & waypoints** box, set whe
 
 <img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="18"> **maxVMG:** DC only. Sets the selected DC value to the max VMG.
 
-<img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> **Undo:** Undoes the last waypoint edit. The number of edits that can be undone is shown in brackets.
+<img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> **Undo:** Undoes the last DC or waypoint edit. The number of edits that can be undone is shown in brackets.
 
 <img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" style="transform: scaleX(-1);" height="18"> **Redo:** Puts back the edit that was undone.
-
-<img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> **Save:** Saves the current waypoints.
 
 <img src="../img/icons/Boat_16.png" alt="" class="inline-icon" height="18"> **Centre Boat:** Centres the screen on the boat
 
 <img src="../img/icons/zoom-fit-best.png" alt="" class="inline-icon" height="18"> **Fit Screen:** Fits the screen to the current waypoint/DC plot extents
+
+<img src="../img/icons/info.png" alt="" class="inline-icon" height="18"> **Info:** Shows the details of a DC. Choose **Info**, then click any DC: in the DC area, on the DC trace, on a trace you are showing (a stored Set too), or a dot of the Race DC Trace. A box beside it lists the DC's title (a dot is titled "Race <race id> DC (fired)"), Lat and Lon, the time in UTC, CMD and its value in degrees, TWA, TWS, TWD, COG, SOG and PL (and the PL on arrival), whether it is a PL DC, and for a stored Set the time it was set. Click another DC to see it. The box stays until you right click (or Ctrl + click).
+
+<img src="../img/screens/gfx.info-box.png" alt="" width="450">
+
+**Clear:** Takes the traces, the DC points and the routes that are not active off the chart, so you can start with a clean view. The active route stays. Routes that are shown from the hub are switched off, and the Routes form follows. The wind, the map and the Race DC Trace dots stay. Nothing is deleted, and the next check draws again. The **W** key does the same. The traces are hidden, not deleted: each stays in the Traces form with **Show** cleared, and ticking **Show** brings it back.
 
 <img src="../img/icons/sailboat.png" alt="" class="inline-icon" height="18"> **Sim:** Starts the Simulator, or restarts it if it is already running. Left click where the boat is to start. Members only. See [9.1 Starting and Stopping the Simulator](0900-simulator.md#91-starting-and-stopping-the-simulator).
 
@@ -521,11 +556,201 @@ The mouse click pops the setter form.
 
 The radio buttons toggle between TWA and CC commands. The required value can also be entered manually. <img src="../img/icons/dialog-apply.png" alt="" class="inline-icon" height="18"> applies the command and sets the course immediately. <img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> aborts and cancels the command.
 
-### 5.4.4 MaxVMG Waypoints <img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="24">
+### 5.4.4 Conditioning DCs <img src="../img/icons/kgpg_edit.png" alt="" class="inline-icon" height="24">
+
+If some DCs show up as purple, they can be fixed using the **Condition** or **Condition All** option.
+
+<img src="../img/manual/image151.png" alt="" width="389">
+
+Select the DC to condition and follow the prompts in the top right corner. The DC will then be conditioned.
+
+<img src="../img/manual/image152.png" alt="" width="404">
+
+Continue until no DCs are left purple.
+
+### 5.4.5 Danger Point
+
+The DC Checker has been enhanced to include the danger point, inside which the execution of a round has the risk of failing. The boat may execute the rounding any time from the danger mark to the main DC. The danger mark is a scalable (10 m across) mark that is shown just before the main DC. This is shown below as the unlabelled cross.
+
+<img src="../img/manual/image153.png" alt="" width="597">
+
+### 5.4.6 AIS Button <img src="../img/icons/ais16.png" alt="" class="inline-icon" height="24">
+
+Opens the AIS Boat Chooser. Select the desired boats and click Add. Then click Apply to update the AIS boat list. The icon is on both the Parameters and DC Checker tabs.
+
+### 5.4.7 Boat Data Table Button <img src="../img/icons/boat-data-table.png" alt="" class="inline-icon" height="24">
+
+Opens the Boat Data Table shown below based on the AIS selected boats. Each of the columns is sortable by clicking on the column name. This is the same information that is used to create the AIS data feed. The top table is the standard data. The bottom table is the differences from the selected boat.
+
+The table will now show the boat polar being used for that boat. The polar must exist in the polar library, and the polar library must have been set.
+
+<img src="../img/screens/main.boat-data-table.png" alt="" width="900">
+
+### 5.4.8 Boat Horn Radio Button
+
+When checked, the boat horn will sound if
+
+1.  The race has started
+
+2.  The boat has not finished the race
+
+3.  The boat has left the start, and
+
+4.  The boat is twa 0.
+
+### 5.4.9 qtVlm <img src="../img/icons/qtVlm.png" alt="" class="inline-icon" height="24">
+
+If you are a SOL member, and **qtVlm integration** is enabled on the Parameters tab, you will see two additional icons on the toolbar.
+
+Launches qtVlm. This will perform the checks it needs and configure qtVLM as follows:
+
+- Checks that the SOL map tiles and the race's links are in place, and that the qtVlm install is still the version the race was linked to. If not, it asks before it downloads or links anything
+
+- Sets the grib to current_grib.grb
+
+- Sets the polar to the current race polar
+
+- Sets the boat name to match your user name
+
+- Sets the maps to the matching resolution
+
+- Turns the NMEA RMB messages on
+
+- Sets the qtVlm NMEA port to match the AGL one (if different). If qtVlm is already connected on that port, it is left alone and no second qtVlm is started
+
+<img src="../img/icons/qtVlmHide.png" alt="" class="inline-icon" height="18"> <img src="../img/icons/qtVlmShow.png" alt="" class="inline-icon" height="18"> Minimises or maximises qtVlm, depending on the qtVlm current iconified state. This allows the user to pop the qtVlm session linked to this race, and not try to find it on the taskbar.
+
+qtVlm's **Routing**, **Converting Routing to Route**, **Simplification result** and **Optimization results** windows can open behind other windows. The AGL Hub brings them to the front for you, one at a time, and shows a light orange frame round the AGL windows while one is open without the focus. This is described in [2.3.3.6 Managing qtVlm Dialogs](0200-installing-agl.md#2336-managing-qtvlm-dialogs) and is switched on and off with **Manage qtVlm dialogs?** on the hub's Launcher tab.
+
+**Note:** On Linux, if this icon set is not on the toolbar, it means that there is no X11 support installed. To check if you have a real X11 session, enter
+
+```
+echo $XDG_SESSION_TYPE; command -v xdotool || echo "xdotool not installed"
+```
+
+If **xdotool not installed** is returned, you do not have X11. Install by entering the following in a Terminal window
+
+```
+sudo apt install xdotool
+```
+
+## 5.5 Routes and Waypoints
+
+A **route** is a named list of waypoints. A **waypoint** that is in no route is a free waypoint. AGL keeps the routes and waypoints of every race in the hub's database, in a folder next to the install folder (`agl_db`, with `agl_db_Beta` and `agl_db_Test` for the beta and test installs). It no longer reads or writes waypoint files. You put routes in with **Import**, and get them out with **Export GPX**.
+
+One route at a time is the **active route**. The edits you make in the graphics, and the commands that use waypoints, work on the active route. Edits are kept at once, so there is no Save.
+
+### 5.5.1 The Routes and Waypoints Form
+
+The **Routes** menu on the AGL window and the **Routes** button on the graphics toolbar open the same form. It stays open while you work, remembers its position and size for each race, and updates itself after every change.
+
+<img src="../img/screens/gui.routes.png" alt="" width="700">
+
+The form lists only what belongs to the race area: the routes whose waypoints are all inside it, and the waypoints inside it. The race's own course marks are listed too, but they are read only.
+
+**Routes list**
+
+- **Active:** the route the commands use. Only one route can be ticked.
+- **Show:** tick it to draw the route on the graphics. Waypoints start hidden; the waypoints of a shown route are drawn with the route anyway. The active route is drawn blue, and each other shown route takes the next free colour. The **Colour** box shows it.
+- **Name:** click to rename the route. Names must be different from each other and cannot contain `!`.
+- The waypoints a route has passed are ticked **Passed**, and the segments leading to them are grey. **Clear Passed** unticks them.
+
+**Waypoints list.** Select a route to see its waypoints. You can change the name of a waypoint of your own, and its Lat and Lon (inside the race area only). **In routes** says how many routes use a waypoint. A waypoint of a route shows its command, for example `WP10 (+P)`.
+
+**Buttons:**
+
+- **Import** reads a GPX file into a route (an older .wpt file can also be imported). If a name is already in use, AGL asks what to do. A route that crosses the edge of the race area is not imported, but the waypoints of it that are inside are added as free waypoints.
+
+  <img src="../img/screens/dlg.routes-an-imported-route-crosses-the-race-area.png" alt="" width="700">
+
+- **Export GPX** saves the selected route as a GPX file.
+- **New route** asks for a name, makes an empty route and makes it the active route. Put waypoints in it with **Insert**, **New** and **Add** on the graphics.
+- **Copy route** makes a copy of the selected route together with a copy of each of its waypoints. A form asks for the route name, a waypoint prefix and a waypoint suffix, which are added to the name of every new waypoint. One of them is needed. If any new name is already in use, nothing is copied and the form lists the names.
+
+  <img src="../img/screens/gui.copy-route.png" alt="" width="501">
+
+- **Delete route** deletes the selected routes, after one question.
+- **Delete waypoint** and **Copy waypoint** work on the selected waypoints.
+- **Refresh** reads the lists again. It is rarely needed.
+
+When you open a race that has routes from earlier years, the form can move them to this race (**Yes**, **No**, **Always** or **Never**).
+
+#### 5.5.1.1 The Deleted Tab
+
+Nothing you delete is lost at once. The **Deleted** tab lists the routes and waypoints you have deleted.
+
+<img src="../img/screens/gui.routes-deleted.png" alt="" width="700">
+
+- Tick **Select** for the routes or waypoints you want. For a route, **Waypoints** also brings back its deleted waypoints.
+- **Restore** puts them back.
+- **Delete...** deletes them for good, after asking. The question gives the true number.
+- **Merge duplicates** merges duplicate entries.
+- **Select All** and **Clear All** are in the right click menu of the lists.
+
+### 5.5.2 The Active Route
+
+There are three ways to choose the active route:
+
+- Tick **Active** on the Routes and Waypoints form.
+- Use the <img src="../img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="18"> button on the graphics toolbar. It drops a list of the routes, with the active one ticked.
+- Choose **Set Active** on the right click menu, then click a drawn route line or one of its waypoints.
+
+The old active route stays shown when another becomes active, so you can switch between two routes quickly with **Set Active**. Hide a route with its **Show** tick, or take it off with **Clear** (Clear never hides the active route). A **Set Active** also clears the undo list, because Undo belongs to the route that was being edited.
+
+The active route is the route that **Verify Course**, the waypoint run and **Timed Race** use. The route box those commands read follows the active route by itself, so there is nothing to choose in a box.
+
+<img src="../img/screens/gfx.two-routes.png" alt="" width="600">
+
+*Two routes shown: the active route is blue.*
+
+### 5.5.3 Editing Waypoints on the Graphics
+
+The waypoint items of the right click menu work on the active route. Follow the prompts in the top right corner of the graphics, and right click ends or cancels. **Make sure waypoint editing mode is active.** The <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> icon must not be selected (grey borders). If it is, click the icon to deselect DC editing. Every segment of the active route is drawn while you pick, blue, and grey where the segment leads to a passed waypoint.
+
+- **Set Active:** click a route line or one of its waypoints to make that route the active one.
+- <img src="../img/icons/add-wp.png" alt="" class="inline-icon" height="18"> **New:** puts a free waypoint where you click. It is shown as a black square and is named in the waypoint editor window (a prefix and an increment). Click again for the next one.
+- <img src="../img/icons/Insert_Vertex.png" alt="" class="inline-icon" height="18"> **Insert:** puts a new waypoint where you click into the segment of the active route that you pick. Near the start of the route it goes in front, otherwise it goes on the end. The waypoint editor pops up.
+- <img src="../img/icons/increase.png" alt="" class="inline-icon" height="18"> **Add:** the first click picks the segment, or the end of the active route. Then click existing drawn waypoints (free waypoints, waypoints of other shown routes, course marks) and they go in, in the order you click, with the control set in the waypoint editor. After the first click a line shows which two waypoints the next one goes between. A waypoint already in the route is refused.
+- <img src="../img/icons/move_wp.png" alt="" class="inline-icon" height="18"> **Move:** moves a waypoint.
+- <img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="18"> **Edit:** edits a waypoint. The Waypoint Values form pops up, with the name, the position, and the control type and waypoint date. The date is shown even when it has already passed.
+
+  <img src="../img/screens/gfx.waypoint-values.png" alt="" width="400">
+
+- <img src="../img/icons/go-next-red.png" alt="" class="inline-icon" height="18"> **Remove:** takes the waypoint out of the active route. It stays as a free waypoint, and stays shown.
+- <img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> **Delete:** takes the waypoint out of the route and deletes it. It can be brought back with **Restore** on the Deleted tab. A free waypoint can be deleted too: click it, then click again to confirm. A course mark, or a waypoint another route still uses, is only removed.
+- <img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Follow:** see [5.5.4 Follow](0500-using-agl.md#554-follow).
+
+Move, Insert, New and Add refuse a position outside the race area, and the waypoint stays picked up for Move. The course marks of the race cannot be edited. If there is no active route, the edits are not kept and the Feedback says so.
+
+While you edit waypoints, the keys **D** (delete), **E** (edit), **I** (insert) and **M** (move) also work.
+
+### 5.5.4 Follow
+
+Follow inserts waypoints that go round the coast between two waypoints, so that a route that crosses an island or headland is taken round it. It is for waypoints only, not DCs, and it is available to SOL members. You need at least two waypoints.
+
+1. Choose **Follow** from the right click menu. The prompt at the top right says **Select segment to insert ( right click cancel)**.
+
+2. Click the line between the two waypoints that crosses the land. Inactive waypoints (those with a ! at the start of the name) are skipped: the segment is between the two active waypoints either side of your click. The waypoint editor pops up, as it does for **Insert**. The new waypoints take the name and command of the first waypoint of the segment, so change the control type there if you want something else.
+
+   <img src="../img/manual/image138.png" alt="" width="900">
+
+3. The prompt now says **Click the side of the segment to pass on ( right click cancel)**, and a thin line follows the mouse from the segment. Click on the side of the segment that you want to pass the first island on. That side applies to the first island only. If there are more islands on the segment, each takes whichever side gives the shortest route.
+
+   <img src="../img/manual/image139.png" alt="" width="900">
+
+4. AGL finds the coast that the segment crosses and inserts a waypoint at each corner of the coast that the route must go round (the convex hull), between where the segment first enters the coast and where it last leaves it. The Feedback area says how many waypoints were inserted. If there is nothing to insert, it says why, for example **The segment does not enter and leave any coastline**, and you can click another segment.
+
+   <img src="../img/manual/image140.png" alt="" width="900">
+
+5. Right click cancels at either step. **Undo** and **Redo** on the menu and toolbar take the new waypoints out and put them back.
+
+Two values on the **Parameters** tab, in the **Waypoints** box, set where the waypoints go. **Follow: offset from coast (m)** (10 to start with) moves each point that many metres out from the shore. **Follow: offset along track (m)** (0 to start with) then moves each point along the direction of travel. AGL then checks once more, and adds a point wherever the moved route would still cross the coast.
+
+### 5.5.5 MaxVMG Waypoints <img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="24">
 
 This section describes how to use the maxVMG waypoints and associated tools. The maxVMG waypoints are driven by a waypoint command stored with the waypoint. The command is made up of up to three characters, e.g. 1P+. The applicable commands are described below.
 
-#### 5.4.4.1 Waypoint Commands
+#### 5.5.5.1 Waypoint Commands
 
 First letter controls for two letter commands are as follows
 
@@ -568,7 +793,9 @@ Some examples of these waypoint types
 
 <img src="../img/manual/image149.png" alt="" width="457">
 
-#### 5.4.4.2 Editing a Waypoint <img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="24">
+If the boat has already sailed the pivot of a **+P**, **-P**, **FP+** or **FP-** waypoint (for example after a DC regeneration), AGL goes direct to the mark if it can. If not, it sails one maxVMG leg on the tack the boat is on, and if that cannot reach the mark it makes the route for the opposite sign.
+
+#### 5.5.5.2 Editing a Waypoint <img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="24">
 
 To change the waypoint name or command, use the Edit option and follow the prompts in the top right corner.
 
@@ -578,179 +805,26 @@ The maxVMG waypoint also supports a waypoint-based start time. A waypoint start 
 
 <img src="../img/manual/image150.png" alt="" width="211">
 
-### 5.4.5 Using Waypoint To DC <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="24">
+### 5.5.6 Using Waypoint To DC <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="24">
 
 After checking that the waypoints produce the desired result, the <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="18"> can be used. The command generates a set of DCs that match the waypoint path. 
 
 **Note:** If the boat is not moving, the DCs will be a snapshot at that time, and the DCs will move as time moves on. The only time that they are valid with a stopped boat is during the haulback, and the boat is stopped.
 
-### 5.4.6 Conditioning DCs <img src="../img/icons/kgpg_edit.png" alt="" class="inline-icon" height="24">
+### 5.5.7 Waypoints and Routes in the Hub
 
-If some DCs show up as purple, they can be fixed using the **Condition** or **Condition All** option.
+The hub has a **Routes > Waypoints and Routes...** window that shows the routes and waypoints of every race, with a **Race** column and no race area filter. Use it to clear out the routes and waypoints of old races. There is no import in this window.
 
-<img src="../img/manual/image151.png" alt="" width="389">
+<img src="../img/screens/hub.hub-waypoints-routes.png" alt="" width="700">
 
-Select the DC to condition and follow the prompts in the top right corner. The DC will then be conditioned.
+- Tick the routes or waypoints and press **Delete**. A waypoint that a route uses is refused, and the route names are given.
+- The **Deleted** tab has **Restore** and **Delete...** (for good, after asking). **Select All** and **Clear All** are in the right click menu of the lists.
 
-<img src="../img/manual/image152.png" alt="" width="404">
+<img src="../img/screens/hub.hub-waypoints-routes-deleted.png" alt="" width="700">
 
-Continue until no DCs are left purple.
+## 5.6 Import File Formats
 
-### 5.4.7 Danger Point
-
-The DC Checker has been enhanced to include the danger point, inside which the execution of a round has the risk of failing. The boat may execute the rounding any time from the danger mark to the main DC. The danger mark is a scalable (10 m across) mark that is shown just before the main DC. This is shown below as the unlabelled cross.
-
-<img src="../img/manual/image153.png" alt="" width="597">
-
-### 5.4.8 Check WPs <img src="../img/icons/waypoint-icon-ok.png" alt="" class="inline-icon" height="24">
-
-The application has the option to write a route out to a set of waypoints, then read them back in. The waypoint file is a simple csv file in the format
-
-&lt;name&gt;, CP,&lt;lat&gt;,&lt;lon&gt;
-
-The two letters CP must be provided after the name, as the library is used for other purposes.
-
-An example of a waypoint file is shown below, which was produced by the write routine.
-
-07/14 02:20:00/-130.3/ 100.0/ 6.1/ 10.9/ 76.7, CP , 60.005411 , 26.333079
-
-07/14 02:25:00/-129.0/ 100.0/ 6.2/ 11.0/ 76.7, CP , 60.007374 , 26.349729
-
-07/14 02:30:00/-128.0/ 100.0/ 6.3/ 11.2/ 76.8, CP , 60.009362 , 26.366626
-
-07/14 02:35:00/-127.2/ 100.0/ 6.4/ 11.3/ 76.8, CP , 60.011375 , 26.383736
-
-07/14 02:40:00/-126.6/ 100.0/ 6.4/ 11.4/ 76.8, CP , 60.013405 , 26.401028
-
-07/14 02:45:00/-126.1/ 100.0/ 6.5/ 11.5/ 76.8, CP , 60.015451 , 26.418467
-
-07/14 02:50:00/-125.9/ 100.0/ 6.5/ 11.6/ 76.8, CP , 60.017507 , 26.436020
-
-07/14 02:55:00/-125.8/ 100.0/ 6.5/ 11.7/ 76.8, CP , 60.019568 , 26.453650
-
-07/14 03:00:00/-126.0/ 100.0/ 6.5/ 11.7/ 76.8, CP , 60.021631 , 26.471310
-
-07/14 03:05:00/-126.3/ 100.0/ 6.5/ 11.7/ 76.9, CP , 60.023691 , 26.488965
-
-07/14 03:10:00/-126.9/ 100.0/ 6.5/ 11.7/ 76.9, CP , 60.025745 , 26.506597
-
-07/14 03:15:00/-127.9/ 100.0/ 6.4/ 11.6/ 76.9, CP , 60.027784 , 26.524119
-
-07/14 03:20:00/-128.9/ 100.0/ 6.4/ 11.5/ 76.9, CP , 60.029800 , 26.541475
-
-The application can also read and write gpx files. A valid waypoint gpx file will have the following format
-
-&lt;gpx xmlns="http://www.topografix.com/GPX/1/1"
-
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
-
-version="1.1"
-
-creator="AutoGribLoader"&gt;
-
-&lt;wpt lat="-35.2" lon="-54.0"&gt;
-
-&lt;name&gt;Punta DO &lt;/name&gt;
-
-&lt;type&gt;RTWR 2016 - Leg 2 - Uruguay to New Zealand&lt;/type&gt;
-
-&lt;/wpt&gt;
-
-&lt;wpt lat="-52.3" lon="-68.3"&gt;
-
-&lt;name&gt;Cabo 0&lt;/name&gt;
-
-&lt;type&gt;RTWR 2016 - Leg 2 - Uruguay to New Zealand&lt;/type&gt;
-
-&lt;/wpt&gt;
-
-&lt;/gpx&gt;
-
-A gpx file is recognised by the file extension .gpx.
-
-### 5.4.9 Write WPs <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="24">
-
-Will take the current set of DCs as plotted on the screen, and write them out as a waypoint file in the format shown above. If the file extension is not provided, the default .wpt will be used and the file will be a csv in the format
-
-&lt;name&gt;, CP,&lt;lat&gt;,&lt;lon&gt;
-
-If the extension .gpx is used, a gpx format file will be created which will contain both the waypoints, and a route connecting the waypoints.
-
-### 5.4.10 Convert WPs to GPX  <img src="../img/icons/wp_to_gpx.png" alt="" class="inline-icon" height="24">
-
-Launches the file chooser in which the required .wpt file is selected. This file is then converted into a GPX file of the same name with the extension .gpx
-
-<img src="../img/manual/image154.png" alt="" width="271">
-
-### 5.4.11 AIS Button <img src="../img/icons/ais16.png" alt="" class="inline-icon" height="24">
-
-Opens the AIS Boat Chooser. Select the desired boats and click Add. Then click Apply to update the AIS boat list. The icon is on both the Parameters and DC Checker tabs.
-
-### 5.4.12 Boat Data Table Button <img src="../img/icons/table-add.png" alt="" class="inline-icon" height="24">
-
-Opens the Boat Data Table shown below based on the AIS selected boats. Each of the columns is sortable by clicking on the column name. This is the same information that is used to create the AIS data feed. The top table is the standard data. The bottom table is the differences from the selected boat.
-
-The table will now show the boat polar being used for that boat. The polar must exist in the polar library, and the polar library must have been set.
-
-<img src="../img/screens/main.boat-data-table.png" alt="" width="900">
-
-### 5.4.13 Boat Horn Radio Button
-
-When checked, the boat horn will sound if
-
-1.  The race has started
-
-2.  The boat has not finished the race
-
-3.  The boat has left the start, and
-
-4.  The boat is twa 0.
-
-### 5.4.14 Additional Course Waypoints Button <img src="../img/icons/document-open-2.png" alt="" class="inline-icon" height="24">
-
-Launches the Additional Course Waypoints file chooser.
-
-### 5.4.15 qtVlm <img src="../img/icons/qtVlm.png" alt="" class="inline-icon" height="24">
-
-If you are a SOL member, and **qtVlm integration** is enabled on the Parameters tab, you will see two additional icons on the toolbar.
-
-Launches qtVlm. This will perform the checks it needs and configure qtVLM as follows:
-
-- Checks that the SOL map tiles and the race's links are in place, and that the qtVlm install is still the version the race was linked to. If not, it asks before it downloads or links anything
-
-- Sets the grib to current_grib.grb
-
-- Sets the polar to the current race polar
-
-- Sets the boat name to match your user name
-
-- Sets the maps to the matching resolution
-
-- Turns the NMEA RMB messages on
-
-- Sets the qtVlm NMEA port to match the AGL one (if different). If qtVlm is already connected on that port, it is left alone and no second qtVlm is started
-
-<img src="../img/icons/qtVlmHide.png" alt="" class="inline-icon" height="18"> <img src="../img/icons/qtVlmShow.png" alt="" class="inline-icon" height="18"> Minimises or maximises qtVlm, depending on the qtVlm current iconified state. This allows the user to pop the qtVlm session linked to this race, and not try to find it on the taskbar.
-
-qtVlm's **Routing**, **Converting Routing to Route**, **Simplification result** and **Optimization results** windows can open behind other windows. The AGL Hub brings them to the front for you, one at a time, and shows a light orange frame round the AGL windows while one is open without the focus. This is described in [2.3.3.6 Managing qtVlm Dialogs](0200-installing-agl.md#2336-managing-qtvlm-dialogs) and is switched on and off with **Manage qtVlm dialogs?** on the hub's Launcher tab.
-
-**Note:** On Linux, if this icon set is not on the toolbar, it means that there is no X11 support installed. To check if you have a real X11 session, enter
-
-```
-echo $XDG_SESSION_TYPE; command -v xdotool || echo "xdotool not installed"
-```
-
-If **xdotool not installed** is returned, you do not have X11. Install by entering the following in a Terminal window
-
-```
-sudo apt install xdotool
-```
-
-## 5.5 Import File Formats
-
-### 5.5.1 GPX File
+### 5.6.1 GPX File
 
 The import supports gpx files that have been exported in the route format. The file must be similar to the below.
 
@@ -814,7 +888,9 @@ It must contain the tags of **&lt;gpx, &lt;rte&gt;, &lt;rtept lat =”….” lo
 
 The **&lt;gpx** tag must contain the attribute **creator=”….”** It must also have the word **Expedition** or **qtVlm** somewhere in the value.
 
-### 5.5.2 CSV File
+### 5.6.2 CSV File
+
+**Important**: Whilst the CSV file works, it does require a valid data format to be entered and produces a less precise route to the **Route>Export** in qtVlm. This method is not recommended.
 
 The importer has been written to suit qtVlm csv file formats, but may suit other file formats. For the importer to work, it must have a header row with column names as defined below.
 
@@ -826,18 +902,7 @@ The column and data separator is set as “**;”** and no other separator will 
 
 Provided the file format matches these requirements, the loader should work.
 
-#### 5.5.2.1 Date Format
+#### 5.6.2.1 Date Format
 
 The **Parameters** tab has a field called **DC import date format.** This is used to specify the date format of the DC import file. From qtVlm, csv route export, these will typically be either dd/MM/yyyy HH:mm or MM/dd/yyyy HH:mm. Other formats can be defined as per [SimpleDateFormat (Java SE 25 & JDK 25) (oracle.com)](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/SimpleDateFormat.html).
 
-## 5.6 Additional Waypoints
-
-Additional waypoints are a set of waypoints of your own, kept apart from the course and from the DCs. They are shown in the graphics window so that you can compare a route with the DCs, for example the route you planned in a routing package.
-
-They are loaded from the additional course waypoint file. The file chooser button selects the file, and the reload button loads it again after you change it. **Additional waypoints** in **View Options** turns them on and off.
-
-The DC Data Table does not change them. When it loads a DC file it draws its own **grey DC trace** (see [6.3.1 How it works](0600-dc-data-table.md#631-how-it-works)), so you can leave your original route in the additional waypoints and see how far the DCs depart from it.
-
-<img src="../img/manual/image172.png" alt="" width="900">
-
-*Additional waypoints in the graphics window: the red line is the additional route, with the time of each point. The boat is the green one.*

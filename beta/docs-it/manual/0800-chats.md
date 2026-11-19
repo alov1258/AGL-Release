@@ -2,7 +2,11 @@
 
 La scheda Chat di AGL replica le chat di SOL. Inoltre ha stanze Pushover e Telegram che ti inviano messaggi sugli eventi principali come BBQ, boe mancate e arrivo del Wx, e Telegram ti permette di rispondere dal telefono. Quando AGL avvia le chat per la prima volta, si apre con le stanze Pushover e inglese impostate.
 
-<img src="../img/manual/image174.png" alt="">
+La scheda Chat è solo per i membri.
+
+<img src="../img/screens/main.chats.png" alt="">
+
+In alto nella scheda c'è una fila di caselle della barca, disposte come nella scheda Controllo DC: **SOG**, **COG**, **TWA**, **PL**, **Posizione**, **DBL** e **Salto server (s)**. Si aggiornano quando si aggiornano le caselle del Controllo DC e non si possono modificare, così puoi tenere d'occhio la tua barca mentre chatti. Sotto c'è il riquadro **Messaggi**, che contiene le impostazioni dei messaggi che AGL ti invia (vedi [8.1.4 In Ogni Regata](#814-in-ogni-regata)). Pushover, Telegram e i messaggi si impostano una volta nell'hub, e ogni regata li usa.
 
 ## 8.1 Gestione delle Chat
 
@@ -41,6 +45,8 @@ Un'emoticon viene modificata solo quando sta da sola: all'inizio del messaggio o
 | XD | 😆 | :\* :-\* | 😘 | (y) (Y) | 👍 |
 | ;) ;-) | 😉 | :S :s :-S :-s | 😖 | (n) (N) | 👎 |
 
+Il tasto destro nell'elenco dei messaggi dà **Rispondi a** *nome* (per primo nel menu, per il messaggio su cui hai fatto clic), **Copia** e **Seleziona tutto**. **Seleziona tutto** seleziona il messaggio su cui hai fatto clic, non tutta la stanza. La casella di inserimento ha il menu di modifica completo (Annulla, Ripeti, Taglia, Copia, Incolla, Elimina, Seleziona tutto). Ogni casella di testo di AGL ha lo stesso menu del tasto destro; nelle caselle in cui non si può scrivere sono disponibili solo Copia e Seleziona tutto.
+
 ### 8.1.2 Configurazione di Pushover
 
 1. Su **pushover.net**, crea un account e un'applicazione per AGL. Carica un'icona per l'applicazione nella stessa pagina, così i messaggi di AGL la portano sul telefono: usa `agl.png` dalla cartella di installazione Java25 (è 150 x 150 e può essere caricata così com'è). L'icona si imposta sul sito di Pushover, non in AGL. L'applicazione ti dà un **API token**. La tua **user key** è nella pagina iniziale di Pushover. Entrambi sono composti da 30 lettere e cifre.
@@ -49,13 +55,13 @@ Un'emoticon viene modificata solo quando sta da sola: all'inizio del messaggio o
 
    <img src="../img/screens/po.application.png" alt="">
 
-2. Nell'hub, apri il menu **Pushover** e scegli **Impostazioni...**.
+2. Nell'hub, apri il menu **Messaggi**. La finestra ha tre schede: **Pushover**, **Telegram** e **Messaggi**. Parti dalla scheda **Pushover**. La finestra può restare aperta mentre lavori. Le modifiche vengono salvate un attimo dopo l'ultimo tasto e inviate a ogni regata in esecuzione, quindi ogni regata usa gli stessi dati Pushover.
 
-   <img src="../img/screens/hub.pushover-menu.png" alt="" width="900">
+   <img src="../img/screens/hub.menu-bar.png" alt="" width="600">
 
-3. Inserisci l'**Token API dell’applicazione** e la tua **User key**. Se la chiave è una chiave di gruppo di consegna, seleziona **Gruppo**: AGL allora mette il nome della barca davanti a ogni messaggio, così le persone del gruppo sanno di chi è. Seleziona **Mostra il token e la chiave** se vuoi controllare ciò che hai digitato.
+3. Nella scheda **Pushover**, inserisci l'**Token API dell’applicazione** e la tua **User key**. Se la chiave è una chiave di gruppo di consegna, seleziona **Gruppo**: AGL allora mette il nome della barca davanti a ogni messaggio, così le persone del gruppo sanno di chi è. Seleziona **Mostra il token e la chiave** se vuoi controllare ciò che hai digitato.
 
-   <img src="../img/screens/hub.hub-pushover-setup.png" alt="" width="995">
+   <img src="../img/screens/hub.hub-pushover-setup-tab.png" alt="" width="900">
 
 4. Lascia vuoto **Nome/i del dispositivo** per inviare a tutti i tuoi dispositivi, oppure inserisci uno o più nomi separati da virgole. Non viene usato con una chiave di gruppo.
 
@@ -63,7 +69,7 @@ Un'emoticon viene modificata solo quando sta da sola: all'inizio del messaggio o
 
 6. I **Messaggi di emergenza** si ripetono ogni numero di secondi che imposti, e rinunciano dopo il numero di minuti che imposti.
 
-7. Premi **Invia messaggio di prova**. Il telefono dovrebbe mostrare "TEST: Pushover is working". Poi **OK**.
+7. Premi **Invia messaggio di prova**. Il telefono dovrebbe mostrare "TEST: Pushover is working".
 
    <img src="../img/screens/po.message.png" alt="" width="400">
 
@@ -89,10 +95,8 @@ Ti serve un bot Telegram tuo. Ci vogliono pochi minuti.
 
    <img src="../img/screens/tg.botfather-token.png" alt="" width="500">
 
-6. Nell'hub, apri il menu **Telegram** e scegli **Impostazioni...**.
+6. Nell'hub, apri il menu **Messaggi** e fai clic sulla scheda **Telegram**.
 
-   <img src="../img/screens/hub_TG.png" alt="" width="900">
-   
 7. Incolla il token in **Token del bot** e seleziona **Attiva Telegram**. L'hub legge il bot solo finché questa casella è selezionata. Lo stato dovrebbe passare a **running**.
 
 8. In Telegram, apri il tuo nuovo bot e premi **Avvia**.
@@ -101,7 +105,7 @@ Ti serve un bot Telegram tuo. Ci vogliono pochi minuti.
 
 10. Premi **Invia prova**. Il telefono dovrebbe mostrare il messaggio di prova.
 
-   <img src="../img/screens/hub.hub-telegram-setup.png" alt="" width="801">
+   <img src="../img/screens/hub.hub-telegram-tab.png" alt="" width="900">
 
 11. Quando la prova ha successo, puoi impostare l'immagine del bot su `agl.png` facendo clic su **Imposta immagine del bot**. I messaggi di AGL porteranno l'icona di AGL.
 
@@ -115,25 +119,30 @@ Cose da sapere:
 
 - **Un solo bot serve tutte le regate.** Fai iniziare un comando con il numero della regata (ad esempio `1 cc 140`), oppure invia `GET` per vedere le regate. Puoi anche impostare prima la regata con `SET`.
 - **Solo un programma alla volta può leggere un bot.** Non usare lo stesso bot con un altro hub.
-- Nell'hub, il menu Telegram elenca le regate, con una casella **Attivo** per ciascuna. Telegram viene usato solo per le regate selezionate.
+- In ogni regata, la casella **Telegram** nel riquadro Messaggi della scheda Chat attiva Telegram per quella regata. Telegram viene usato solo per le regate spuntate.
 
 ### 8.1.4 In Ogni Regata
 
-Nella scheda Chat, seleziona **Attiva Pushover** per attivare Pushover per la regata. **Orari attivi** imposta quando Pushover può inviare; una fascia che termina prima di iniziare attraversa la mezzanotte, ad esempio dalle 22:00 alle 06:00.
+Il riquadro **Messaggi** nella scheda Chat contiene le impostazioni dei messaggi della regata. **Usa Hub** è spuntato per una nuova regata: la regata usa le impostazioni fatte nell'hub (menu **Messaggi**, scheda **Messaggi**) per sapere se Pushover è attivo, per gli orari attivi e per ogni messaggio, e qui compaiono in grigio. Togli la spunta a **Usa Hub** per dare a questa regata impostazioni proprie.
+
+Se una regata aveva già impostazioni proprie diverse da quelle dell'hub, AGL chiede una volta, *Le impostazioni dei messaggi sono diverse da quelle dell'hub*. **Usa Hub** fa seguire alla regata l'hub. **Usa Regata** mantiene le impostazioni proprie della regata (**Usa Hub** non è spuntato) e AGL non lo chiede più. Se le impostazioni sono uguali, la regata segue l'hub senza chiedere.
+
+<img src="../img/screens/dlg.messaging-the-settings-differ-from-the-hub-use-hub-use-race.png" alt="" width="350">
+
+Seleziona **Attiva Pushover** per attivare Pushover per la regata. **Orari attivi** imposta quando Pushover e Telegram possono inviare, nell'ora locale del tuo computer; una fascia che termina prima di iniziare attraversa la mezzanotte, ad esempio dalle 22:00 alle 06:00. Finché la regata usa l'hub, il pulsante dice **Hub:** e gli orari dell'hub. Nel selettore, seleziona **Usa gli orari attivi dell'hub** per seguire l'hub, oppure toglila per impostare orari per questa regata. Gli orari trattengono solo ciò che AGL ti invia: i comandi che invii dal telefono vengono sempre accettati.
+
 <img src="../img/screens/main.chats-active-times.png" alt="" width ="500"> 
 
-**Configurazione messaggi** mostra i messaggi. Per ognuno puoi:
+**Configurazione messaggi** mostra i messaggi (la stessa tabella è nella scheda **Messaggi** della finestra Messaggi dell'hub, dove imposta i messaggi per ogni regata che usa l'hub). Per ognuno puoi:
 
 - selezionare **Pushover** e **Telegram** per scegliere dove va,
 - cambiare il **testo**. Lascialo vuoto per il testo standard. `<time left>` e `<time>` vengono riempiti con il tempo che manca all'evento e con l'ora, e `<mark name>` con la boa,
 - impostare la **priorità**: Lowest non invia nessun avviso sul telefono, Low è silenziosa, Normal, High ignora le ore di silenzio del telefono ed Emergency si ripete finché non confermi,
-- impostare gli **orari attivi**: seguire gli orari generali, a qualsiasi ora, oppure solo nelle fasce che scegli,
+- impostare gli **orari attivi**: seguire gli orari attivi qui sopra, a qualsiasi ora, oppure solo nelle fasce che scegli (gli orari propri di un messaggio hanno la precedenza su quelli della regata e dell'hub),
 - impostare l'**anticipo (lead)**, in minuti, per i messaggi che ne hanno uno,
 - premere il pulsante di prova per inviare subito il messaggio, come prova.
 
 Le stanze Pushover e Telegram nella scheda Chat mostrano cosa è stato inviato, e cosa non è stato inviato e perché. Digita un testo sotto la stanza e premi **Invia** per provare che funzioni.
-
-<img src="../img/screens/main.chats.png" alt="">
 
 ### 8.1.5 Rispondere dal Telefono
 
@@ -144,6 +153,8 @@ I suggerimenti di Telegram arrivano con i pulsanti **Applica** e **Ignora**. Un 
 Premendo **Applica**, la correzione viene applicata e il messaggio viene aggiornato con le nuove informazioni sulla barca.
 
 <img src="../img/screens/tg.apply.png" alt="" width = "500">
+
+**DC modificati, non impostati** ti avvisa quando l'area DC è stata modificata e non impostata per il numero di minuti del suo **anticipo (lead)** (15 per impostazione predefinita; il messaggio è disattivato finché non lo spunti). Pushover riceve un avviso. Telegram e lo schermo mostrano **Imposta ora** e **Ignora**: **Imposta ora** imposta i DC, e **Ignora** rilegge l'area DC dal server e scarta le tue modifiche. Ogni nuova modifica fa ripartire il tempo.
 
 Puoi anche inviare comandi ad AGL per controllare la tua barca. I comandi iniziano con il numero della regata, oppure puoi impostare prima la regata con `SET`. Sono solo per i membri. `HELP` li elenca; i principali sono:
 

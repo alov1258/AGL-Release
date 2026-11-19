@@ -46,6 +46,8 @@ Il Simulatore muove la barca come fa il server SOL: velocità della polare per l
 
 - **La costa.** Una barca che raggiunge la costa si ferma dove si trova, con TWA 0. Il comando successivo che la muove la fa ripartire con l'80% di prestazioni.
 
+- **Non viene registrato nulla.** Mentre il Simulatore è in esecuzione, nulla di ciò che fa viene conservato. I Set fatti nel Simulatore non vengono memorizzati (non compaiono nel modulo Set salvati) e i DC simulati non vengono inviati all'hub, quindi non compaiono mai nella Traccia DC della regata. Le tracce e la grafica si aggiornano come al solito.
+
 - **Vento.** Il vento viene dal grib. **SIM WIND** *twd,tws* imposta un vento fisso in gradi e nodi, e **SIM WIND OFF** torna al grib.
 
 - **Velocità dell'orologio.** **SIM SPEED** *n* imposta la velocità dell'orologio, dove 1 è il tempo reale. Tienila a 1 quando provi i DC.
@@ -84,6 +86,7 @@ Quando la barca attraversa la linea di arrivo, il Simulatore la ferma e la segna
 | `SIM START` *n* | La partenza della regata *n* minuti da adesso, senza finestra di dialogo. Si comporta allo stesso modo. |
 | `SIM START CLEAR` | Rimuove l'orario di partenza del Simulatore. La partenza reale torna, e la barca torna dove era stata posizionata |
 | `SIM RESET` | Ripristina le informazioni originali della regata. Tutte le modifiche del Simulatore vengono rimosse. |
+| `SIM MARKS RESET` | Elimina la copia salvata delle boe spostate, così il Simulatore successivo parte con le boe reali |
 | `SIM OFF` | Ferma il Simulatore |
 | `CC` *gradi* | Imposta una rotta |
 | `CP` *gradi* | Come `CC`, con perdita di prestazioni per la virata |

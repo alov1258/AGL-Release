@@ -1,19 +1,9 @@
 # 10 Known Issues and Bugs
 
-1.  Changing the AIS boat list may not cause an update of boat traces for new boats. A restart is needed.
+There are no known bugs.
 
-2.  There are occasional hangs that are caused by lower level issues in the operating system and Java Runtime Environment. When these happen, an exception is typically thrown in the command window or Terminal. They will vary, but typically look like this:
+If something goes wrong, AGL shows an exception, in red, on the race's tab in the hub (and in the command window or Terminal). It starts with "Uncaught exception in thread" and is followed by lines starting "at". The example below is a test exception.
 
-*Exception in thread "Thread-2" java.lang.NullPointerException: Cannot invoke "String.length()" because "text" is null*
+<img src="../img/screens/hub.hub-exception.png" alt="">
 
-*at java.base/java.text.SimpleDateFormat.parse(SimpleDateFormat.java:1471)*
-
-*at java.base/java.text.DateFormat.parse(DateFormat.java:394)*
-
-*at grib.GribFactory.waitForGrib(GribFactory.java:332)*
-
-*at grib.GribFactory.run(GribFactory.java:154)*
-
-*at java.base/java.lang.Thread.run(Thread.java:832)*
-
-A restart is typically required.
+If you see one, or something does not work as it should, choose **Help > Mail logs**. AGL zips the hub log and the logs of your races, with your keys and passwords taken out, opens a new message addressed to the author, and shows you the zip so you can attach it. Say what you were doing when it happened, and then send the email with the zip attached.

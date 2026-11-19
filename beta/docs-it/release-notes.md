@@ -1,6 +1,154 @@
-# AGL 25 Note di Rilascio 25.4.3
+# AGL 25 Note di Rilascio
 
-AGL 25.4.X è una serie di release importante con molte nuove funzionalità. L'obiettivo di questa release è fornire strumenti che riducano gli errori banali, ti tirino fuori dai guai prima che si verifichino e rendano più efficiente l'uso di qtVlm e di AGL. Le modifiche sono molte: leggi le note di rilascio per sapere quali sono, e il Manuale Utente per sapere come usarle.
+AGL 25.5.X è un'altra serie di release importante, con molte nuove funzionalità. L'obiettivo è stato spostare i file di waypoint (ora percorsi) e i DC in un database SQLite per conservare i dati storici e permettere di confrontare nella grafica i dati attuali con quelli passati. Le modifiche sono molte, con un numero significativo di icone dei pulsanti cambiate e di pulsanti rimossi. Leggi le note di rilascio per sapere quali sono, e il Manuale Utente per sapere come usarle.
+
+**Importante**: L'accesso ora è gestito dall'hub. All'aggiornamento devi inserire le tue credenziali nell'hub e convalidarle prima di avviare qualsiasi regata. Vedi [2.3.3.9 L'Accesso SOL](manual/0200-installing-agl.md#2339-laccesso-sol) e [3.1 Accesso e regata](manual/0300-configuration.md#31-accesso-e-regata).
+
+## Versione 25.5.1
+
+### Miglioramenti
+
+#### Modificare e controllare i DC
+
+1. Un nuovo Editor DC mostra i DC dell'area DC come una tabella che puoi modificare direttamente. Vedi [6.6 L'Editor DC](manual/0600-dc-data-table.md#66-leditor-dc).
+
+    a. Fai clic su una cella per modificarla. Gli orari usano un selettore di data limitato agli orari dei DC vicini, e la grafica si aggiorna automaticamente.
+
+    b. I blocchi di perdita di prestazione (PL) vengono mostrati e spostati come un unico blocco.
+
+    c. Una colonna PL mostra la perdita di prestazione a ogni DC, e i DC fuori dal maxVMG vengono portati al maxVMG per te.
+
+    d. Annulla e Ripeti sono condivisi con la grafica.
+
+2. Con Usa la perdita di prestazione selezionato ci sono due pulsanti di controllo: Check PL <img src="img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="24">, che aggiunge i DC PL all'area DC, e un semplice Check <img src="img/icons/emblem-important-3.png" alt="" class="inline-icon" height="24"> che mostra i DC esattamente come li tiene l'Editor DC. Un pulsante Editor DC <img src="img/icons/dc-edit-table.png" alt="" class="inline-icon" height="24"> si trova accanto a loro nella barra degli strumenti della grafica. Vedi [5.1.10 Pulsante Check DCs](manual/0500-using-agl.md#5110-pulsante-check-dcs).
+
+3. Le etichette PL nella grafica mostrano la PL con cui la barca arriva e, tra parentesi, la PL dopo la virata. Vedi [5.3.2.3 Etichette dei DC](manual/0500-using-agl.md#5323-etichette-dei-dc).
+
+4. Un nuovo messaggio, **DC modificati, non impostati**, ti avvisa tramite Pushover, Telegram o sullo schermo quando hai modificato i DC e non li hai impostati per un tempo stabilito, e ti permette di Imposta ora o Ignora. Vedi [5.2.6 DC Non Ancora Impostati](manual/0500-using-agl.md#526-dc-non-ancora-impostati).
+
+5. L'impostazione dei DC ora si occupa dei blocchi PL, e invia di nuovo un DC che la latenza ha reso in ritardo. Vedi [5.1.2 Pulsante Set](manual/0500-using-agl.md#512-pulsante-set).
+
+#### La DC Data Table
+
+1. I percorsi caricati da file GPX di qtVlm vengono ripuliti dai punti ridondanti. La tolleranza, 2 m all'inizio, si imposta nella casella **Filtra percorso (m)**. Vedi [6.2.2 Filtro della Rotta](manual/0600-dc-data-table.md#622-filtro-della-rotta).
+
+2. Un punto in cui la rotta gira bruscamente verso l'interno e subito all'indietro, su un breve tratto, viene considerato un punto sospetto. Viene spuntato nella colonna **Escludi?**, mostrato in magenta, e non viene inviato né disegnato. Vedi [6.2.3 Punti Sospetti e la Colonna Escludi?](manual/0600-dc-data-table.md#623-punti-sospetti-e-la-colonna-escludi).
+
+3. Send, Send To, Send Hr e Append ora controllano i DC e aprono l'Editor DC, nascondendo la DC Data Table. Vedi [6.4 Impostazione dei DC](manual/0600-dc-data-table.md#64-impostazione-dei-dc).
+
+#### Tracce multiple e registri della regata
+
+1. L'opzione delle tracce multiple nella grafica è stata migliorata. Vedi [5.3.3.1 Il Modulo Tracce](manual/0500-using-agl.md#5331-il-modulo-tracce).
+
+    a. Ogni traccia parte dalla posizione della barca quando è stata creata, segnata con l'icona di una barca.
+
+    b. Ogni nuova traccia creata nella grafica (Condiziona, Sposta, Cambia segno, ecc.) viene conservata e può essere richiamata come sovrapposizione.
+
+2. Un nuovo modulo Set salvati elenca ogni Set conservato per la regata, così puoi mostrarli come tracce, esportarli come percorsi GPX o eliminarli. Vedi [5.3.3.2 Set Salvati](manual/0500-using-agl.md#5332-set-salvati).
+
+3. La Traccia DC della regata conserva ogni DC scattato, con ciò che si sapeva quando è stato impostato, e li mostra sulla carta, insieme a quelli degli anni precedenti della stessa regata. Vedi [5.3.3.3 Traccia DC della Regata](manual/0500-using-agl.md#5333-traccia-dc-della-regata).
+
+4. Una nuova voce **Info** <img src="img/icons/info.png" alt="" class="inline-icon" height="24"> nel menu del tasto destro della grafica mostra i dettagli di qualsiasi DC su cui fai clic, attuale o passato. Vedi [5.4.2 Il Menu del Tasto Destro](manual/0500-using-agl.md#542-il-menu-del-tasto-destro).
+
+5. Le tracce delle barche vengono conservate per tutta la regata, anche dopo il riavvio di AGL, con le lacune riempite quando arrivano le tracce del server. Vedi [5.3.3.4 Tracce delle Barche](manual/0500-using-agl.md#5334-tracce-delle-barche).
+
+6. Una traccia si può esportare come percorso GPX dal modulo Tracce, e l'esportazione GPX dei Set salvati riporta l'id che il server ha dato a ogni DC. Vedi [5.3.3.1 Il Modulo Tracce](manual/0500-using-agl.md#5331-il-modulo-tracce).
+
+#### Percorsi e waypoint
+
+1. I percorsi e i waypoint sono ora conservati in un database SQLite, gestito dall'hub, per tutte le tue regate, e AGL non legge né scrive più file di waypoint. Vedi [5.5.1 Il Modulo Percorsi e Waypoint](manual/0500-using-agl.md#551-il-modulo-percorsi-e-waypoint).
+
+    a. Un menu Percorsi e un pulsante nella grafica aprono il modulo Percorsi, per importare ed esportare percorsi e per crearli, copiarli ed eliminarli.
+
+    b. Ogni percorso può essere mostrato nel proprio colore, e un percorso è il percorso attivo.
+
+    c. Sono elencati solo i percorsi dentro l'area di regata. I percorsi eliminati si possono ripristinare.
+
+2. I waypoint si possono modificare nella grafica, con nuovi comandi del tasto destro, e le modifiche vengono conservate man mano che le fai (non c'è Salva). Vedi [5.5.3 Modifica dei Waypoint nella Grafica](manual/0500-using-agl.md#553-modifica-dei-waypoint-nella-grafica).
+
+3. La casella WP Route nella scheda Parametri sceglie il percorso da un elenco, e lo stesso fa il pulsante Apri <img src="img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="24"> nella barra degli strumenti della grafica. Vedi [3.2 Waypoint](manual/0300-configuration.md#32-waypoint) e [5.5.2 Il Percorso Attivo](manual/0500-using-agl.md#552-il-percorso-attivo).
+
+4. Una finestra Waypoint e percorsi nell'hub mostra i percorsi e i waypoint di ogni regata. I vecchi percorsi di qualsiasi regata si possono gestire lì. Vedi [5.5.7 Waypoint e Percorsi nell'Hub](manual/0500-using-agl.md#557-waypoint-e-percorsi-nellhub).
+
+5. I waypoint aggiuntivi del percorso sono stati rimossi e sostituiti da Importa percorso e Mostra percorso. Vedi [3.2 Waypoint](manual/0300-configuration.md#32-waypoint).
+
+#### Finestra grafica
+
+1. Quattro nuovi pulsanti di zoom: ingrandisci, riduci, zoom sulla traccia attuale e zoom sull'area di regata. Vedi [5.4.1 Icone della Toolbar](manual/0500-using-agl.md#541-icone-della-toolbar).
+
+2. I comandi non reimpostano più il tuo zoom. La vista viene adattata alla nuova traccia solo quando usi Send dalla DC Data Table.
+
+3. Le altre barche sono più facili da leggere. Vedi [5.3.2.1 Vista](manual/0500-using-agl.md#5321-vista).
+
+    a. Una barca arrivata è mostrata come un punto grigio senza nome.
+
+    b. Ogni barca con nome mostra la sua classifica.
+
+    c. Passa il mouse su una barca per mostrare le sue statistiche e la sua traccia.
+
+4. Il menu del tasto destro della grafica ora mostra solo le voci che valgono per ciò che c'è sulla carta. Vedi [5.4.2 Il Menu del Tasto Destro](manual/0500-using-agl.md#542-il-menu-del-tasto-destro).
+
+5. Una nuova voce **Pulisci** nel menu del tasto destro, e il tasto W, tolgono dalla carta le tracce, i punti DC e i percorsi non attivi. Vedi [5.4.2 Il Menu del Tasto Destro](manual/0500-using-agl.md#542-il-menu-del-tasto-destro).
+
+6. Opzioni di vista ha un nuovo riquadro Barbe del vento per impostare dimensione e spaziatura delle barbe. Vedi [5.3.2 Opzioni di vista](manual/0500-using-agl.md#532-opzioni-di-vista).
+
+#### Messaggi e Chat
+
+Le voci da 1 a 3 sono solo per i membri.
+
+1. Pushover, Telegram e i messaggi si configurano ora una volta in un nuovo modulo **Messaggi** dell'hub, che sostituisce i menu Pushover e Telegram dell'hub. Vedi [8.1.2 Configurazione di Pushover](manual/0800-chats.md#812-configurazione-di-pushover).
+
+    a. Il modulo contiene le impostazioni di Pushover, il bot Telegram e la tabella dei messaggi. Le modifiche arrivano a ogni regata in esecuzione man mano che le fai.
+
+    b. Ogni regata ha una casella **Usa Hub**, per seguire le impostazioni dell'hub o tenere le proprie.
+
+2. Gli orari attivi per Pushover e Telegram si impostano una volta nell'hub; una regata può seguirli o tenere i propri. Vedi [8.1.4 In Ogni Regata](manual/0800-chats.md#814-in-ogni-regata).
+
+3. La scheda Chat mostra i dati della barca (SOG, COG, TWA, PL, Posizione, DBL e Salto server (s)) in una riga in alto, così si possono leggere mentre si chatta. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+
+4. Ogni casella di testo ora ha il menu del tasto destro (Annulla, Taglia, Copia, Incolla, Seleziona tutto). Vedi [8.1.1 Rispondere ai Messaggi](manual/0800-chats.md#811-rispondere-ai-messaggi).
+
+#### Il grib NOAA
+
+1. Quando apri Routing settings in qtVlm, AGL ti avvisa se il grib caricato da qtVlm è più vecchio di quello che sta usando AGL. Vedi [7.3.1 current_grib.grb](manual/0700-noaa-server.md#731-current_gribgrb).
+
+2. AGL ti avvisa prima del download NOAA se non ha memoria sufficiente per il grib, e di nuovo se esaurisce la memoria mentre lo carica. Vedi [7.4 Memoria](manual/0700-noaa-server.md#74-memoria).
+
+#### L'hub
+
+1. L'hub ora gestisce l'accesso a SailOnline per tutte le regate. Inserisci nome utente e password una volta in SOL > Accesso, e ogni regata li usa. Una regata può comunque regatare come un altro utente, e puoi cambiare utente in una regata in esecuzione senza chiuderla. Selezionare o deselezionare Usa SOL in una regata in esecuzione ne cambia subito l'accesso.
+
+2. L'hub può controllare le nuove regate SailOnline, chiederti se vuoi parteciparvi e iscriverti. Puoi aprire una regata per guardarla prima che si aprano le iscrizioni, e l'hub ti iscrive automaticamente quando si aprono. Le regate a tempo vengono iscritte alla partenza e di nuovo dopo l'arrivo. Vedi [2.3.3.10 Controllare le Nuove Regate](manual/0200-installing-agl.md#23310-controllare-le-nuove-regate). Una regata già configurata in una delle tue cartelle di regata non viene mai proposta, e se ti iscrivi tu stesso sul sito l'hub se ne accorge e non te lo richiede.
+
+3. Chiudere l'hub ora chiude le sue regate, che tornano nell'elenco di riavvio. Vedi [2.3.3.8 Chiusura dell'Hub](manual/0200-installing-agl.md#2338-chiusura-dellhub).
+
+4. Le cornici delle finestre mostrano lo stato di una regata: rosso per il Simulatore, arancione mentre qtVlm è in attesa, e viola quando Usa SOL è selezionato. Vedi [2.3.3.11 Colori della Cornice delle Finestre](manual/0200-installing-agl.md#23311-colori-della-cornice-delle-finestre).
+
+5. Quando fai un Set in una regata, l'hub passa alla scheda di quella regata (si può disattivare nella scheda Launcher). Vedi [2.3.3.3 La Scheda Launcher](manual/0200-installing-agl.md#2333-la-scheda-launcher).
+
+6. Un hub di produzione, uno beta e uno di sviluppo possono girare sullo stesso computer senza sovrascrivere le proprie impostazioni. Vedi [2.3.3.1 La Finestra dell'Hub](manual/0200-installing-agl.md#2331-la-finestra-dellhub).
+
+7. Un nuovo pulsante Riponi tutto accanto ad Aggiungi regata mette via con un clic le finestre AGL e qtVlm di ogni regata. Vedi [2.3.3.1 La Finestra dell'Hub](manual/0200-installing-agl.md#2331-la-finestra-dellhub).
+
+#### Registrazione
+
+1. La scheda Registro ora contiene l'essenziale, e **Vista > Registro dettagliato** aggiunge il dettaglio di lavoro di controlli e percorsi. Il registro è molto più piccolo. Vedi [2.3.4.2 Il Menu Vista](manual/0200-installing-agl.md#2342-il-menu-vista) e [2.3.4.3 Il Menu Aiuto](manual/0200-installing-agl.md#2343-il-menu-aiuto).
+
+### Correzioni di bug – 25.5.1
+
+1. I waypoint +P / -P e FP+ / FP- non vanno più diretti quando la barca ha già navigato il perno. Vedi [5.2 Verifica del Percorso](manual/0500-using-agl.md#52-verifica-del-percorso).
+
+2. Gli avvisi di BBQ e di boe sono stati corretti. L'avviso BBQ sul telefono ora concorda con la traccia del predittore, quindi non ci sono falsi avvisi di incaglio, e gli avvisi vengono inviati ogni volta che In controllo è selezionato. Vedi [5.2.1 Attivare i Controlli](manual/0500-using-agl.md#521-attivare-i-controlli).
+
+3. L'elenco Tracce non si riempie più dei controlli che AGL fa da solo.
+
+4. Nella DC Table, Delete, Send e Copy senza nulla su cui agire non svuotano più l'intera area DC.
+
+5. L'hub, la finestra di regata, la finestra Waypoint e percorsi, l'Editor DC e la finestra Chat non si ingrandiscono più un poco a ogni riavvio di AGL. Ridimensiona ciascuna una volta dopo l'aggiornamento.
+
+6. Aggiungi regata viene trattenuto mentre l'hub sta ancora riavviando le tue regate.
+
+7. Il controllo VMC per i waypoint non dà più tempi di percorrenza troppo ottimistici. Vedi [5.4.1 Icone della Toolbar](manual/0500-using-agl.md#541-icone-della-toolbar).
 
 ## Versione 25.4.3
 
@@ -11,6 +159,9 @@ AGL 25.4.X è una serie di release importante con molte nuove funzionalità. L'o
 2. I blocchi PL non si allontanano più dal PL obiettivo, evitando che i DC PL non vengano riconosciuti come tali.
 
 3. Il Controllo BBQ gestisce correttamente i blocchi PL quando propone una correzione. Ora propone la correzione e sposta con sé l'intero blocco, invece di segnalare "Unable to prevent BBQ". Vedi [5.2 Verifica del Percorso](manual/0500-using-agl.md#52-verifica-del-percorso).
+4. Una gara che si blocca ora lascia un thread dump, e Kill nell'hub comprime i log in uno zip e apre un'email all'autore.
+
+5. Il numero di build viene mostrato all'avvio di AGL e nella finestra della patch.
 
 ## Versione 25.4.1
 
@@ -36,7 +187,7 @@ AGL 25.4.X è una serie di release importante con molte nuove funzionalità. L'o
 
 1. AGL ora può pre-verificare i DC per BBQ, boe di mare mancate e linea di arrivo, proponendoti soluzioni prima che i DC vengano impostati. Non viene modificato nulla finché non accetti un suggerimento. Il Controllo DC segna inoltre con puntini rossi i BBQ che trova, e per evitare la terraferma è disponibile Tack/Gybe later. Vedi [5.2 Verifica del Percorso](manual/0500-using-agl.md#52-verifica-del-percorso).
 
-2. Quando un DC cade fuori dal maxVMG, AGL ora condiziona l'intera lista dei DC, con Condiziona tutti e Imposta comunque. Vedi [5.4.6 Condizionamento dei DC](manual/0500-using-agl.md#546-condizionamento-dei-dc).
+2. Quando un DC cade fuori dal maxVMG, AGL ora condiziona l'intera lista dei DC, con Condiziona tutti e Imposta comunque. Vedi [5.4.4 Condizionamento dei DC](manual/0500-using-agl.md#544-condizionamento-dei-dc).
 
 3. Un nuovo comando Segui nel menu popup della grafica aggiunge waypoint lungo una costa tra due waypoint. Vedi [5.4.2 Il Menu del Tasto Destro](manual/0500-using-agl.md#542-il-menu-del-tasto-destro).
 

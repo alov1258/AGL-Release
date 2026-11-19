@@ -46,6 +46,8 @@ The Simulator moves the boat the way the SOL server does: polar speed times perf
 
 - **The coast.** A boat that reaches the coast stops where it is, with TWA 0. The next command that moves it starts it again with 80% performance.
 
+- **Nothing is recorded.** While the Simulator is running, nothing it does is kept. Sets made in the Simulator are not stored (they do not appear in the Stored Sets form), and simulated DCs are not sent to the hub, so they never appear in the Race DC Trace. The traces and the graphics update as usual.
+
 - **Wind.** The wind comes from the grib. **SIM WIND** *twd,tws* sets a fixed wind in degrees and knots, and **SIM WIND OFF** goes back to the grib.
 
 - **Clock speed.** **SIM SPEED** *n* sets the clock speed, 1 being real time. Keep it at 1 when you test DCs.
@@ -84,6 +86,7 @@ When the boat crosses the finish line, the Simulator stops it and marks it finis
 | `SIM START` *n* | The race start *n* minutes from now, with no dialog. Behave the same way. |
 | `SIM START CLEAR` | Removes the Simulator's start time. The real start is back, and the boat goes back to where it was placed |
 | `SIM RESET` | Restores the original race information. All Simulator changes are removed. |
+| `SIM MARKS RESET` | Deletes the saved copy of the moved marks, so the next Simulator starts with the real marks |
 | `SIM OFF` | Stops the Simulator |
 | `CC` *degrees* | Steers a course |
 | `CP` *degrees* | As `CC`, with performance loss for the turn |

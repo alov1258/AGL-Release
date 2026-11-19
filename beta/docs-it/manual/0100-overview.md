@@ -12,13 +12,13 @@ AGL (AutoGribLoader) è un'applicazione Java 25 che aiuta i velisti di SailOnlin
 
 **DC e waypoint**
 
-3.  Un editor di DC per gestire le tue serie di DC, con un DC Checker grafico che controlla e modifica la serie rispetto alle tile delle mappe, tenendo conto della perdita di prestazioni.
+3.  Un Editor DC che mostra i DC dell'area DC come una tabella che puoi modificare direttamente, con un DC Checker grafico che controlla e modifica la serie rispetto alle tile delle mappe, tenendo conto della perdita di prestazioni. Tracce e Set salvati conservano i tuoi controlli e Set precedenti, così puoi confrontarli con quelli attuali.
 
-4.  Un editor di waypoint, e la conversione dei waypoint in DC, compresi i waypoint maxVMG.
+4.  Percorsi e waypoint conservati in un database dall'hub, con un modulo Percorsi, la modifica nella grafica e la conversione dei waypoint in DC, compresi i waypoint maxVMG.
 
 5.  Una DC Data Table che carica una rotta da Expedition o qtVlm, da controllare e impostare come DC (vedi [DC Data Table](0600-dc-data-table.md)).
 
-6.  Crea un file GPX dei waypoint del percorso e della rotta, da caricare nei pacchetti di routing.
+6.  Importa un file .wpt o .gpx come percorso, ed esporta un percorso come file GPX, da caricare nei pacchetti di routing.
 
 7.  Crea file polari dettagliati per qtVlm ed Expedition per la regata.
 
@@ -28,7 +28,7 @@ AGL (AutoGribLoader) è un'applicazione Java 25 che aiuta i velisti di SailOnlin
 
 **Messaggi sul telefono (solo per i membri)**
 
-9.  La scheda Chat mostra le chat room di SOL, e ha stanze Pushover e Telegram che inviano gli eventi principali al telefono. Telegram ti permette di rispondere dal telefono (vedi [Chat](0800-chats.md)).
+9.  La scheda Chat mostra le chat room di SOL, e ha un riquadro Messaggi che invia gli eventi principali al telefono tramite Pushover e Telegram. I messaggi si configurano una volta nell'hub per tutte le regate. Telegram ti permette di rispondere dal telefono (vedi [Chat](0800-chats.md)).
 
 **Lavorare con altro software**
 
@@ -40,9 +40,9 @@ AGL (AutoGribLoader) è un'applicazione Java 25 che aiuta i velisti di SailOnlin
 
 12. Suona una sirena da nave quando vai in secca durante la regata.
 
-13. L'AGL Hub è l'unica finestra di AGL nella barra delle applicazioni. Ha una scheda per ogni regata, così puoi eseguire più regate, e gestisce aggiornamenti e riavvii (vedi [Installazione di AGL](0200-installing-agl.md)).
+13. L'AGL Hub è l'unica finestra di AGL nella barra delle applicazioni. Ha una scheda per ogni regata, così puoi eseguire più regate, e gestisce il tuo accesso a SailOnline, gli aggiornamenti e i riavvii. Può anche controllare le nuove regate SailOnline e iscriverti (vedi [Installazione di AGL](0200-installing-agl.md)).
 
-14. Registra i dati della barca in un file csv, con dati di posizione precisi al secondo, e conserva un file di log per analisi successive. Il menu Help può raccogliere i tuoi log e preparare un'email all'autore quando hai bisogno di aiuto.
+14. Registra i dati della barca in un file csv, con dati di posizione precisi al secondo, e conserva un file di log per analisi successive. La scheda Registro contiene l'essenziale, e Vista > Registro dettagliato aggiunge il dettaglio di lavoro. Il menu Aiuto può raccogliere i tuoi log e preparare un'email all'autore quando hai bisogno di aiuto.
 
 15. Un Simulatore che sostituisce il server SOL, così puoi provare AGL e ciò che vedrai sul telefono senza toccare la tua barca reale (vedi [Simulatore](0900-simulator.md)). (Solo per i membri.)
 
@@ -54,17 +54,17 @@ Questi sono i passaggi principali per iniziare. Ognuno rimanda alla parte del ma
 
 2.  **Avvia AGL.** Fai doppio clic sull'icona AGL25. Si apre l'AGL Hub. La prima volta, AGL ti chiede la tua **cartella delle regate** (races directory): la cartella che conterrà tutte le tue cartelle di regata, ad esempio D:\sailonline\Races. Non usare la cartella Java25. Vedi [Avvio di AGL per la Prima Volta](0200-installing-agl.md#232-avvio-di-agl-per-la-prima-volta).
 
-3.  **Aggiungi una regata.** Fai clic su **Aggiungi regata** e scegli una cartella di regata, oppure creane una nuova. **Apri** avvia AGL nella cartella e attende che tu prema Apply. **Avvia** lo avvia e preme Apply al posto tuo. Vedi [Aggiungere una Regata](0200-installing-agl.md#2335-aggiungere-una-regata).
+3.  **Aggiungi una regata.** Fai clic su **Aggiungi regata** e scegli una cartella di regata, oppure creane una nuova. **Apri** avvia AGL nella cartella e attende che tu prema Applica. **Avvia** lo avvia e preme Applica al posto tuo. Oppure seleziona **Controlla le nuove regate** nella scheda Launcher dell'hub, e l'hub ti propone ogni nuova regata e ti iscrive. Vedi [Aggiungere una Regata](0200-installing-agl.md#2335-aggiungere-una-regata).
 
-4.  **Compila la scheda Parametri.** Inserisci il tuo **Nome utente** e la tua **Password** SOL, scegli la **Regata** dall'elenco a discesa e premi **Applica**. Vedi [Configurazione](0300-configuration.md).
+4.  **Accedi e compila la scheda Parametri.** Inserisci il tuo nome utente e la tua password SOL una volta nell'hub, con **SOL > Accesso...**. Nella scheda Parametri lascia selezionato **Usa l'accesso dell'hub**, scegli la **Regata** dall'elenco a discesa e premi **Applica**. Vedi [L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol) e [Configurazione](0300-configuration.md).
 
 5.  **Attendi l'inizializzazione.** Può richiedere fino a 30 secondi. Al termine, AGL mostra la scheda Controllo DC e iniziano ad apparire i dati della tua barca. Vedi [Inizializzazione](0400-initialisation.md).
 
-6.  **Controlla e imposta i tuoi DC.** I tuoi DC attuali vengono caricati nella finestra Comandi ritardati. Modificali, controllali rispetto alla mappa, poi premi **Set** per inviarli al server. Vedi [Scheda DC Checker](0500-using-agl.md#51-scheda-controllo-dc).
+6.  **Controlla e imposta i tuoi DC.** I tuoi DC attuali vengono caricati nella finestra Comandi ritardati e nell'Editor DC. Modificali, controllali rispetto alla mappa, poi premi **Set** per inviarli al server. Vedi [Scheda DC Checker](0500-using-agl.md#51-scheda-controllo-dc).
 
-7.  **Attiva i controlli (solo per i membri).** Seleziona **In controllo** nella scheda Controllo DC, e **Controllo BBQ** e **Controllo delle boe** nella scheda Parametri, in modo che AGL continui a sorvegliare il tuo percorso mentre fai regata. Vedi [Verifica del Percorso](0500-using-agl.md#52-verifica-del-percorso).
+7.  **Attiva i controlli (solo per i membri).** Seleziona **In controllo** nella scheda Controllo DC, e AGL ti avvisa dei BBQ e delle boe mancate mentre fai regata. **Controllo BBQ** e **Controllo delle boe** nella scheda Parametri decidono se AGL propone anche una soluzione. Vedi [Verifica del Percorso](0500-using-agl.md#52-verifica-del-percorso).
 
-**Se qualcosa va storto,** invia i tuoi log all'autore. Scegli **Aiuto > Invia i log...** nell'hub o in una finestra di regata. AGL raccoglie i log, rimuove tutto ciò che è segreto, come password e token, e apre una nuova email per te, con la cartella che contiene il file zip accanto. Aggiungi cosa stavi facendo e cosa è andato storto, trascina lo zip nell'email e invia. Nulla lascia il tuo computer finché non premi **Invia**. Vedi [Invio dei Log per Email](0200-installing-agl.md#invio-dei-log-per-email).
+**Se qualcosa va storto,** invia i tuoi log all'autore. Scegli **Aiuto > Invia i log...** nell'hub o in una finestra di regata. Se l'autore lo chiede, seleziona prima **Vista > Registro dettagliato** e ripeti il problema. AGL raccoglie i log, rimuove tutto ciò che è segreto, come password e token, e apre una nuova email per te, con la cartella che contiene il file zip accanto. Aggiungi cosa stavi facendo e cosa è andato storto, trascina lo zip nell'email e invia. Nulla lascia il tuo computer finché non premi **Invia**. Vedi [Invio dei Log per Email](0200-installing-agl.md#invio-dei-log-per-email).
 
 Quando tutto funziona, puoi voler aggiungere:
 

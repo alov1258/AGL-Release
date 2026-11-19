@@ -6,7 +6,7 @@ Questo capitolo descrive come si usa AGL giorno per giorno: controllare i tuoi D
 
 Una volta completata l'inizializzazione, i pulsanti della scheda Controllo DC diventano attivi. Inoltre, eventuali DC correnti verranno scaricati nella finestra Comandi ritardati. La scheda dovrebbe apparire così una volta configurata completamente.
 
-<img src="../img/screens/main.dc-checker.png" alt="" width="900">
+<img src="../img/screens/main.dc-checker.png" alt="" width="698">
 
 Le funzionalità di questa scheda sono descritte di seguito.
 
@@ -14,11 +14,11 @@ Le funzionalità di questa scheda sono descritte di seguito.
 
 Sono disponibili due menu utilizzabili per copiare e incollare. Il primo è il menu **Modifica** che mostra questo menu.
 
-<img src="../img/manual/image90.png" alt="" width="900">
+<img src="../img/manual/image90.png" alt="" width="119">
 
 Il secondo è accessibile facendo clic con il tasto destro del mouse nella finestra Comandi ritardati.
 
-<img src="../img/manual/image91.png" alt="" width="900">
+<img src="../img/manual/image91.png" alt="" width="273">
 
 ### 5.1.2 Pulsante Set<img src="../img/icons/go-next.png" alt="" class="inline-icon" height="24">
 
@@ -30,13 +30,13 @@ Questo pulsante viene utilizzato per impostare tutti i DC che sono stati incolla
 
 3.  Verifica che l'orientamento (bearing) tra due DC di tipo **cc** consecutivi sia inferiore a 170 gradi. In caso contrario, verrà visualizzata la seguente finestra di dialogo
 
-<img src="../img/manual/image92.png" alt="" width="300">
+<img src="../img/manual/image92.png" alt="" width="163">
 
 **Sì** ignorerà l'avviso e imposterà i DC, **No** interromperà il processo di impostazione e consentirà la modifica.
 
 Le date dei DC incriminati verranno scritte nell'area Riscontro come mostrato di seguito.
 
-<img src="../img/manual/image93.png" alt="" width="300">
+<img src="../img/manual/image93.png" alt="" width="231">
 
 4.  Elimina eventuali DC obsoleti (cioè precedenti al momento attuale).
 
@@ -46,6 +46,8 @@ Le date dei DC incriminati verranno scritte nell'area Riscontro come mostrato di
 
 7.  Aggiorna con l'insieme valido corrente.
 
+Se i DC comprendono blocchi di perdita di prestazione (PL), un DC reso in ritardo dalla latenza (fuori dall'impostazione **Tempo di recupero del server**) viene inviato di nuovo finché il suo orario non è giusto, e dopo il Set i DC sul server vengono confrontati con l'area DC (fino a 3 tentativi).
+
 **Nota:** Un record DC deve avere questo formato:
 
 2016/05/27 01:51:00 twa 138.45
@@ -54,7 +56,7 @@ Le date dei DC incriminati verranno scritte nell'area Riscontro come mostrato di
 
 Il pulsante refresh richiederà l'elenco dei DC correnti al server e li visualizzerà.
 
-### 5.1.4 Pulsante Delete <img src="../img/icons/delete.png" alt="" class="inline-icon" height="24">
+### 5.1.4 Pulsante Delete <img src="../img/icons/dialog-cancel-3.png" alt="" class="inline-icon" height="24">
 
 Per eliminare tutti i DC, fai clic sul pulsante delete . Per eliminarne un sottoinsieme, evidenzia quelli da eliminare.
 
@@ -74,7 +76,7 @@ Visualizza la finestra grafica OpenGL.
 
 **Nota:** Ai waypoint del percorso è stato applicato un ridimensionamento nel checker grafico classico. La dimensione della croce è di 10 metri. Il riquadro del mirino OpenGL è di 10 m, come mostrato nella figura successiva.
 
-<img src="../img/manual/image96.png" alt="" width="900">
+<img src="../img/manual/image96.png" alt="" width="587">
 
 Il pulsante <img src="../img/icons/reset_graphics.png" alt="" class="inline-icon" height="18"> riavvia la finestra grafica (che può bloccarsi; questo risolve il problema)
 
@@ -84,21 +86,21 @@ Questo aprirà il selettore del file polare alternativo e configurerà AGL per u
 
 ### 5.1.8 Show Polar Diagram <img src="../img/icons/show_boat_polar.png" alt="" class="inline-icon" height="24">
 
-<img src="../img/manual/image98.png" alt="" width="500">
+<img src="../img/manual/image98.png" alt="" width="281">
 
 Questo aprirà il diagramma polare della barca. La curva polare nera mostra la curva di velocità attualmente in uso. La linea nera indica il TWA corrente: è una linea separata e non fa parte della curva polare. Il diagramma rimane sempre in primo piano; premi il pulsante di chiusura per nasconderlo.
 
-<img src="../img/manual/image99.png" alt="" width="250">
+<img src="../img/manual/image99.png" alt="" width="135">
 
 Il menu a tendina presenta tre opzioni: Default, Low Wind (\< 6 kts) e User. Se viene utilizzata l’opzione User, sarà necessario inserire il TWS massimo da utilizzare per le curve.
 
 Il diagramma mostra anche le linee Max VMG sia per la bolina che per la poppa. La linea max SPD mostra il TWA che consente di raggiungere la velocità massima della barca a quell’intensità di vento. Passando il mouse sopra il diagramma verranno mostrati TWS, velocità della barca (BS), TWA e VMG in quel punto.
 
-### 5.1.9 DC Data Table <img src="../img/icons/table-add.png" alt="" class="inline-icon" height="24">
+### 5.1.9 DC Data Table <img src="../img/icons/dc-data-table.png" alt="" class="inline-icon" height="24">
 
 Questo avvierà la DC Data Table. Il funzionamento è descritto nella sezione [6 DC Data Table](0600-dc-data-table.md).
 
-<img src="../img/manual/image100.png" alt="" width="900">
+<img src="../img/manual/image100.png" alt="" width="602">
 
 ### 5.1.10 Pulsante Check DCs <img src="../img/icons/emblem-important-3.png" alt="" class="inline-icon" height="24">
 
@@ -106,7 +108,7 @@ Questo pulsante prenderà tutti i DC mostrati nella finestra DC e li convertirà
 
 **Versione OpenGL del DC Checker**
 
-<img src="../img/manual/image101.png" alt="" width="900">
+<img src="../img/manual/image101.png" alt="" width="593">
 
 **Nota:** Se l'orario del primo DC ricade nel periodo di haulback (l'ora precedente alla partenza della regata), la traccia viene modificata per riflettere il risultato nella regata reale. Non vengono apportate modifiche ai DC effettivi. Questo funziona nel modo seguente.
 
@@ -114,39 +116,35 @@ Viene eseguita una scansione dei DC e viene determinato l'ultimo DC prima della 
 
 Possiamo ora parlare di cosa fa ciascun parametro e di come funziona.
 
-Se il waypoint è evidenzia**to** in viola, la barca navigherà verso quel waypoint al di fuori dell'intervallo ottimale di TWA. Se il waypoint è evidenziato in arancione, per quel DC è possibile la minimizzazione della performance loss.
+Se il waypoint è evidenziato in viola, la barca navigherà verso quel waypoint al di fuori dell'intervallo ottimale di TWA. Se il waypoint è evidenziato in arancione, per quel DC è possibile la minimizzazione della performance loss.
 
-<img src="../img/manual/image102.png" alt="" width="900">
+<img src="../img/manual/image102.png" alt="" width="595">
 
 Gli stessi DC condizionati per la performance loss si presentano così. Nota che la performance loss è inferiore del 2% alle 05:41:11 (95,3% contro 93,2%).
 
-<img src="../img/manual/image103.png" alt="" width="900">
+<img src="../img/manual/image103.png" alt="" width="595">
 
-Sono disponibili due icone per il controllo della performance loss.
+Con **Usa la perdita di prestazione** selezionato ci sono due pulsanti Check. Il semplice **Check** <img src="../img/icons/emblem-important-3.png" alt="" class="inline-icon" height="18"> controlla i DC esattamente come li ha il server e non cambia nulla nell'area DC. **Check PL** <img src="../img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="18"> calcola le manovre di perdita di prestazione e aggiunge i DC PL all'area DC. Scrive nell'area DC solo dopo una modifica reale: uno spostamento, una modifica, un inserimento, un'eliminazione, Condiziona, Annulla o Ripeti. Con **Usa la perdita di prestazione** disattivato c'è un solo pulsante Check.
 
-L'icona <img src="../img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="18">calcolerà le manovre di performance loss e le mostrerà senza modificare i DC effettivi. L'icona <img src="../img/icons/checkDCPL16.png" alt="" class="inline-icon" height="18">calcolerà e modificherà/aggiungerà DC per ottenere il risultato di PL.
+Il pulsante **Editor DC** <img src="../img/icons/dc-edit-table.png" alt="" class="inline-icon" height="18"> apre l'Editor DC, che elenca i DC dell'area DC (vedi [6.6 L'Editor DC](0600-dc-data-table.md#66-leditor-dc)).
 
 #### 5.1.10.1 Parametri DC
 
 Troverai tutti questi parametri nella scheda Parametri.
 
-**Frequenza di controllo DC (s):** Questo parametro (in secondi) determina ogni quanto vengono tracciati punti aggiuntivi sullo schermo tra un DC e l'altro. Il waypoint **01:15:00/-172.3(87.4/-172.5)/100.0/4.3/9.6/71.3** mostra**to** di seguito è uno di questi, e si trova a 300 secondi dalla partenza. Il nome del waypoint è l'orario in cui la barca arriverà, e i valori successivi sono TWA, PL, SOG, TWS e COG. Il PL è la performance loss che la barca sperimenterà in quel punto, e il TWA/COG è il TWA/COG con cui la barca navigherà verso quel waypoint. Poiché la barca sta navigando al di fuori dell'intervallo ottimale di TWA, è colorato in viola e il valore ottimale viene aggiunto tra parentesi dopo il TWA. In questo caso, **(87.4/-172.5)**rappresenta il COG o il TWA che deve essere impostato per ottenere il TWA ottimale. La funzione **Condiziona** descritta più avanti farà questo in modo interattivo.
+**Frequenza di controllo DC (s):** Questo parametro (in secondi) determina ogni quanto vengono tracciati punti aggiuntivi sullo schermo tra un DC e l'altro. Il waypoint **01:15:00/-172.3(87.4/-172.5)/100.0/4.3/9.6/71.3** mostrato di seguito è uno di questi, e si trova a 300 secondi dalla partenza. Il nome del waypoint è l'orario in cui la barca arriverà, e i valori successivi sono TWA, PL, SOG, TWS e COG. Il PL è la performance loss che la barca sperimenterà in quel punto, e il TWA/COG è il TWA/COG con cui la barca navigherà verso quel waypoint. Poiché la barca sta navigando al di fuori dell'intervallo ottimale di TWA, è colorato in viola e il valore ottimale viene aggiunto tra parentesi dopo il TWA. In questo caso, **(87.4/-172.5)**rappresenta il COG o il TWA che deve essere impostato per ottenere il TWA ottimale. La funzione **Condiziona** descritta più avanti farà questo in modo interattivo.
 
 Quando un DC viene raggiunto, viene indicato per esteso. 07/14 01:29:52/-165.0/98.7/4.3/9.5/89.4 è il secondo DC che verrà raggiunto nell'esempio mostrato.
 
 **Nota:** I waypoint mostrati in questo colore vengono navigati al di fuori dell'intervallo ottimale di TWA.
 
-<img src="../img/manual/image106.png" alt="" width="900">
+<img src="../img/manual/image106.png" alt="" width="587">
 
 **Durata del calcolo (s):** Questo parametro (in secondi) determina ogni quanto la barca viene fatta avanzare. Concetto simile al jump del server. I punti generati non vengono tracciati, ma vengono utilizzati per determinare le coordinate di ciascun waypoint, campionando TWS e TWD dopo ogni avanzamento e utilizzando poi questi valori per l'avanzamento successivo.
 
 **Usa la partenza della regata:** Consente all'utente di controllare i DC fin dall'inizio. Se selezionato, il checker presumerà che la barca si trovi al waypoint di partenza e che l'orario sia quello di partenza. Eventuali DC successivi a tale orario verranno elaborati nella produzione della rotta. Se deselezionato, l'orario di partenza sarà quello attuale.
 
-**Mostra la posizione della barca:** Utilizzato quando la barca si trova molto lontana dai DC di interesse. Non verrà tracciata né considerata nella produzione della rotta. Più applicabile quando **Use these start coordinates** è selezionato.
-
-**Use these start coordinates:** La rotta verrà calcolata presupponendo che la barca si trovi alle **Start coords (lat, lon)**, e l'orario verrà portato avanti fino all'orario del primo DC.
-
-**Start coords (lat, lon):** Le coordinate di partenza per la rotta. Sono nel formato che può essere incollato direttamente dal client SOL. Per copiare le coordinate dal client SOL, tieni premuto il tasto Alt e fai clic con il pulsante sinistro del mouse. Questo copia le coordinate del mirino negli appunti.
+**Mostra la posizione della barca:** Utilizzato quando la barca si trova molto lontana dai DC di interesse. Non verrà tracciata né considerata nella produzione della rotta.
 
 **Nota:** Se la barca ha attualmente TWA 0, significa che non si sta muovendo. L'unica azione possibile è far avanzare l'orologio fino all'orario del primo DC, presupponendo che la barca inizi a muoversi su quella rotta in quel momento. Il punto di partenza sarà quindi la posizione attuale della barca, e l'orario sarà quello del primo DC.
 
@@ -166,8 +164,10 @@ Questi controlli sono per i membri SOL. Perché funzionino in tempo reale serve 
 
 Nella scheda Parametri, sotto DC's (oppure con le caselle nella barra degli strumenti della scheda Controllo DC):
 
-- **Controllo BBQ** controlla lungo il percorso e i DC alla ricerca di terraferma, invia i messaggi BBQ e propone soluzioni.
-- **Controllo delle boe** avvisa quando la barca sta per mancare una boa.
+- **Controllo BBQ** fa cercare al BBQ Checker la terraferma lungo il percorso e i DC e propone soluzioni.
+- **Controllo delle boe** gli fa controllare anche le girate delle boe, e avvisa quando la barca sta per mancare una boa.
+
+I messaggi BBQ e di boa mancata in tempo reale richiedono che **In controllo** sia selezionato. Queste due caselle non li attivano né li disattivano; decidono se l'avviso arriva con una soluzione suggerita.
 
 <img src="../img/screens/main.params-dcs-checks.png" alt="" width="350">
 
@@ -177,11 +177,9 @@ Possono essere attivati e disattivati anche nella barra degli strumenti della sc
 
 <img src="../img/screens/gfx.bbq-checker-buttons.png" alt="" width="300">
 
-
-
 ### 5.2.2 Il BBQ Checker
 
-Il BBQ Checker esamina i DC nell'area dei DC alla ricerca di collisioni con la costa e li affronta uno alla volta. Il pulsante **Check** <img src="../img/icons/shipwreck_48X48.png" alt="" class="inline-icon" height="18"> lo esegue; **Check PL** <img src="../img/icons/shipwreck_pl.png" alt="" class="inline-icon" height="18"> lo esegue tenendo conto della perdita di prestazioni.
+Il BBQ Checker esamina i DC nell'area dei DC alla ricerca di collisioni con la costa e li affronta uno alla volta. Il pulsante BBQ Checker <img src="../img/icons/shipwreck_48X48.png" alt="" class="inline-icon" height="18"> lo esegue. Con **Usa la perdita di prestazione** selezionato il pulsante mostra invece <img src="../img/icons/shipwreck_pl.png" alt="" class="inline-icon" height="18"> e lo esegue con la perdita di prestazione.
 
 Per ogni collisione AGL mostra dove avviene, ad esempio "Potential collision after DC 0", ed elenca le soluzioni che ha trovato. La soluzione suggerita è selezionata. Puoi selezionarne un'altra, o nessuna, poi premere:
 
@@ -191,7 +189,9 @@ Per ogni collisione AGL mostra dove avviene, ad esempio "Potential collision aft
 
 <img src="../img/screens/dlg.fix-report-two-fixes-check-boxes-apply-apply-pl-cancel.png" alt="" width="440">
 
-Una soluzione può impostare un DC a un nuovo orario, spostare un DC, aggiungere un DC prima della collisione, oppure dare una nuova rotta. Quando la collisione dipende dal server che attiva un DC un secondo o due in anticipo, il titolo lo dice ("with 1 s early server hop") e le soluzioni ne tengono conto.
+Una soluzione può impostare un DC a un nuovo orario, spostare un DC, aggiungere un DC prima della collisione, oppure dare una nuova rotta.
+
+Una soluzione non cambia mai da sola i DC all'interno di un blocco di perdita di prestazione (PL). L'unico DC di un blocco PL che può spostare è il DC di ingresso, e allora si sposta con lui il resto del blocco, mantenendo distanze e valori. Quando la collisione dipende dal server che attiva un DC un secondo o due in anticipo, il titolo lo dice ("with 1 s early server hop") e le soluzioni ne tengono conto.
 
 Se la rotta attuale della barca finisce contro la terraferma, AGL propone una virata a sinistra o a dritta che la evita, con la rotta e il numero di gradi.
 
@@ -258,11 +258,11 @@ Mentre fai regata, AGL esegue da solo i controlli e mostra una finestra di sugge
 <img src="../img/screens/dlg.live-suggestion-window-check-boxes-apply-apply-pl-dismiss.png" alt="" width="440">
 
 Se non rispondi, il suggerimento può andare anche al telefono, tramite Pushover o Telegram. Con Telegram arriva con i pulsanti **Applica** e **Ignora**, così puoi rispondere dal telefono. Vedi [Chat](0800-chats.md) per come configurarlo.
-<img src="../img/screens/tg.suggestion.png" alt="" width = "500"> 
+<img src="../img/screens/tg.suggestion.png" alt="" width="500"> 
 
 Se premi **Applica**, il comando viene inviato ad AGL perché lo esegua. AGL aggiornerà poi il messaggio con lo stato della barca dopo l'**Applica**.
 
-<img src="../img/screens/tg.apply.png" alt="" width = "500">
+<img src="../img/screens/tg.apply.png" alt="" width="500">
 
 ### 5.2.6 DC Non Ancora Impostati
 
@@ -282,19 +282,11 @@ La funzione di zoom è disponibile solo utilizzando un mouse con rotellina (sul 
 
 #### 5.3.1.2 Clic del Mouse
 
-Un clic del mouse con il tasto sinistro copierà le coordinate correnti del mouse negli appunti nel formato
-
-,CP,\<lat\>,\<lon\>
-
-Ad es. ,*CP,38.681941,-9.201922*
-
-Questo consente un semplice incollaggio in un file di waypoint, dove l'unica cosa necessaria è il nome per ottenere un waypoint valido.
-
-Ad es. *WP01,CP,38.671979,-9.196492*
-
-Un clic del mouse con il tasto destro (grafica standard**)** oppure \<Shift\> sinistro (grafica OpenGL) copierà le coordinate correnti del mouse negli appunti nello stesso formato del client SOL, cioè
+Un clic con **Shift + sinistro** del mouse copia le coordinate correnti del mouse negli appunti nello stesso formato del client SOL, cioè
 
 *38.605778,-9.485908*
+
+Un semplice clic sinistro non copia più le coordinate.
 
 ### 5.3.2 Opzioni di vista
 
@@ -314,17 +306,21 @@ Ogni casella attiva o disattiva una cosa nella grafica.
 - **Velocità del vento** mostra i numeri della velocità del vento.
 - **Isotache** mostra le linee di uguale velocità del vento.
 - **Isobare** mostra le linee di uguale pressione. **Spaziatura isobare (hPa)** imposta la pressione tra le linee, da 1 a 50.
-- **Waypoint aggiuntivi** mostra i waypoint aggiuntivi (vedi [5.6 Waypoint Aggiuntivi](0500-using-agl.md#56-waypoint-aggiuntivi)).
+- **Traccia DC della regata** mostra i DC scattati in questa regata (vedi [5.3.3.3 Traccia DC della Regata](0500-using-agl.md#5333-traccia-dc-della-regata)).
 - **Etichette** mostra le etichette dei DC, impostate più sotto.
 - **Riempi i poligoni della terra** riempie le forme della terraferma.
 
 La visualizzazione seguente mostra le barche AIS e le loro tracce, e la linea di previsione. Il numero sotto ciascuna barca AIS è la sua posizione attuale. I quattro numeri sotto la tua barca sono posizione, TWA, SOG e performance loss.
 
-<img src="../img/manual/image120.png" alt="" width="900">
+<img src="../img/manual/image120.png" alt="" width="601">
 
 Inoltre, se la tua barca è nell'elenco AIS, verrà mostrata in nero nella posizione in cui si trovava quando tutte le altre barche AIS sono state aggiornate. Questa è la posizione effettiva della tua barca rispetto alle altre mostrate sullo schermo.
 
-<img src="../img/manual/image121.png" alt="" width="900">
+<img src="../img/manual/image121.png" alt="" width="532">
+
+**Dimensione e spaziatura delle barbe del vento:** il riquadro **Barbe del vento** imposta la grandezza delle barbe (**Dimensione barbe (px)**, da 10 a 300 pixel) e la loro distanza (**Spaziatura barbe (px)**, da 20 a 1000 pixel). I pulsanti **-** e **+** rendono il valore 1,1 volte più piccolo o più grande a ogni clic, oppure puoi scrivere un valore. La grafica cambia subito e i valori vengono salvati. Si trovano anche nella scheda Parametri (vedi [Grafica](0300-configuration.md#310-grafica)).
+
+**Altre barche:** una barca che ha finito la regata è disegnata come un piccolo punto grigio nella sua ultima posizione, senza nome. Le barche con nome (l'elenco AIS, o **Mostra i nomi delle altre barche**) mostrano la loro classifica tra parentesi sotto il nome. Tieni il mouse su una barca qualsiasi per vederne i dettagli: la sua traccia viene disegnata come una linea del colore del suo nome finché il mouse non si sposta.
 
 #### 5.3.2.2 Carattere della grafica
 
@@ -339,6 +335,56 @@ Qui si imposta cosa viene scritto su ogni etichetta DC nella grafica.
 - Il gruppo **Date** sceglie quali parti della data vengono mostrate. Se una parte è selezionata viene mostrata in ogni punto; se non è selezionata viene mostrata solo dove cambia. Le parti sono **Anno**, **Mese**, **Giorno** e **Ora HH:MM:SS**.
 - **Seconda riga: waypoint e comando con il suo valore** aggiunge all'etichetta una seconda riga con il waypoint e il comando con il suo valore.
 
+Il campo **PL** mostra la perdita di prestazione con cui la barca arriva al DC e, tra parentesi, la perdita di prestazione dopo la virata, ad esempio 97.4 (95.7). Le etichette dei DC PL sono grigie.
+
+### 5.3.3 Tracce
+
+Ogni volta che controlli, modifichi o imposti i DC, AGL disegna il risultato nella grafica come traccia. Il pulsante **Tracce** nella barra degli strumenti della grafica apre il modulo Tracce, dove scegli quali tracce mostrare.
+
+#### 5.3.3.1 Il Modulo Tracce
+
+<img src="../img/screens/gfx.traces.png" alt="" width="450">
+
+- La prima riga in grassetto è la traccia **attuale**, l'ultima cosa fatta. Ha una casella **Mostra** come le altre. Viene spuntata di nuovo a ogni nuova traccia attuale, così non resta mai nascosta per errore. Toglila per guardare più da vicino una traccia precedente.
+- Le altre righe sono tracce precedenti. Spunta **Mostra** per confrontarle con quella attuale. **Evento** dice cosa è stato fatto, e **Ora (UTC)** quando. **Imposta** è l'ora di un Set. **Colore** è il colore della traccia.
+- **Testo** mostra le etichette sulla traccia. Quando è spuntato le etichette mostrano i campi scelti in [Etichette dei DC](0500-using-agl.md#5323-etichette-dei-dc), e quando non lo è mostrano solo gli orari.
+- **Mostra le tracce selezionate insieme a quella attuale** attiva e disattiva le tracce confrontate. Non influisce sulla traccia attuale.
+- **Reimposta** rimuove tutte le tracce tranne quella attuale e i Set. **Svuota** rimuove le tracce con **Mostra** spuntato. La traccia attuale resta sempre. Fai clic su una riga per selezionarla (viene evidenziata, una riga alla volta, e resta selezionata quando l'elenco si aggiorna).
+- **Esporta GPX...** salva la traccia selezionata come file GPX nella cartella della regata, con lo stesso formato dell'esportazione dei Set salvati: un percorso, con il numero del DC come nome di ogni punto. Vengono scritti solo i DC. Il file si chiama "Trace &lt;regata&gt; &lt;evento&gt; &lt;ora&gt;.gpx".
+
+Una traccia viene creata solo per ciò che fai: Send, una modifica (Sposta, Cambia segno, Condiziona, Elimina, Inserisci, o una modifica nell'Editor DC), Annulla o Ripeti, un Check o un controllo BBQ, e un Set. Un controllo che AGL fa da solo viene mostrato solo finché è l'ultima cosa fatta, e scompare appena crei una traccia vera. Un Set che AGL fa da solo (Condiziona i DC dopo il nuovo meteo, o Set Anyway) è etichettato **Set AGL**; un Set che fai tu è etichettato **Set**.
+
+Ogni traccia parte dalla barca com'era quando la traccia è stata creata, segnata con l'icona di una barca (a sinistra o a dritta, come le altre barche). La traccia attuale parte dalla posizione in diretta della barca e non ha icona.
+
+#### 5.3.3.2 Set Salvati
+
+Ogni Set che fai viene conservato con la regata: per ogni DC la sua posizione, il vento, la velocità, la PL e la barca. Il pulsante **Set salvati...** nel modulo Tracce apre il modulo Set salvati.
+
+<img src="../img/screens/gfx.stored-sets.png" alt="" width="700">
+
+- Spunta le caselle **Selezionato** dei Set che vuoi (trascina lungo la colonna per spuntarne più d'uno) e premi **Mostra selezionati** per disegnarli come tracce.
+- Fai clic su un Set per vederne i DC. La tabella mostra il Valore in gradi e Lat e Lon in gradi, minuti e secondi.
+- **Esporta GPX...** scrive i Set selezionati in un file GPX, un percorso per ogni Set. AGL può rileggere il file. Ogni DC conserva l'id che gli ha dato il server, e il file lo riporta come `agl:serverId` nelle estensioni e come `id N` nella descrizione. Un DC che il server non ha ancora elencato non ha id fino all'elenco successivo; i Set fatti prima di questa versione non ne hanno, a meno che siano il Set più recente e i loro DC siano ancora sul server.
+- **Elimina...** elimina i Set selezionati, dopo aver chiesto. **Rimuovi selezionati** li toglie dal grafico, e **Rimuovi tutti** toglie ogni Set mostrato.
+
+<img src="../img/screens/dlg.stored-sets-delete-the-selected-sets.png" alt="" width="300">
+
+Un Set fatto prima che le posizioni venissero conservate non ne ha, e AGL lo dice. Un DC senza posizione conservata viene lasciato fuori dal disegno.
+
+I Set sono conservati nel database della regata, `db/dc_<id regata>.db`, nella cartella della regata. C'è un file per ogni regata, quindi i Set di una regata non compaiono mai in un'altra. Tra una sessione e l'altra vengono conservati solo i Set. Il file non viene ripulito automaticamente e può essere eliminato dopo la regata.
+
+#### 5.3.3.3 Traccia DC della Regata
+
+Spunta **Traccia DC della regata** in Opzioni di vista per vedere i DC scattati in questa regata. Ognuno è un punto rosso scuro con il suo orario in UTC. I DC scattati nelle regate precedenti con lo stesso nome sono punti arancioni senza etichetta. Il registro è conservato nell'hub insieme alla regata. Usa **Info** nel menu del tasto destro per leggere i dettagli di un punto.
+
+<img src="../img/screens/gfx.race-dc-trace.png" alt="" width="600">
+
+Un DC che scatta mentre un Set viene inviato (un Set può richiedere minuti) viene registrato a Set finito, posizionato in base agli aggiornamenti della barca stessa. Un DC che il Set elimina dal server non viene mai registrato come scattato.
+
+#### 5.3.3.4 Tracce delle Barche
+
+Le tracce delle barche AIS e della tua barca sono conservate per tutta la regata, in `db/traces_<id regata>.db` nella cartella della regata. Il server taglia la parte vecchia delle tracce lunghe, ma AGL conserva ciò che ha avuto e aggiunge quello che il server invia a ogni caricamento delle tracce. Viene disegnata l'intera traccia, anche dopo che AGL è stato chiuso e riavviato. Un tratto senza punti, perché AGL era spento e il server lo aveva già tagliato, viene disegnato come un vuoto e riempito quando arrivano le tracce del server. Il registro serve solo per la visualizzazione. Può essere eliminato dopo la regata.
+
 ## 5.4 Comandi Specifici della Grafica OpenGL
 
 Il motore OpenGL dispone di diversi comandi da tastiera specifici solo per il motore OpenGL.
@@ -349,69 +395,65 @@ Il motore OpenGL dispone di diversi comandi da tastiera specifici solo per il mo
 
 **B** – Centra la visualizzazione sulla barca
 
-**W** – Pulisce lo schermo
+**C** – Avvia l'impostatore di rotta (vedi [5.4.3 Impostazione di un Percorso](0500-using-agl.md#543-impostazione-di-un-percorso))
+
+**W** – Pulisce le tracce, i punti DC e i percorsi non attivi (come **Pulisci** nel menu del tasto destro)
 
 ### 5.4.1 Icone della Toolbar
 
+La barra degli strumenti della grafica ha questi pulsanti, da sinistra.
+
 Il pulsante <img src="../img/icons/agl.png" alt="" class="inline-icon" height="18"> porta la finestra di AGL in primo piano.
 
-Il pulsante <img src="../img/icons/table-add.png" alt="" class="inline-icon" height="18"> apre la boat data table
+Il pulsante <img src="../img/icons/boat-data-table.png" alt="" class="inline-icon" height="18"> apre la boat data table.
 
-Il pulsante <img src="../img/icons/polar.png" alt="" class="inline-icon" height="18"> apre il selettore del file polare alternativo
+Il pulsante <img src="../img/icons/polar.png" alt="" class="inline-icon" height="18"> apre il selettore del file polare alternativo.
 
-Il pulsante <img src="../img/icons/show_boat_polar.png" alt="" class="inline-icon" height="18"> apre il diagramma polare
-
-Il pulsante <img src="../img/icons/applications-internet.png" alt="" class="inline-icon" height="18"> porta la finestra grafica in primo piano.
+Il pulsante <img src="../img/icons/show_boat_polar.png" alt="" class="inline-icon" height="18"> apre il diagramma polare.
 
 Il pulsante <img src="../img/icons/selection.png" alt="" class="inline-icon" height="18"> crea un sottoinsieme del grib corrente. Il file verrà collocato nella cartella grib con il prefisso SUB\_. Il messaggio seguente appare al termine della creazione del sottoinsieme.
 
 <img src="../img/screens/dlg.subset-grib-written.png" alt="" width="379">
 
-Il pulsante <img src="../img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="18"> seleziona il file di waypoint corrente.
+Il pulsante <img src="../img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="18"> apre un elenco dei percorsi della regata, con quello attivo spuntato. Il percorso su cui fai clic diventa il percorso attivo (vedi [5.5.2 Il Percorso Attivo](0500-using-agl.md#552-il-percorso-attivo)).
 
-Il pulsante <img src="../img/icons/go-next.png" alt="" class="inline-icon" height="18">applica l'elenco DC corrente. È disattivato (in grigio) se non sono state apportate modifiche.
+Il pulsante <img src="../img/icons/set_wp_date.png" alt="" class="inline-icon" height="18"> imposta la data del grib sulla data di un waypoint, come fa **Imposta data grib** nel menu del tasto destro.
 
-Il pulsante <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> scrive i DC correnti in un file di waypoint
+Il pulsante <img src="../img/icons/go-next.png" alt="" class="inline-icon" height="18"> applica l'elenco DC corrente. È disattivato (in grigio) se non sono state apportate modifiche.
 
-Quando <img src="../img/icons/waypoint-icon-ok.png" alt="" class="inline-icon" height="18"> è selezionato e viene caricato un insieme di waypoint, vengono attivati i seguenti comandi da tastiera per la modifica
+Il pulsante <img src="../img/icons/arrow-refresh.png" alt="" class="inline-icon" height="18"> ricarica i DC dal server.
 
-**D** – Elimina un waypoint
+Il pulsante <img src="../img/icons/dc-edit-table.png" alt="" class="inline-icon" height="18"> apre l'Editor DC, il pulsante <img src="../img/icons/emblem-important-3.png" alt="" class="inline-icon" height="18"> controlla i DC e, con **Usa la perdita di prestazione** selezionato, il pulsante <img src="../img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="18"> li controlla con la perdita di prestazione. Il pulsante <img src="../img/icons/shipwreck_48X48.png" alt="" class="inline-icon" height="18"> esegue il BBQ Checker (<img src="../img/icons/shipwreck_pl.png" alt="" class="inline-icon" height="18"> con la perdita di prestazione). Vedi [5.1.10 Pulsante Check DCs](0500-using-agl.md#5110-pulsante-check-dcs) e [5.2.2 Il BBQ Checker](0500-using-agl.md#522-il-bbq-checker).
 
-**E** – Modifica i valori di un waypoint
+Il pulsante <img src="../img/icons/wheel.png" alt="" class="inline-icon" height="18"> avvia l'impostatore di rotta (vedi [5.4.3 Impostazione di un Percorso](0500-using-agl.md#543-impostazione-di-un-percorso)).
 
-**I** – Inserisce / Aggiunge waypoint
+Il pulsante <img src="../img/icons/kgpg_edit.png" alt="" class="inline-icon" height="18"> condiziona un DC, il pulsante <img src="../img/icons/ConditionAll.png" alt="" class="inline-icon" height="18"> condiziona tutti i DC e il pulsante <img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="18"> imposta un DC al max VMG. Vedi [5.4.4 Condizionamento dei DC](0500-using-agl.md#544-condizionamento-dei-dc).
 
-**M** – Sposta un waypoint
+Il pulsante <img src="../img/icons/filter.png" alt="" class="inline-icon" height="18"> mostra il percorso attivo senza i waypoint ridondanti, utilizzando una tolleranza di filtro. Non modifica nulla. Il pulsante successivo <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> fa lo stesso e poi toglie i waypoint ridondanti dal percorso attivo.
 
-Il pulsante <img src="../img/icons/filter.png" alt="" class="inline-icon" height="18"> filtra eventuali waypoint ridondanti, utilizzando una tolleranza di filtro
+Il pulsante <img src="../img/icons/view-options-eye-blue-48.png" alt="" class="inline-icon" height="18"> apre il modulo Opzioni di vista, dove si impostano la linea del predittore, le barche e le tracce AIS, le barbe del vento, la traccia DC della regata, le etichette DC, il riempimento della terraferma e il carattere della grafica. Vedi [5.3.2 Opzioni di vista](0500-using-agl.md#532-opzioni-di-vista).
 
-Il pulsante successivo <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> filtra eventuali waypoint ridondanti, utilizzando una tolleranza di filtro, e li salva in un file
+I pulsanti <img src="../img/icons/zoom-plus.png" alt="" class="inline-icon" height="18"> e <img src="../img/icons/zoom-minus.png" alt="" class="inline-icon" height="18"> ingrandiscono e riducono attorno al centro della vista della grafica, del **Passo dello zoom** impostato nella scheda Parametri. Il pulsante <img src="../img/icons/zoom-fit-best.png" alt="" class="inline-icon" height="18"> adatta la vista alla traccia dell'ultimo controllo e il pulsante <img src="../img/icons/zoom-reset.png" alt="" class="inline-icon" height="18"> la adatta all'area di regata (il riquadro rosa).
 
-Il pulsante <img src="../img/icons/view-options-eye-blue-48.png" alt="" class="inline-icon" height="18"> apre il modulo View Options, dove si impostano la linea del predictor, le barche e le tracce AIS, le barbule del vento, i waypoint aggiuntivi, le etichette DC, il riempimento della terraferma e il font della grafica. Vedi [5.3.2 View Options](0500-using-agl.md#532-opzioni-di-vista).
+Il pulsante **Tracce** apre il modulo Tracce (vedi [5.3.3 Tracce](0500-using-agl.md#533-tracce)).
 
 Il pulsante <img src="../img/icons/DCtrace.png" alt="" class="inline-icon" height="18"> attiva e disattiva la traccia DC grigia. Vedi [6.3.1 Come Funziona](0600-dc-data-table.md#631-come-funziona).
 
-Il pulsante Append <img src="../img/icons/append-trace.png" alt="" class="inline-icon" height="18"> attiva o disattiva l'aggiunta dei tracciati DC. Usa **W** per pulire la visualizzazione.
+Il pulsante <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> alterna tra il lavoro con i DC e con i waypoint.
 
-Il pulsante <img src="../img/icons/edit-redo-3.png" alt="" class="inline-icon" height="18"> ricarica il file dei waypoint aggiuntivi del percorso
+Il pulsante <img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> annulla le modifiche ai DC e ai waypoint una alla volta, e la stessa icona capovolta rimette la modifica.
 
-Il pulsante <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> alterna tra il lavoro con i DC e con i waypoint
+Il pulsante **Percorsi** apre il modulo Percorsi e waypoint (vedi [5.5.1 Il Modulo Percorsi e Waypoint](0500-using-agl.md#551-il-modulo-percorsi-e-waypoint)).
 
-Il pulsante <img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> annulla le modifiche ai waypoint una alla volta
+Il pulsante <img src="../img/icons/waypoint-icon-ok-v.png" alt="" class="inline-icon" height="18"> calcola i waypoint e i DC in una rotta utilizzando maxVMG per i waypoint.
 
-Il pulsante <img src="../img/icons/wp_to_gpx.png" alt="" class="inline-icon" height="18"> scrive i waypoint correnti in un file gpx
+Il pulsante <img src="../img/icons/waypoint-icon16-vmc.png" alt="" class="inline-icon" height="18"> calcola i waypoint e i DC in una rotta utilizzando maxVMC per i waypoint.
 
-Il pulsante <img src="../img/icons/waypoint-icon-ok-v.png" alt="" class="inline-icon" height="18"> calcola i waypoint e i DC in una rotta utilizzando maxVMG per i waypoint
-
-Il pulsante <img src="../img/icons/waypoint-icon16-vmc.png" alt="" class="inline-icon" height="18">calcola i waypoint e i DC in una rotta utilizzando maxVMC per i waypoint
-
-Il pulsante <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="18"> converte waypoint e DC in soli DC, utilizzando maxVMG per i waypoint
-
-Il pulsante <img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> converte i waypoint maxVMG e i DC in un file di waypoint
+Il pulsante <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="18"> converte waypoint e DC in soli DC, utilizzando maxVMG per i waypoint.
 
 Le toolbar possono anche essere sganciate e riagganciate facendo clic e tenendo premuto sull'area grigia puntinata della toolbar accanto alla prima icona, come mostrato di seguito.
 
-<img src="../img/manual/image130.png" alt="" width="38">
+<img src="../img/manual/image130.png" alt="" width="100">
 
 Le toolbar sganciate sono mostrate di seguito
 
@@ -419,9 +461,30 @@ Le toolbar sganciate sono mostrate di seguito
 
 ### 5.4.2 Il Menu del Tasto Destro
 
-Un clic destro del mouse nella finestra grafica richiama un menu rapido di opzioni, che cambia a seconda che si lavori sui DC o sui waypoint. Alcuni comandi valgono solo per i waypoint. Quello a sinistra è per i waypoint e quello a destra per i DC.
+Un clic destro del mouse nella finestra grafica richiama un menu rapido di opzioni. Le voci mostrate dipendono da cosa c'è sulla carta e dal fatto che si lavori sui DC o sui waypoint.
 
-<img src="../img/screens/gfx.popup-wp.png" alt="" width="105"> <img src="../img/screens/gfx.popup-dc.png" alt="" width="106">
+<img src="../img/screens/gfx.popup-dc-edit.png" alt="" width="110"> <img src="../img/screens/gfx.popup-route.png" alt="" width="110"> <img src="../img/screens/gfx.popup-none.png" alt="" width="110">
+
+*Il menu con DC attivi, Percorsi attivi e Nessuno attivo.*
+
+Alcune voci sono sempre mostrate: Steer, Vira, Abbatti, Max su, Max giù, Imposta data grib, VMG, Annulla, Ripeti, Centra barca, Adatta allo schermo, Info, Pulisci e Cancel. **Imposta DC attivo / Imposta WP attivo** e **Cambia CMD** sono mostrati solo quando sulla carta c'è una traccia DC. Senza traccia DC sulla carta il pulsante di modifica dei DC è in grigio.
+
+Le altre voci dipendono da ciò su cui lavori. Un trattino significa che la voce non è mostrata, e "in grigio" che è mostrata ma non si può scegliere.
+
+| **Voce**       | DC attivi | Percorsi attivi | Nessuno attivo |
+|----------------|:--:|:--:|:--:|
+| Imposta attivo | –  | ✓  | in grigio |
+| Nuovo          | –  | ✓  | ✓  |
+| Aggiungi       | –  | ✓  | in grigio |
+| Rimuovi        | –  | ✓  | in grigio |
+| Modifica       | –  | ✓  | in grigio |
+| Segui (membri) | – | ✓ | in grigio |
+| Inserisci      | ✓ (DC) | ✓ | in grigio |
+| Sposta         | ✓ (DC) | ✓ | in grigio |
+| Elimina        | ✓ (DC) | ✓ | in grigio |
+| WP On/Off, Condiziona, Condiziona tutti, maxVMG | ✓ | – | – |
+
+**Cambia CMD** si può scegliere quando i DC sono attivi o c'è un percorso attivo. Il percorso attivo mostra sempre i suoi waypoint.
 
 <img src="../img/icons/wheel.png" alt="" class="inline-icon" height="18"> **Steer:** Richiama Impostazione di un Percorso
 
@@ -441,49 +504,17 @@ Un clic destro del mouse nella finestra grafica richiama un menu rapido di opzio
 
 <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> **Imposta DC attivo / Imposta WP attivo:** Passa dal lavorare sui DC al lavorare sui waypoint, e viceversa
 
-<img src="../img/icons/Insert_Vertex.png" alt="" class="inline-icon" height="18"> **Inserisci:** Inserisce un waypoint / DC. Segui le indicazioni in alto a destra. Se è un waypoint, l'editor farà comparire questo modulo.
+**Imposta attivo** (senza icona), <img src="../img/icons/add-wp.png" alt="" class="inline-icon" height="18"> **Nuovo**, <img src="../img/icons/increase.png" alt="" class="inline-icon" height="18"> **Aggiungi**, <img src="../img/icons/Insert_Vertex.png" alt="" class="inline-icon" height="18"> **Inserisci**, <img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Segui**, <img src="../img/icons/move_wp.png" alt="" class="inline-icon" height="18"> **Sposta**, <img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="18"> **Modifica**, <img src="../img/icons/go-next-red.png" alt="" class="inline-icon" height="18"> **Rimuovi** ed <img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> **Elimina** lavorano su waypoint e percorsi. Sono descritti in [5.5.3 Modifica dei Waypoint nella Grafica](0500-using-agl.md#553-modifica-dei-waypoint-nella-grafica) e [5.5.4 Segui](0500-using-agl.md#554-segui).
 
-<img src="../img/screens/gfx.waypoint-values.png" alt="" width="294">
-
-Seleziona il tipo di controllo dall'elenco a discesa e modifica gli altri valori se lo desideri.
-
-<img src="../img/manual/image137.png" alt="" width="350">
-
-<img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Segui:** Inserisce waypoint che girano intorno alla costa tra due waypoint
-
-1. Scegli **Segui** dal menu del tasto destro. Il messaggio in alto a destra dice **Seleziona il segmento da inserire ( clic destro per annullare)**.
-
-2. Fai clic sulla linea tra i due waypoint che attraversa la terraferma. I waypoint inattivi (quelli con un ! all'inizio del nome) vengono saltati: il segmento è tra i due waypoint attivi ai lati del tuo clic. L'editor dei waypoint compare, come per **Inserisci**. I nuovi waypoint prendono il nome e il comando del primo waypoint del segmento, quindi cambia lì il tipo di controllo se vuoi qualcosa di diverso.
-
-   <img src="../img/manual/image138.png" alt="" width="900">
-
-3. Il messaggio ora dice **Clicca il lato del segmento da cui passare ( clic destro per annullare)**, e una linea sottile segue il mouse a partire dal segmento. Fai clic sul lato del segmento da cui vuoi passare la prima isola. Quel lato vale solo per la prima isola. Se sul segmento ci sono altre isole, ciascuna prende il lato che dà il percorso più breve.
-
-   <img src="../img/manual/image139.png" alt="" width="900">
-
-4. AGL trova la costa che il segmento attraversa e inserisce un waypoint a ogni angolo della costa che la rotta deve aggirare (l'inviluppo convesso), tra il punto in cui il segmento entra per la prima volta nella costa e quello in cui la lascia per l'ultima volta. L'area Riscontro dice quanti waypoint sono stati inseriti. Se non c'è nulla da inserire, dice perché, ad esempio **The segment does not enter and leave any coastline**, e puoi fare clic su un altro segmento.
-
-   <img src="../img/manual/image140.png" alt="" width="900">
-
-5. Il clic destro annulla a entrambi i passaggi. **Annulla** e **Ripeti** nel menu e nella barra degli strumenti tolgono i nuovi waypoint e li rimettono.
-
-Due valori nella scheda **Parametri**, nel riquadro **Percorso e waypoint**, impostano dove vanno i waypoint. **Segui: distanza dalla costa (m)** (10 all'inizio) sposta ogni punto di quei metri verso il largo dalla riva. **Segui: distanza lungo la traccia (m)** (0 all'inizio) sposta poi ogni punto lungo la direzione di marcia. AGL controlla quindi ancora una volta, e aggiunge un punto ovunque la rotta spostata attraverserebbe ancora la costa.
-
-<img src="../img/icons/move_wp.png" alt="" class="inline-icon" height="18"> **Sposta:** Sposta un waypoint / DC. Segui le indicazioni in alto a destra. Nota per i DC:
+Con i DC attivi, **Inserisci**, **Sposta** ed **Elimina** lavorano invece sui DC. Segui le indicazioni in alto a destra. Nota per i DC:
 
 1.  Se il tipo di DC è TWA, lo spostamento non porterà il twa fuori dall'intervallo maxVMG ottimale
 
 2.  Se il DC viene spostato sulla terraferma, viene rimesso indietro per non causare un BBQ
 
-<img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="18"> **Modifica:** Modifica un waypoint. Segui le indicazioni in alto a destra. L'editor farà comparire questo modulo, in cui si possono modificare la data e il tipo di controllo.
+3.  Un DC dentro un blocco PL non si sposta da solo. Il DC di ingresso del blocco porta il numero del DC, e spostarlo sposta l'intero blocco. I DC PL e il DC di uscita sono etichettati PL e non si possono scegliere.
 
-<img src="../img/manual/image141.png" alt="" width="350">
-
-<img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> **Elimina:** Elimina un waypoint o un DC. Segui le indicazioni in alto a destra
-
-**WP On/Off:** Attiva o disattiva i waypoint. Se è disattivato, il waypoint non viene usato. Segui le indicazioni in alto a destra.
-
-**Cambia segno:** Cambia il segno di un DC TWA. Segui le indicazioni in alto a destra
+**WP On/Off:** Mostrato con i DC attivi. Cambia il segno di un DC TWA. Segui le indicazioni in alto a destra
 
 **Cambia CMD:** Solo DC. Passa da CC a TWA e viceversa e aggiorna di conseguenza il valore. Segui le indicazioni in alto a destra.
 
@@ -495,15 +526,19 @@ Due valori nella scheda **Parametri**, nel riquadro **Percorso e waypoint**, imp
 
 <img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="18"> **maxVMG:** Solo DC. Imposta il valore del DC selezionato al max VMG.
 
-<img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> **Annulla:** Annulla l'ultima modifica ai waypoint. Il numero di modifiche annullabili è mostrato tra parentesi.
+<img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" height="18"> **Annulla:** Annulla l'ultima modifica ai DC o ai waypoint. Il numero di modifiche annullabili è mostrato tra parentesi.
 
 <img src="../img/icons/edit-undo-8.png" alt="" class="inline-icon" style="transform: scaleX(-1);" height="18"> **Ripeti:** Rimette la modifica che era stata annullata.
-
-<img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="18"> **Salva:** Salva i waypoint attuali.
 
 <img src="../img/icons/Boat_16.png" alt="" class="inline-icon" height="18"> **Centra barca:** Centra lo schermo sulla barca
 
 <img src="../img/icons/zoom-fit-best.png" alt="" class="inline-icon" height="18"> **Adatta allo schermo:** Adatta lo schermo all'estensione del tracciato attuale di waypoint/DC
+
+<img src="../img/icons/info.png" alt="" class="inline-icon" height="18"> **Info:** Mostra i dettagli di un DC. Scegli **Info**, poi fai clic su un DC qualsiasi: nell'area DC, sulla traccia DC, su una traccia che stai mostrando (anche un Set salvato), o su un punto della Traccia DC della regata. Un riquadro accanto elenca il titolo del DC (un punto ha il titolo "Race &lt;id regata&gt; DC (fired)"), Lat e Lon, l'ora in UTC, CMD e il suo valore in gradi, TWA, TWS, TWD, COG, SOG e PL (e la PL all'arrivo), se è un DC PL e, per un Set salvato, l'ora in cui è stato impostato. Fai clic su un altro DC per vederlo. Il riquadro resta finché non fai clic destro (o Ctrl + clic).
+
+<img src="../img/screens/gfx.info-box.png" alt="" width="450">
+
+**Pulisci:** Toglie dalla carta le tracce, i punti DC e i percorsi non attivi, così puoi ripartire con una vista pulita. Il percorso attivo resta. I percorsi mostrati dall'hub vengono disattivati e il modulo Percorsi li segue. Il vento, la mappa e i punti della Traccia DC della regata restano. Non viene eliminato nulla e il controllo successivo disegna di nuovo. Il tasto **W** fa lo stesso. Le tracce sono nascoste, non eliminate: ognuna resta nel modulo Tracce con **Mostra** deselezionato, e selezionando **Mostra** torna visibile.
 
 <img src="../img/icons/sailboat.png" alt="" class="inline-icon" height="18"> **Simulatore:** Avvia il Simulatore, o lo riavvia se è già in esecuzione. Fai clic sinistro dove si trova la barca per iniziare. Solo per i membri. Vedi [9.1 Avvio e Arresto del Simulatore](0900-simulator.md#91-avvio-e-arresto-del-simulatore).
 
@@ -517,7 +552,7 @@ Quando il Simulatore è in esecuzione, al menu popup viene aggiunta una voce, **
 
 L'impostatore di rotta viene richiamato con la lettera C. Muovi il mouse finché non trovi la rotta desiderata, quindi fai clic con il tasto sinistro del mouse.
 
-<img src="../img/manual/image142.png" alt="" width="900">
+<img src="../img/manual/image142.png" alt="" width="593">
 
 Il clic del mouse apre la finestra dell'impostatore.
 
@@ -525,174 +560,29 @@ Il clic del mouse apre la finestra dell'impostatore.
 
 I pulsanti di opzione alternano tra i comandi TWA e CC. Il valore richiesto può anche essere inserito manualmente. <img src="../img/icons/dialog-apply.png" alt="" class="inline-icon" height="18"> applica il comando e imposta immediatamente la rotta. <img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> interrompe e annulla il comando.
 
-### 5.4.4 MaxVMG Waypoints<img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="24">
-
-Questa sezione descrive come utilizzare i waypoint maxVMG e gli strumenti associati. I waypoint maxVMG sono guidati da un comando memorizzato insieme al waypoint. Il comando è composto da massimo tre caratteri, ad es. 1P+. I comandi applicabili sono descritti di seguito.
-
-#### 5.4.4.1 Comandi dei Waypoint
-
-I controlli della prima lettera per i comandi a due lettere sono i seguenti
-
-| **Comando** | **Comportamento**                                                                                                                           |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
-| **T**       | Guida a twa                                                                                                                                 |
-| **C**       | Guida a CC                                                                                                                                  |
-| **+**       | Guida a maxVMG, prima a dritta e poi vira/strambata a sinistra. Rispetta il waypoint.                                                       |
-| **-**       | Guida a maxVMG, prima a sinistra e poi vira/strambata a dritta. Rispetta il waypoint.                                                       |
-| **1**       | Guida solo a maxVMG, in base al TWA attuale della barca, finché non si raggiunge il punto più vicino al waypoint. Non rispetta il waypoint. |
-| **2**       | Guida diretta e poi maxVMG se necessario. Non rispetta il waypoint.                                                                         |
-| **3**       | Guida solo a maxVMG in stile qtVlm. Virerà/strambata secondo necessità per raggiungere il waypoint. Non rispetta il waypoint.               |
-
-La seconda lettera controlla la performance loss, P oppure N. Ad es., CP guiderà a CC e applicherà la performance loss quando si naviga VERSO quel waypoint. CN guiderà a CC e non applicherà la PL quando si naviga VERSO quel waypoint.
-
-**Attenzione:** Il comportamento della performance loss al waypoint corrente che si sta doppiando è determinato dall'impostazione sul waypoint verso cui si sta navigando.
-
-Ci sono tre comandi che utilizzano tre lettere. Il loro comportamento è documentato di seguito
-
-| **1<sup>°</sup>** | **2<sup>°</sup>** | **3<sup>°</sup>** | **Comportamento**                                                                             |
-|-------------------|-------------------|-------------------|-----------------------------------------------------------------------------------------------|
-| **1, 2 o 3**      | **P o N**         | **+**             | Stesso comportamento di sopra, ma inizia a dritta. Non rispetta il waypoint. Ad es. **2P+**   |
-| **1, 2 o 3**      | **P o N**         | **-**             | Stesso comportamento di sopra, ma inizia a sinistra. Non rispetta il waypoint. Ad es. **3P-** |
-
-Alcuni esempi di questi tipi di waypoint
-
-**-P**
-
-<img src="../img/manual/image146.png" alt="" width="900">
-
-**+P (con data del waypoint)**
-
-<img src="../img/manual/image147.png" alt="" width="900">
-
-**1P- (con data del waypoint)**
-
-<img src="../img/manual/image148.png" alt="" width="900">
-
-**3P+ (con data del waypoint)**
-
-<img src="../img/manual/image149.png" alt="" width="900">
-
-#### 5.4.4.2 Modifica di un Waypoint<img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="24">
-
-Per modificare il nome o il comando del waypoint, usa l'opzione Edit e segui le istruzioni nell'angolo in alto a destra.
-
-**Attenzione:** Assicurati che la modalità di modifica dei waypoint sia attiva. Questa <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> icona non deve essere selezionata (bordi grigi). Se lo è, fai clic sull'icona per deselezionare la modifica dei DC.
-
-Il waypoint maxVMG supporta anche un orario di partenza basato sul waypoint. La partenza da un waypoint può essere ritardata fino a un orario specifico, e gli eventuali DC esistenti verranno utilizzati per coprire il tempo dal momento in cui è stato raggiunto il waypoint precedente fino all'orario specificato. Il formato è lo stesso di prima, ed è possibile usare il selettore di data.
-
-<img src="../img/manual/image150.png" alt="" width="350">
-
-### 5.4.5 Conversione dei Waypoint in DC<img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="24">
-
-Dopo aver verificato che i waypoint producano il risultato desiderato, si può usare <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="18">. Il comando genera un insieme di DC che corrisponde al percorso dei waypoint.
-
-**Nota:** se la barca non si muove, i DC saranno un'istantanea di quel momento, e i DC si sposteranno con il passare del tempo. L'unico caso in cui sono validi con una barca ferma è durante l'haulback, quando la barca è ferma.
-
-### 5.4.6 Condizionamento dei DC<img src="../img/icons/kgpg_edit.png" alt="" class="inline-icon" height="24">
+### 5.4.4 Condizionamento dei DC<img src="../img/icons/kgpg_edit.png" alt="" class="inline-icon" height="24">
 
 Se alcuni DC appaiono in viola, possono essere corretti usando l'opzione **Condiziona** o **Condiziona tutti**.
 
-<img src="../img/manual/image151.png" alt="" width="500">
+<img src="../img/manual/image151.png" alt="" width="389">
 
 Seleziona il DC da condizionare e segui le istruzioni nell'angolo in alto a destra. Il DC verrà quindi condizionato.
 
-<img src="../img/manual/image152.png" alt="" width="500">
+<img src="../img/manual/image152.png" alt="" width="404">
 
 Continua finché non rimangono più DC in viola.
 
-### 5.4.7 Punto di Pericolo
+### 5.4.5 Punto di Pericolo
 
 Il DC Checker è stato migliorato per includere il punto di pericolo, entro il quale l'esecuzione di una doppiata comporta il rischio di fallire. La barca può eseguire la doppiata in qualsiasi momento dal segnale di pericolo fino al DC principale. Il segnale di pericolo è un segnale scalabile (10 m di diametro) mostrato appena prima del DC principale. Questo è mostrato di seguito come la croce disabilitata.
 
 <img src="../img/manual/image153.png" alt="" width="597">
 
-### 5.4.8 Check WPs<img src="../img/icons/waypoint-icon-ok.png" alt="" class="inline-icon" height="24">
-
-L'applicazione ha la possibilità di scrivere una rotta in un insieme di waypoint e poi rileggerli. Il file di waypoint è un semplice file csv nel formato
-
-\<name\>, CP,\<lat\>,\<lon\>
-
-Le due lettere CP devono essere fornite dopo il nome, poiché la libreria viene utilizzata anche per altri scopi.
-
-Di seguito è riportato un esempio di file di waypoint, prodotto dalla routine di scrittura.
-
-07/14 02:20:00/-130.3/ 100.0/ 6.1/ 10.9/ 76.7, CP , 60.005411 , 26.333079
-
-07/14 02:25:00/-129.0/ 100.0/ 6.2/ 11.0/ 76.7, CP , 60.007374 , 26.349729
-
-07/14 02:30:00/-128.0/ 100.0/ 6.3/ 11.2/ 76.8, CP , 60.009362 , 26.366626
-
-07/14 02:35:00/-127.2/ 100.0/ 6.4/ 11.3/ 76.8, CP , 60.011375 , 26.383736
-
-07/14 02:40:00/-126.6/ 100.0/ 6.4/ 11.4/ 76.8, CP , 60.013405 , 26.401028
-
-07/14 02:45:00/-126.1/ 100.0/ 6.5/ 11.5/ 76.8, CP , 60.015451 , 26.418467
-
-07/14 02:50:00/-125.9/ 100.0/ 6.5/ 11.6/ 76.8, CP , 60.017507 , 26.436020
-
-07/14 02:55:00/-125.8/ 100.0/ 6.5/ 11.7/ 76.8, CP , 60.019568 , 26.453650
-
-07/14 03:00:00/-126.0/ 100.0/ 6.5/ 11.7/ 76.8, CP , 60.021631 , 26.471310
-
-07/14 03:05:00/-126.3/ 100.0/ 6.5/ 11.7/ 76.9, CP , 60.023691 , 26.488965
-
-07/14 03:10:00/-126.9/ 100.0/ 6.5/ 11.7/ 76.9, CP , 60.025745 , 26.506597
-
-07/14 03:15:00/-127.9/ 100.0/ 6.4/ 11.6/ 76.9, CP , 60.027784 , 26.524119
-
-07/14 03:20:00/-128.9/ 100.0/ 6.4/ 11.5/ 76.9, CP , 60.029800 , 26.541475
-
-L'applicazione può anche leggere e scrivere file gpx. Un file gpx di waypoint valido avrà il seguente formato
-
-\<gpx xmlns="http://www.topografix.com/GPX/1/1"
-
-xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
-xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd"
-
-version="1.1"
-
-creator="AutoGribLoader"\>
-
-\<wpt lat="-35.2" lon="-54.0"\>
-
-\<name\>Punta DO \</name\>
-
-\<type\>RTWR 2016 - Leg 2 - Uruguay to New Zealand\</type\>
-
-\</wpt\>
-
-\<wpt lat="-52.3" lon="-68.3"\>
-
-\<name\>Cabo 0\</name\>
-
-\<type\>RTWR 2016 - Leg 2 - Uruguay to New Zealand\</type\>
-
-\</wpt\>
-
-\</gpx\>
-
-Un file gpx viene riconosciuto dall'estensione del file .gpx.
-
-### 5.4.9 Write WPs<img src="../img/icons/document-save-5.png" alt="" class="inline-icon" height="24">
-
-Prenderà l'insieme corrente di DC tracciati sullo schermo e li scriverà in un file di waypoint nel formato mostrato sopra. Se l'estensione del file non viene fornita, verrà utilizzata l'estensione predefinita .wpt e il file sarà un csv nel formato
-
-\<name\>, CP,\<lat\>,\<lon\>
-
-Se viene utilizzata l'estensione .gpx, verrà creato un file in formato gpx che conterrà sia i waypoint sia una rotta che li collega.
-
-### 5.4.10 Convert WPs to GPX<img src="../img/icons/wp_to_gpx.png" alt="" class="inline-icon" height="24">
-
-Apre il selettore file in cui selezionare il file .wpt richiesto. Questo file viene poi convertito in un file GPX con lo stesso nome e l'estensione .gpx
-
-<img src="../img/manual/image154.png" alt="" width="450">
-
-### 5.4.11 Pulsante AIS<img src="../img/icons/ais16.png" alt="" class="inline-icon" height="24">
+### 5.4.6 Pulsante AIS<img src="../img/icons/ais16.png" alt="" class="inline-icon" height="24">
 
 Apre l'AIS Boat Chooser. Seleziona le barche desiderate e fai clic su Add. Quindi fai clic su Apply per aggiornare l'elenco delle barche AIS. L'icona si trova sia nella scheda Parametri che nella scheda Controllo DC.
 
-### 5.4.12 Pulsante Boat Data Table<img src="../img/icons/table-add.png" alt="" class="inline-icon" height="24">
+### 5.4.7 Pulsante Boat Data Table<img src="../img/icons/boat-data-table.png" alt="" class="inline-icon" height="24">
 
 Apre la Boat Data Table mostrata di seguito, basata sulle barche AIS selezionate. Ogni colonna può essere ordinata facendo clic sul nome della colonna. Queste sono le stesse informazioni utilizzate per creare il feed di dati AIS. La tabella superiore contiene i dati standard. La tabella inferiore mostra le differenze rispetto alla barca selezionata.
 
@@ -700,7 +590,7 @@ La tabella mostrerà ora la polare della barca utilizzata per quella barca. La p
 
 <img src="../img/screens/main.boat-data-table.png" alt="" width="900">
 
-### 5.4.13 Pulsante di Opzione Boat Horn
+### 5.4.8 Pulsante di Opzione Boat Horn
 
 Se selezionato, la sirena della barca suonerà se
 
@@ -712,11 +602,7 @@ Se selezionato, la sirena della barca suonerà se
 
 4.  La barca è a twa 0.
 
-### 5.4.14 Pulsante Additional Course Waypoints<img src="../img/icons/document-open-2.png" alt="" class="inline-icon" height="24">
-
-Apre il selettore file di Additional Course Waypoints.
-
-### 5.4.15 qtVlm<img src="../img/icons/qtVlm.png" alt="" class="inline-icon" height="24">
+### 5.4.9 qtVlm<img src="../img/icons/qtVlm.png" alt="" class="inline-icon" height="24">
 
 Se sei un membro SOL e **qtVlm integration** è abilitato nella scheda Parametri, vedrai due icone aggiuntive sulla toolbar.
 
@@ -752,9 +638,197 @@ Se viene restituito ***"xdotool not installed***", non hai X11. Installalo digit
 sudo apt install xdotool
 ```
 
-## 5.5 Formati dei File di Importazione
+## 5.5 Percorsi e Waypoint
 
-### 5.5.1 File GPX
+Un **percorso** è un elenco di waypoint con un nome. Un **waypoint** che non è in nessun percorso è un waypoint libero. AGL conserva i percorsi e i waypoint di ogni regata nel database dell'hub, in una cartella accanto alla cartella di installazione (`agl_db`, con `agl_db_Beta` e `agl_db_Test` per le installazioni beta e di test). Non legge né scrive più file di waypoint. I percorsi si inseriscono con **Importa** e si estraggono con **Esporta GPX**.
+
+Un percorso alla volta è il **percorso attivo**. Le modifiche che fai nella grafica e i comandi che usano i waypoint lavorano sul percorso attivo. Le modifiche vengono conservate subito, quindi non c'è Salva.
+
+### 5.5.1 Il Modulo Percorsi e Waypoint
+
+Il menu **Percorsi** nella finestra di AGL e il pulsante **Percorsi** nella barra degli strumenti della grafica aprono lo stesso modulo. Resta aperto mentre lavori, ricorda posizione e dimensione per ogni regata e si aggiorna da solo dopo ogni modifica.
+
+<img src="../img/screens/gui.routes.png" alt="" width="700">
+
+Il modulo elenca solo ciò che appartiene all'area di regata: i percorsi i cui waypoint sono tutti al suo interno, e i waypoint al suo interno. Sono elencati anche i segnali del percorso della regata, ma sono di sola lettura.
+
+**Elenco dei percorsi**
+
+- **Attivo:** il percorso che usano i comandi. Si può spuntare un solo percorso.
+- **Mostra:** spuntalo per disegnare il percorso nella grafica. I waypoint partono nascosti; i waypoint di un percorso mostrato vengono comunque disegnati con il percorso. Il percorso attivo è disegnato in blu, e ogni altro percorso mostrato prende il colore libero successivo. La casella **Colore** lo mostra.
+- **Nome:** fai clic per rinominare il percorso. I nomi devono essere diversi tra loro e non possono contenere `!`.
+- I waypoint che un percorso ha superato sono spuntati **Superato**, e i segmenti che portano a loro sono grigi. **Azzera superati** li deseleziona.
+
+**Elenco dei waypoint.** Seleziona un percorso per vederne i waypoint. Puoi cambiare il nome di un tuo waypoint, e i suoi Lat e Lon (solo dentro l'area di regata). **Nei percorsi** dice quanti percorsi usano un waypoint. Un waypoint di un percorso mostra il suo comando, ad esempio `WP10 (+P)`.
+
+**Pulsanti:**
+
+- **Importa...** legge un file GPX in un percorso (si può importare anche un vecchio file .wpt). Se un nome è già in uso, AGL chiede cosa fare. Un percorso che attraversa il bordo dell'area di regata non viene importato, ma i suoi waypoint che sono all'interno vengono aggiunti come waypoint liberi.
+
+  <img src="../img/screens/dlg.routes-an-imported-route-crosses-the-race-area.png" alt="" width="700">
+
+- **Esporta GPX...** salva il percorso selezionato come file GPX.
+- **Nuovo percorso...** chiede un nome, crea un percorso vuoto e lo rende il percorso attivo. Metti i waypoint al suo interno con **Inserisci**, **Nuovo** e **Aggiungi** nella grafica.
+- **Copia percorso...** crea una copia del percorso selezionato insieme a una copia di ciascuno dei suoi waypoint. Un modulo chiede il nome del percorso, un prefisso dei waypoint e un suffisso dei waypoint, che vengono aggiunti al nome di ogni nuovo waypoint. Ne serve uno dei due. Se un nuovo nome è già in uso, non viene copiato nulla e il modulo elenca i nomi.
+
+  <img src="../img/screens/gui.copy-route.png" alt="" width="501">
+
+- **Elimina percorso...** elimina i percorsi selezionati, dopo una domanda.
+- **Elimina waypoint** e **Copia waypoint...** lavorano sui waypoint selezionati.
+- **Aggiorna** rilegge gli elenchi. Raramente serve.
+
+Quando apri una regata che ha percorsi degli anni precedenti, il modulo può spostarli in questa regata (**Sì**, **No**, **Sempre** o **Mai**).
+
+#### 5.5.1.1 La Scheda Eliminati
+
+Nulla di ciò che elimini va perso subito. La scheda **Eliminati** elenca i percorsi e i waypoint che hai eliminato.
+
+<img src="../img/screens/gui.routes-deleted.png" alt="" width="700">
+
+- Spunta **Seleziona** per i percorsi o i waypoint che vuoi. Per un percorso, **Waypoint** riporta anche i suoi waypoint eliminati.
+- **Ripristina** li rimette a posto.
+- **Elimina...** li elimina definitivamente, dopo aver chiesto. La domanda indica il numero esatto.
+- **Unisci duplicati** unisce le voci duplicate.
+- **Seleziona tutto** e **Deseleziona tutto** sono nel menu del tasto destro degli elenchi.
+
+### 5.5.2 Il Percorso Attivo
+
+Ci sono tre modi per scegliere il percorso attivo:
+
+- Spunta **Attivo** nel modulo Percorsi e waypoint.
+- Usa il pulsante <img src="../img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="18"> nella barra degli strumenti della grafica. Apre un elenco dei percorsi, con quello attivo spuntato.
+- Scegli **Imposta attivo** nel menu del tasto destro, poi fai clic su una linea di percorso disegnata o su uno dei suoi waypoint.
+
+Il vecchio percorso attivo resta mostrato quando ne diventa attivo un altro, così puoi passare rapidamente da un percorso all'altro con **Imposta attivo**. Nascondi un percorso con la sua casella **Mostra**, oppure toglilo con **Pulisci** (Pulisci non nasconde mai il percorso attivo). Un **Imposta attivo** svuota anche l'elenco di annullamento, perché Annulla appartiene al percorso che si stava modificando.
+
+Il percorso attivo è quello usato da **Verify Course**, dall'esecuzione dei waypoint e da **Timed Race**. La casella del percorso che quei comandi leggono segue da sola il percorso attivo, quindi non c'è nulla da scegliere in una casella.
+
+<img src="../img/screens/gfx.two-routes.png" alt="" width="600">
+
+*Due percorsi mostrati: il percorso attivo è blu.*
+
+### 5.5.3 Modifica dei Waypoint nella Grafica
+
+Le voci del menu del tasto destro per i waypoint lavorano sul percorso attivo. Segui le indicazioni in alto a destra nella grafica; il clic destro termina o annulla. **Assicurati che la modalità di modifica dei waypoint sia attiva.** L'icona <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> non deve essere selezionata (bordi grigi). Se lo è, fai clic sull'icona per deselezionare la modifica dei DC. Ogni segmento del percorso attivo viene disegnato mentre scegli, in blu, e in grigio dove il segmento porta a un waypoint superato.
+
+- **Imposta attivo:** fai clic su una linea di percorso o su uno dei suoi waypoint per rendere attivo quel percorso.
+- <img src="../img/icons/add-wp.png" alt="" class="inline-icon" height="18"> **Nuovo:** mette un waypoint libero dove fai clic. È mostrato come un quadrato nero e prende il nome nella finestra dell'editor dei waypoint (un prefisso e un incremento). Fai di nuovo clic per il successivo.
+- <img src="../img/icons/Insert_Vertex.png" alt="" class="inline-icon" height="18"> **Inserisci:** mette un nuovo waypoint dove fai clic nel segmento del percorso attivo che scegli. Vicino all'inizio del percorso va davanti, altrimenti va in fondo. Compare l'editor dei waypoint.
+- <img src="../img/icons/increase.png" alt="" class="inline-icon" height="18"> **Aggiungi:** il primo clic sceglie il segmento, o la fine del percorso attivo. Poi fai clic sui waypoint esistenti disegnati (waypoint liberi, waypoint di altri percorsi mostrati, segnali del percorso) e vengono inseriti, nell'ordine in cui fai clic, con il controllo impostato nell'editor dei waypoint. Dopo il primo clic una linea mostra tra quali due waypoint andrà il successivo. Un waypoint già nel percorso viene rifiutato.
+- <img src="../img/icons/move_wp.png" alt="" class="inline-icon" height="18"> **Sposta:** sposta un waypoint.
+- <img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="18"> **Modifica:** modifica un waypoint. Compare il modulo Valori del waypoint, con il nome, la posizione, il tipo di controllo e la data del waypoint. La data è mostrata anche quando è già passata.
+
+  <img src="../img/screens/gfx.waypoint-values.png" alt="" width="400">
+
+- <img src="../img/icons/go-next-red.png" alt="" class="inline-icon" height="18"> **Rimuovi:** toglie il waypoint dal percorso attivo. Resta come waypoint libero e resta mostrato.
+- <img src="../img/icons/delete.png" alt="" class="inline-icon" height="18"> **Elimina:** toglie il waypoint dal percorso e lo elimina. Si può recuperare con **Ripristina** nella scheda Eliminati. Si può eliminare anche un waypoint libero: fai clic su di esso, poi fai di nuovo clic per confermare. Un segnale del percorso, o un waypoint che un altro percorso usa ancora, viene solo rimosso.
+- <img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Segui:** vedi [5.5.4 Segui](0500-using-agl.md#554-segui).
+
+Sposta, Inserisci, Nuovo e Aggiungi rifiutano una posizione fuori dall'area di regata, e per Sposta il waypoint resta raccolto. I segnali del percorso della regata non si possono modificare. Se non c'è un percorso attivo, le modifiche non vengono conservate e il Riscontro lo dice.
+
+Mentre modifichi i waypoint funzionano anche i tasti **D** (elimina), **E** (modifica), **I** (inserisci) e **M** (sposta).
+
+### 5.5.4 Segui
+
+Segui inserisce waypoint che girano intorno alla costa tra due waypoint, così un percorso che attraversa un'isola o un promontorio viene portato attorno ad esso. Vale solo per i waypoint, non per i DC, ed è disponibile per i membri SOL. Servono almeno due waypoint.
+
+1. Scegli **Segui** dal menu del tasto destro. Il messaggio in alto a destra dice **Seleziona il segmento da inserire ( clic destro per annullare)**.
+
+2. Fai clic sulla linea tra i due waypoint che attraversa la terraferma. I waypoint inattivi (quelli con un ! all'inizio del nome) vengono saltati: il segmento è tra i due waypoint attivi ai lati del tuo clic. L'editor dei waypoint compare, come per **Inserisci**. I nuovi waypoint prendono il nome e il comando del primo waypoint del segmento, quindi cambia lì il tipo di controllo se vuoi qualcosa di diverso.
+
+   <img src="../img/manual/image138.png" alt="" width="900">
+
+3. Il messaggio ora dice **Clicca il lato del segmento da cui passare ( clic destro per annullare)**, e una linea sottile segue il mouse a partire dal segmento. Fai clic sul lato del segmento da cui vuoi passare la prima isola. Quel lato vale solo per la prima isola. Se sul segmento ci sono altre isole, ciascuna prende il lato che dà il percorso più breve.
+
+   <img src="../img/manual/image139.png" alt="" width="900">
+
+4. AGL trova la costa che il segmento attraversa e inserisce un waypoint a ogni angolo della costa che la rotta deve aggirare (l'inviluppo convesso), tra il punto in cui il segmento entra per la prima volta nella costa e quello in cui la lascia per l'ultima volta. L'area Riscontro dice quanti waypoint sono stati inseriti. Se non c'è nulla da inserire, dice perché, ad esempio **The segment does not enter and leave any coastline**, e puoi fare clic su un altro segmento.
+
+   <img src="../img/manual/image140.png" alt="" width="900">
+
+5. Il clic destro annulla a entrambi i passaggi. **Annulla** e **Ripeti** nel menu e nella barra degli strumenti tolgono i nuovi waypoint e li rimettono.
+
+Due valori nella scheda **Parametri**, nel riquadro **Waypoint**, impostano dove vanno i waypoint. **Segui: distanza dalla costa (m)** (10 all'inizio) sposta ogni punto di quei metri verso il largo dalla riva. **Segui: distanza lungo la traccia (m)** (0 all'inizio) sposta poi ogni punto lungo la direzione di marcia. AGL controlla quindi ancora una volta, e aggiunge un punto ovunque la rotta spostata attraverserebbe ancora la costa.
+
+### 5.5.5 MaxVMG Waypoints<img src="../img/icons/maxVMG.png" alt="" class="inline-icon" height="24">
+
+Questa sezione descrive come utilizzare i waypoint maxVMG e gli strumenti associati. I waypoint maxVMG sono guidati da un comando memorizzato insieme al waypoint. Il comando è composto da massimo tre caratteri, ad es. 1P+. I comandi applicabili sono descritti di seguito.
+
+#### 5.5.5.1 Comandi dei Waypoint
+
+I controlli della prima lettera per i comandi a due lettere sono i seguenti
+
+| **Comando** | **Comportamento**                                                                                                                           |
+|-------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| **T**       | Guida a twa                                                                                                                                 |
+| **C**       | Guida a CC                                                                                                                                  |
+| **+**       | Guida a maxVMG, prima a dritta e poi vira/strambata a sinistra. Rispetta il waypoint.                                                       |
+| **-**       | Guida a maxVMG, prima a sinistra e poi vira/strambata a dritta. Rispetta il waypoint.                                                       |
+| **1**       | Guida solo a maxVMG, in base al TWA attuale della barca, finché non si raggiunge il punto più vicino al waypoint. Non rispetta il waypoint. |
+| **2**       | Guida diretta e poi maxVMG se necessario. Non rispetta il waypoint.                                                                         |
+| **3**       | Guida solo a maxVMG in stile qtVlm. Virerà/strambata secondo necessità per raggiungere il waypoint. Non rispetta il waypoint.               |
+
+La seconda lettera controlla la performance loss, P oppure N. Ad es., CP guiderà a CC e applicherà la performance loss quando si naviga VERSO quel waypoint. CN guiderà a CC e non applicherà la PL quando si naviga VERSO quel waypoint.
+
+**Attenzione:** Il comportamento della performance loss al waypoint corrente che si sta doppiando è determinato dall'impostazione sul waypoint verso cui si sta navigando.
+
+Ci sono tre comandi che utilizzano tre lettere. Il loro comportamento è documentato di seguito
+
+| **1<sup>°</sup>** | **2<sup>°</sup>** | **3<sup>°</sup>** | **Comportamento**                                                                             |
+|-------------------|-------------------|-------------------|-----------------------------------------------------------------------------------------------|
+| **1, 2 o 3**      | **P o N**         | **+**             | Stesso comportamento di sopra, ma inizia a dritta. Non rispetta il waypoint. Ad es. **2P+**   |
+| **1, 2 o 3**      | **P o N**         | **-**             | Stesso comportamento di sopra, ma inizia a sinistra. Non rispetta il waypoint. Ad es. **3P-** |
+
+Alcuni esempi di questi tipi di waypoint
+
+**-P**
+
+<img src="../img/manual/image146.png" alt="" width="447">
+
+**+P (con data del waypoint)**
+
+<img src="../img/manual/image147.png" alt="" width="435">
+
+**1P- (con data del waypoint)**
+
+<img src="../img/manual/image148.png" alt="" width="470">
+
+**3P+ (con data del waypoint)**
+
+<img src="../img/manual/image149.png" alt="" width="457">
+
+Se la barca ha già navigato il perno di un waypoint **+P**, **-P**, **FP+** o **FP-** (ad esempio dopo una rigenerazione dei DC), AGL va diretto alla boa se può. Se non può, naviga una tratta maxVMG sulla mura in cui si trova la barca e, se questa non può raggiungere la boa, crea la rotta per il segno opposto.
+
+#### 5.5.5.2 Modifica di un Waypoint<img src="../img/icons/edit-5.png" alt="" class="inline-icon" height="24">
+
+Per modificare il nome o il comando del waypoint, usa l'opzione Edit e segui le istruzioni nell'angolo in alto a destra.
+
+**Attenzione:** Assicurati che la modalità di modifica dei waypoint sia attiva. Questa <img src="../img/icons/edit-dc.png" alt="" class="inline-icon" height="18"> icona non deve essere selezionata (bordi grigi). Se lo è, fai clic sull'icona per deselezionare la modifica dei DC.
+
+Il waypoint maxVMG supporta anche un orario di partenza basato sul waypoint. La partenza da un waypoint può essere ritardata fino a un orario specifico, e gli eventuali DC esistenti verranno utilizzati per coprire il tempo dal momento in cui è stato raggiunto il waypoint precedente fino all'orario specificato. Il formato è lo stesso di prima, ed è possibile usare il selettore di data.
+
+<img src="../img/manual/image150.png" alt="" width="211">
+
+### 5.5.6 Conversione dei Waypoint in DC<img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="24">
+
+Dopo aver verificato che i waypoint producano il risultato desiderato, si può usare <img src="../img/icons/convert-vmg-waypoint-to-dc.png" alt="" class="inline-icon" height="18">. Il comando genera un insieme di DC che corrisponde al percorso dei waypoint.
+
+**Nota:** se la barca non si muove, i DC saranno un'istantanea di quel momento, e i DC si sposteranno con il passare del tempo. L'unico caso in cui sono validi con una barca ferma è durante l'haulback, quando la barca è ferma.
+
+### 5.5.7 Waypoint e Percorsi nell'Hub
+
+L'hub ha una finestra **Percorsi > Waypoint e percorsi...** che mostra i percorsi e i waypoint di ogni regata, con una colonna **Regata** e senza filtro per l'area di regata. Usala per ripulire i percorsi e i waypoint delle vecchie regate. In questa finestra non c'è l'importazione.
+
+<img src="../img/screens/hub.hub-waypoints-routes.png" alt="" width="700">
+
+- Spunta i percorsi o i waypoint e premi **Elimina**. Un waypoint usato da un percorso viene rifiutato, e vengono indicati i nomi dei percorsi.
+- La scheda **Eliminati** ha **Ripristina** ed **Elimina...** (definitivamente, dopo aver chiesto). **Seleziona tutto** e **Deseleziona tutto** sono nel menu del tasto destro degli elenchi.
+
+<img src="../img/screens/hub.hub-waypoints-routes-deleted.png" alt="" width="700">
+
+## 5.6 Formati dei File di Importazione
+
+### 5.6.1 File GPX
 
 L'importazione supporta file gpx esportati nel formato rotta. Il file deve essere simile a quello riportato di seguito.
 
@@ -818,7 +892,9 @@ Deve contenere i tag **\<gpx, \<rte\>, \<rtept lat =”….” lon =”…”\>*
 
 Il tag **\<gpx** deve contenere l'attributo **creator=”….”** e deve contenere la parola **Expedition** oppure **qtVlm** da qualche parte nel valore.
 
-### 5.5.2 File CSV
+### 5.6.2 File CSV
+
+**Importante**: Anche se il file CSV funziona, richiede un formato di dati valido e produce una rotta meno precisa di **Route>Export** in qtVlm. Questo metodo non è consigliato.
 
 L'importatore è stato scritto per adattarsi ai formati di file csv di qtVlm, ma potrebbe adattarsi anche ad altri formati di file. Per funzionare, l'importatore richiede una riga di intestazione con i nomi di colonna definiti di seguito.
 
@@ -830,18 +906,6 @@ Il separatore di colonne e dati è impostato su “**;”** e nessun altro separ
 
 Purché il formato del file soddisfi questi requisiti, il caricatore dovrebbe funzionare.
 
-#### 5.5.2.1 Formato Data
+#### 5.6.2.1 Formato Data
 
 La scheda **Parametri** ha un campo denominato DC Import Date Format. Utilizzato per specificare il formato data del file di importazione dei DC. Nell'esportazione della rotta csv da qtVlm, questi saranno tipicamente dd/MM/yyyy HH:mm oppure MM/dd/yyyy HH:mm. Altri formati possono essere definiti come indicato in [SimpleDateFormat (Java SE 25 & JDK 25) (oracle.com)](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/SimpleDateFormat.html).
-
-## 5.6 Waypoint Aggiuntivi
-
-I waypoint aggiuntivi sono un insieme di waypoint tuoi, tenuti separati dal percorso e dai DC. Vengono mostrati nella finestra grafica per poter confrontare una rotta con i DC, ad esempio la rotta che hai pianificato in un pacchetto di routing.
-
-Vengono caricati dal file dei waypoint aggiuntivi del percorso. Il pulsante del selettore di file sceglie il file, e il pulsante di ricarica lo carica di nuovo dopo che lo hai modificato. **Waypoint aggiuntivi** in **Opzioni di vista** li attiva e disattiva.
-
-La DC Data Table non li modifica. Quando carica un file di DC disegna una propria **traccia DC grigia** (vedi [6.3.1 Come Funziona](0600-dc-data-table.md#631-come-funziona)), così puoi lasciare la tua rotta originale nei waypoint aggiuntivi e vedere quanto i DC se ne discostano.
-
-<img src="../img/manual/image172.png" alt="" width="900">
-
-*Waypoint aggiuntivi nella finestra grafica: la linea rossa è la rotta aggiuntiva, con l'orario di ogni punto. La barca è quella verde.*

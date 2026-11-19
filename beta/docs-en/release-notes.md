@@ -1,6 +1,154 @@
-# AGL 25 Release Notes 25.4.3
+# AGL 25 Release Notes
 
-AGL 25.4.X is a major release chain with a lot of new functionality. The focus of this release has been to provide tools that reduce stupid mistakes, get out of trouble before it happens and to improve the efficiency of using both qtVlm and AGL. There are many changes, read the release note as to what they are, and the User Manual on how to use them.
+AGL 25.5.X is another major release chain with a lot of new functionality. The focus of this has been to move waypoint files (now routes) and DCs into an SQLite database to preserve historic data, and allow comparison of current to past data in the graphics. There are several changes, with a significant number of button icon changes and buttons removed. Please read the release notes for what they are, and the User Manual for how to use them.
+
+**Important**: Login in is now handled by the hub. On upgrade, you must enter your credentials into the hub and validate before starting any races. See [2.3.3.9 The SOL Login](manual/0200-installing-agl.md#2339-the-sol-login) and [3.1 Login & Race](manual/0300-configuration.md#31-login-race).
+
+## Version 25.5.1
+
+### Enhancements
+
+#### Editing and checking DCs
+
+1. A new DC Editor shows the DCs of the DC area as a table you can edit directly. See [6.6 The DC Editor](manual/0600-dc-data-table.md#66-the-dc-editor).
+
+    a. Click a cell to edit it. Times use a date spinner limited to the neighbouring DC times, and the graphics updates automatically.
+
+    b. Performance loss (PL) blocks are shown and moved as one block.
+
+    c. A PL column shows the performance loss at each DC, and DCs outside maxVMG are set to maxVMG for you.
+
+    d. Undo and Redo are shared with the graphics.
+
+2. With Use Performance Loss ticked there are two check buttons: Check PL <img src="img/icons/checkDCPLUpdate16.png" alt="" class="inline-icon" height="24">, which adds the PL DCs to the DC area, and a plain Check <img src="img/icons/emblem-important-3.png" alt="" class="inline-icon" height="24"> that shows the DCs exactly as the DC Editor holds them. A DC Editor <img src="img/icons/dc-edit-table.png" alt="" class="inline-icon" height="24"> button sits beside them on the graphics toolbar. See [5.1.10 Check DCs Button](manual/0500-using-agl.md#5110-check-dcs-button).
+
+3. The PL labels in the graphics show the PL the boat arrives with and, in brackets, the PL after the turn. See [5.3.2.3 DC Labels](manual/0500-using-agl.md#5323-dc-labels).
+
+4. A new message, **DCs edited, not set**, warns you by Pushover, Telegram or on screen when you have edited the DCs and not set them for a chosen time, and lets you Set Now or Dismiss. See [5.2.6 DCs Not Yet Set](manual/0500-using-agl.md#526-dcs-not-yet-set).
+
+5. Setting the DCs now looks after PL blocks, and resends a DC that latency has made late. See [5.1.2 Set Button](manual/0500-using-agl.md#512-set-button).
+
+#### The DC Data Table
+
+1. Routes loaded from qtVlm GPX files are cleaned of redundant points. The tolerance, 2 m to start with, is set in the **Filter route (m)** box. See [6.2.2 Filter Route](manual/0600-dc-data-table.md#622-filter-route).
+
+2. A point where the route turns sharply in and straight back out, over a short leg, is treated as a suspect point. It is ticked in the **Exclude?** column, shown in magenta, and is not sent or drawn. See [6.2.3 Suspect Points and the Exclude? Column](manual/0600-dc-data-table.md#623-suspect-points-and-the-exclude-column).
+
+3. Send, Send To, Send Hr and Append now check the DCs and open the DC Editor, hiding the DC Data Table. See [6.4 Setting the DCs](manual/0600-dc-data-table.md#64-setting-the-dcs).
+
+#### Multiple traces and records of the race
+
+1. The multiple traces option in the graphics has been improved. See [5.3.3.1 The Traces Form](manual/0500-using-agl.md#5331-the-traces-form).
+
+    a. Each trace starts at the boat's position when it was made, marked with a boat icon.
+
+    b. Each new trace made in the graphics (Condition, Move, Switch Sign, etc) is stored and can be recalled as an overlay.
+
+2. A new Stored Sets form lists every Set kept for the race, so you can show them as traces, export them as GPX routes or delete them. See [5.3.3.2 Stored Sets](manual/0500-using-agl.md#5332-stored-sets).
+
+3. Race DC Trace keeps every DC that fired, with what was known when it was set, and shows them on the chart, with those of earlier years of the same race. See [5.3.3.3 Race DC Trace](manual/0500-using-agl.md#5333-race-dc-trace).
+
+4. A new **Info** <img src="img/icons/info.png" alt="" class="inline-icon" height="24"> item in the graphics right-click menu shows the details of any DC you click, current or past. See [5.4.2 The Right Click Menu](manual/0500-using-agl.md#542-the-right-click-menu).
+
+5. Boat traces are kept for the whole race, also after AGL is restarted, with any gaps filled in when the server's traces arrive. See [5.3.3.4 Boat Traces](manual/0500-using-agl.md#5334-boat-traces).
+
+6. A trace can be exported as a GPX route from the Traces form, and the GPX export of stored Sets carries the id the server gave each DC. See [5.3.3.1 The Traces Form](manual/0500-using-agl.md#5331-the-traces-form).
+
+#### Routes and waypoints
+
+1. Routes and waypoints are now kept in an SQLite database, managed by the hub, for all your races, and AGL no longer reads or writes waypoint files. See [5.5.1 The Routes and Waypoints Form](manual/0500-using-agl.md#551-the-routes-and-waypoints-form).
+
+    a. A Routes menu and a graphics button open the Routes form, to import and export routes and to make, copy and delete them.
+
+    b. Each route can be shown in its own colour, and one route is the active route.
+
+    c. Only routes inside the race area are listed. Deleted routes can be restored.
+
+2. Waypoints can be edited on the graphics, with new right-click commands, and edits are kept as you make them (there is no Save). See [5.5.3 Editing Waypoints on the Graphics](manual/0500-using-agl.md#553-editing-waypoints-on-the-graphics).
+
+3. The WP Route box on the Parameters tab chooses the route from a list, and so does the Open <img src="img/icons/folder-yellow_open.png" alt="" class="inline-icon" height="24"> button on the graphics toolbar. See [3.2 Waypoints](manual/0300-configuration.md#32-waypoints) and [5.5.2 The Active Route](manual/0500-using-agl.md#552-the-active-route).
+
+4. A Waypoints and Routes window in the hub shows the routes and waypoints of every race. Old routes of any race can be managed there. See [5.5.7 Waypoints and Routes in the Hub](manual/0500-using-agl.md#557-waypoints-and-routes-in-the-hub).
+
+5. The additional course waypoints have been removed, and replaced by Import Route and Show Route. See [3.2 Waypoints](manual/0300-configuration.md#32-waypoints).
+
+#### Graphics window
+
+1. Four new zoom buttons: zoom in, zoom out, zoom to the current trace and zoom to the race area. See [5.4.1 Toolbar Icons](manual/0500-using-agl.md#541-toolbar-icons).
+
+2. Commands no longer reset your zoom. The view is fitted to the new trace only when you Send from the DC Data Table.
+
+3. Other boats are easier to read. See [5.3.2.1 View](manual/0500-using-agl.md#5321-view).
+
+    a. A finished boat is shown as a grey dot with no name.
+
+    b. Every named boat shows its ranking.
+
+    c. Hover over a boat to show its statistics and its trace.
+
+4. The graphics right-click menu now shows only the items that apply to what is on the chart. See [5.4.2 The Right Click Menu](manual/0500-using-agl.md#542-the-right-click-menu).
+
+5. A new **Clear** item in the right-click menu, and the W key, clear the chart of traces, DC points and routes that are not active. See [5.4.2 The Right Click Menu](manual/0500-using-agl.md#542-the-right-click-menu).
+
+6. View Options has a new Wind barbs box to set the barb size and spacing. See [5.3.2 View Options](manual/0500-using-agl.md#532-view-options).
+
+#### Messages and Chats
+
+Items 1 to 3 are for members only.
+
+1. Pushover, Telegram and the messages are now set up once in a new hub **Messaging** form, which replaces the Pushover and Telegram hub menus. See [8.1.2 Setting Up Pushover](manual/0800-chats.md#812-setting-up-pushover).
+
+    a. The form holds the Pushover settings, the Telegram bot and the table of messages. Changes reach every running race as you make them.
+
+    b. Each race has a **Use Hub** tick, to follow the hub's settings or keep its own.
+
+2. The active times for Pushover and Telegram are set once in the hub; a race can follow them or keep its own. See [8.1.4 In Each Race](manual/0800-chats.md#814-in-each-race).
+
+3. The Chats tab shows the boat data (SOG, COG, TWA, PL, Position, DBL and Server Jump) in a row at the top, so it can be read while chatting. See [Chapter 8, Chats](manual/0800-chats.md).
+
+4. Every text box now has the right-click menu (Undo, Cut, Copy, Paste, Select All). See [8.1.1 Replying To Messages](manual/0800-chats.md#811-replying-to-messages).
+
+#### The NOAA grib
+
+1. When you open Routing settings in qtVlm, AGL warns you if the grib qtVlm has loaded is older than the one AGL is using. See [7.3.1 current_grib.grb](manual/0700-noaa-server.md#731-current_gribgrb).
+
+2. AGL warns you before the NOAA download if it does not have enough memory for the grib, and again if it runs out of memory while loading it. See [7.4 Memory](manual/0700-noaa-server.md#74-memory).
+
+#### The hub
+
+1. The hub now manages the SailOnline login for all races. Enter your user name and password once in SOL > Login, and every race uses it. A race can still sail as another user, and you can switch user in a running race without closing it.  Ticking or clearing Use SOL in a running race also changes its login at once.
+
+2. The hub can watch for new SailOnline races, ask if you want to sail them, and register you. You can open a race to look at it before registration opens, and the hub registers you automatically when it does. Timed races are registered at the start and again after they finish. See [2.3.3.10 Watching for New Races](manual/0200-installing-agl.md#23310-watching-for-new-races). A race already set up in one of your race folders is never offered, and if you register on the website yourself the hub notices and does not ask again.
+
+3. Closing the hub now closes its races, which come back on the restart list. See [2.3.3.8 Closing the Hub](manual/0200-installing-agl.md#2338-closing-the-hub).
+
+4. Window frames show the state of a race: red for the Simulator, orange while qtVlm is waiting, and purple when Use SOL is ticked. See [2.3.3.11 Window Frame Colours](manual/0200-installing-agl.md#23311-window-frame-colours).
+
+5. When you make a Set in a race, the hub switches to that race's tab (this can be turned off in the Launcher tab). See [2.3.3.3 The Launcher Tab](manual/0200-installing-agl.md#2333-the-launcher-tab).
+
+6. A hub for production, one for beta and one for development can run on the same computer without overwriting each other's settings. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
+
+7. A new Stow All button beside Add Race puts away the AGL and qtVlm windows of every race in one click. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
+
+#### Logging
+
+1. The Logger tab now holds the essentials, and **View > Detailed logging** adds the working detail of checks and routes. The log is much smaller. See [2.3.4.2 The View Menu](manual/0200-installing-agl.md#2342-the-view-menu) and [2.3.4.3 The Help Menu](manual/0200-installing-agl.md#2343-the-help-menu).
+
+### Bug fixes – 25.5.1
+
+1. +P / -P and FP+ / FP- waypoints no longer go direct when the boat has already sailed the pivot. See [5.2 Checking the Course](manual/0500-using-agl.md#52-checking-the-course).
+
+2. BBQ and mark warnings have been corrected. The phone's BBQ warning now agrees with the predictor trace, so there are no false run-aground warnings, and the warnings are sent whenever In Control is ticked. See [5.2.1 Switching the Checks On](manual/0500-using-agl.md#521-switching-the-checks-on).
+
+3. The Traces list no longer fills with checks AGL makes by itself.
+
+4. In the DC Table, Delete, Send and Copy with nothing to act on no longer clear the whole DC area.
+
+5. The hub, the race window, the Waypoints and Routes window, the DC Editor and the Chats window no longer grow a little each time AGL restarts. Resize each once after updating.
+
+6. Add Race is held off while the hub is still restarting your races.
+
+7. The VMC check for waypoints no longer gives travel times that are too optimistic. See [5.4.1 Toolbar Icons](manual/0500-using-agl.md#541-toolbar-icons).
 
 ## Version 25.4.3
 
@@ -11,6 +159,10 @@ AGL 25.4.X is a major release chain with a lot of new functionality. The focus o
 2. PL blocks no longer drift away from the target PL causing PL DCs not to be recognised as such.
 
 3. The BBQ Checker handles PL blocks properly when it offers a correction. The checker now offers that fix and moves the whole block with it, instead of reporting "Unable to prevent BBQ". See [5.2 Checking the Course](manual/0500-using-agl.md#52-checking-the-course).
+
+4. A race that hangs now leaves a thread dump, and Kill in the hub zips the logs and opens an email to the author.
+
+5. The build number is shown when AGL starts and in the patch dialog.
 
 ## Version 25.4.1
 
@@ -36,7 +188,7 @@ AGL 25.4.X is a major release chain with a lot of new functionality. The focus o
 
 1. AGL can now pre-check DCs for BBQs, missed sea marks and the finish line, with solutions offered to you before the DCs are set. Nothing is changed until you accept a suggestion. The DC Checker also marks the BBQs it finds with red dots, and Tack/Gybe later is available for land avoidance. See [5.2 Checking the Course](manual/0500-using-agl.md#52-checking-the-course).
 
-2. When a DC falls outside maxVMG, AGL now conditions the whole DC list, with Condition All and Set Anyway. See [5.4.6 Conditioning DCs](manual/0500-using-agl.md#546-conditioning-dcs).
+2. When a DC falls outside maxVMG, AGL now conditions the whole DC list, with Condition All and Set Anyway. See [5.4.4 Conditioning DCs](manual/0500-using-agl.md#544-conditioning-dcs).
 
 3. A new Follow command in the graphics popup menu adds waypoints along a coastline between two waypoints. See [5.4.2 The Right Click Menu](manual/0500-using-agl.md#542-the-right-click-menu).
 
@@ -64,13 +216,13 @@ AGL 25.4.X is a major release chain with a lot of new functionality. The focus o
 
 1. AGL warns you when you open Routing settings in qtVlm and the grib has not been refreshed since the last Wx download.
 
-2. The linked qtVlm can be set up in Production mode, or in Test mode to try a new qtVlm release before upgrading. AGL offers to link it again if its set-up is broken, and checks that its map tiles are the set that goes with the SOL maps. See [3.7 qtVlm](manual/0300-configuration.md).
+2. The linked qtVlm can be set up in Production mode, or in Test mode to try a new qtVlm release before upgrading. AGL offers to link it again if its set-up is broken, and checks that its map tiles are the set that goes with the SOL maps. See [3.7 qtVlm](manual/0300-configuration.md#37-qtvlm).
 
 3. AGL plots isobars from the pressure in the grib (SOL and NOAA), and keeps them when a new NOAA download starts. See [5.3.2.1 View](manual/0500-using-agl.md#5321-view).
 
 4. AGL checks that it has enough memory for the NOAA grib. If it runs out, the grib already loaded stays in use.
 
-5. The DC Data Table now starts watching the DC file when AGL starts, reloads it when it changes, and asks whether to switch if qtVlm saves a changed file in a different folder. See [6.3 DC File Change Detection](manual/0600-dc-data-table.md).
+5. The DC Data Table now starts watching the DC file when AGL starts, reloads it when it changes, and asks whether to switch if qtVlm saves a changed file in a different folder. See [6.3 DC File Change Detection](manual/0600-dc-data-table.md#63-dc-file-change-detection).
 
 6. Manage qtVlm dialogs: the qtVlm windows Routing, Converting Routing to Route, Simplification result and Optimization results are brought to the front, one at a time, when they are hidden behind other windows. See [2.3.3.6 Managing qtVlm Dialogs](manual/0200-installing-agl.md#2336-managing-qtvlm-dialogs).
 
@@ -104,7 +256,7 @@ AGL 25.4.X is a major release chain with a lot of new functionality. The focus o
 
 #### Windows, Parameters and logs
 
-1. Text Size and Icon Size on the Parameters tab: Font -/+ and Icon -/+ with a preview of the icon size, applied with Apply Font. The font is always Dialog, so the font choice is gone. See [3.10 Graphics](manual/0300-configuration.md).
+1. Text Size and Icon Size on the Parameters tab: Font -/+ and Icon -/+ with a preview of the icon size, applied with Apply Font. The font is always Dialog, so the font choice is gone. See [3.10 Graphics](manual/0300-configuration.md#310-graphics).
 
 2. Parameters are saved to the ini file as they are changed, so the Save and Refresh buttons are gone. A value that is not valid is not saved, and Feedback says so. See [Chapter 3, Configuration](manual/0300-configuration.md).
 
@@ -125,7 +277,6 @@ AGL 25.4.X is a major release chain with a lot of new functionality. The focus o
 4. Fixed lock up if DCs were checked exactly when the Wx download started.
 
 5. On Linux, the update window did not open when AGL was started from a desktop icon that runs in a terminal. It does now.
-
 
 ## Version 25.3.1
 

@@ -12,13 +12,13 @@ AGL (AutoGribLoader) is a Java 25 application that helps SailOnline sailors run 
 
 **DCs and waypoints**
 
-3.  A DC editor to manage your DC series, with a graphical DC Checker that checks and edits the series against the map tiles, allowing for performance loss.
+3.  A DC Editor that shows the DCs of the DC area as a table you can edit directly, with a graphical DC Checker that checks and edits the series against the map tiles, allowing for performance loss. Traces and Stored Sets keep your earlier checks and Sets so you can compare them with the current ones.
 
-4.  A waypoint editor, and conversion of waypoints to DCs, including maxVMG waypoints.
+4.  Routes and waypoints kept in a database by the hub, with a Routes form, editing on the graphics, and conversion of waypoints to DCs, including maxVMG waypoints.
 
 5.  A DC Data Table that loads a route from Expedition or qtVlm, to check and set as DCs (see [DC Data Table](0600-dc-data-table.md)).
 
-6.  Creates a GPX file of the course waypoints and route, to load into routing packages.
+6.  Imports a .wpt or .gpx file as a route, and exports a route as a GPX file, to load into routing packages.
 
 7.  Creates detailed qtVlm and Expedition polar files for the race.
 
@@ -28,7 +28,7 @@ AGL (AutoGribLoader) is a Java 25 application that helps SailOnline sailors run 
 
 **Phone messages (members only)**
 
-9.  The Chats tab shows the SOL chat rooms, and has Pushover and Telegram rooms that send key events to your phone. Telegram lets you answer from your phone (see [Chats](0800-chats.md)).
+9.  The Chats tab shows the SOL chat rooms, and has a Messaging box that sends key events to your phone through Pushover and Telegram. Messaging is set up once in the hub for every race. Telegram lets you answer from your phone (see [Chats](0800-chats.md)).
 
 **Working with other software**
 
@@ -40,9 +40,9 @@ AGL (AutoGribLoader) is a Java 25 application that helps SailOnline sailors run 
 
 12. Sounds a boat horn when you run aground and are racing.
 
-13. The AGL Hub is the one AGL window on your taskbar. It has a tab for each race, so you can run several races, and it manages updates and restarts (see [Installing AGL](0200-installing-agl.md)).
+13. The AGL Hub is the one AGL window on your taskbar. It has a tab for each race, so you can run several races, and it manages your SailOnline login, updates and restarts. It can also watch for new SailOnline races and register you in them (see [Installing AGL](0200-installing-agl.md)).
 
-14. Logs boat data to a csv file, with position data accurate to one second, and keeps a log file for later analysis. The Help menu can gather your logs and start an email to the author when you need help.
+14. Logs boat data to a csv file, with position data accurate to one second, and keeps a log file for later analysis. The Logger tab holds the essentials, and View > Detailed logging adds the working detail. The Help menu can gather your logs and start an email to the author when you need help.
 
 15. A Simulator that stands in for the SOL server, so you can test AGL and what you will see on your phone without touching your real boat (see [Simulator](0900-simulator.md)). (Members only.)
 
@@ -54,17 +54,17 @@ These are the key steps to get you going. Each one points to the part of the man
 
 2.  **Start AGL.** Double click the AGL25 icon. The AGL Hub opens. The first time, AGL asks for your **races directory**: the folder that will hold all of your race folders, for example D:\sailonline\Races. Do not use the Java25 folder. See [Starting AGL for the First Time](0200-installing-agl.md#232-starting-agl-for-the-first-time).
 
-3.  **Add a race.** Click **Add Race** and choose a race folder, or make a new one. **Open** starts AGL in the folder and waits for you to press Apply. **Start** starts it and presses Apply for you. See [Adding a Race](0200-installing-agl.md#2335-adding-a-race).
+3.  **Add a race.** Click **Add Race** and choose a race folder, or make a new one. **Open** starts AGL in the folder and waits for you to press Apply. **Start** starts it and presses Apply for you. Or tick **Watch for new races** on the hub's Launcher tab, and the hub offers you each new race and registers you. See [Adding a Race](0200-installing-agl.md#2335-adding-a-race).
 
-4.  **Fill in the Parameters tab.** Enter your SOL **User name** and **Password**, choose the **Race** from the drop-down list, and press **Apply**. See [Configuration](0300-configuration.md).
+4.  **Log in and fill in the Parameters tab.** Enter your SOL user name and password once in the hub, with **SOL > Login...**. On the Parameters tab leave **Use the hub login** ticked, choose the **Race** from the drop-down list, and press **Apply**. See [The SOL Login](0200-installing-agl.md#2339-the-sol-login) and [Configuration](0300-configuration.md).
 
 5.  **Wait for initialisation.** It can take up to 30 seconds. When it is done, AGL shows the DC Checker tab, and your boat data starts to appear. See [Initialisation](0400-initialisation.md).
 
-6.  **Check and set your DCs.** Your current DCs are loaded into the Delay Commands window. Edit them, check them against the map, then press **Set** to send them to the server. See [DC Checker Tab](0500-using-agl.md#51-dc-checker-tab).
+6.  **Check and set your DCs.** Your current DCs are loaded into the Delay Commands window and the DC Editor. Edit them, check them against the map, then press **Set** to send them to the server. See [DC Checker Tab](0500-using-agl.md#51-dc-checker-tab).
 
-7.  **Switch the checks on (members only).** Tick **In Control** on the DC Checker tab, and **Check for BBQ** and **Check mark roundings** on the Parameters tab, so that AGL keeps watching your course while you race. See [Checking the Course](0500-using-agl.md#52-checking-the-course).
+7.  **Switch the checks on (members only).** Tick **In Control** on the DC Checker tab, and AGL warns you about BBQs and missed marks while you race. **Check for BBQ** and **Check mark roundings** on the Parameters tab decide whether AGL also offers a fix. See [Checking the Course](0500-using-agl.md#52-checking-the-course).
 
-**If something goes wrong,** send your logs to the author. Choose **Help > Mail logs...** in the hub or in a race window. AGL gathers the logs, removes anything secret such as passwords and tokens, and opens a new email for you, with the folder holding the zip file beside it. Add what you were doing and what went wrong, drag the zip into the email, and send it. Nothing leaves your computer until you press **Send**. See [Mailing Your Logs](0200-installing-agl.md#mailing-your-logs).
+**If something goes wrong,** send your logs to the author. Choose **Help > Mail logs...** in the hub or in a race window. If the author asks, tick **View > Detailed logging** first and repeat the problem. AGL gathers the logs, removes anything secret such as passwords and tokens, and opens a new email for you, with the folder holding the zip file beside it. Add what you were doing and what went wrong, drag the zip into the email, and send it. Nothing leaves your computer until you press **Send**. See [Mailing Your Logs](0200-installing-agl.md#mailing-your-logs).
 
 When that works, you may want to add:
 

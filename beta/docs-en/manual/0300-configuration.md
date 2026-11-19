@@ -4,29 +4,27 @@ You are now ready to configure and fill out the fields as follows:
 
 ## 3.1 Login & Race
 
-**Use SOL as login id:** Check this if you want to log on as SOL.
+**Use the hub login:** Ticked to start with. The hub logs on to SailOnline for this race with the login you gave it (see [The SOL Login](0200-installing-agl.md#2339-the-sol-login)), and the **User name** and **Password** boxes are greyed. Clear it to log on as another user, for example to sail a boat for someone else; the race then uses the **User name** and **Password** below. You can tick or clear it in a running race too. The race gets a new login and the DCs are loaded again, so there is no need to close the race.
+
+**Use SOL as login id:** Check this if you want to log on as SOL, to look at a race you are not yet registered in. The race window has a purple frame while it is ticked (see [Window Frame Colours](0200-installing-agl.md#23311-window-frame-colours)). AGL remembers the setting between starts, and unticks it when the hub registers you in the race.
 
 ***Note*:** If your **User name** is not **sol** and this is checked, you will automatically be logged out as **sol** and logged in under your **User name** once the race has started.
 
-**User name:** Your SOL username (boat name)
+**User name:** Your SOL username (boat name). It is used only when **Use the hub login** is not ticked.
 
-**Password:** Your SOL password
+**Password:** Your SOL password, used only when **Use the hub login** is not ticked. Tick **Show password** to see what is typed.
 
 **Race:** Using the Race drop-down combo list, select the current Race. This will automatically populate the race ID.
 
-<img src="../img/manual/image60.png" alt="" width="208">
+<img src="../img/screens/main.params-login-race.png" alt="" width="300">
+
+<img src="../img/screens/main.race-dropdown.png" alt="" width="300">
 
 ***Note*:** If there are no races in the list, you most likely have an internet connection error. Check your internet, close the app and restart.
 
-## 3.2 Course & Waypoints
+## 3.2 Waypoints
 
-**Waypoint file:** Name of the waypoint file to use; can be a gpx file.
-
-**Course waypoint file:** Allows a waypoint or gpx format file to be loaded as additional course waypoints. Select the <img src="../img/icons/document-open-2.png" alt="" class="inline-icon" height="18"> which will launch the file chooser.
-
-<img src="../img/manual/image61.png" alt="" width="326">
-
-Select the file to use and **Open**. Selecting **Cancel** will clear the currently selected file. This file will now be automatically used each time DC Checker is used.
+AGL no longer reads or writes waypoint files. The routes and waypoints of a race are kept in the hub's database, and you import and export GPX files from the Routes form (see Chapter 5).
 
 **VMG tolerance:** Used by the Waypoint to DC routine to determine how closely it needs to honour a waypoint when tacking or gybing to a waypoint. This is an iterative process, and the finer the tolerance, the longer it will take (and may fail).
 
@@ -58,31 +56,25 @@ Select the file to use and **Open**. Selecting **Cancel** will clear the current
 
 On selection, the year will be highlighted. Use the left and right arrows, or Tab and shift-Tab to move between date and time components. You can also click on each component with the mouse. When the component is highlighted, the up and down arrows will increment and decrement that value respectively. The same applies to the arrows at the end of the field.
 
-<img src="../img/manual/image64.png" alt="" width="386">
+<img src="../img/screens/main.date-spinner.png" alt="" width="450">
 
-**Use race start time:** This allows the user to check DCs from the start. If checked, the checker will assume that the boat is at the start waypoint, and the time is the start time. Any DCs after that time will be processed in producing the route. If left unchecked, the start time will be now.
+**Use race start:** This allows the user to check DCs from the start. If checked, the checker will assume that the boat is at the start waypoint, and the time is the start time. Any DCs after that time will be processed in producing the route. If left unchecked, the start time will be now.
 
-**Display boat position:** This is used when the boat is a long way away from the DCs of interest. It will not be plotted or considered in producing the route. Most applicable when **Use these start coordinates** is checked.
-
-**Use these start coordinates:** The route will be calculated assuming the boat is at the **Start coords (lat, lon)**, and the time will be wound forward to the time of the first DC.
-
-**Start coords (lat, lon):** The start coordinates for the route. It is in the format that can be pasted directly from the SOL client. To pick up coordinates from the SOL client, hold the Alt key down, and then click the left mouse button. This copies the coordinates of the crosshairs into the copy/paste buffer.
+**Display boat position:** This is used when the boat is a long way away from the DCs of interest. It will not be plotted or considered in producing the route.
 
 ## 3.5 DCs
-
-**Make DC using CC:** Used by the waypoint to DC converter to determine how to drive to the next waypoint. Should be left checked.
 
 **Wake up DC:** If checked, additional DCs will be inserted at the defined time before the next DC is due to fire. If no DCs are executed for a while, the server jump drifts out to 30 seconds. This can be a problem in rounds as there are now 30 seconds of uncertainty as to when the DC will fire. This is used to wake the server up on roundings so that DCs are fired at 10 second intervals.
 
 **Wake up (min):** The time in minutes to insert an additional DC before the next one fires. 5 minutes is a good duration.
 
-**Mark clearance (m):** How far clear of a course mark, in metres, the boat must pass it to count as having rounded it, and how far past the mark the DC that turns the boat must fire. The default is 5.
+**DC clearance time (s):** The server can fire a DC up to this long early. The fixes keep clear of the land, and the marks are rounded, with a DC that early. The default is 10. A smaller time makes smaller changes but takes more risk.
 
-**Check for BBQ:** If checked, AGL looks along the boat's course and your DCs for land, sends the BBQ messages and offers fixes. It also needs In Control to be on.
+**Check for BBQ:** If checked, the BBQ Checker looks along your DCs and the boat's course for land and offers fixes. The real-time BBQ messages need **In Control** to be on; this box does not switch them.
 
 **BBQ lookahead (min):** How far ahead, in minutes, Check for BBQ looks along the course or the DCs. The default is 60.
 
-**Check mark roundings:** If checked, AGL warns you when the boat is going to miss the next mark it has to round. It also needs In Control to be on.
+**Check mark roundings:** If checked, the BBQ Checker also checks the mark roundings, and warns you when the boat is going to miss a mark it has to round. The real-time missed-mark warning needs **In Control** to be on; this box does not switch it.
 
 **Mark lookahead (min):** How far ahead, in minutes, the mark check looks for the mark. The default is 15.
 
@@ -150,9 +142,11 @@ You are now ready to make a new AGL test race folder by doing the following.
 
     <img src="../img/screens/dlg.qtvlm-no-set-up-for-this-race-folder.png" alt="" width="1008">
 
-6.  If the qtVlm maps that AGL uses have not been downloaded already, this will be displayed.
+6. If the qtVlm maps that AGL uses have not been downloaded already, this will be displayed.
 
-    <img src="../img/screens/dlg.qtvlm-map-tiles-missing.png" alt="" width="565">Select **Yes** to continue. **No** will cancel the integration setup. qtVlm's maps have to be the same set as SOL's, so qtVlm is not started without them. On Windows, you will be asked to allow changes to be made to this computer. Select **Yes** to continue.
+   <img src="../img/screens/dlg.qtvlm-map-tiles-missing.png" alt="" width="565">
+
+   Select **Yes** to continue. **No** will cancel the integration setup. qtVlm's maps have to be the same set as SOL's, so qtVlm is not started without them. On Windows, you will be asked to allow changes to be made to this computer. Select **Yes** to continue.
 
 7.  You will now be asked for the location of the Test instance. Navigate down to the C:\SOL\qtTest\qtVlm folder (or ~/qtTest\qtVlm for Linux/macOS in their folder chooser). This folder must contain qtVlm.exe (or qtVlm for Linux/macOS).
 
@@ -168,11 +162,11 @@ You are now ready to make a new AGL test race folder by doing the following.
 
 9.  The qtVlm icon on the toolbar will now be enabled. Click on it.
 
-    <img src="../img/manual/image72.png" alt="" width="350">
+    <img src="../img/manual/image72.png" alt="" width="900">
 
 10. The qtVlm startup page for a new install will now be displayed.
 
-    <img src="../img/manual/image73.png" alt="" width="347">
+    <img src="../img/manual/image73.png" alt="" width="900">
 
 11. You may see this error. Just click **OK**.
 
@@ -238,7 +232,7 @@ If the required maps have not been downloaded, you will be asked
 
 Click **Yes**. If the tiles you already have are another version's, AGL asks to move them aside and download the right set: answer Yes. If any qtVlm sessions are running, you will see
 
-<img src="../img/manual/image80.png" alt="" width="381">
+<img src="../img/manual/image80.png" alt="" width="500">
 
 Close any open qtVlm sessions. The dialog will disappear once all sessions are closed, and it will proceed with the download.
 
@@ -252,7 +246,7 @@ There may be other prompts regarding the maps. If asked to download, answer **Ye
 
 5.  If qtVlm doesn't start after 90 seconds (for example because qtVlm shows an error about missing files or maps and stops), a window opens saying qtVlm has not started. One solution is to remove all links and relink.
 
-    <img src="../img/manual/image82.png" alt="" width="405">
+    <img src="../img/manual/image82.png" alt="" width="800">
 
 6.  Select **Clean and link again** which should fix the problem. If not, you need to investigate outside AGL what is wrong with the qtVlm install.
 
@@ -272,19 +266,17 @@ If you do not see that message when you stop the NMEA in qtVlm, the port has loc
 
 provided that you have correctly configured qtVlm and it has been working in the past. If that does not occur, close both AGL and qtVlm, restart AGL, then launch qtVlm from AGL once again. If they still do not connect, you now need to reboot your computer to reset the ports at a system level.
 
-<img src="../img/screens/dlg.start-up-the-nmea-port-is-in-use-enter-another.png" alt="" width="491">If the NMEA port set in AGL is already in use when AGL starts by another AGL race or by another program, AGL will alert you and ask for a new port number. It will use the next available port as a suggestion.
+<img src="../img/screens/dlg.start-up-the-nmea-port-is-in-use-enter-another.png" alt="" width="491">
+
+If the NMEA port set in AGL is already in use when AGL starts by another AGL race or by another program, AGL will alert you and ask for a new port number. It will use the next available port as a suggestion.
 
 Enter the port you want this race to use. AGL checks it and, if it is free, saves it and starts the NMEA connection on it, so the next session starts cleanly. If the port you enter is in use as well, you are asked again. Each race needs its own unique port.
 
 If you click **Cancel**, AGL keeps the original port and waits for it to become free. The next time AGL starts qtVlm, it sets qtVlm's TCP port to match AGL's. If qtVlm is already running, close it and start it again from AGL so that it connects on the new port.
 
-## 3.8 Race Messages, Mayday & AIS
+## 3.8 Race Messages & AIS
 
 **Monitor race messages:** This will monitor the race message feed, and if any new race message arrives, the race information is updated.
-
-**Make mayday calls:** If checked, the BBQ rescue feature will be enabled. The feature is discussed in detail later.
-
-**Mayday respondents:** Who can respond to your mayday calls. Discussed later.
 
 **AIS boat list:** The list of boats whose AIS information will be sent in the NMEA feed. If blank, all boats are sent. Selecting the <img src="../img/icons/ais16.png" alt="" class="inline-icon" height="18">icon opens the AIS Boat Chooser. Select the desired boats and click Add. Then click Apply to update the AIS boat list. The icon is on both the Parameters and DC Checker tabs.
 
@@ -334,6 +326,10 @@ AGL now makes a grib called current_grib.grb which is an exact replica of what i
 
 **Wind barb size (px):** The size in pixels that the wind barbs will be drawn.
 
+The barb spacing and size can also be changed in the [View Options](0500-using-agl.md#532-view-options) form.
+
+**Zoom step:** How much one click of **Zoom in** or **Zoom out** on the graphics toolbar zooms. It must be more than 1. The default is 1.5, which is a third of the view each click.
+
 **Text Size:** The size of the text and buttons in AGL's windows. Font - and Font + change the size by 1, and show the new size beside the one in use. Apply Font applies it. The font is always Dialog, so there is no font to choose.
 
 **Icon Size:** The size of the icons, as a percentage of their normal size (50 to 300, normally 100). Icon - and Icon + change it by 10, and the In Control icon is shown at the new size as a preview. Apply Font applies it.
@@ -373,6 +369,8 @@ Max TWA: TWA at which maximum boat speed occurs
 Max Speed: The maximum speed in knots
 
 **Note:** The log file can be loaded into the graphical checker.
+
+**Log DC firing times:** If checked, AGL writes a file called dc_timing_&lt;race&gt;.csv in the logs folder of the race folder. It compares the time each DC was set with the time the server actually carried it out, to show how early or late the server fires DCs. You only need it if the author asks for it.
 
 **Create AIS log file:** If checked, the application will automatically create a log file of all the AIS boats data at every server jump. This ranges from 10 to 30 seconds.
 
@@ -461,64 +459,6 @@ If the client disconnects, the application will stop transmitting, and then wait
 ***Note:*** It can take up to 30 seconds for the data feed to start. The waypoints will be sent immediately, but the data feed waits for the next server jump to start.
 
 To start the application, select **Apply**. This will apply the settings and start the selected components.
-
-The parameters are written to an .ini file, which by default, is called **autoGribLoader.ini**. The application supports different .ini files in two ways. By default, the AGL_run.bat file specifies the .ini file as a command line argument at the end of the .bat file, thus:
-
-*"!INSTALL_DIR!\windows_jre%AGL_GEN%\bin\java.exe" ^*
-
-*-Dsun.java2d.uiScale.enabled=false ^*
-
-*-Dfile.encoding=UTF8 ^*
-
-*--enable-native-access=ALL-UNNAMED ^*
-
-*--add-opens=java.base/sun.nio.ch=ALL-UNNAMED ^*
-
-*--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED ^*
-
-*--add-exports=java.base/java.lang=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.awt=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.java2d=ALL-UNNAMED ^*
-
-*-classpath "!INSTALL_DIR!\\VERSION!.jar;!INSTALL_DIR!\agl%AGL_GEN%\_lib\\;" ^*
-
-*main.AGMain ^*
-
-***autoGribLoader.ini***
-
-You can edit the .bat file using a text editor and specify a different .ini file, or none. If no .ini file is specified, as shown below,
-
-*"!INSTALL_DIR!\windows_jre%AGL_GEN%\bin\java.exe" ^*
-
-*-Dsun.java2d.uiScale.enabled=false ^*
-
-*-Dfile.encoding=UTF8 ^*
-
-*--enable-native-access=ALL-UNNAMED ^*
-
-*--add-opens=java.base/sun.nio.ch=ALL-UNNAMED ^*
-
-*--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED ^*
-
-*--add-exports=java.base/java.lang=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.awt=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.java2d=ALL-UNNAMED ^*
-
-*-classpath "!INSTALL_DIR!\\VERSION!.jar;!INSTALL_DIR!\agl%AGL_GEN%\_lib\\;" ^*
-
-*main.AGMain*
-
-a file chooser will appear when you execute the .bat file and the ini file can be selected as shown below.
-
-For Linux and macOS, the AGL_run.sh scripts contain a similar command at the end of the file, and can be adjusted in the same way.
-
-<img src="../img/manual/image86.png" alt="" width="341">
-
-Select the file or Cancel to exit completely.
 
 Changes to the parameters are saved to the ini file as you make them: a text box is saved when you press Enter or Tab, or click in another field. If a value is not valid it is not saved: the box goes back to its last good value and a message in Feedback says so.
 
