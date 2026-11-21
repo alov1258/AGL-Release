@@ -24,7 +24,7 @@ AGL 25.5.X è un'altra serie di release importante, con molte nuove funzionalit�
 
 3. Le etichette PL nella grafica mostrano la PL con cui la barca arriva e, tra parentesi, la PL dopo la virata. Vedi [5.3.2.3 Etichette dei DC](manual/0500-using-agl.md#5323-etichette-dei-dc).
 
-4. Un nuovo messaggio, **DC modificati, non impostati**, ti avvisa tramite Pushover, Telegram o sullo schermo quando hai modificato i DC e non li hai impostati per un tempo stabilito, e ti permette di Imposta ora o Ignora. Vedi [5.2.6 DC Non Ancora Impostati](manual/0500-using-agl.md#526-dc-non-ancora-impostati).
+4. Un nuovo messaggio, **DC modificati, non impostati**, ti avvisa tramite Pushover, Telegram o sullo schermo quando hai modificato i DC e non li hai impostati per un tempo stabilito, e ti permette di Imposta ora, Aggiorna o Lascia, sullo schermo e su Telegram. Vedi [5.2.6 DC Non Ancora Impostati](manual/0500-using-agl.md#526-dc-non-ancora-impostati).
 
 5. L'impostazione dei DC ora si occupa dei blocchi PL, e invia di nuovo un DC che la latenza ha reso in ritardo. Vedi [5.1.2 Pulsante Set](manual/0500-using-agl.md#512-pulsante-set).
 
@@ -72,6 +72,10 @@ AGL 25.5.X è un'altra serie di release importante, con molte nuove funzionalit�
 
 5. I waypoint aggiuntivi del percorso sono stati rimossi e sostituiti da Importa percorso e Mostra percorso. Vedi [3.2 Waypoint](manual/0300-configuration.md#32-waypoint).
 
+6. Un percorso si può costruire e cambiare nel modulo Percorsi: Modifica, Aggiungi, Rimuovi, Su e Giù agiscono sui waypoint del percorso. Vedi [5.5.1.2 Modifica dei Waypoint di un Percorso](manual/0500-using-agl.md#5512-modifica-dei-waypoint-di-un-percorso).
+
+7. Quando più di un waypoint si trova nel punto su cui fai clic per Modifica, Aggiungi, Rimuovi o Elimina, una piccola finestra di dialogo ti lascia scegliere quale. Vedi [5.5.3 Modifica dei Waypoint nella Grafica](manual/0500-using-agl.md#553-modifica-dei-waypoint-nella-grafica).
+
 #### Finestra grafica
 
 1. Quattro nuovi pulsanti di zoom: ingrandisci, riduci, zoom sulla traccia attuale e zoom sull'area di regata. Vedi [5.4.1 Icone della Toolbar](manual/0500-using-agl.md#541-icone-della-toolbar).
@@ -104,7 +108,7 @@ Le voci da 1 a 3 sono solo per i membri.
 
 2. Gli orari attivi per Pushover e Telegram si impostano una volta nell'hub; una regata può seguirli o tenere i propri. Vedi [8.1.4 In Ogni Regata](manual/0800-chats.md#814-in-ogni-regata).
 
-3. La scheda Chat mostra i dati della barca (SOG, COG, TWA, PL, Posizione, DBL e Salto server (s)) in una riga in alto, così si possono leggere mentre si chatta. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+3. La scheda Chat mostra i dati della barca (SOG, COG, TWA, PL, Posizione, DBL e Salto server (s)) in una riga in alto, così si possono leggere mentre si chatta. Vedi [8 Chat](manual/0800-chats.md#8-chat).
 
 4. Ogni casella di testo ora ha il menu del tasto destro (Annulla, Taglia, Copia, Incolla, Seleziona tutto). Vedi [8.1.1 Rispondere ai Messaggi](manual/0800-chats.md#811-rispondere-ai-messaggi).
 
@@ -118,7 +122,7 @@ Le voci da 1 a 3 sono solo per i membri.
 
 1. L'hub ora gestisce l'accesso a SailOnline per tutte le regate. Inserisci nome utente e password una volta in SOL > Accesso, e ogni regata li usa. Una regata può comunque regatare come un altro utente, e puoi cambiare utente in una regata in esecuzione senza chiuderla. Selezionare o deselezionare Usa SOL in una regata in esecuzione ne cambia subito l'accesso.
 
-2. L'hub può controllare le nuove regate SailOnline, chiederti se vuoi parteciparvi e iscriverti. Puoi aprire una regata per guardarla prima che si aprano le iscrizioni, e l'hub ti iscrive automaticamente quando si aprono. Le regate a tempo vengono iscritte alla partenza e di nuovo dopo l'arrivo. Vedi [2.3.3.10 Controllare le Nuove Regate](manual/0200-installing-agl.md#23310-controllare-le-nuove-regate). Una regata già configurata in una delle tue cartelle di regata non viene mai proposta, e se ti iscrivi tu stesso sul sito l'hub se ne accorge e non te lo richiede.
+2. Una nuova scheda Regate nell'hub elenca ogni regata SailOnline con il suo stato di iscrizione e l'ora di partenza. Spunta Iscrivere? per iscriverti e Ignorare? per mettere da parte una regata, poi fai clic su Applica. Puoi aprire una regata per guardarla prima che si aprano le iscrizioni (con l'accesso come sol), e l'hub ti iscrive automaticamente quando si aprono. Le regate a tempo vengono iscritte alla partenza e di nuovo dopo l'arrivo. La scheda trova da sola le regate a cui sei iscritto, comprese quelle a cui ti sei iscritto sul sito. Vedi [2.3.3.10 La Scheda Regate](manual/0200-installing-agl.md#23310-la-scheda-regate).
 
 3. Chiudere l'hub ora chiude le sue regate, che tornano nell'elenco di riavvio. Vedi [2.3.3.8 Chiusura dell'Hub](manual/0200-installing-agl.md#2338-chiusura-dellhub).
 
@@ -150,6 +154,14 @@ Le voci da 1 a 3 sono solo per i membri.
 
 7. Il controllo VMC per i waypoint non dà più tempi di percorrenza troppo ottimistici. Vedi [5.4.1 Icone della Toolbar](manual/0500-using-agl.md#541-icone-della-toolbar).
 
+8. Il BBQ Checker non fallisce più nel correggere una collisione perché un esportatore di percorsi ha messo accanto al DC che sposta un DC con quasi la stessa rotta. Tali DC ora vengono ignorati dai controlli. Vedi [5.2.2 Il BBQ Checker](manual/0500-using-agl.md#522-il-bbq-checker).
+
+9. Una linea di arrivo mancata subito dopo l'ultimo DC ora viene trovata, e il BBQ Checker lo dice nel Logger quando il percorso non raggiunge l'arrivo. Vedi [5.2.4 L'Arrivo](manual/0500-using-agl.md#524-larrivo).
+
+10. La grafica poteva smettere di ridisegnarsi quando i puntini rossi BBQ erano sullo schermo e la traccia attuale era nascosta. Ogni traccia ora conserva i suoi puntini. Vedi [5.3.3.1 Il Modulo Tracce](manual/0500-using-agl.md#5331-il-modulo-tracce).
+
+11. Le note di rilascio ora si aprono nel browser anche dopo un aggiornamento Beta (la pagina beta per un'installazione Beta).
+
 ## Versione 25.4.3
 
 ### Correzioni di bug – 25.4.3
@@ -173,7 +185,7 @@ Le voci da 1 a 3 sono solo per i membri.
     sh -c "'$HOME/SOL/Java25/AGL_start.sh'"
     ```
 
-    (usa la cartella in cui è installato AGL se non è ~/SOL/Java25; per un'installazione Beta usa `Java25Beta` e aggiungi `--channel=beta` dopo le virgolette di chiusura del percorso). Oppure esegui tu stesso l'installer, come descritto nella sezione 2.1.3 del Manuale Utente.
+    (usa la cartella in cui è installato AGL se non è ~/SOL/Java25; per un'installazione Beta usa `Java25Beta` e aggiungi `--channel=beta` dopo le virgolette di chiusura del percorso). Oppure esegui tu stesso l'installer, come descritto nella sezione [2.1.3 Linux](manual/0200-installing-agl.md#213-linux) del Manuale Utente.
 
 2. Se AGL dice che un aggiornamento è in corso e non c'è nessuna finestra di aggiornamento aperta, elimina il file di blocco dell'aggiornamento e avvia di nuovo AGL:
 
@@ -193,21 +205,21 @@ Le voci da 1 a 3 sono solo per i membri.
 
 #### Messaggi sul telefono
 
-1. AGL ora può inviare messaggi in tempo reale al tuo telefono tramite Pushover e Telegram: arrivo del Wx, rischio di incaglio o incaglio avvenuto, boa che sta per essere mancata o mancata, regata che parte senza rotta, e DC del server che finiscono prima del prossimo Wx (No DCs). I messaggi di emergenza si ripetono finché non li confermi sul telefono. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+1. AGL ora può inviare messaggi in tempo reale al tuo telefono tramite Pushover e Telegram: arrivo del Wx, rischio di incaglio o incaglio avvenuto, boa che sta per essere mancata o mancata, regata che parte senza rotta, e DC del server che finiscono prima del prossimo Wx (No DCs). I messaggi di emergenza si ripetono finché non li confermi sul telefono. Vedi [8 Chat](manual/0800-chats.md#8-chat).
 
-2. Pushover si configura una sola volta nell'hub, per tutte le regate. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+2. Pushover si configura una sola volta nell'hub, per tutte le regate. Vedi [8 Chat](manual/0800-chats.md#8-chat).
 
-3. Telegram funziona con un solo bot nell'hub, con canali per ciascuna regata. AGL può proporti una variazione di rotta sul telefono, e viene applicata solo quando la confermi da lì. Un insieme di comandi permette di controllare lo stato e inviare variazioni di rotta dal telefono. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+3. Telegram funziona con un solo bot nell'hub, con canali per ciascuna regata. AGL può proporti una variazione di rotta sul telefono, e viene applicata solo quando la confermi da lì. Un insieme di comandi permette di controllare lo stato e inviare variazioni di rotta dal telefono. Vedi [8 Chat](manual/0800-chats.md#8-chat).
 
-4. Replica delle chat room del client SOL in una scheda chat staccabile. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+4. Replica delle chat room del client SOL in una scheda chat staccabile. Vedi [8 Chat](manual/0800-chats.md#8-chat).
 
-5. I messaggi inviati da AGL più lunghi di 187 caratteri vengono divisi in parti e trasmessi insieme, e AGL cerca di riunire i messaggi divisi in un unico messaggio. Vedi [Capitolo 8, Chat](manual/0800-chats.md).
+5. I messaggi inviati da AGL più lunghi di 187 caratteri vengono divisi in parti e trasmessi insieme, e AGL cerca di riunire i messaggi divisi in un unico messaggio. Vedi [8 Chat](manual/0800-chats.md#8-chat).
 
 #### Finestra grafica
 
 1. Un modulo Opzioni di vista nella finestra grafica sostituisce diverse icone della barra degli strumenti e aggiunge i campi delle etichette DC, una legenda, Riempi i poligoni della terra e Carattere -/+ per la grafica. Vedi [5.3.2 Opzioni di vista](manual/0500-using-agl.md#532-opzioni-di-vista).
 
-2. Traccia DC grigia nella finestra grafica, alimentata direttamente dalla DC Data Table, con un pulsante on/off; i waypoint aggiuntivi non vengono più sovrascritti dai DC. Vedi [Capitolo 6, DC Data Table](manual/0600-dc-data-table.md).
+2. Traccia DC grigia nella finestra grafica, alimentata direttamente dalla DC Data Table, con un pulsante on/off; i waypoint aggiuntivi non vengono più sovrascritti dai DC. Vedi [6 DC Data Table](manual/0600-dc-data-table.md#6-dc-data-table).
 
 3. Le barche AIS ora vengono tracciate anche dopo la fine di una regata.
 
@@ -215,13 +227,13 @@ Le voci da 1 a 3 sono solo per i membri.
 
 1. AGL ti avvisa quando apri Routing settings in qtVlm e il grib non è stato aggiornato dopo l'ultimo download del Wx.
 
-2. Il qtVlm collegato può essere configurato in modalità Production, oppure in modalità Test per provare una nuova release di qtVlm prima di aggiornare. AGL propone di collegarlo di nuovo se la sua configurazione è danneggiata, e verifica che le sue tile delle mappe siano il set che corrisponde alle mappe SOL. Vedi [3.7 qtVlm](manual/0300-configuration.md).
+2. Il qtVlm collegato può essere configurato in modalità Production, oppure in modalità Test per provare una nuova release di qtVlm prima di aggiornare. AGL propone di collegarlo di nuovo se la sua configurazione è danneggiata, e verifica che le sue tile delle mappe siano il set che corrisponde alle mappe SOL. Vedi [3.7 qtVlm](manual/0300-configuration.md#37-qtvlm).
 
 3. AGL traccia le isobare dalla pressione presente nel grib (SOL e NOAA), e le conserva quando parte un nuovo download NOAA. Vedi [5.3.2.1 Vista](manual/0500-using-agl.md#5321-vista).
 
 4. AGL verifica di avere memoria sufficiente per il grib NOAA. Se la memoria finisce, resta in uso il grib già caricato.
 
-5. La DC Data Table ora inizia a controllare il file dei DC all'avvio di AGL, lo ricarica quando cambia, e chiede se passare al nuovo file quando qtVlm salva un file modificato in una cartella diversa. Vedi [6.3 Rilevamento delle Modifiche al File DC](manual/0600-dc-data-table.md).
+5. La DC Data Table ora inizia a controllare il file dei DC all'avvio di AGL, lo ricarica quando cambia, e chiede se passare al nuovo file quando qtVlm salva un file modificato in una cartella diversa. Vedi [6.3 Rilevamento delle Modifiche al File DC](manual/0600-dc-data-table.md#63-rilevamento-delle-modifiche-al-file-dc).
 
 6. Gestione delle finestre di dialogo di qtVlm: le finestre di qtVlm Routing, Converting Routing to Route, Simplification result e Optimization results vengono portate in primo piano, una alla volta, quando sono nascoste dietro altre finestre. Vedi [2.3.3.6 Gestione delle Finestre di Dialogo di qtVlm](manual/0200-installing-agl.md#2336-gestione-delle-finestre-di-dialogo-di-qtvlm).
 
@@ -251,13 +263,13 @@ Le voci da 1 a 3 sono solo per i membri.
 
 2. Il Manuale Utente e le Note di Rilascio sono ora pagine web. Vengono installati con AGL e si aprono dal menu Aiuto senza internet, e sono anche online su https://alov1258.github.io/AGL-Release/. Le versioni PDF e i relativi collegamenti sul desktop non vengono più installati, e l'installer rimuove quelli vecchi quando aggiorni.
 
-3. Il Simulatore (solo per i membri) sostituisce il server SailOnline, così puoi provare AGL, e ciò che vedrai sul telefono, senza toccare la tua barca reale. Ha una propria scheda Simulatore. Fai riferimento alla sezione 9 del Manuale Utente. Vedi [Capitolo 9, Simulatore](manual/0900-simulator.md).
+3. Il Simulatore (solo per i membri) sostituisce il server SailOnline, così puoi provare AGL, e ciò che vedrai sul telefono, senza toccare la tua barca reale. Ha una propria scheda Simulatore. Fai riferimento a [9 Simulatore](manual/0900-simulator.md#9-simulatore).
 
 #### Finestre, Parametri e log
 
-1. Dimensione testo e Dimensione icone nella scheda Parametri: Carattere -/+ e Icone -/+ con un'anteprima della dimensione delle icone, applicate con Applica carattere. Il font è sempre Dialog, quindi la scelta del font non c'è più. Vedi [3.10 Grafica](manual/0300-configuration.md).
+1. Dimensione testo e Dimensione icone nella scheda Parametri: Carattere -/+ e Icone -/+ con un'anteprima della dimensione delle icone, applicate con Applica carattere. Il font è sempre Dialog, quindi la scelta del font non c'è più. Vedi [3.10 Grafica](manual/0300-configuration.md#310-grafica).
 
-2. I parametri vengono salvati nel file ini man mano che vengono modificati, quindi i pulsanti Save e Refresh non ci sono più. Un valore non valido non viene salvato, e Riscontro lo segnala. Vedi [Capitolo 3, Configurazione](manual/0300-configuration.md).
+2. I parametri vengono salvati nel file ini man mano che vengono modificati, quindi i pulsanti Save e Refresh non ci sono più. Un valore non valido non viene salvato, e Riscontro lo segnala. Vedi [3 Configurazione](manual/0300-configuration.md#3-configurazione).
 
 3. AGL ricorda le posizioni delle finestre dell'hub e di AGL e le ripristina all'avvio. Una finestra la cui dimensione risulta sbagliata dopo lo spostamento tra schermi con scala diversa viene riparata.
 
@@ -321,7 +333,7 @@ Solo Windows e Linux. macOS seguirà non appena funzionante e verrà abilitato t
 
 **IMPORTANTE:**
 
-AGL 25.2.7 è un aggiornamento importante basato sulla 25.1.5. Il Manuale Utente descrive la procedura di installazione nella sezione 2.1 per ciascuna delle piattaforme supportate. Per l'aggiornamento dalla 25.1.5, AGL deve eseguire una riorganizzazione importante oltre ad aggiornare l'ambiente runtime. Questo significa che AGL non può più funzionare dalla cartella Java25 attuale, e deve rimuovere completamente tutti i file in quella cartella associati alle release precedenti. Vedrai il seguente messaggio quando proverai per la prima volta ad aggiornare. Digitando **Y** verrà effettuata un'installazione di prova pulita della nuova versione, senza toccare la tua installazione attuale. Puoi usarla se vuoi dare un'occhiata alla nuova versione, continuando comunque a utilizzare quella vecchia.
+AGL 25.2.7 è un aggiornamento importante basato sulla 25.1.5. Il Manuale Utente descrive la procedura di installazione nella sezione [2.1 Installazione e Aggiornamento di AGL 25](manual/0200-installing-agl.md#21-installazione-e-aggiornamento-di-agl-25) per ciascuna delle piattaforme supportate. Per l'aggiornamento dalla 25.1.5, AGL deve eseguire una riorganizzazione importante oltre ad aggiornare l'ambiente runtime. Questo significa che AGL non può più funzionare dalla cartella Java25 attuale, e deve rimuovere completamente tutti i file in quella cartella associati alle release precedenti. Vedrai il seguente messaggio quando proverai per la prima volta ad aggiornare. Digitando **Y** verrà effettuata un'installazione di prova pulita della nuova versione, senza toccare la tua installazione attuale. Puoi usarla se vuoi dare un'occhiata alla nuova versione, continuando comunque a utilizzare quella vecchia.
 
 ![Il prompt dell'installer mostrato prima dell'aggiornamento](img/upgrade-installer-prompt.png)
 
@@ -337,15 +349,15 @@ Una volta aggiornato alla 25.2.7, il launcher di AGL gestirà gli aggiornamenti 
 
 2. Usabilità del selettore data (date spinner) migliorata. Il selettore data ora si sposta tra i componenti con Tab, Shift-Tab e con un clic del mouse.
 
-3. Le release ora provengono da GitHub e l'installer è stato riscritto. Si avvia da un link nel Manuale Utente, funziona allo stesso modo su Windows, Linux e macOS (solo aarch64) e non richiede più variabili d'ambiente. Fai riferimento alla sezione 2.1 del Manuale Utente.
+3. Le release ora provengono da GitHub e l'installer è stato riscritto. Si avvia da un link nel Manuale Utente, funziona allo stesso modo su Windows, Linux e macOS (solo aarch64) e non richiede più variabili d'ambiente. Fai riferimento alla sezione [2.1 Installazione e Aggiornamento di AGL 25](manual/0200-installing-agl.md#21-installazione-e-aggiornamento-di-agl-25) del Manuale Utente.
 
 4. L'installer è suddiviso in componenti (applicazione, runtime Java, librerie, launcher, tile delle mappe e documenti) e scarica solo ciò che gli serve. Un file già presente nella cartella Downloads viene riutilizzato solo se è la versione corrente. Le installazioni pulite e l'applicazione delle patch sono ora lo stesso processo.
 
-5. Uno script cleaner rimuove le impostazioni, i collegamenti e i file di programma di AGL, in modo che il computer appaia come se AGL non fosse mai stato installato. Le cartelle delle regate e le tile delle mappe non vengono mai rimosse. Fai riferimento alla sezione 2.2 del Manuale Utente.
+5. Uno script cleaner rimuove le impostazioni, i collegamenti e i file di programma di AGL, in modo che il computer appaia come se AGL non fosse mai stato installato. Le cartelle delle regate e le tile delle mappe non vengono mai rimosse. Fai riferimento alla sezione [2.2 Rimozione Completa di AGL](manual/0200-installing-agl.md#22-rimozione-completa-di-agl) del Manuale Utente.
 
 6. I documenti non hanno più la versione nel nome. L'installer aggiunge il Manuale Utente e le Note di Rilascio correnti alla cartella di installazione (in italiano se il tuo computer è impostato sull'italiano) e inserisce sul desktop un collegamento a ciascuno. Il titolo di ciascun documento indica la release a cui si riferisce, e la versione della release è controllata dalla release su GitHub.
 
-7. AGL controlla la disponibilità di una versione più recente a ogni avvio e, dopo la tua conferma, si chiude ed esegue l'installer. Se sono in esecuzione altre sessioni di AGL, chiede di chiuderle al posto tuo; ciascuna si chiude come se avessi fatto clic sul suo pulsante di chiusura, quindi le sue impostazioni vengono salvate. AGL non può essere avviato mentre è in corso un aggiornamento. Fai riferimento alla sezione 2.4 del Manuale Utente.
+7. AGL controlla la disponibilità di una versione più recente a ogni avvio e, dopo la tua conferma, si chiude ed esegue l'installer. Se sono in esecuzione altre sessioni di AGL, chiede di chiuderle al posto tuo; ciascuna si chiude come se avessi fatto clic sul suo pulsante di chiusura, quindi le sue impostazioni vengono salvate. AGL non può essere avviato mentre è in corso un aggiornamento. Fai riferimento alla sezione [2.4 Aggiornamento di AGL](manual/0200-installing-agl.md#24-aggiornamento-di-agl) del Manuale Utente.
 
 8. Una release può richiedere che AGL venga ripulito prima dell'installazione, ad esempio quando si aggiorna da una versione vecchia. AGL lo fa dopo la tua conferma, conservando le cartelle delle regate e le tile delle mappe.
 
@@ -445,7 +457,7 @@ Una volta aggiornato alla 25.2.7, il launcher di AGL gestirà gli aggiornamenti 
 
 ### Miglioramenti
 
-1. La DC Data Table ora supporta l'importazione dei file gpx di qtVlm ed Expedition in formato rotta. Leggi la Sezione 6 del manuale utente prima di utilizzare la DC Data Table.
+1. La DC Data Table ora supporta l'importazione dei file gpx di qtVlm ed Expedition in formato rotta. Leggi la Sezione [6 DC Data Table](manual/0600-dc-data-table.md#6-dc-data-table) del manuale utente prima di utilizzare la DC Data Table.
 
 2. Il selettore file ora utilizza la directory del file corrente come cartella predefinita.
 

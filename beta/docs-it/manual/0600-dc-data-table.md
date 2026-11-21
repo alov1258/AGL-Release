@@ -48,7 +48,7 @@ La finestra dei comandi (cmd) dice cosa non va, ad esempio una colonna mancante 
 
 <img src="../img/manual/image163.png" alt="" width="900">
 
-**Nota:** AGL controlla il file dei DC e carica i nuovi dati ogni volta che viene modificato (vedi **Rilevamento delle Modifiche al File DC** più avanti). Questo permette all'utente di riutilizzare lo stesso file a ogni importazione dal file csv.
+**Nota:** AGL controlla il file dei DC e carica i nuovi dati ogni volta che viene modificato (vedi [6.3 Rilevamento delle Modifiche al File DC](0600-dc-data-table.md#63-rilevamento-delle-modifiche-al-file-dc)). Questo permette all'utente di riutilizzare lo stesso file a ogni importazione dal file csv.
 
 Durante il caricamento, AGL ha verificato se ci sono DC al di fuori dell'intervallo ottimale di VMG e, in tal caso, ha impostato automaticamente il comando su “twa” e il valore su maxVMG. Questo può essere disattivato deselezionando il pulsante di opzione MaxVMG, nel qual caso il valore e il comando verranno impostati su COG/cc.
 

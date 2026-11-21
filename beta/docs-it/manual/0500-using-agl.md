@@ -98,7 +98,7 @@ Il diagramma mostra anche le linee Max VMG sia per la bolina che per la poppa. L
 
 ### 5.1.9 DC Data Table <img src="../img/icons/dc-data-table.png" alt="" class="inline-icon" height="24">
 
-Questo avvierà la DC Data Table. Il funzionamento è descritto nella sezione [6 DC Data Table](0600-dc-data-table.md).
+Questo avvierà la DC Data Table. Il funzionamento è descritto nella sezione [6 DC Data Table](0600-dc-data-table.md#6-dc-data-table).
 
 <img src="../img/manual/image100.png" alt="" width="602">
 
@@ -171,7 +171,7 @@ I messaggi BBQ e di boa mancata in tempo reale richiedono che **In controllo** s
 
 <img src="../img/screens/main.params-dcs-checks.png" alt="" width="350">
 
-Ogni controllo ha un anticipo (look ahead), in minuti. I messaggi relativi partono quando il controllo trova il problema entro quell'anticipo. I messaggi stessi, e quando vanno al telefono, si impostano nella scheda Chat (vedi [Chat](0800-chats.md)).
+Ogni controllo ha un anticipo (look ahead), in minuti. I messaggi relativi partono quando il controllo trova il problema entro quell'anticipo. I messaggi stessi, e quando vanno al telefono, si impostano nella scheda Chat (vedi [8 Chat](0800-chats.md#8-chat)).
 
 Possono essere attivati e disattivati anche nella barra degli strumenti della scheda Controllo DC.
 
@@ -190,6 +190,8 @@ Per ogni collisione AGL mostra dove avviene, ad esempio "Potential collision aft
 <img src="../img/screens/dlg.fix-report-two-fixes-check-boxes-apply-apply-pl-cancel.png" alt="" width="440">
 
 Una soluzione può impostare un DC a un nuovo orario, spostare un DC, aggiungere un DC prima della collisione, oppure dare una nuova rotta.
+
+I DC che mantengono quasi la stessa rotta del DC che li precede (entro la tolleranza del filtro dei percorsi della Tabella Dati DC, 2 m all'inizio) non cambiano nulla, quindi il controllo BBQ, il BBQ Checker e il controllo prima di Imposta DC li lasciano fuori, e una soluzione non viene rifiutata a causa di uno di essi.
 
 Una soluzione non cambia mai da sola i DC all'interno di un blocco di perdita di prestazione (PL). L'unico DC di un blocco PL che può spostare è il DC di ingresso, e allora si sposta con lui il resto del blocco, mantenendo distanze e valori. Quando la collisione dipende dal server che attiva un DC un secondo o due in anticipo, il titolo lo dice ("with 1 s early server hop") e le soluzioni ne tengono conto.
 
@@ -239,7 +241,7 @@ La grafica ingrandisce l'area del problema e mostra le possibili soluzioni. Se M
 
 ### 5.2.4 L'Arrivo
 
-Per la linea di arrivo il percorso deve attraversare la linea lontano dalle sue estremità. Un percorso che attraversa oltre l'estremità della linea viene segnalato come una boa mancata. AGL propone una nuova rotta verso la linea, o una rotta con perno verso la boa, quando riesce a trovarne una.
+Per la linea di arrivo il percorso deve attraversare la linea lontano dalle sue estremità. Un percorso che attraversa oltre l'estremità della linea viene segnalato come una boa mancata. Il BBQ Checker e il controllo prima di Imposta DC seguono i DC oltre l'ultimo DC per l'**Anticipo boa**, così un attraversamento subito dopo l'ultimo DC viene trovato. Se il percorso non raggiunge l'arrivo, il Logger lo dice. Una nuova rotta verso la linea non viene proposta quando richiederebbe un DC oltre l'Anticipo boa dopo l'ultimo DC. AGL propone una nuova rotta verso la linea, o una rotta con perno verso la boa, quando riesce a trovarne una.
 
 <img src="../img/screens/dlg.finish-a-new-route-to-the-line-is-offered.png" alt="" width="660">
 
@@ -257,7 +259,7 @@ Mentre fai regata, AGL esegue da solo i controlli e mostra una finestra di sugge
 
 <img src="../img/screens/dlg.live-suggestion-window-check-boxes-apply-apply-pl-dismiss.png" alt="" width="440">
 
-Se non rispondi, il suggerimento può andare anche al telefono, tramite Pushover o Telegram. Con Telegram arriva con i pulsanti **Applica** e **Ignora**, così puoi rispondere dal telefono. Vedi [Chat](0800-chats.md) per come configurarlo.
+Se non rispondi, il suggerimento può andare anche al telefono, tramite Pushover o Telegram. Con Telegram arriva con i pulsanti **Applica** e **Ignora**, così puoi rispondere dal telefono. Vedi [8 Chat](0800-chats.md#8-chat) per come configurarlo.
 <img src="../img/screens/tg.suggestion.png" alt="" width="500"> 
 
 Se premi **Applica**, il comando viene inviato ad AGL perché lo esegua. AGL aggiornerà poi il messaggio con lo stato della barca dopo l'**Applica**.
@@ -307,7 +309,7 @@ Ogni casella attiva o disattiva una cosa nella grafica.
 - **Isotache** mostra le linee di uguale velocità del vento.
 - **Isobare** mostra le linee di uguale pressione. **Spaziatura isobare (hPa)** imposta la pressione tra le linee, da 1 a 50.
 - **Traccia DC della regata** mostra i DC scattati in questa regata (vedi [5.3.3.3 Traccia DC della Regata](0500-using-agl.md#5333-traccia-dc-della-regata)).
-- **Etichette** mostra le etichette dei DC, impostate più sotto.
+- **Etichette** mostra le etichette dei DC, impostate in [5.3.2.3 Etichette dei DC](0500-using-agl.md#5323-etichette-dei-dc).
 - **Riempi i poligoni della terra** riempie le forme della terraferma.
 
 La visualizzazione seguente mostra le barche AIS e le loro tracce, e la linea di previsione. Il numero sotto ciascuna barca AIS è la sua posizione attuale. I quattro numeri sotto la tua barca sono posizione, TWA, SOG e performance loss.
@@ -318,7 +320,7 @@ Inoltre, se la tua barca è nell'elenco AIS, verrà mostrata in nero nella posiz
 
 <img src="../img/manual/image121.png" alt="" width="532">
 
-**Dimensione e spaziatura delle barbe del vento:** il riquadro **Barbe del vento** imposta la grandezza delle barbe (**Dimensione barbe (px)**, da 10 a 300 pixel) e la loro distanza (**Spaziatura barbe (px)**, da 20 a 1000 pixel). I pulsanti **-** e **+** rendono il valore 1,1 volte più piccolo o più grande a ogni clic, oppure puoi scrivere un valore. La grafica cambia subito e i valori vengono salvati. Si trovano anche nella scheda Parametri (vedi [Grafica](0300-configuration.md#310-grafica)).
+**Dimensione e spaziatura delle barbe del vento:** il riquadro **Barbe del vento** imposta la grandezza delle barbe (**Dimensione barbe (px)**, da 10 a 300 pixel) e la loro distanza (**Spaziatura barbe (px)**, da 20 a 1000 pixel). I pulsanti **-** e **+** rendono il valore 1,1 volte più piccolo o più grande a ogni clic, oppure puoi scrivere un valore. La grafica cambia subito e i valori vengono salvati. Si trovano anche nella scheda Parametri (vedi [3.10 Grafica](0300-configuration.md#310-grafica)).
 
 **Altre barche:** una barca che ha finito la regata è disegnata come un piccolo punto grigio nella sua ultima posizione, senza nome. Le barche con nome (l'elenco AIS, o **Mostra i nomi delle altre barche**) mostrano la loro classifica tra parentesi sotto il nome. Tieni il mouse su una barca qualsiasi per vederne i dettagli: la sua traccia viene disegnata come una linea del colore del suo nome finché il mouse non si sposta.
 
@@ -347,7 +349,8 @@ Ogni volta che controlli, modifichi o imposti i DC, AGL disegna il risultato nel
 
 - La prima riga in grassetto è la traccia **attuale**, l'ultima cosa fatta. Ha una casella **Mostra** come le altre. Viene spuntata di nuovo a ogni nuova traccia attuale, così non resta mai nascosta per errore. Toglila per guardare più da vicino una traccia precedente.
 - Le altre righe sono tracce precedenti. Spunta **Mostra** per confrontarle con quella attuale. **Evento** dice cosa è stato fatto, e **Ora (UTC)** quando. **Imposta** è l'ora di un Set. **Colore** è il colore della traccia.
-- **Testo** mostra le etichette sulla traccia. Quando è spuntato le etichette mostrano i campi scelti in [Etichette dei DC](0500-using-agl.md#5323-etichette-dei-dc), e quando non lo è mostrano solo gli orari.
+- **Testo** mostra le etichette sulla traccia. Quando è spuntato le etichette mostrano i campi scelti in [5.3.2.3 Etichette dei DC](0500-using-agl.md#5323-etichette-dei-dc), e quando non lo è mostrano solo gli orari.
+- Ogni traccia conserva i puntini rossi BBQ trovati per essa. Quando sono mostrate più tracce, ognuna ha i suoi puntini, e una traccia non mostrata non ha puntini. La traccia attuale mostra i puntini dell'ultimo controllo BBQ. I Set riletti dal database non hanno puntini.
 - **Mostra le tracce selezionate insieme a quella attuale** attiva e disattiva le tracce confrontate. Non influisce sulla traccia attuale.
 - **Reimposta** rimuove tutte le tracce tranne quella attuale e i Set. **Svuota** rimuove le tracce con **Mostra** spuntato. La traccia attuale resta sempre. Fai clic su una riga per selezionarla (viene evidenziata, una riga alla volta, e resta selezionata quando l'elenco si aggiorna).
 - **Esporta GPX...** salva la traccia selezionata come file GPX nella cartella della regata, con lo stesso formato dell'esportazione dei Set salvati: un percorso, con il numero del DC come nome di ogni punto. Vengono scritti solo i DC. Il file si chiama "Trace &lt;regata&gt; &lt;evento&gt; &lt;ora&gt;.gpx".
@@ -375,7 +378,7 @@ I Set sono conservati nel database della regata, `db/dc_<id regata>.db`, nella c
 
 #### 5.3.3.3 Traccia DC della Regata
 
-Spunta **Traccia DC della regata** in Opzioni di vista per vedere i DC scattati in questa regata. Ognuno è un punto rosso scuro con il suo orario in UTC. I DC scattati nelle regate precedenti con lo stesso nome sono punti arancioni senza etichetta. Il registro è conservato nell'hub insieme alla regata. Usa **Info** nel menu del tasto destro per leggere i dettagli di un punto.
+Spunta **Traccia DC della regata** in [5.3.2 Opzioni di vista](0500-using-agl.md#532-opzioni-di-vista) per vedere i DC scattati in questa regata. Ognuno è un punto rosso scuro con il suo orario in UTC. I DC scattati nelle regate precedenti con lo stesso nome sono punti arancioni senza etichetta. Il registro è conservato nell'hub insieme alla regata. Usa **Info** nel menu del tasto destro per leggere i dettagli di un punto.
 
 <img src="../img/screens/gfx.race-dc-trace.png" alt="" width="600">
 
@@ -691,6 +694,19 @@ Nulla di ciò che elimini va perso subito. La scheda **Eliminati** elenca i perc
 - **Unisci duplicati** unisce le voci duplicate.
 - **Seleziona tutto** e **Deseleziona tutto** sono nel menu del tasto destro degli elenchi.
 
+#### 5.5.1.2 Modifica dei Waypoint di un Percorso
+
+Sotto la tabella dei **Waypoint del percorso** (seleziona un percorso per vederla) ci sono cinque pulsanti. Le stesse voci sono nel menu del tasto destro della tabella.
+
+- **Modifica...** apre l'Editor dei waypoint per il waypoint selezionato. Un doppio clic su una riga fa lo stesso. Puoi cambiare il nome e la posizione di un tuo waypoint (un waypoint del tracciato mostra solo il controllo e l'ora di inizio), e il controllo e l'ora di inizio. **OK** applica la modifica e **Annulla** la scarta.
+- **Aggiungi** mette nel percorso i waypoint che hai selezionato nell'elenco **Waypoint nell'area di regata**, dopo la riga selezionata (in fondo se nessuna riga è selezionata). Ognuno è una riga a sé, senza controllo, e lo stesso waypoint può essere aggiunto più volte.
+- **Rimuovi** toglie dal percorso le righe selezionate, dopo una domanda. I waypoint restano nell'area di regata.
+- **Su** e **Giù** spostano di un posto le righe selezionate, anche più insieme.
+
+Ogni modifica viene salvata subito. La spunta **Superato** resta con la sua riga quando viene spostata.
+
+Il nome e la posizione appartengono al waypoint, quindi rinominarlo o spostarlo cambia il waypoint in ogni percorso che lo usa. Il controllo e l'ora di inizio appartengono solo a questa riga di questo percorso.
+
 ### 5.5.2 Il Percorso Attivo
 
 Ci sono tre modi per scegliere il percorso attivo:
@@ -725,6 +741,12 @@ Le voci del menu del tasto destro per i waypoint lavorano sul percorso attivo. S
 - <img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Segui:** vedi [5.5.4 Segui](0500-using-agl.md#554-segui).
 
 Sposta, Inserisci, Nuovo e Aggiungi rifiutano una posizione fuori dall'area di regata, e per Sposta il waypoint resta raccolto. I segnali del percorso della regata non si possono modificare. Se non c'è un percorso attivo, le modifiche non vengono conservate e il Riscontro lo dice.
+
+**Waypoint nello stesso punto.** Quando si fa clic su Modifica, Aggiungi, Rimuovi o Elimina dove è disegnato più di un waypoint (entro circa 6 pixel dal più vicino), si apre al mouse una piccola finestra di dialogo con una casella per ciascuno: un waypoint del percorso che stai modificando (con il suo posto nel percorso e il suo controllo), un waypoint libero, un waypoint di un altro percorso mostrato, o una boa del tracciato. Il più vicino è spuntato. Modifica e Aggiungi prendono un solo waypoint (spuntarne un altro toglie la spunta al primo). Rimuovi ed Elimina prendono ogni waypoint spuntato, così i duplicati possono essere tolti insieme, e segue il solito clic di conferma. Annulla, o nessuna spunta, non fa nulla. Quando c'è un solo waypoint non viene chiesto niente.
+
+<img src="../img/screens/dlg.waypoints-at-the-same-spot-edit-or-add-tick-one.png" alt="" width="600">
+
+<img src="../img/screens/dlg.waypoints-at-the-same-spot-remove-or-delete-tick-several.png" alt="" width="700">
 
 Mentre modifichi i waypoint funzionano anche i tasti **D** (elimina), **E** (modifica), **I** (inserisci) e **M** (sposta).
 

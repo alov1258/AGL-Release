@@ -154,7 +154,7 @@ On pressing **Apply**, the correction is applied and the message is update with 
 
 <img src="../img/screens/tg.apply.png" alt="" width = "500">
 
-**DCs edited, not set** warns you when the DC area has been edited and not set for the number of minutes in its **lead** (15 by default; the message is off until you tick it). Pushover gets a notice. Telegram and the screen show **Set Now** and **Dismiss**: **Set Now** sets the DCs, and **Dismiss** reads the DC area from the server again and drops your edits. Each new edit restarts the time.
+**DCs edited, not set** warns you when the DC area has been edited and not set for the number of minutes in its **lead** (15 by default; the message is off until you tick it). Pushover gets a notice. The message has three buttons, on Telegram and in the dialog on the screen: **Set Now** sets the DCs, **Refresh** reads the DC area from the server again and drops your edits, and **Leave** closes the message and keeps the DC area as it is, still edited (the X on the screen dialog does the same). On Telegram, **Refresh** is answered with "Refreshing the DCs", and typing `TG D` means Leave for this message. Each new edit restarts the time.
 
 You can also send commands back to AGL to control your boat. Commands start with the race number, or you can `SET` the race first. They are for members only. `HELP` lists them; the main ones are:
 
@@ -177,7 +177,7 @@ Steering from the phone needs **In Control** to be ticked in AGL.
 
 ### 8.1.6 Testing Telegram
 
-Before turning the live messaging on, it is advisable to use the [Simulator](0900-simulator.md) to test what is going to happen with each event, both on the console and with Telegram. We suggest you do the following tests on any race that has finished or is yet to start.
+Before turning the live messaging on, it is advisable to use the [9 Simulator](0900-simulator.md#9-simulator) to test what is going to happen with each event, both on the console and with Telegram. We suggest you do the following tests on any race that has finished or is yet to start.
 
 #### 8.1.6.1 BBQ Checking
 

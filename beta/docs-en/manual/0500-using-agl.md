@@ -94,7 +94,7 @@ The diagram also shows the Max VMG lines for both beating and running. The max S
 
 ### 5.1.9 DC Data Table <img src="../img/icons/dc-data-table.png" alt="" class="inline-icon" height="24">
 
-This will launch the DC Data Table. Operation is described in section [6 DC Data Table](0600-dc-data-table.md).
+This will launch the DC Data Table. Operation is described in section [6 DC Data Table](0600-dc-data-table.md#6-dc-data-table).
 
 <img src="../img/manual/image100.png" alt="" width="602">
 
@@ -167,7 +167,7 @@ The real-time BBQ and missed-mark messages need **In Control** to be ticked. The
 
 <img src="../img/screens/main.params-dcs-checks.png" alt="" width="350">
 
-Each check has a look ahead, in minutes. The messages for it go out when the check finds the problem within that look ahead. The messages themselves, and when they go to your phone, are set on the Chats tab (see [Chats](0800-chats.md)).
+Each check has a look ahead, in minutes. The messages for it go out when the check finds the problem within that look ahead. The messages themselves, and when they go to your phone, are set on the Chats tab (see [8 Chats](0800-chats.md#8-chats)).
 
 These can also be enabled and disabled on the DC Checker toolbar.
 
@@ -186,6 +186,8 @@ For each collision AGL shows where it happens, for example "Potential collision 
 <img src="../img/screens/dlg.fix-report-two-fixes-check-boxes-apply-apply-pl-cancel.png" alt="" width="440">
 
 A fix can set a DC to a new time, move a DC, add a DC before the collision, or give a new course.
+
+DCs that keep almost the same course as the DC before them (within the route filter tolerance of the DC Data Table, 2 m to start with) change nothing, so the BBQ look, the BBQ Checker and the check before Set DCs leave them out, and a fix is not refused because of one.
 
 A fix never changes the DCs inside a performance loss (PL) block on its own. The one DC of a PL block it may move is the entry DC, and then the rest of the block moves with it, keeping its spacing and values. Where the collision depends on the server firing a DC a second or two early, the heading says so ("with 1 s early server hop") and the fixes allow for it.
 
@@ -235,7 +237,7 @@ The graphics zooms to the problem area and shows the potential solutions. png im
 
 ### 5.2.4 The Finish
 
-For the finish line the path has to cross the line clear of its end. A path that crosses beyond the end of the line is reported in the same way as a missed mark. AGL offers a new route to the line, or a pivot route to the mark, when it can find one.
+For the finish line the path has to cross the line clear of its end. A path that crosses beyond the end of the line is reported in the same way as a missed mark. The BBQ Checker and the check before Set DCs follow the DCs past the last DC by the **Mark lookahead**, so a crossing just after the last DC is found. If the finish is not reached by the path, the Logger says so. A new route to the line is not offered when it would need a DC more than the Mark lookahead after the last DC. AGL offers a new route to the line, or a pivot route to the mark, when it can find one.
 
 <img src="../img/screens/dlg.finish-a-new-route-to-the-line-is-offered.png" alt="" width="660">
 
@@ -253,7 +255,7 @@ While you race, AGL runs the checks itself and shows a suggestion window when it
 
 <img src="../img/screens/dlg.live-suggestion-window-check-boxes-apply-apply-pl-dismiss.png" alt="" width="440">
 
-If you do not answer, the suggestion can go to your phone as well, by Pushover or Telegram. With Telegram it arrives with **Apply** and **Dismiss** buttons, so you can answer from the phone. See [Chats](0800-chats.md) for how to set that up.
+If you do not answer, the suggestion can go to your phone as well, by Pushover or Telegram. With Telegram it arrives with **Apply** and **Dismiss** buttons, so you can answer from the phone. See [8 Chats](0800-chats.md#8-chats) for how to set that up.
 <img src="../img/screens/tg.suggestion.png" alt="" width = "500"> 
 
 If you hit **Apply**, the command is sent to AGL to execute. AGL will then update the message with the status of the boat after the **Apply**.
@@ -303,7 +305,7 @@ Each check box switches one thing on or off in the graphics.
 - **Isotachs** shows lines of equal wind speed.
 - **Isobars** shows lines of equal pressure. **Isobar spacing (hPa)** sets the pressure between the lines, from 1 to 50.
 - **Race DC Trace** shows the DCs that have fired in this race (see [5.3.3.3 Race DC Trace](0500-using-agl.md#5333-race-dc-trace)).
-- **Labels** shows the DC labels, set up below.
+- **Labels** shows the DC labels, set up in [5.3.2.3 DC Labels](0500-using-agl.md#5323-dc-labels).
 - **Fill land polygons** fills the land shapes.
 
 The display below shows AIS boats and their traces, and the predictor line. The number beneath each AIS boat is their current position. The four numbers below your own boat are position, TWA, SOG and performance loss.
@@ -314,7 +316,7 @@ Also, if your boat is in the AIS list, it will be shown in black in the position
 
 <img src="../img/manual/image121.png" alt="" width="532">
 
-**Wind barb size and spacing:** the **Wind barbs** box sets how big the barbs are (**Barb size**, 10 to 300 pixels) and how far apart they are (**Barb spacing**, 20 to 1000 pixels). The **-** and **+** buttons make the value 1.1 times smaller or larger with each click, or you can type a value. The graphics change at once, and the values are saved. They are also on the Parameters tab (see [Graphics](0300-configuration.md#310-graphics)).
+**Wind barb size and spacing:** the **Wind barbs** box sets how big the barbs are (**Barb size**, 10 to 300 pixels) and how far apart they are (**Barb spacing**, 20 to 1000 pixels). The **-** and **+** buttons make the value 1.1 times smaller or larger with each click, or you can type a value. The graphics change at once, and the values are saved. They are also on the Parameters tab (see [3.10 Graphics](0300-configuration.md#310-graphics)).
 
 **Other boats:** a boat that has finished the race is drawn as a small grey dot at its last position, with no name. The boats that are named (the AIS list, or **Show other boat names**) show their ranking in brackets under the name. Hold the mouse over any boat to see its details, and its trace is drawn as a line in the colour of its name until the mouse moves away.
 
@@ -343,7 +345,8 @@ Whenever you check, change or set the DCs, AGL draws the result in the graphics 
 
 - The bold first row is the **current** trace, the latest thing done. It has a **Show** tick like the others. It is ticked again for every new current trace, so it is never left hidden by mistake. Untick it to look at an earlier trace more closely.
 - The other rows are earlier traces. Tick **Show** to compare them with the current one. **Event** says what was done, and **Time (UTC)** when. **Set** is the time of a Set. **Colour** is the colour of the trace.
-- **Text** shows the labels on the trace. When it is ticked the labels show the fields chosen in [DC Labels](0500-using-agl.md#5323-dc-labels), and when it is not ticked they show only the times.
+- **Text** shows the labels on the trace. When it is ticked the labels show the fields chosen in [5.3.2.3 DC Labels](0500-using-agl.md#5323-dc-labels), and when it is not ticked they show only the times.
+- Each trace keeps the red BBQ dots found for it. When several traces are shown, each has its own dots, and a trace that is not shown has no dots. The current trace shows the dots of the last BBQ check. Sets read back from the database have no dots.
 - **Show the ticked traces with the current one** switches the compared traces on and off. It does not affect the current trace.
 - **Reset** removes all the traces except the current one and the Sets. **Clear** removes the traces that are ticked **Show**. The current trace always stays. Click a row to select it (it is highlighted, one row at a time, and stays selected when the list refreshes).
 - **Export GPX...** saves the selected trace as a GPX file in the race folder, in the same layout as the Stored Sets export: one route, with the DC number as the name of each point. Only the DCs are written. The file is named "Trace &lt;race&gt; &lt;event&gt; &lt;time&gt;.gpx".
@@ -371,7 +374,7 @@ The Sets are kept in the race database, `db/dc_<race id>.db`, in the race folder
 
 #### 5.3.3.3 Race DC Trace
 
-Tick **Race DC Trace** in View Options to see the DCs that have fired in this race. Each is a dark red dot with its time in UTC. The DCs that fired in earlier races of the same name are orange dots with no label. The record is kept in the hub with the race. Use **Info** on the right click menu to read the details of a dot.
+Tick **Race DC Trace** in [5.3.2 View Options](0500-using-agl.md#532-view-options) to see the DCs that have fired in this race. Each is a dark red dot with its time in UTC. The DCs that fired in earlier races of the same name are orange dots with no label. The record is kept in the hub with the race. Use **Info** on the right click menu to read the details of a dot.
 
 <img src="../img/screens/gfx.race-dc-trace.png" alt="" width="600">
 
@@ -687,6 +690,19 @@ Nothing you delete is lost at once. The **Deleted** tab lists the routes and way
 - **Merge duplicates** merges duplicate entries.
 - **Select All** and **Clear All** are in the right click menu of the lists.
 
+#### 5.5.1.2 Changing the Waypoints of a Route
+
+Under the table of **Waypoints of the route** (select a route to see it) there are five buttons. The same items are on the right-click menu of the table.
+
+- **Edit...** opens the Waypoint Editor for the selected waypoint. A double-click on a row does the same. You can change the name and position of a waypoint of your own (a course waypoint shows the control and start time only), and the control and start time. **OK** applies the change and **Cancel** drops it.
+- **Add** puts the waypoints you selected in the list **Waypoints in the race area** into the route, after the selected row (at the end when no row is selected). Each is a row of its own with no control, and the same waypoint can be added more than once.
+- **Remove** takes the selected rows out of the route, after a question. The waypoints stay in the race area.
+- **Up** and **Down** move the selected rows, several together, one place.
+
+Each change is saved at once. The **Passed** tick stays with its row when it is moved.
+
+The name and position belong to the waypoint, so a rename or a move changes the waypoint in every route that uses it. The control and the start time belong to this row of this route only.
+
 ### 5.5.2 The Active Route
 
 There are three ways to choose the active route:
@@ -721,6 +737,12 @@ The waypoint items of the right click menu work on the active route. Follow the 
 - <img src="../img/icons/Follow.png" alt="" class="inline-icon" height="18"> **Follow:** see [5.5.4 Follow](0500-using-agl.md#554-follow).
 
 Move, Insert, New and Add refuse a position outside the race area, and the waypoint stays picked up for Move. The course marks of the race cannot be edited. If there is no active route, the edits are not kept and the Feedback says so.
+
+**Waypoints at the same spot.** When Edit, Add, Remove or Delete is clicked where more than one waypoint is drawn (within about 6 pixels of the nearest), a small dialog opens at the mouse with a check box for each: a waypoint of the route being edited (with its place in the route and its control), a free waypoint, a waypoint of another shown route, or a course mark. The nearest is ticked. Edit and Add take one waypoint (ticking another clears the first). Remove and Delete take every ticked waypoint, so duplicates can be taken out together, and the usual confirming click follows. Cancel, or no tick, does nothing. When only one waypoint is there nothing is asked.
+
+<img src="../img/screens/dlg.waypoints-at-the-same-spot-edit-or-add-tick-one.png" alt="" width="600">
+
+<img src="../img/screens/dlg.waypoints-at-the-same-spot-remove-or-delete-tick-several.png" alt="" width="700">
 
 While you edit waypoints, the keys **D** (delete), **E** (edit), **I** (insert) and **M** (move) also work.
 

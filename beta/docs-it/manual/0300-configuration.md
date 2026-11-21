@@ -4,9 +4,9 @@ Ora sei pronto per configurare e compilare i campi come segue:
 
 ## 3.1 Accesso e regata
 
-**Usa l'accesso dell'hub:** Selezionato all'inizio. L'hub accede a SailOnline per questa regata con l'accesso che gli hai dato (vedi [L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol)), e le caselle **Nome utente** e **Password** sono in grigio. Deselezionalo per accedere come un altro utente, ad esempio per far regatare una barca per conto di qualcun altro; la regata usa allora il **Nome utente** e la **Password** qui sotto. Puoi selezionarlo o deselezionarlo anche in una regata in esecuzione. La regata ottiene un nuovo accesso e i DC vengono caricati di nuovo, quindi non serve chiudere la regata.
+**Usa l'accesso dell'hub:** Selezionato all'inizio. L'hub accede a SailOnline per questa regata con l'accesso che gli hai dato (vedi [2.3.3.9 L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol)), e le caselle **Nome utente** e **Password** sono in grigio. Deselezionalo per accedere come un altro utente, ad esempio per far regatare una barca per conto di qualcun altro; la regata usa allora il **Nome utente** e la **Password** qui sotto. Puoi selezionarlo o deselezionarlo anche in una regata in esecuzione. La regata ottiene un nuovo accesso e i DC vengono caricati di nuovo, quindi non serve chiudere la regata.
 
-**Usa SOL come ID di accesso:** Seleziona questa opzione se vuoi accedere come SOL, per guardare una regata a cui non sei ancora iscritto. La finestra della regata ha una cornice viola finché è selezionata (vedi [Colori della Cornice delle Finestre](0200-installing-agl.md#23311-colori-della-cornice-delle-finestre)). AGL ricorda l'impostazione tra un avvio e l'altro, e la deseleziona quando l'hub ti iscrive alla regata.
+**Usa SOL come ID di accesso:** Seleziona questa opzione se vuoi accedere come SOL, per guardare una regata a cui non sei ancora iscritto. La finestra della regata ha una cornice viola finché è selezionata (vedi [2.3.3.11 Colori della Cornice delle Finestre](0200-installing-agl.md#23311-colori-della-cornice-delle-finestre)). AGL ricorda l'impostazione tra un avvio e l'altro, e la deseleziona quando l'hub ti iscrive alla regata.
 
 ***Nota*:** Se il tuo **Nome utente** non è **sol** e questa opzione è selezionata, verrai automaticamente disconnesso come **sol** e connesso con il tuo **Nome utente** una volta iniziata la regata.
 
@@ -24,7 +24,7 @@ Ora sei pronto per configurare e compilare i campi come segue:
 
 ## 3.2 Waypoint
 
-AGL non legge né scrive più file di waypoint. I percorsi e i waypoint di una regata sono conservati nel database dell'hub, e importi ed esporti i file GPX dal modulo Percorsi (vedi Capitolo 5).
+AGL non legge né scrive più file di waypoint. I percorsi e i waypoint di una regata sono conservati nel database dell'hub, e importi ed esporti i file GPX dal modulo Percorsi (vedi [5 Utilizzo di AGL](0500-using-agl.md#5-utilizzo-di-agl)).
 
 **Tolleranza VMG:** Utilizzato dalla routine Waypoint to DC per determinare con quanta precisione rispettare un waypoint durante una virata o una strambata verso un waypoint. Si tratta di un processo iterativo: più fine è la tolleranza, più tempo richiederà (e potrebbe anche fallire).
 
@@ -82,7 +82,7 @@ Alla selezione, l'anno verrà evidenziato. Usa le frecce sinistra e destra, oppu
 
 **Formato data di importazione DC:** Utilizzato per specificare il formato data del file di importazione dei DC. Nell'esportazione della rotta da qtVlm, questi saranno tipicamente dd/MM/yyyy HH:mm oppure MM/dd/yyyy HH:mm. Altri formati possono essere definiti come indicato in [SimpleDateFormat (Java SE 25 & JDK 25) (oracle.com)](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/SimpleDateFormat.html).
 
-La DC Data Table è spiegata nella sezione [6 DC Data Table](0600-dc-data-table.md).
+La DC Data Table è spiegata nella sezione [6 DC Data Table](0600-dc-data-table.md#6-dc-data-table).
 
 **Attenzione:** un formato di data non valido causerà un'eccezione di analisi della data e può mandare in crash il DC Table Editor definito più avanti. Un metodo migliore è esportare la rotta come gpx e lasciare che AGL ricalcoli i DC usando il grib attuale.
 
@@ -200,7 +200,7 @@ Per forzare una nuova esecuzione dell'integrazione, elimina semplicemente il fil
 
 L'integrazione delle regate Production è sostanzialmente lo stesso processo. Dopo aver verificato che l'istanza Test funzioni, puoi avviare AGL in una cartella di regata esistente oppure crearne una nuova. Poi segui i passaggi per l'ambiente Test e seleziona **Produzione** invece di **Prova**.
 
-Quando viene mostrato il selettore di cartelle, vai all'installazione Production di qtVlm e poi segui i passaggi descritti in 3.7.1 Passaggi di Integrazione – Ambiente Test.
+Quando viene mostrato il selettore di cartelle, vai all'installazione Production di qtVlm e poi segui i passaggi descritti in [3.7.1 Passaggi di Integrazione – Ambiente Test](0300-configuration.md#371-passaggi-di-integrazione-ambiente-test).
 
 ### 3.7.3 Aggiornamento di qtVlm
 
@@ -296,7 +296,7 @@ Se fai clic su **Annulla**, AGL mantiene la porta originale e attende che si lib
 
 **Includi la pressione (PRMSL):** Scarica anche la pressione al livello medio del mare oltre ai dati del vento?
 
-**Nota:** Il comportamento del server NOAA è spiegato più avanti in **Server NOAA**.
+**Nota:** Il comportamento del server NOAA è spiegato in [7 Server NOAA](0700-noaa-server.md#7-server-noaa).
 
 **Riduci il grib:** Se selezionato, i grib SOL e NOAA verranno ridotti in modo da essere di poco più grandi dell'area di regata. Anche la mappa verrà creata di poco più grande dell'area di regata. Selezionando questa opzione si riduce il traffico di download per NOAA e si velocizza il funzionamento di AGL.
 
@@ -326,7 +326,7 @@ AGL ora crea un grib chiamato current_grib.grb che è una replica esatta di ciò
 
 **Dimensione barbe del vento (px):** La dimensione in pixel con cui verranno disegnate le barbe del vento.
 
-I valori di spaziatura e dimensione delle barbe si possono cambiare anche nel modulo [Opzioni di vista](0500-using-agl.md#532-opzioni-di-vista).
+I valori di spaziatura e dimensione delle barbe si possono cambiare anche nel modulo [5.3.2 Opzioni di vista](0500-using-agl.md#532-opzioni-di-vista).
 
 **Passo dello zoom:** Di quanto zooma un clic su **Ingrandisci** o **Riduci** nella barra degli strumenti della grafica. Deve essere maggiore di 1. Il valore predefinito è 1,5, cioè un terzo della vista a ogni clic.
 

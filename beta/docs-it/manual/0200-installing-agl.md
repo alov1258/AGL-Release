@@ -52,7 +52,7 @@ Premi Invio (Enter) per chiudere la finestra.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Fai doppio clic su di essa per avviare AGL e procedere con la configurazione come descritto in 2.3 Avvio di AGL. Il Manuale Utente e le Note di Rilascio vengono installati con AGL e si aprono dal suo menu Help (vedi 2.3.4.3 Il Menu Aiuto); non ci sono file separati né collegamenti sul desktop per essi.
+Fai doppio clic su di essa per avviare AGL e procedere con la configurazione come descritto in [2.3 Avvio di AGL](0200-installing-agl.md#23-avvio-di-agl). Il Manuale Utente e le Note di Rilascio vengono installati con AGL e si aprono dal suo menu Help (vedi [2.3.4.3 Il Menu Aiuto](0200-installing-agl.md#2343-il-menu-aiuto)); non ci sono file separati né collegamenti sul desktop per essi.
 
 #### 2.1.1.2 Beta
 
@@ -122,7 +122,7 @@ Premi Invio (Enter) per chiudere la finestra.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Fai doppio clic sull'icona AGL25 sul Desktop (un collegamento ad AGL_Launcher.app nella cartella Java25) per avviare AGL e procedere con la configurazione come descritto in 2.3 Avvio di AGL. Il Manuale Utente e le Note di Rilascio vengono installati con AGL e si aprono dal suo menu Help (vedi 2.3.4.3 Il Menu Aiuto); non ci sono file separati né collegamenti sul desktop per essi.
+Fai doppio clic sull'icona AGL25 sul Desktop (un collegamento ad AGL_Launcher.app nella cartella Java25) per avviare AGL e procedere con la configurazione come descritto in [2.3 Avvio di AGL](0200-installing-agl.md#23-avvio-di-agl). Il Manuale Utente e le Note di Rilascio vengono installati con AGL e si aprono dal suo menu Help (vedi [2.3.4.3 Il Menu Aiuto](0200-installing-agl.md#2343-il-menu-aiuto)); non ci sono file separati né collegamenti sul desktop per essi.
 
 #### 2.1.2.2 Beta
 
@@ -192,7 +192,7 @@ Premi Invio (Enter) per chiudere la finestra.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Fai doppio clic su di essa per avviare AGL e procedere con la configurazione come descritto in 2.3 Avvio di AGL. Il Manuale Utente e le Note di Rilascio vengono installati con AGL e si aprono dal suo menu Help (vedi 2.3.4.3 Il Menu Aiuto); non ci sono file separati né collegamenti sul desktop per essi.
+Fai doppio clic su di essa per avviare AGL e procedere con la configurazione come descritto in [2.3 Avvio di AGL](0200-installing-agl.md#23-avvio-di-agl). Il Manuale Utente e le Note di Rilascio vengono installati con AGL e si aprono dal suo menu Help (vedi [2.3.4.3 Il Menu Aiuto](0200-installing-agl.md#2343-il-menu-aiuto)); non ci sono file separati né collegamenti sul desktop per essi.
 
 ***Nota*:** L'installer esegue install_AGL_linux.sh al posto tuo (imposta i permessi sul Java incluso), quindi non c'è altro da eseguire. Alcuni desktop Linux potrebbero chiederti di considerare attendibile il launcher la prima volta che ci fai doppio clic (Linux Mint non lo chiede). Se richiesto, scegli l'opzione per considerarlo attendibile o consentirne l'avvio.
 
@@ -240,7 +240,7 @@ Se vuoi rimuovere completamente AGL e riportare il computer a uno stato in cui A
 
 5.  Ti verrà ora chiesto di digitare **Sì** per continuare.
 
-6.  Al termine, premi **Enter per chiudere la finestra** e continua con [2.1 Installazione e Aggiornamento di AGL 25](#21-installazione-e-aggiornamento-di-agl-25). L'ultima riga della finestra ti dice di eseguire agl-install-windows.bat: è l'installer descritto in 2.1.
+6.  Al termine, premi **Enter per chiudere la finestra** e continua con [2.1 Installazione e Aggiornamento di AGL 25](#21-installazione-e-aggiornamento-di-agl-25). L'ultima riga della finestra ti dice di eseguire agl-install-windows.bat: è l'installer descritto in [2.1 Installazione e Aggiornamento di AGL 25](0200-installing-agl.md#21-installazione-e-aggiornamento-di-agl-25).
 
 Per rimuovere un'installazione Beta, segui gli stessi passaggi, ma fai clic invece sul link [AGL Beta Cleaner](https://github.com/alov1258/AGL-Release/releases/download/beta/agl-clean-windows-beta.bat) (agl-clean-windows-beta.bat).
 
@@ -350,11 +350,11 @@ Per rimuovere un'installazione Beta, segui gli stessi passaggi, ma fai clic sul 
 
 Per tenerlo nel Dock: trascina "AGL_Launcher.app" sul Dock, oppure fai clic con il tasto destro sulla sua icona mentre è in esecuzione e scegli "Opzioni \> Mantieni nel Dock". Puoi lasciarlo dove si trova nella cartella Java25: non è necessario spostarlo in Applicazioni.
 
-L'avvio di AGL apre l'**AGL Hub**: l'unica finestra di AGL nella barra delle applicazioni, con una scheda per ogni regata. Se l'hub è già aperto, avviando di nuovo AGL viene semplicemente portato in primo piano. La prima volta che AGL viene avviato chiede prima alcune cose (vedi Avvio di AGL per la Prima Volta), poi si apre l'hub (vedi L'AGL Hub).
+L'avvio di AGL apre l'**AGL Hub**: l'unica finestra di AGL nella barra delle applicazioni, con una scheda per ogni regata. Se l'hub è già aperto, avviando di nuovo AGL viene semplicemente portato in primo piano. La prima volta che AGL viene avviato chiede prima alcune cose (vedi [2.3.2 Avvio di AGL per la Prima Volta](0200-installing-agl.md#232-avvio-di-agl-per-la-prima-volta)), poi si apre l'hub (vedi [2.3.3 L'AGL Hub](0200-installing-agl.md#233-lagl-hub)).
 
 ### 2.3.2 Avvio di AGL per la Prima Volta
 
-Se è disponibile una versione più recente di AGL, viene mostrata per prima la finestra di aggiornamento descritta in 2.4 Aggiornamento di AGL. Si verificheranno alcuni o tutti i seguenti passaggi:
+Se è disponibile una versione più recente di AGL, viene mostrata per prima la finestra di aggiornamento descritta in [2.4 Aggiornamento di AGL](0200-installing-agl.md#24-aggiornamento-di-agl). Si verificheranno alcuni o tutti i seguenti passaggi:
 
 Alla prima esecuzione può accadere tutto o in parte quanto segue:
 
@@ -378,7 +378,7 @@ Alla prima esecuzione può accadere tutto o in parte quanto segue:
 
 5. Si apre l'**AGL Hub** con la scheda **Launcher**. Nessuna regata è stata avviata: AGL non avvia mai una regata, né chiede una cartella di regata, da solo. Devi inserire il tuo nome utente e la tua password SailOnline con **SOL > Accesso...**. Dopo un accesso riuscito, puoi aggiungere una regata.
 
-6. Fai clic su **Aggiungi regata** per avviare la tua prima regata (vedi Aggiungere una Regata). Se hai dimenticato di inserire le tue credenziali (vedi L'Accesso SOL), l'hub le chiede la prima volta che una regata ne ha bisogno.
+6. Fai clic su **Aggiungi regata** per avviare la tua prima regata (vedi [2.3.3.5 Aggiungere una Regata](0200-installing-agl.md#2335-aggiungere-una-regata)). Se hai dimenticato di inserire le tue credenziali (vedi [2.3.3.9 L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol)), l'hub le chiede la prima volta che una regata ne ha bisogno.
 
 7. <img src="../img/screens/hub.hub-the-window-launcher-tab.png" alt="" width="900">
 
@@ -388,7 +388,7 @@ La scheda Launcher mostra cosa ha fatto AGL per arrivare fin qui: la revisione d
 
 ### 2.3.3 L'AGL Hub
 
-L'hub è l'unica finestra di AGL nella barra delle applicazioni. Ogni regata continua a essere eseguita come programma a sé, nella propria cartella di regata, quindi una regata bloccata può essere terminata senza toccare le altre. Le regate si chiudono con l'hub (vedi Chiusura dell'Hub). L'hub accede anche a SailOnline per ogni regata (vedi L'Accesso SOL) e conserva i percorsi e i waypoint di ogni regata.
+L'hub è l'unica finestra di AGL nella barra delle applicazioni. Ogni regata continua a essere eseguita come programma a sé, nella propria cartella di regata, quindi una regata bloccata può essere terminata senza toccare le altre. Le regate si chiudono con l'hub (vedi [2.3.3.8 Chiusura dell'Hub](0200-installing-agl.md#2338-chiusura-dellhub)). L'hub accede anche a SailOnline per ogni regata (vedi [2.3.3.9 L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol)) e conserva i percorsi e i waypoint di ogni regata.
 
 #### 2.3.3.1 La Finestra dell'Hub
 
@@ -396,7 +396,7 @@ L'hub si apre in alto a sinistra dello schermo principale la prima volta che lo 
 
 <img src="../img/screens/hub.menu-bar.png" alt="" width="400">
 
-- La barra delle schede ha la scheda **Launcher**, poi una scheda per ogni regata, con il nome della sua cartella di regata. Tieni il mouse su una scheda di regata per vedere il nome e il numero della regata.
+- La barra delle schede ha la scheda **Launcher**, la scheda **Regate** (vedi [2.3.3.10 La Scheda Regate](0200-installing-agl.md#23310-la-scheda-regate)), poi una scheda per ogni regata, con il nome della sua cartella di regata. Tieni il mouse su una scheda di regata per vedere il nome e il numero della regata.
 
 - Il pulsante **Aggiungi regata** si trova dopo l'ultima scheda. È grigio mentre l'hub si avvia, finché non sono state avviate le regate dell'elenco di riavvio (circa 4 secondi per ciascuna). La console del Launcher dice poi "Launch complete - Add Race is on".
 - Il pulsante a icona **Riponi tutto** accanto ad **Aggiungi regata** mette via le finestre AGL di ogni regata e riduce a icona il qtVlm di ciascuna, con un solo clic. Fa per tutte le regate ciò che **Riponi** e **qtVlm Riponi** fanno su una scheda di regata per quella regata.
@@ -407,7 +407,7 @@ L'hub si apre in alto a sinistra dello schermo principale la prima volta che lo 
 
 - L'icona dell'hub <img src="../img/icons/agl_hub_48_48.png" alt="" class="inline-icon" height="18"> accanto all'icona In Control <img src="../img/icons/control_panel_monitor_48x48.png" alt="" class="inline-icon" height="18"> nella scheda Controllo DC porta l'hub in primo piano.
 
-L'hub non si chiude mai da solo. Resta aperto finché non lo chiudi tu (vedi Chiusura dell'Hub).
+L'hub non si chiude mai da solo. Resta aperto finché non lo chiudi tu (vedi [2.3.3.8 Chiusura dell'Hub](0200-installing-agl.md#2338-chiusura-dellhub)).
 
 **Più di un hub.** L'hub tiene le proprie impostazioni per ogni canale, così un hub di produzione, uno beta e uno di sviluppo sullo stesso computer non si sovrascrivono le impostazioni a vicenda (gli elenchi del controllo delle regate, Telegram, le impostazioni delle finestre e il registro dell'hub). La produzione usa la cartella `.agl` nella tua cartella home (hub.properties, hub.log, hub_telegram.txt), la beta usa `.agl/beta` e l'hub di sviluppo usa `.agl/dev`. La prima volta che parte un hub beta o di sviluppo copia dalla produzione solo l'accesso SOL, la lingua e la dimensione del testo. Gli elenchi del controllo delle regate, Telegram e gli orari attivi partono vuoti. Il database di percorsi e DC è condiviso.
 
@@ -415,9 +415,9 @@ L'hub non si chiude mai da solo. Resta aperto finché non lo chiudi tu (vedi Chi
 
 <img src="../img/manual/image41.png" alt="" width="900">
 
-- **File &gt; Aggiungi regata...** (Ctrl+N) sceglie le cartelle di regata e avvia AGL in esse (vedi Aggiungere una Regata).
+- **File &gt; Aggiungi regata...** (Ctrl+N) sceglie le cartelle di regata e avvia AGL in esse (vedi [2.3.3.5 Aggiungere una Regata](0200-installing-agl.md#2335-aggiungere-una-regata)).
 - **File &gt; Ferma tutte le regate** chiude ogni regata in esecuzione come fa il suo Quit.
-- **File &gt; Esci** chiude l'hub e le regate in esecuzione. AGL chiede prima (vedi Chiusura dell'Hub).
+- **File &gt; Esci** chiude l'hub e le regate in esecuzione. AGL chiede prima (vedi [2.3.3.8 Chiusura dell'Hub](0200-installing-agl.md#2338-chiusura-dellhub)).
 
 - **Vista &gt; Dimensione testo** imposta la dimensione del testo nell'hub: scegli una dimensione dall'elenco, oppure usa **Più grande** (Ctrl e +), **Più piccolo** (Ctrl e -) o **Ripristina** (Ctrl e 0). La dimensione è propria dell'hub e viene ricordata. Le console usano un font monospaziato più grande.
 
@@ -427,17 +427,17 @@ L'hub non si chiude mai da solo. Resta aperto finché non lo chiudi tu (vedi Chi
 
 - Il menu **Lingua** sceglie la lingua di AGL (inglese o italiano). L'hub cambia subito, le regate in esecuzione vengono avvisate e anche le regate che avvii in seguito la usano. AGL ricorda la scelta. Una finestra di regata ha un proprio menu **Lingua**, che cambia quella finestra e le sue finestre di dialogo solo per la sessione: l'impostazione dell'hub non viene modificata.
 
-- Il menu **SOL** ha **Accesso...**, dove inserisci il nome utente e la password SailOnline con cui l'hub accede (vedi L'Accesso SOL).
+- Il menu **SOL** ha **Accesso...**, dove inserisci il nome utente e la password SailOnline con cui l'hub accede (vedi [2.3.3.9 L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol)).
 
-- La voce di menu **Messaggi** apre la finestra Messaggi, dove Pushover, Telegram e i messaggi che le regate inviano si configurano una volta per tutte le regate. Sostituisce i menu Telegram e Pushover. È descritta nel Capitolo 8, Chat.
+- La voce di menu **Messaggi** apre la finestra Messaggi, dove Pushover, Telegram e i messaggi che le regate inviano si configurano una volta per tutte le regate. Sostituisce i menu Telegram e Pushover. È descritta in [8 Chat](0800-chats.md#8-chat).
 
-- Il menu **Percorsi** ha **Waypoint e percorsi...**, una finestra che mostra i percorsi e i waypoint di ogni regata, con una colonna Regata, e permette di eliminare e ripristinare quelli vecchi. In questa finestra non c'è l'importazione: importa un percorso da una regata (vedi Capitolo 5).
+- Il menu **Percorsi** ha **Waypoint e percorsi...**, una finestra che mostra i percorsi e i waypoint di ogni regata, con una colonna Regata, e permette di eliminare e ripristinare quelli vecchi. In questa finestra non c'è l'importazione: importa un percorso da una regata (vedi [5 Utilizzo di AGL](0500-using-agl.md#5-utilizzo-di-agl)).
 
-- Il menu **Aiuto** apre la documentazione e invia i tuoi log per email. È descritto in Il Menu Aiuto, più avanti.
+- Il menu **Aiuto** apre la documentazione e invia i tuoi log per email. È descritto in [2.3.4.3 Il Menu Aiuto](0200-installing-agl.md#2343-il-menu-aiuto).
 
 #### 2.3.3.3 La Scheda Launcher
 
-La console di questa scheda mostra cosa fa AGL all'avvio, una riga per ogni regata avviata e i messaggi dell'hub stesso, che iniziano con \[hub\]. Includono quale qtVlm appartiene a ciascuna regata, se la regata è di un membro e cosa fa il gestore delle finestre di dialogo di qtVlm (vedi Gestione delle Finestre di Dialogo di qtVlm).
+La console di questa scheda mostra cosa fa AGL all'avvio, una riga per ogni regata avviata e i messaggi dell'hub stesso, che iniziano con \[hub\]. Includono quale qtVlm appartiene a ciascuna regata, se la regata è di un membro e cosa fa il gestore delle finestre di dialogo di qtVlm (vedi [2.3.3.6 Gestione delle Finestre di Dialogo di qtVlm](0200-installing-agl.md#2336-gestione-delle-finestre-di-dialogo-di-qtvlm)).
 
 <img src="../img/screens/hub.hub-the-window-launcher-tab.png" alt="" width="900">
 
@@ -449,11 +449,11 @@ La console di questa scheda mostra cosa fa AGL all'avvio, una riga per ogni rega
 
 - **Segui** scorre fino alla riga più recente man mano che arriva. Deselezionalo per leggere le righe precedenti.
 
-- **Gestire i dialoghi di qtVlm?** (vedi Gestione delle Finestre di Dialogo di qtVlm).
+- **Gestire i dialoghi di qtVlm?** (vedi [2.3.3.6 Gestione delle Finestre di Dialogo di qtVlm](0200-installing-agl.md#2336-gestione-delle-finestre-di-dialogo-di-qtvlm)).
 
-- **Riavviare le regate dopo uno spegnimento?** (vedi Riavvio delle Regate dopo uno Spegnimento).
+- **Riavviare le regate dopo uno spegnimento?** (vedi [2.3.3.7 Riavvio delle Regate dopo uno Spegnimento](0200-installing-agl.md#2337-riavvio-delle-regate-dopo-uno-spegnimento)).
 
-- **Controlla le nuove regate** è disattivato all'inizio. Quando è selezionato l'hub ti chiede delle nuove regate SailOnline e ti iscrive (vedi Controllare le Nuove Regate).
+- Le nuove regate SailOnline sono nella scheda **Regate** (vedi [2.3.3.10 La Scheda Regate](0200-installing-agl.md#23310-la-scheda-regate)).
 
 - **Mostrare la regata su un Set?** è selezionato all'inizio. Quando fai un Set di DC in una regata, l'hub passa alla scheda di quella regata. La finestra dell'hub non viene portata in primo piano. Viene ricordato per ogni utente. Il passaggio avviene appena il Set inizia, non quando finisce, così puoi ridurre a icona le finestre delle regate durante un Set lungo. Vale per i Set che avvii tu, non per quelli che AGL fa da solo.
 
@@ -479,7 +479,7 @@ I pulsanti nella scheda di una regata sono:
 
 - **Ferma** chiude la regata come fa il suo Quit, e salva prima. Se non si è chiusa dopo 10 secondi, lo stato dice "Non si ferma - usa Termina", e alla regata viene chiesto un dump dei thread.
 
-- **Termina** termina subito la regata senza salvare nulla, quindi usalo solo per una regata bloccata. AGL ti chiede di confermare. Dopo la conferma, alla regata viene chiesto un dump dei thread, viene terminata 2,5 secondi dopo e si apre il tuo programma di posta con i log compressi da inviare all'autore, come fa **Aiuto > Invia i log...** (vedi Invio dei Log per Email). Su una regata già terminata, Termina chiude la sua scheda.
+- **Termina** termina subito la regata senza salvare nulla, quindi usalo solo per una regata bloccata. AGL ti chiede di confermare. Dopo la conferma, alla regata viene chiesto un dump dei thread, viene terminata 2,5 secondi dopo e si apre il tuo programma di posta con i log compressi da inviare all'autore, come fa **Aiuto > Invia i log...** (vedi [Invio dei Log per Email](0200-installing-agl.md#invio-dei-log-per-email)). Su una regata già terminata, Termina chiude la sua scheda.
 
 <img src="../img/screens/hub.hub-kill-a-race.png" alt="" width="355">
 
@@ -584,7 +584,7 @@ Fai clic sulla X dell'hub, oppure scegli **File &gt; Esci**. Se ci sono regate i
 
 <img src="../img/screens/hub.hub-close-agl-close-the-races-or-leave-them.png" alt="" width="432">
 
-- La domanda è "Chiudere l'hub richiede di chiudere anche le regate. OK per chiudere?". **OK** chiude le regate e l'hub, perché una regata ha bisogno dell'hub per il suo accesso e per i suoi percorsi. Le regate che erano aperte restano nell'elenco di riavvio e ripartono al successivo avvio dell'hub (vedi Riavvio delle Regate dopo uno Spegnimento). Una regata che hai chiuso di proposito non viene riavviata. **Annulla** lascia aperto l'hub.
+- La domanda è "Chiudere l'hub richiede di chiudere anche le regate. OK per chiudere?". **OK** chiude le regate e l'hub, perché una regata ha bisogno dell'hub per il suo accesso e per i suoi percorsi. Le regate che erano aperte restano nell'elenco di riavvio e ripartono al successivo avvio dell'hub (vedi [2.3.3.7 Riavvio delle Regate dopo uno Spegnimento](0200-installing-agl.md#2337-riavvio-delle-regate-dopo-uno-spegnimento)). Una regata che hai chiuso di proposito non viene riavviata. **Annulla** lascia aperto l'hub.
 
 Una regata ripresa da un nuovo hub mostra la sua console da quel momento in poi. Ciò che ha scritto prima è in agl_console.log nella cartella della regata.
 
@@ -617,31 +617,39 @@ Se non è stato impostato alcun accesso quando una regata ne ha bisogno, l'hub l
 
 **AGL funziona solo dall'hub.** Se AGL viene avviato in un altro modo, dice "AGL must be started from the AGL hub" e termina.
 
-#### 2.3.3.10 Controllare le Nuove Regate
+#### 2.3.3.10 La Scheda Regate
 
-Seleziona **Controlla le nuove regate** nella scheda Launcher, e l'hub ti chiede di ogni nuova regata SailOnline e ti iscrive in quelle che vuoi. È disattivato all'inizio e usa l'accesso SOL dell'hub.
+La scheda **Regate**, accanto alla scheda Launcher, elenca ogni regata SailOnline e ti iscrive in quelle che scegli. Usa l'accesso SOL dell'hub. L'hub controlla le regate quando si avvia, quando una regata inizia il download del meteo SOL o NOAA, ogni mezz'ora e quando fai clic su **Aggiorna**.
 
-1.  Quando lo selezioni, compare un elenco delle regate aperte, con una casella per ciascuna. Spunta le regate a cui sei già iscritto; l'hub spunta quelle in cui vede che sei iscritto. **OK** conserva le tue risposte, **Annulla** chiede di ogni regata. Le regate terminate non sono elencate.
-    <img src="../img/screens/hub.hub-watch-for-new-races-the-races-you-are-already-in.png" alt="" width="400">
+<img src="../img/screens/hub.hub-the-window-races-tab.png" alt="" width="900">
 
-2.  L'hub controlla le regate quando una regata inizia il download del meteo SOL o NOAA, e ogni mezz'ora (ogni due minuti mentre una regata attende la sua iscrizione). Per ogni nuova regata chiede, in corrispondenza del mouse, se vuoi parteciparvi: **Sì**, **Ricordamelo dopo** o **No**.
+Ogni riga è una regata:
 
-    - **No**: non ti viene più chiesto di quella regata.
+- **Regata** è il numero della regata e **Nome** il suo nome.
+- **Stato** è l'iscrizione: **Aperta**, **In attesa** (non ancora aperta) o **Chiusa**.
+- **Partenza UTC** e **Partenza locale** sono l'ora di partenza in UTC e nell'ora del tuo computer. **Tempo alla partenza** fa il conto alla rovescia.
+- **Iscritto** dice se l'utente dell'hub è iscritto alla regata.
+- **Cartella regata** è il nome della cartella in cui si trova la regata, per esempio Race_1.
+- **Iscrivere?** e **Ignorare?** sono le caselle che spunti, poi fai clic su **Applica**.
 
-    - **Ricordamelo dopo**: ti viene chiesto di nuovo quando si aprono le iscrizioni, oppure dopo un giorno se sono aperte adesso.
+Una riga è verde chiaro quando l'iscrizione è aperta, viola chiaro quando non è ancora aperta e rosso chiaro quando è chiusa. Una regata chiusa a cui sei iscritto e in cui AGL è in esecuzione è verde chiaro, anche quando gira sotto un altro hub.
 
-    - **Sì**: si apre il selettore della cartella della regata. Se le iscrizioni sono aperte, l'hub ti iscrive con il suo accesso SOL (se la regata ha più di una barca, scegli la barca), la cartella riceve l'id della regata e la regata parte.
-      <img src="../img/screens/hub.hub-a-new-sailonline-race-yes-remind-me-later-no.png" alt="" width="900">
+**Iscriversi.** Spunta **Iscrivere?**. Si apre subito il selettore della cartella della regata. Una cartella già usata da un'altra regata è in grigio, perché una cartella può servire una sola regata. Poi fai clic su **Applica**.
 
-    <img src="../img/screens/hub.hub-a-new-race-which-boat.png" alt="" width="450">
+- Se l'iscrizione è aperta, sei iscritto subito, la cartella riceve l'id della regata e la regata parte. Se la regata ha più di una barca, scegli la barca.
+- Se l'iscrizione non è ancora aperta, la regata viene messa in coda. La cartella riceve la regata, con **Usa SOL** selezionato, così puoi guardare la regata. Quando l'iscrizione si apre l'hub ti iscrive, e la regata deseleziona Usa SOL e accede come te. Deseleziona **Iscrivere?** e fai clic su **Applica** per annullare una regata in coda.
+- Una regata a tempo parte quando ti iscrivi, quindi l'hub ti iscrive quando la regata parte. Quando la tua barca arriva, l'hub iscrive di nuovo la regata così puoi regatare ancora.
+- **Iscrivere?** non è disponibile per una regata a cui sei già iscritto, né per una regata chiusa.
 
-3.  Se le iscrizioni non sono ancora aperte, **Sì** prepara comunque la cartella e avvia la regata, con **Usa SOL** selezionato, così puoi guardare la regata. Quando le iscrizioni si aprono, l'hub ti iscrive automaticamente, la regata deseleziona Usa SOL e accede come te.
+**Ignorare.** Spunta **Ignorare?** e fai clic su **Applica** per mettere da parte una regata. Una regata a cui sei iscritto viene ritirata e la sua cartella è di nuovo libera. Deseleziona Ignorare e fai clic su Applica perché l'hub ritrovi l'iscrizione.
 
-4.  Una regata a tempo parte quando ti iscrivi, quindi l'hub ti iscrive quando la regata parte. Quando la tua barca arriva, l'hub iscrive di nuovo la regata così puoi regatare ancora.
+Una regata a cui sei iscritto mostra sempre **Iscritto** come Sì. L'hub lo scopre dalle cartelle delle regate (una cartella configurata per la regata con **Usa SOL** deselezionato) e, per una regata aperta, dalla pagina di iscrizione di SailOnline, e lo ricorda. Questo include una regata a cui ti sei iscritto tu stesso sul sito di SailOnline. Una regata che parte in una cartella configurata per essa (per esempio da **Aggiungi regata**, con **Usa SOL** deselezionato) viene mostrata come iscritta, con quella cartella, appena arriva il suo primo download del meteo. Una cartella serve una sola regata: quando una cartella fa girare un'altra regata, viene tolta dalla regata per cui era iscritta. Una regata che hai ritirato con **Ignorare** e poi fai girare di nuovo viene iscritta di nuovo. Una cartella è di nuovo libera dopo che la sua regata è sparita dall'elenco e l'hub è stato riavviato.
 
-L'iscrizione usa sempre l'accesso dell'hub: se fai regatare una barca per conto di qualcun altro, quella persona si iscrive sul proprio computer. Se l'iscrizione fallisce, un messaggio ne spiega il motivo. Dopo 3 tentativi l'hub rinuncia e ti iscrivi sul sito SailOnline. Le regate la cui iscrizione si è chiusa dopo la partenza non vengono mai proposte.
+Una regata che parte con **Usa SOL** selezionato mentre la sua iscrizione è aperta viene spuntata come **Iscrivere?** per quella cartella. Fai clic su **Applica** per iscriverti.
 
-Una regata per cui una delle tue cartelle di regata è già configurata non viene mai proposta. Una cartella che hai configurato a mano con **Usa SOL** selezionato aspetta l'iscrizione come quella del punto 3: l'hub ti iscrive quando l'iscrizione si apre (una regata a tempo: alla partenza). Deseleziona **Usa SOL** in quella cartella e l'attesa finisce. Se ti iscrivi tu stesso sul sito di SailOnline, l'hub se ne accorge quando la sua iscrizione viene rifiutata (controlla se sei già nella regata), non ti chiede più della regata, e la regata deseleziona **Usa SOL**. Il messaggio "The hub could not register in race #n" viene mostrato una volta per regata. Il registro dell'hub annota cosa ha detto il sito quando ha rifiutato un'iscrizione.
+Il titolo della scheda ha un punto arancione finché una regata non è iscritta, in coda o ignorata. Iscrivi o ignora ogni regata e il punto sparisce.
+
+Per le nuove regate non compare nessuna finestra di dialogo. I problemi (nessun accesso SOL, iscrizione fallita, l'hub ha rinunciato dopo 3 tentativi) compaiono nella riga sotto la tabella e nel registro dell'hub. L'iscrizione usa sempre l'accesso dell'hub: se fai regatare una barca per conto di qualcun altro, quella persona si iscrive sul proprio computer. Le regate la cui iscrizione si è chiusa dopo la partenza non vengono mai proposte.
 
 #### 2.3.3.11 Colori della Cornice delle Finestre
 
@@ -649,7 +657,7 @@ Una regata mostra il suo stato con una cornice colorata, larga 5 pixel, all'inte
 
 - **Rosso**: la regata usa il Simulatore.
 
-- **Arancione chiaro**: una finestra di dialogo di qtVlm è aperta e in attesa (vedi Gestione delle Finestre di Dialogo di qtVlm).
+- **Arancione chiaro**: una finestra di dialogo di qtVlm è aperta e in attesa (vedi [2.3.3.6 Gestione delle Finestre di Dialogo di qtVlm](0200-installing-agl.md#2336-gestione-delle-finestre-di-dialogo-di-qtvlm)).
 
 - **Viola**: l'utente della barca è SOL (**Usa SOL** è selezionato nella regata).
 
@@ -699,7 +707,7 @@ L'hub e ogni finestra di regata hanno un menu **Aiuto**.
 
 - **Note di rilascio** apre le Note di Rilascio.
 
-- **Invia i log...** raccoglie i log necessari per individuare un problema e prepara un'email all'autore (vedi Invio dei Log per Email, più avanti).
+- **Invia i log...** raccoglie i log necessari per individuare un problema e prepara un'email all'autore (vedi [Invio dei Log per Email](0200-installing-agl.md#invio-dei-log-per-email)).
 
 Le pagine si aprono nel tuo browser web. Sono installate con AGL, nella cartella **docs** della cartella Java25, e vengono mostrate dal tuo computer, quindi funzionano senza internet e corrispondono sempre alla versione di AGL che stai usando. Se quella cartella non c'è, AGL apre invece le stesse pagine sul web. Le pagine sono nella lingua della finestra, se esiste una traduzione, e in inglese se non esiste.
 
@@ -721,7 +729,7 @@ AGL non invia nulla da solo: nulla lascia il tuo computer finché non premi **In
 
 Se AGL non riesce ad aprire un programma di posta, lo dice e fornisce il nome del file zip. Apri tu la cartella **AGL-Logs** e allega lo zip a un'email all'indirizzo indicato dal messaggio.
 
-Se l'autore chiede più dettagli, seleziona prima **Vista > Registro dettagliato**, ripeti il problema e poi scegli **Invia i log...**. Senza di esso il Registro contiene solo l'essenziale: errori, avvisi, boe, arrivo, BBQ e righe dei Set DC vengono sempre scritti. Anche terminare una regata dall'hub (vedi Le Schede delle Regate) raccoglie i log e apre l'email allo stesso modo.
+Se l'autore chiede più dettagli, seleziona prima **Vista > Registro dettagliato**, ripeti il problema e poi scegli **Invia i log...**. Senza di esso il Registro contiene solo l'essenziale: errori, avvisi, boe, arrivo, BBQ e righe dei Set DC vengono sempre scritti. Anche terminare una regata dall'hub (vedi [2.3.3.4 Le Schede delle Regate](0200-installing-agl.md#2334-le-schede-delle-regate)) raccoglie i log e apre l'email allo stesso modo.
 
 <img src="../img/screens/hub.hub-help-no-mail-program-could-be-opened.png" alt="" width="700">
 
@@ -751,7 +759,7 @@ A **patch** è una versione modificata della release che stai già usando. La fi
 
 <img src="../img/screens/launcher.launcher-a-patch-is-available.png" alt="" width="500">
 
-Occasionalmente una release richiede che AGL venga riportato a uno stato pulito prima di essere installato; le Note di Rilascio indicano quando. La finestra di dialogo aggiunge allora *questa versione prima riporta AGL a uno stato pulito*, e dopo aver fatto clic su **Aggiorna ora** ti viene chiesto di confermare. Le cartelle delle regate e le tile delle mappe vengono conservate, ma AGL potrebbe chiederti di nuovo la cartella Races al primo avvio successivo (vedi 2.3). Scegli la stessa cartella di prima.
+Occasionalmente una release richiede che AGL venga riportato a uno stato pulito prima di essere installato; le Note di Rilascio indicano quando. La finestra di dialogo aggiunge allora *questa versione prima riporta AGL a uno stato pulito*, e dopo aver fatto clic su **Aggiorna ora** ti viene chiesto di confermare. Le cartelle delle regate e le tile delle mappe vengono conservate, ma AGL potrebbe chiederti di nuovo la cartella Races al primo avvio successivo (vedi [2.3 Avvio di AGL](0200-installing-agl.md#23-avvio-di-agl)). Scegli la stessa cartella di prima.
 
 2.  Se sono in esecuzione altre sessioni di AGL, AGL le elenca per cartella della regata e chiede di chiuderle, perché usano tutte gli stessi file. Se non ce ne sono, questo passaggio viene saltato.
 
@@ -759,7 +767,7 @@ Occasionalmente una release richiede che AGL venga riportato a uno stato pulito 
 
     Fai clic su **Sì**. Ogni sessione si chiude come se avessi fatto clic sul suo pulsante di chiusura, quindi le sue impostazioni vengono salvate. Normalmente ci vogliono pochi secondi, ma una sessione occupata (ad esempio una che sta scaricando dati) può impiegare fino a 30 secondi. Se una non si è ancora chiusa, AGL offre di forzarne la chiusura, il che non salva le impostazioni di quella sessione. Fai clic su **No** per annullare l'aggiornamento: non viene modificato nulla e AGL si avvia normalmente.
 
-3.  AGL ora si chiude e si apre una finestra **Aggiornamento di AGL**. Attende che AGL abbia finito di chiudersi e poi esegue l'installer descritto in 2.1. Se è necessaria una pulizia, vedrai prima **Step 1 of 2** mentre AGL viene riportato allo stato pulito, seguito da **Step 2 of 2**. Per un aggiornamento normale l'installer trova l'installazione esistente e chiede *Update it? (Y/N) \[Y\]*: premi **Enter** per accettare.
+3.  AGL ora si chiude e si apre una finestra **Aggiornamento di AGL**. Attende che AGL abbia finito di chiudersi e poi esegue l'installer descritto in [2.1 Installazione e Aggiornamento di AGL 25](0200-installing-agl.md#21-installazione-e-aggiornamento-di-agl-25). Se è necessaria una pulizia, vedrai prima **Step 1 of 2** mentre AGL viene riportato allo stato pulito, seguito da **Step 2 of 2**. Per un aggiornamento normale l'installer trova l'installazione esistente e chiede *Update it? (Y/N) \[Y\]*: premi **Enter** per accettare.
 
 <img src="../img/manual/image59.png" alt="" width="900">
 

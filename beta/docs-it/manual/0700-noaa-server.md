@@ -43,7 +43,7 @@ Il server crea file nella cartella grib, e nella cartella NOAA sotto di essa.
 3.  GFS_NOAA\_{race id}\_{grib_time}\_1p00.grb2. Questi sono i dati grezzi a 1 grado per le ore da 192 a 384, nella cartella grib\NOAA.
 4.  CFS_NOAA\_{race id}\_{cfs_cycle_time}\_1p00.grb2. Solo per i membri. Sono i dati CFS, un file per ogni ciclo CFS, nella cartella grib\NOAA.
 
-Nota che il grib A può essere caricato e usato non appena viene creato, quindi non c'è bisogno di aspettare il completamento del download NOAA. Conterrà solo i frame fino all'ultimo frame scaricato. Per avere più frame, vedi [current_grib.grb](#731-current_gribgrb).
+Nota che il grib A può essere caricato e usato non appena viene creato, quindi non c'è bisogno di aspettare il completamento del download NOAA. Conterrà solo i frame fino all'ultimo frame scaricato. Per avere più frame, vedi [7.3.1 current_grib.grb](#731-current_gribgrb).
 
 ### 7.3.1 current_grib.grb
 

@@ -4,9 +4,9 @@ You are now ready to configure and fill out the fields as follows:
 
 ## 3.1 Login & Race
 
-**Use the hub login:** Ticked to start with. The hub logs on to SailOnline for this race with the login you gave it (see [The SOL Login](0200-installing-agl.md#2339-the-sol-login)), and the **User name** and **Password** boxes are greyed. Clear it to log on as another user, for example to sail a boat for someone else; the race then uses the **User name** and **Password** below. You can tick or clear it in a running race too. The race gets a new login and the DCs are loaded again, so there is no need to close the race.
+**Use the hub login:** Ticked to start with. The hub logs on to SailOnline for this race with the login you gave it (see [2.3.3.9 The SOL Login](0200-installing-agl.md#2339-the-sol-login)), and the **User name** and **Password** boxes are greyed. Clear it to log on as another user, for example to sail a boat for someone else; the race then uses the **User name** and **Password** below. You can tick or clear it in a running race too. The race gets a new login and the DCs are loaded again, so there is no need to close the race.
 
-**Use SOL as login id:** Check this if you want to log on as SOL, to look at a race you are not yet registered in. The race window has a purple frame while it is ticked (see [Window Frame Colours](0200-installing-agl.md#23311-window-frame-colours)). AGL remembers the setting between starts, and unticks it when the hub registers you in the race.
+**Use SOL as login id:** Check this if you want to log on as SOL, to look at a race you are not yet registered in. The race window has a purple frame while it is ticked (see [2.3.3.11 Window Frame Colours](0200-installing-agl.md#23311-window-frame-colours)). AGL remembers the setting between starts, and unticks it when the hub registers you in the race.
 
 ***Note*:** If your **User name** is not **sol** and this is checked, you will automatically be logged out as **sol** and logged in under your **User name** once the race has started.
 
@@ -24,7 +24,7 @@ You are now ready to configure and fill out the fields as follows:
 
 ## 3.2 Waypoints
 
-AGL no longer reads or writes waypoint files. The routes and waypoints of a race are kept in the hub's database, and you import and export GPX files from the Routes form (see Chapter 5).
+AGL no longer reads or writes waypoint files. The routes and waypoints of a race are kept in the hub's database, and you import and export GPX files from the Routes form (see [5 Using AGL](0500-using-agl.md#5-using-agl)).
 
 **VMG tolerance:** Used by the Waypoint to DC routine to determine how closely it needs to honour a waypoint when tacking or gybing to a waypoint. This is an iterative process, and the finer the tolerance, the longer it will take (and may fail).
 
@@ -82,7 +82,7 @@ On selection, the year will be highlighted. Use the left and right arrows, or Ta
 
 **DC import date format:** This is used to specify the date format of the DC import file. From qtVlm, route export, these will typically be either dd/MM/yyyy HH:mm or MM/dd/yyyy HH:mm. Other formats can be defined as per [SimpleDateFormat (Java SE 25 & JDK 25) (oracle.com)](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/SimpleDateFormat.html).
 
-The DC Data Table is explained in section [6 DC Data Table](0600-dc-data-table.md).
+The DC Data Table is explained in section [6 DC Data Table](0600-dc-data-table.md#6-dc-data-table).
 
 **Caution:** An invalid date format will cause a date parsing exception and may crash the DC Table Editor defined later. A better method is to export the route as a gpx and let AGL recalculate the DCs using the current grib.
 
@@ -200,7 +200,7 @@ To force the integration to run again, simply delete the file (it’s actually a
 
 Integrating the production races is essentially the same process. After you have confirmed that the Test instance works, you can start AGL in an existing race folder, or create a new one. Then follow the steps for the Test environment and select **Production** instead of **Test**.
 
-When the folder chooser is launched, navigate to the Production qtVlm install and then follow the steps as described in 3.7.1 Integration Steps – Test Environment.
+When the folder chooser is launched, navigate to the Production qtVlm install and then follow the steps as described in [3.7.1 Integration Steps – Test Environment](0300-configuration.md#371-integration-steps-test-environment).
 
 ### 3.7.3 Updating qtVlm
 
@@ -296,7 +296,7 @@ If you click **Cancel**, AGL keeps the original port and waits for it to become 
 
 **Include pressure (PRMSL):** Get the pressure at mean sea level as well as the wind data?
 
-**Note:** The NOAA server behaviour is explained later in **NOAA Server**.
+**Note:** The NOAA server behaviour is explained in [7 NOAA Server](0700-noaa-server.md#7-noaa-server).
 
 **Reduce grib:** When selected, the SOL and NOAA gribs will be reduced to be just larger than the race area. The Map will be created to be just larger than the race area as well. Selecting this will reduce download traffic for NOAA and speed up AGL operation.
 
@@ -326,7 +326,7 @@ AGL now makes a grib called current_grib.grb which is an exact replica of what i
 
 **Wind barb size (px):** The size in pixels that the wind barbs will be drawn.
 
-The barb spacing and size can also be changed in the [View Options](0500-using-agl.md#532-view-options) form.
+The barb spacing and size can also be changed in the [5.3.2 View Options](0500-using-agl.md#532-view-options) form.
 
 **Zoom step:** How much one click of **Zoom in** or **Zoom out** on the graphics toolbar zooms. It must be more than 1. The default is 1.5, which is a third of the view each click.
 

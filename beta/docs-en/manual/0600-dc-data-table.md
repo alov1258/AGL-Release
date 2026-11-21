@@ -48,7 +48,7 @@ The command (cmd) window says what is wrong, for example a missing column or the
 
 <img src="../img/manual/image163.png" alt="" width="900">
 
-**Note:** AGL watches the DC file and loads the new data whenever it is modified (see **DC File Change Detection** below). This allows the user to keep reusing the same file for each import from the csv file.
+**Note:** AGL watches the DC file and loads the new data whenever it is modified (see [6.3 DC File Change Detection](0600-dc-data-table.md#63-dc-file-change-detection)). This allows the user to keep reusing the same file for each import from the csv file.
 
 During the load, AGL has checked if any DCs are outside the optimum VMG range, and if so, has automatically set the command to “twa” and the value to maxVMG. This can be turned off by deselecting the MaxVMG radio button, in which case the value and command will be set to COG/cc.
 

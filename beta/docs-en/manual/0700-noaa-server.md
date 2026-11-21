@@ -43,7 +43,7 @@ The server creates files in the grib folder, and in the NOAA folder below that.
 3.  GFS_NOAA\_{race id}\_{grib_time}\_1p00.grb2. This is the raw 1 degree data for hours 192 to 384, in the grib\NOAA folder.
 4.  CFS_NOAA\_{race id}\_{cfs_cycle_time}\_1p00.grb2. Members only. This is the CFS data, one file for each CFS cycle, in the grib\NOAA folder.
 
-Note that the A grib can be loaded and used as it is created, so there is no need to wait for the NOAA download to complete. It will only contain the frames up to the last frame downloaded. For more frames, look at [current_grib.grb](#731-current_gribgrb).
+Note that the A grib can be loaded and used as it is created, so there is no need to wait for the NOAA download to complete. It will only contain the frames up to the last frame downloaded. For more frames, look at [7.3.1 current_grib.grb](#731-current_gribgrb).
 
 ### 7.3.1 current_grib.grb
 

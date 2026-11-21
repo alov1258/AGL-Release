@@ -52,7 +52,7 @@ Press Enter to close the window.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Double click on it to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The User Manual and Release Notes are installed with AGL and open from its Help menu (see 2.3.4.3 The Help Menu); there are no separate document files or desktop links for them.
+Double click on it to launch AGL and proceed with configuration as described in [2.3 Launching AGL](0200-installing-agl.md#23-launching-agl). The User Manual and Release Notes are installed with AGL and open from its Help menu (see [2.3.4.3 The Help Menu](#2343-the-help-menu)); there are no separate document files or desktop links for them.
 
 #### 2.1.1.2 Beta
 
@@ -122,7 +122,7 @@ Press Enter to close the window.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Double-click the AGL25 icon on the Desktop (a link to AGL_Launcher.app in the Java25 folder) to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The User Manual and Release Notes are installed with AGL and open from its Help menu (see 2.3.4.3 The Help Menu); there are no separate document files or desktop links for them.
+Double-click the AGL25 icon on the Desktop (a link to AGL_Launcher.app in the Java25 folder) to launch AGL and proceed with configuration as described in [2.3 Launching AGL](0200-installing-agl.md#23-launching-agl). The User Manual and Release Notes are installed with AGL and open from its Help menu (see [2.3.4.3 The Help Menu](#2343-the-help-menu)); there are no separate document files or desktop links for them.
 
 #### 2.1.2.2 Beta
 
@@ -192,7 +192,7 @@ Press Enter to close the window.
 
 <img src="../img/manual/image22.png" alt="" width="43">
 
-Double click on it to launch AGL and proceed with configuration as described in 2.3 Launching AGL. The User Manual and Release Notes are installed with AGL and open from its Help menu (see 2.3.4.3 The Help Menu); there are no separate document files or desktop links for them.
+Double click on it to launch AGL and proceed with configuration as described in [2.3 Launching AGL](0200-installing-agl.md#23-launching-agl). The User Manual and Release Notes are installed with AGL and open from its Help menu (see [2.3.4.3 The Help Menu](#2343-the-help-menu)); there are no separate document files or desktop links for them.
 
 ***Note*:** The installer runs install_AGL_linux.sh for you (it sets the permissions on the bundled Java), so there is nothing more to run. Some Linux desktops may ask you to trust the launcher the first time you double-click it (Linux Mint does not). If asked, choose the option to trust or allow launching it.
 
@@ -240,7 +240,7 @@ If you want to completely remove AGL and reset your computer to a state that AGL
 
 5.  You will now be asked to type **YES** to continue.
 
-6.  Once complete, press **Enter to close the window** and continue with [2.1 Installing and Upgrading AGL 25](#21-installing-and-upgrading-agl-25). The last line of the window tells you to run agl-install-windows.bat: that is the installer described in 2.1.
+6.  Once complete, press **Enter to close the window** and continue with [2.1 Installing and Upgrading AGL 25](#21-installing-and-upgrading-agl-25). The last line of the window tells you to run agl-install-windows.bat: that is the installer described in [2.1 Installing and Upgrading AGL 25](0200-installing-agl.md#21-installing-and-upgrading-agl-25).
 
 To remove a Beta installation, follow the same steps, but click the [AGL Beta Cleaner](https://github.com/alov1258/AGL-Release/releases/download/beta/agl-clean-windows-beta.bat) (agl-clean-windows-beta.bat) link instead.
 
@@ -350,11 +350,11 @@ To remove a Beta installation, follow the same steps, but click the [AGL Beta Cl
 
 To keep it on the Dock: drag “AGL_Launcher.app” onto the Dock, or right-click its icon while it’s running and choose “Options &gt; Keep in Dock”. You can leave it right where it is in the Java25 folder - you don’t need to move it to Applications.
 
-Starting AGL opens the **AGL Hub**: the one AGL window on the taskbar, with a tab for each race. If the hub is already open, starting AGL again simply brings it to the front. The first time AGL is started it asks for a few things first (see Starting AGL for the First Time), and then the hub opens (see The AGL Hub).
+Starting AGL opens the **AGL Hub**: the one AGL window on the taskbar, with a tab for each race. If the hub is already open, starting AGL again simply brings it to the front. The first time AGL is started it asks for a few things first (see [2.3.2 Starting AGL for the First Time](#232-starting-agl-for-the-first-time)), and then the hub opens (see [2.3.3 The AGL Hub](#233-the-agl-hub)).
 
 ### 2.3.2 Starting AGL for the First Time
 
-If a newer version of AGL is available, the update dialog described in 2.4 Updating AGL is shown first. Some or all of the following steps will occur:
+If a newer version of AGL is available, the update dialog described in [2.4 Updating AGL](0200-installing-agl.md#24-updating-agl) is shown first. Some or all of the following steps will occur:
 
 Some or all of the following will occur the first time:
 
@@ -378,7 +378,7 @@ Some or all of the following will occur the first time:
 
 5. The **AGL Hub** opens with its **Launcher** tab. No race has been started: AGL never starts a race, or asks for a race folder, by itself. You must enter your SailOnline user name and password with **SOL > Login...**. After a successful login, you can add a race.
 
-6. Click **Add Race** to start your first race (see Adding a Race). If you forgot to add your credentials (see The SOL Login), the hub asks for them the first time a race needs them.
+6. Click **Add Race** to start your first race (see [2.3.3.5 Adding a Race](#2335-adding-a-race)). If you forgot to add your credentials (see [2.3.3.9 The SOL Login](#2339-the-sol-login)), the hub asks for them the first time a race needs them.
 
 7. <img src="../img/screens/hub.hub-the-window-launcher-tab.png" alt="" width="900">
 
@@ -389,7 +389,7 @@ The Launcher tab shows what AGL did to get here: the launcher revision, the inst
 ### 2.3.3 The AGL Hub
 
 
-The hub is the one AGL window on the taskbar. Each race still runs as a program of its own, in its own race folder, so a race that hangs can be ended without touching the others. The races close with the hub (see Closing the Hub). The hub also logs on to SailOnline for every race (see The SOL Login) and keeps the routes and waypoints of every race.
+The hub is the one AGL window on the taskbar. Each race still runs as a program of its own, in its own race folder, so a race that hangs can be ended without touching the others. The races close with the hub (see [2.3.3.8 Closing the Hub](#2338-closing-the-hub)). The hub also logs on to SailOnline for every race (see [2.3.3.9 The SOL Login](#2339-the-sol-login)) and keeps the routes and waypoints of every race.
 
 #### 2.3.3.1 The Hub Window
 
@@ -397,7 +397,7 @@ The hub opens at the top left of the main screen the first time you start it. It
 
 <img src="../img/screens/hub.menu-bar.png" alt="" width="400">
 
-- The tab strip has the **Launcher** tab, then a tab for each race, named after its race folder. Hold the mouse over a race tab to see the race name and number.
+- The tab strip has the **Launcher** tab, the **Races** tab (see [2.3.3.10 The Races Tab](#23310-the-races-tab)), then a tab for each race, named after its race folder. Hold the mouse over a race tab to see the race name and number.
 
 - The **Add Race** button is after the last tab. It is grey while the hub is starting, until the races on the restart list have been started (about 4 seconds for each). The Launcher console then says "Launch complete - Add Race is on".
 - The **Stow All** icon button beside **Add Race** puts away the AGL windows of every race and minimises each race's qtVlm, in one click. It does for all the races what **Stow** and **qtVlm Stow** on a race tab do for that race.
@@ -406,9 +406,11 @@ The hub opens at the top left of the main screen the first time you start it. It
 
 - Tick **Always on top** (top right) to keep the hub above other windows. AGL remembers it.
 
+- Right-click in a console of the hub, or in a text box of the Telegram and Pushover set-up windows, for **Copy** and **Select All**.
+
 - The hub icon <img src="../img/icons/agl_hub_48_48.png" alt="" class="inline-icon" height="18">beside the In Control icon <img src="../img/icons/control_panel_monitor_48x48.png" alt="" class="inline-icon" height="18"> on the AGL DC Checker tab brings the hub to the front.
 
-The hub never closes by itself. It stays open until you close it (see Closing the Hub).
+The hub never closes by itself. It stays open until you close it (see [2.3.3.8 Closing the Hub](#2338-closing-the-hub)).
 
 **More than one hub.** The hub keeps its own settings for each channel, so a production hub, a beta hub and a development hub on one computer do not overwrite each other's settings (the race watcher lists, Telegram, window settings and the hub log). Production uses the `.agl` folder in your home folder (hub.properties, hub.log, hub_telegram.txt), beta uses `.agl/beta`, and a development hub uses `.agl/dev`. The first time a beta or development hub starts it copies only the SOL login, the language and the text size from production. The race watcher lists, Telegram and the active times start empty. The routes and DC database is shared.
 
@@ -417,9 +419,9 @@ The hub never closes by itself. It stays open until you close it (see Closing th
 
 <img src="../img/manual/image41.png" alt="" width="900">
 
-- **File &gt; Add Race...** (Ctrl+N) chooses race folders and starts AGL in them (see Adding a Race).
+- **File &gt; Add Race...** (Ctrl+N) chooses race folders and starts AGL in them (see [2.3.3.5 Adding a Race](#2335-adding-a-race)).
 - **File &gt; Stop All Races** closes every running race as its own Quit does.
-- **File &gt; Quit** closes the hub and the races that are running. AGL asks first (see Closing the Hub).
+- **File &gt; Quit** closes the hub and the races that are running. AGL asks first (see [2.3.3.8 Closing the Hub](#2338-closing-the-hub)).
 
 - **View &gt; Text Size** sets the size of the text in the hub: choose a size from the list, or use **Larger** (Ctrl and +), **Smaller** (Ctrl and -) or **Reset** (Ctrl and 0). The size is the hub's own, and is remembered. The consoles use a larger monospaced font.
 
@@ -429,17 +431,17 @@ The hub never closes by itself. It stays open until you close it (see Closing th
 
 - The **Language** menu chooses the language of AGL (English or Italian). The hub changes at once, the races that are running are told, and races you start later use it too. AGL remembers the choice. A race window has its own **Language** menu, which changes that window and its dialogs for the session only: the hub's setting is not changed.
 
-- The **SOL** menu has **Login...**, where you enter the SailOnline user name and password the hub logs on with (see The SOL Login).
+- The **SOL** menu has **Login...**, where you enter the SailOnline user name and password the hub logs on with (see [2.3.3.9 The SOL Login](#2339-the-sol-login)).
 
-- The **Messaging** menu item opens the Messaging window, where Pushover, Telegram and the messages the races send are set up once for every race. It replaces the Telegram and Pushover menus. It is described in Chapter 8, Chats.
+- The **Messaging** menu item opens the Messaging window, where Pushover, Telegram and the messages the races send are set up once for every race. It replaces the Telegram and Pushover menus. It is described in [8 Chats](0800-chats.md#8-chats).
 
-- The **Routes** menu has **Waypoints and Routes...**, a window that shows the routes and waypoints of every race, with a Race column, and lets you delete and restore old ones. There is no import in this window: import a route from a race (see Chapter 5).
+- The **Routes** menu has **Waypoints and Routes...**, a window that shows the routes and waypoints of every race, with a Race column, and lets you delete and restore old ones. There is no import in this window: import a route from a race (see [5 Using AGL](0500-using-agl.md#5-using-agl)).
 
-- The **Help** menu opens the documentation and mails your logs. It is described in The Help Menu, below.
+- The **Help** menu opens the documentation and mails your logs. It is described in [2.3.4.3 The Help Menu](0200-installing-agl.md#2343-the-help-menu).
 
 #### 2.3.3.3 The Launcher Tab
 
-The console on this tab shows what AGL does as it starts, a line as each race is started, and messages from the hub itself, which start with \[hub\]. They include which qtVlm belongs to each race, whether the race is a member, and what the qtVlm dialog manager does (see Managing qtVlm Dialogs).
+The console on this tab shows what AGL does as it starts, a line as each race is started, and messages from the hub itself, which start with \[hub\]. They include which qtVlm belongs to each race, whether the race is a member, and what the qtVlm dialog manager does (see [2.3.3.6 Managing qtVlm Dialogs](#2336-managing-qtvlm-dialogs)).
 
 <img src="../img/screens/hub.hub-the-window-launcher-tab.png" alt="" width="900">
 
@@ -451,11 +453,11 @@ The console on this tab shows what AGL does as it starts, a line as each race is
 
 - **Follow** scrolls to the newest line as it arrives. Untick it to read earlier lines.
 
-- **Manage qtVlm dialogs?** (see Managing qtVlm Dialogs).
+- **Manage qtVlm dialogs?** (see [2.3.3.6 Managing qtVlm Dialogs](#2336-managing-qtvlm-dialogs)).
 
-- **Restart races after a shutdown?** (see Restarting Races After a Shutdown).
+- **Restart races after a shutdown?** (see [2.3.3.7 Restarting Races After a Shutdown](#2337-restarting-races-after-a-shutdown)).
 
-- **Watch for new races** is off to start with. When it is ticked the hub asks about new SailOnline races and registers you (see Watching for New Races).
+- New SailOnline races are on the **Races** tab (see [2.3.3.10 The Races Tab](#23310-the-races-tab)).
 
 - **Show the race on a Set?** is ticked to start with. When you make a DC Set in a race, the hub switches to the tab of that race. The hub window is not brought to the front. It is kept for each user. The switch happens as soon as the Set starts, not when it ends, so you can minimise the race windows during a long Set. It applies to Sets you start, not to Sets AGL makes by itself.
 
@@ -479,7 +481,7 @@ The dot on a race's tab shows how it is: **green** for running, **amber** if the
 
 - **Stop** closes the race as its Quit does, and saves first. If it has not closed after 10 seconds the status says "Not stopping - use Kill", and the race is asked for a thread dump.
 
-- **Kill** ends the race at once and saves nothing, so use it only for a race that hangs. AGL asks you to confirm. After you confirm, the race is asked for a thread dump, ended 2.5 seconds later, and your email program opens with the logs zipped to send to the author, as **Help > Mail logs...** does (see Mailing Your Logs). On a race that has already ended, Kill closes its tab.
+- **Kill** ends the race at once and saves nothing, so use it only for a race that hangs. AGL asks you to confirm. After you confirm, the race is asked for a thread dump, ended 2.5 seconds later, and your email program opens with the logs zipped to send to the author, as **Help > Mail logs...** does (see [Mailing Your Logs](#mailing-your-logs)). On a race that has already ended, Kill closes its tab.
 
 <img src="../img/screens/hub.hub-kill-a-race.png" alt="" width="355">
 
@@ -584,7 +586,7 @@ Click the X of the hub, or choose **File &gt; Quit**. If races are running, AGL 
 
 <img src="../img/screens/hub.hub-close-agl-close-the-races-or-leave-them.png" alt="" width="432">
 
-- The question is "Closing the hub needs to close the races as well. OK to close?". **OK** closes the races and the hub, because a race needs the hub for its login and its routes. The races that were open stay on the restart list and start again when the hub next starts (see Restarting Races After a Shutdown). A race you closed on purpose is not started again. **Cancel** keeps the hub open.
+- The question is "Closing the hub needs to close the races as well. OK to close?". **OK** closes the races and the hub, because a race needs the hub for its login and its routes. The races that were open stay on the restart list and start again when the hub next starts (see [2.3.3.7 Restarting Races After a Shutdown](#2337-restarting-races-after-a-shutdown)). A race you closed on purpose is not started again. **Cancel** keeps the hub open.
 
 A race that is taken up again by a new hub shows its console from that point on. What it wrote before is in agl_console.log in the race folder.
 
@@ -615,31 +617,39 @@ If no login has been set when a race needs one, the hub asks for it then.
 
 **AGL runs from the hub only.** If AGL is started any other way, it says "AGL must be started from the AGL hub" and ends.
 
-#### 2.3.3.10 Watching for New Races
+#### 2.3.3.10 The Races Tab
 
-Tick **Watch for new races** on the Launcher tab, and the hub asks about each new SailOnline race and registers you in the ones you want. It is off to start with, and it uses the hub's SOL login.
+The **Races** tab, next to the Launcher tab, lists every SailOnline race and registers you in the ones you choose. It uses the hub's SOL login. The hub looks at the races when it starts, when a race starts its SOL weather or NOAA download, every half hour, and when you click **Refresh**.
 
-1.  When you tick it, a list of the open races appears, with a box for each. Tick the races you are already registered in; the hub ticks the ones it can see you are in. **OK** keeps your answers, **Cancel** asks about every race. Races that are over are not listed.
-    <img src="../img/screens/hub.hub-watch-for-new-races-the-races-you-are-already-in.png" alt="" width="400">
-    
-2.  The hub looks at the races when a race starts its SOL weather or NOAA download, and every half hour (every two minutes while a race waits for its registration). For each new race it asks, at the mouse, whether you want to sail it: **Yes**, **Remind me later** or **No**.
+<img src="../img/screens/hub.hub-the-window-races-tab.png" alt="" width="900">
 
-    - **No**: you are never asked about that race again.
+Each row is a race:
 
-    - **Remind me later**: you are asked again when registration opens, or after a day if it is open now.
+- **Race** is the race number and **Name** its name.
+- **Status** is the registration: **Open**, **Waiting** (not open yet) or **Closed**.
+- **Start UTC** and **Start local** are the start time in UTC and in the computer's own time. **Time to start** counts down.
+- **Registered** says whether the hub's user is registered in the race.
+- **Race folder** is the name of the race folder the race is in, for example Race_1.
+- **Register?** and **Ignore?** are the boxes you tick, then click **Apply**.
 
-    - **Yes**: the race folder chooser opens. If registration is open, the hub registers you with its SOL login (if the race has more than one boat, you choose the boat), the folder gets the race id, and the race starts.
-      <img src="../img/screens/hub.hub-a-new-sailonline-race-yes-remind-me-later-no.png" alt="" width="900">
-    
-    <img src="../img/screens/hub.hub-a-new-race-which-boat.png" alt="" width="450">
-    
-3.  If registration is not open yet, **Yes** still sets up the folder and starts the race, with **Use SOL** ticked, so you can look at the race. When registration opens, the hub registers you automatically, the race unticks Use SOL and logs on as you.
+A row is light green when registration is open, light purple when it is not open yet and light red when it is closed. A closed race that you are registered in and have AGL running in is light green, also when it is running under another hub.
 
-4.  A timed race starts when you register, so the hub registers you when the race starts. When your boat finishes, the hub registers the race again so that you can sail it again.
+**Registering.** Tick **Register?**. The race folder chooser opens at once. A folder already used by another race is greyed out, because one folder can serve only one race. Then click **Apply**.
 
-Registration always uses the hub's login: if you sail a boat for someone else, they register on their own computer. If registration fails, a message says why. After 3 tries the hub gives up and you register on the SailOnline website. Races whose registration closed after they started are never offered.
+- If registration is open, you are registered at once, the folder gets the race id and the race starts. If the race has more than one boat, you choose the boat.
+- If registration is not open yet, the race is queued. The folder gets the race, with **Use SOL** ticked, so you can look at the race. When registration opens the hub registers you, and the race unticks Use SOL and logs on as you. Untick **Register?** and click **Apply** to cancel a queued race.
+- A timed race starts when you register, so the hub registers you when the race starts. When your boat finishes, the hub registers the race again so that you can sail it again.
+- **Register?** is not available for a race you are already registered in, or for a closed race.
 
-A race that one of your race folders is already set up for is never offered. A folder you set up by hand with **Use SOL** ticked waits for its registration like the one in step 3: the hub registers you when registration opens (a timed race: at its start). Clear **Use SOL** in that folder and the wait stops. If you register on the SailOnline website yourself, the hub notices when its own registration is refused (it checks whether you are already in the race), does not ask about the race again, and the race unticks **Use SOL**. The message "The hub could not register in race #n" is shown once for each race. The hub log records what the site said when it refused a registration.
+**Ignoring.** Tick **Ignore?** and click **Apply** to take a race out of the way. A race you are registered in is retired, and its race folder is free again. Un-tick Ignore and Apply to let the hub find the registration again.
+
+A race you are registered in always shows **Registered** as Yes. The hub finds out from the race folders (a folder set up for the race with **Use SOL** off) and, for an open race, from the SailOnline register page, and remembers it. This includes a race you registered on the SailOnline website yourself. A race that starts in a race folder set up for it (for example from **Add Race**, with **Use SOL** off) is shown as registered, with that folder, as soon as its first weather download comes. A race folder serves one race: when a folder runs a different race, it is taken off the race it was registered for. A race you retired with **Ignore** and then run again is registered again. A race folder is free again after its race has gone from the list and the hub has been restarted.
+
+A race that starts with **Use SOL** ticked while its registration is open is ticked as **Register?** for that race folder. Click **Apply** to register.
+
+The tab's title has an orange dot while any race is not yet registered, queued or ignored. Register or ignore every race and the dot goes.
+
+No dialogs pop up for new races. Problems (no SOL login, registration failed, the hub gave up after 3 tries) show in the line under the table and in the hub log. Registration always uses the hub's login: if you sail a boat for someone else, they register on their own computer. Races whose registration closed after they started are never offered.
 
 #### 2.3.3.11 Window Frame Colours
 
@@ -647,7 +657,7 @@ A race shows its state with a coloured frame, 5 pixels wide, inside each of its 
 
 - **Red**: the race is using the Simulator.
 
-- **Light orange**: a qtVlm dialog is open and waiting (see Managing qtVlm Dialogs).
+- **Light orange**: a qtVlm dialog is open and waiting (see [2.3.3.6 Managing qtVlm Dialogs](#2336-managing-qtvlm-dialogs)).
 
 - **Purple**: the boat's user is SOL (**Use SOL** is ticked on the race).
 
@@ -697,7 +707,7 @@ The hub and every race window have a **Help** menu.
 
 - **Release notes** opens the release notes.
 
-- **Mail logs...** gathers the logs needed to find a problem and starts an email to the author (see Mailing Your Logs below).
+- **Mail logs...** gathers the logs needed to find a problem and starts an email to the author (see [Mailing Your Logs](#mailing-your-logs) below).
 
 The pages open in your web browser. They are installed with AGL, in the **docs** folder of the Java25 folder, and are shown from your own computer, so they work without the internet and always match the AGL you are running. If that folder is not there, AGL opens the same pages on the web instead. The pages are in the language of the window, if there is a translation, and in English if there is not.
 
@@ -717,7 +727,7 @@ If you have a problem and the author asks for your logs, choose **Help > Mail lo
 
 AGL does not send anything itself: nothing leaves your computer until you press **Send** in your email program. The zip is **agl_logs_**&lt;date and time&gt;**.zip** in the **AGL-Logs** folder in your home folder; each time you use **Mail logs...** the earlier zips there are deleted. You can open the zip first to see exactly what is in it.
 
-If the author asks for more detail, tick **View > Detailed logging** first, repeat the problem, and then choose **Mail logs...**. Without it, the Logger holds only the essentials: errors, warnings, marks, finish, BBQ and DC set lines are always written. Killing a race from the hub (see Race Tabs) gathers the logs and opens the email in the same way.
+If the author asks for more detail, tick **View > Detailed logging** first, repeat the problem, and then choose **Mail logs...**. Without it, the Logger holds only the essentials: errors, warnings, marks, finish, BBQ and DC set lines are always written. Killing a race from the hub (see [2.3.3.4 Race Tabs](#2334-race-tabs)) gathers the logs and opens the email in the same way.
 
 If AGL cannot open a mail program, it says so and gives the name of the zip file. Open the **AGL-Logs** folder yourself and attach the zip to an email to the address the message gives.
 
@@ -749,7 +759,7 @@ A **patch** is a changed release of the version you already run. The dialog is t
 
 <img src="../img/screens/launcher.launcher-a-patch-is-available.png" alt="" width="500">
 
-Occasionally a release needs AGL to be reset to a clean state before it is installed; the Release Notes say when. The dialog then adds *this release also resets AGL to a clean state first*, and you are asked to confirm after you click **Update Now**. Your race folders and map tiles are kept, but AGL may ask for your Races folder again the first time it starts afterwards (see 2.3). Choose the same folder as before.
+Occasionally a release needs AGL to be reset to a clean state before it is installed; the Release Notes say when. The dialog then adds *this release also resets AGL to a clean state first*, and you are asked to confirm after you click **Update Now**. Your race folders and map tiles are kept, but AGL may ask for your Races folder again the first time it starts afterwards (see [2.3 Launching AGL](0200-installing-agl.md#23-launching-agl)). Choose the same folder as before.
 
 2.  If other AGL sessions are running, AGL lists them by race folder and asks to close them, because they all use the same files. If there are none, this step is skipped.
 
@@ -757,7 +767,7 @@ Occasionally a release needs AGL to be reset to a clean state before it is insta
 
     Click **Yes**. Each session closes as if you had clicked its close button, so its settings are saved. This normally takes a few seconds, but a busy session (for example one that is downloading data) can take up to 30 seconds. If one still has not closed, AGL offers to force it to close, which does not save that session’s settings. Click **No** to cancel the update: nothing is changed and AGL starts as normal.
 
-3.  AGL now closes and an **AGL Update** window opens. It waits for AGL to finish closing and then runs the installer described in 2.1. If a clean is needed you will first see **Step 1 of 2** while AGL is reset, followed by **Step 2 of 2**. For a normal update the installer finds your existing installation and asks *Update it? (Y/N) \[Y\]*: press **Enter** to accept.
+3.  AGL now closes and an **AGL Update** window opens. It waits for AGL to finish closing and then runs the installer described in [2.1 Installing and Upgrading AGL 25](0200-installing-agl.md#21-installing-and-upgrading-agl-25). If a clean is needed you will first see **Step 1 of 2** while AGL is reset, followed by **Step 2 of 2**. For a normal update the installer finds your existing installation and asks *Update it? (Y/N) \[Y\]*: press **Enter** to accept.
 
 <img src="../img/manual/image59.png" alt="" width="900">
 

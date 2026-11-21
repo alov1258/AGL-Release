@@ -154,7 +154,7 @@ Premendo **Applica**, la correzione viene applicata e il messaggio viene aggiorn
 
 <img src="../img/screens/tg.apply.png" alt="" width = "500">
 
-**DC modificati, non impostati** ti avvisa quando l'area DC è stata modificata e non impostata per il numero di minuti del suo **anticipo (lead)** (15 per impostazione predefinita; il messaggio è disattivato finché non lo spunti). Pushover riceve un avviso. Telegram e lo schermo mostrano **Imposta ora** e **Ignora**: **Imposta ora** imposta i DC, e **Ignora** rilegge l'area DC dal server e scarta le tue modifiche. Ogni nuova modifica fa ripartire il tempo.
+**DC modificati, non impostati** ti avvisa quando l'area DC è stata modificata e non impostata per il numero di minuti del suo **anticipo (lead)** (15 per impostazione predefinita; il messaggio è disattivato finché non lo spunti). Pushover riceve un avviso. Il messaggio ha tre pulsanti, su Telegram e nella finestra di dialogo sullo schermo: **Imposta ora** imposta i DC, **Aggiorna** rilegge l'area DC dal server e scarta le tue modifiche, e **Lascia** chiude il messaggio e lascia l'area DC com'è, ancora modificata (la X della finestra sullo schermo fa lo stesso). Su Telegram, **Aggiorna** riceve la risposta "Aggiornamento dei DC in corso", e scrivere `TG D` significa Lascia per questo messaggio. Ogni nuova modifica fa ripartire il tempo.
 
 Puoi anche inviare comandi ad AGL per controllare la tua barca. I comandi iniziano con il numero della regata, oppure puoi impostare prima la regata con `SET`. Sono solo per i membri. `HELP` li elenca; i principali sono:
 
@@ -177,7 +177,7 @@ Per governare dal telefono serve che **In controllo** sia selezionato in AGL.
 
 ### 8.1.6 Prove di Telegram
 
-Prima di attivare i messaggi in diretta, è consigliabile usare il [Simulatore](0900-simulator.md) per provare cosa succederà con ogni evento, sia nella console sia con Telegram. Ti suggeriamo di fare le prove seguenti su una regata già finita o non ancora partita.
+Prima di attivare i messaggi in diretta, è consigliabile usare il [9 Simulatore](0900-simulator.md#9-simulatore) per provare cosa succederà con ogni evento, sia nella console sia con Telegram. Ti suggeriamo di fare le prove seguenti su una regata già finita o non ancora partita.
 
 #### 8.1.6.1 Controllo BBQ
 

@@ -24,7 +24,7 @@ AGL 25.5.X is another major release chain with a lot of new functionality. The f
 
 3. The PL labels in the graphics show the PL the boat arrives with and, in brackets, the PL after the turn. See [5.3.2.3 DC Labels](manual/0500-using-agl.md#5323-dc-labels).
 
-4. A new message, **DCs edited, not set**, warns you by Pushover, Telegram or on screen when you have edited the DCs and not set them for a chosen time, and lets you Set Now or Dismiss. See [5.2.6 DCs Not Yet Set](manual/0500-using-agl.md#526-dcs-not-yet-set).
+4. A new message, **DCs edited, not set**, warns you by Pushover, Telegram or on screen when you have edited the DCs and not set them for a chosen time, and lets you Set Now, Refresh or Leave, on the screen and on Telegram. See [5.2.6 DCs Not Yet Set](manual/0500-using-agl.md#526-dcs-not-yet-set).
 
 5. Setting the DCs now looks after PL blocks, and resends a DC that latency has made late. See [5.1.2 Set Button](manual/0500-using-agl.md#512-set-button).
 
@@ -72,6 +72,10 @@ AGL 25.5.X is another major release chain with a lot of new functionality. The f
 
 5. The additional course waypoints have been removed, and replaced by Import Route and Show Route. See [3.2 Waypoints](manual/0300-configuration.md#32-waypoints).
 
+6. A route can be built and changed in the Routes form: Edit, Add, Remove, Up and Down work on the waypoints of the route. See [5.5.1.2 Changing the Waypoints of a Route](manual/0500-using-agl.md#5512-changing-the-waypoints-of-a-route).
+
+7. When more than one waypoint is at the spot you click for Edit, Add, Remove or Delete, a small dialog lets you choose which. See [5.5.3 Editing Waypoints on the Graphics](manual/0500-using-agl.md#553-editing-waypoints-on-the-graphics).
+
 #### Graphics window
 
 1. Four new zoom buttons: zoom in, zoom out, zoom to the current trace and zoom to the race area. See [5.4.1 Toolbar Icons](manual/0500-using-agl.md#541-toolbar-icons).
@@ -104,7 +108,7 @@ Items 1 to 3 are for members only.
 
 2. The active times for Pushover and Telegram are set once in the hub; a race can follow them or keep its own. See [8.1.4 In Each Race](manual/0800-chats.md#814-in-each-race).
 
-3. The Chats tab shows the boat data (SOG, COG, TWA, PL, Position, DBL and Server Jump) in a row at the top, so it can be read while chatting. See [Chapter 8, Chats](manual/0800-chats.md).
+3. The Chats tab shows the boat data (SOG, COG, TWA, PL, Position, DBL and Server Jump) in a row at the top, so it can be read while chatting. See [8 Chats](manual/0800-chats.md#8-chats).
 
 4. Every text box now has the right-click menu (Undo, Cut, Copy, Paste, Select All). See [8.1.1 Replying To Messages](manual/0800-chats.md#811-replying-to-messages).
 
@@ -117,18 +121,12 @@ Items 1 to 3 are for members only.
 #### The hub
 
 1. The hub now manages the SailOnline login for all races. Enter your user name and password once in SOL > Login, and every race uses it. A race can still sail as another user, and you can switch user in a running race without closing it.  Ticking or clearing Use SOL in a running race also changes its login at once.
-
-2. The hub can watch for new SailOnline races, ask if you want to sail them, and register you. You can open a race to look at it before registration opens, and the hub registers you automatically when it does. Timed races are registered at the start and again after they finish. See [2.3.3.10 Watching for New Races](manual/0200-installing-agl.md#23310-watching-for-new-races). A race already set up in one of your race folders is never offered, and if you register on the website yourself the hub notices and does not ask again.
-
-3. Closing the hub now closes its races, which come back on the restart list. See [2.3.3.8 Closing the Hub](manual/0200-installing-agl.md#2338-closing-the-hub).
-
+2. A new Races tab in the hub lists every SailOnline race with its registration status and start time. Tick Register? to be registered, and Ignore? to put a race aside, then click Apply. You can open a race to look at it before registration opens (logged in as sol), and the hub registers you automatically when it opens. Timed races are registered at the start and again after they finish. The tab finds the races you are registered in by itself, including ones you registered on the website. See [2.3.3.10 The Races Tab](manual/0200-installing-agl.md#23310-the-races-tab).
+3. Closing the hub now closes all its races, which come back on the restart. See [2.3.3.8 Closing the Hub](manual/0200-installing-agl.md#2338-closing-the-hub).
 4. Window frames show the state of a race: red for the Simulator, orange while qtVlm is waiting, and purple when Use SOL is ticked. See [2.3.3.11 Window Frame Colours](manual/0200-installing-agl.md#23311-window-frame-colours).
-
-5. When you make a Set in a race, the hub switches to that race's tab (this can be turned off in the Launcher tab). See [2.3.3.3 The Launcher Tab](manual/0200-installing-agl.md#2333-the-launcher-tab).
-
-6. A hub for production, one for beta and one for development can run on the same computer without overwriting each other's settings. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
-
-7. A new Stow All button beside Add Race puts away the AGL and qtVlm windows of every race in one click. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
+5. A hub for production and one for beta can run on the same computer without overwriting each other's settings. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
+6. When you complete setting DCs for a race, the hub switches to that race's tab to allow you to stow all that race's windows (this can be turned off in the Launcher tab). See [2.3.3.3 The Launcher Tab](manual/0200-installing-agl.md#2333-the-launcher-tab).
+7. A new Stow All button beside Add Race minimises all the AGL and qtVlm windows of every race in one click. See [2.3.3.1 The Hub Window](manual/0200-installing-agl.md#2331-the-hub-window).
 
 #### Logging
 
@@ -137,18 +135,16 @@ Items 1 to 3 are for members only.
 ### Bug fixes – 25.5.1
 
 1. +P / -P and FP+ / FP- waypoints no longer go direct when the boat has already sailed the pivot. See [5.2 Checking the Course](manual/0500-using-agl.md#52-checking-the-course).
-
 2. BBQ and mark warnings have been corrected. The phone's BBQ warning now agrees with the predictor trace, so there are no false run-aground warnings, and the warnings are sent whenever In Control is ticked. See [5.2.1 Switching the Checks On](manual/0500-using-agl.md#521-switching-the-checks-on).
-
 3. The Traces list no longer fills with checks AGL makes by itself.
-
 4. In the DC Table, Delete, Send and Copy with nothing to act on no longer clear the whole DC area.
-
 5. The hub, the race window, the Waypoints and Routes window, the DC Editor and the Chats window no longer grow a little each time AGL restarts. Resize each once after updating.
-
 6. Add Race is held off while the hub is still restarting your races.
-
 7. The VMC check for waypoints no longer gives travel times that are too optimistic. See [5.4.1 Toolbar Icons](manual/0500-using-agl.md#541-toolbar-icons).
+8. The BBQ Checker no longer fails to fix a collision because a route exporter put a DC with almost the same course next to the DC it moves. Such DCs are now ignored by the checks. See [5.2.2 The BBQ Checker](manual/0500-using-agl.md#522-the-bbq-checker).
+9. A finish line missed just after the last DC is now found, and the BBQ Checker says so in the Logger when the path does not reach the finish. See [5.2.4 The Finish](manual/0500-using-agl.md#524-the-finish).
+10. The graphics could stop redrawing when the BBQ red dots were on screen and the current trace was hidden. Each trace now keeps its own dots. See [5.3.3.1 The Traces Form](manual/0500-using-agl.md#5331-the-traces-form).
+11. The release notes now open in the browser after a Beta update as well (the beta page for a Beta install).
 
 ## Version 25.4.3
 
@@ -174,7 +170,7 @@ Items 1 to 3 are for members only.
     sh -c "'$HOME/SOL/Java25/AGL_start.sh'"
     ```
 
-    (use the folder AGL is installed in if it is not ~/SOL/Java25; for a Beta install use `Java25Beta` and add `--channel=beta` after the closing quote of the path). Or run the installer yourself, as described in section 2.1.3 of the User Manual.
+    (use the folder AGL is installed in if it is not ~/SOL/Java25; for a Beta install use `Java25Beta` and add `--channel=beta` after the closing quote of the path). Or run the installer yourself, as described in section [2.1.3 Linux](manual/0200-installing-agl.md#213-linux) of the User Manual.
 
 2. If AGL says an update is in progress and no update window is open, delete the update lock and start AGL again:
 
@@ -194,21 +190,21 @@ Items 1 to 3 are for members only.
 
 #### Messages to your phone
 
-1. AGL can now message your phone live through Pushover and Telegram: weather arrived, about to run aground or run aground, going to miss or missed a mark, a race starting with no course, and the server DCs running out before the next Wx (No DCs). Emergency messages repeat until you acknowledge them on the phone. See [Chapter 8, Chats](manual/0800-chats.md).
+1. AGL can now message your phone live through Pushover and Telegram: weather arrived, about to run aground or run aground, going to miss or missed a mark, a race starting with no course, and the server DCs running out before the next Wx (No DCs). Emergency messages repeat until you acknowledge them on the phone. See [8 Chats](manual/0800-chats.md#8-chats).
 
-2. Pushover is set up once in the hub for all races. See [Chapter 8, Chats](manual/0800-chats.md).
+2. Pushover is set up once in the hub for all races. See [8 Chats](manual/0800-chats.md#8-chats).
 
-3. Telegram runs from a single bot in the hub, with channels for each race. AGL can propose a course change on your phone, and it is applied only when you confirm it there. A set of commands lets you check status and send course changes from the phone. See [Chapter 8, Chats](manual/0800-chats.md).
+3. Telegram runs from a single bot in the hub, with channels for each race. AGL can propose a course change on your phone, and it is applied only when you confirm it there. A set of commands lets you check status and send course changes from the phone. See [8 Chats](manual/0800-chats.md#8-chats).
 
-4. Replication of the SOL client chat rooms in a tear off chat tab. See [Chapter 8, Chats](manual/0800-chats.md).
+4. Replication of the SOL client chat rooms in a tear off chat tab. See [8 Chats](manual/0800-chats.md#8-chats).
 
-5. Messages sent from AGL over 187 characters in length are split into parts and transmitted at once, and AGL attempts to join split messages into one message. See [Chapter 8, Chats](manual/0800-chats.md).
+5. Messages sent from AGL over 187 characters in length are split into parts and transmitted at once, and AGL attempts to join split messages into one message. See [8 Chats](manual/0800-chats.md#8-chats).
 
 #### Graphics window
 
 1. A View Options form in the graphics window replaces several toolbar icons, and adds DC label fields, a legend, Fill land polygons and Font -/+ for the graphics. See [5.3.2 View Options](manual/0500-using-agl.md#532-view-options).
 
-2. Grey DC trace in the graphics window, fed directly by the DC Data Table, with an on/off button; the additional waypoints are no longer overwritten by the DCs. See [Chapter 6, DC Data Table](manual/0600-dc-data-table.md).
+2. Grey DC trace in the graphics window, fed directly by the DC Data Table, with an on/off button; the additional waypoints are no longer overwritten by the DCs. See [6 DC Data Table](manual/0600-dc-data-table.md#6-dc-data-table).
 
 3. AIS boats are now plotted after a race has finished.
 
@@ -252,13 +248,13 @@ Items 1 to 3 are for members only.
 
 2. The User Manual and Release Notes are now web pages. They are installed with AGL and open from the Help menu without the internet, and they are also online at https://alov1258.github.io/AGL-Release/. The PDF versions and their desktop shortcuts are no longer installed, and the installer removes the old ones when you update.
 
-3. The Simulator (members only) stands in for the SailOnline server, so you can test AGL, and what you will see on your phone, without touching your real boat. It has its own Sim tab. Refer to section 9 of the User Manual. See [Chapter 9, Simulator](manual/0900-simulator.md).
+3. The Simulator (members only) stands in for the SailOnline server, so you can test AGL, and what you will see on your phone, without touching your real boat. It has its own Sim tab. Refer to [9 Simulator](manual/0900-simulator.md#9-simulator).
 
 #### Windows, Parameters and logs
 
 1. Text Size and Icon Size on the Parameters tab: Font -/+ and Icon -/+ with a preview of the icon size, applied with Apply Font. The font is always Dialog, so the font choice is gone. See [3.10 Graphics](manual/0300-configuration.md#310-graphics).
 
-2. Parameters are saved to the ini file as they are changed, so the Save and Refresh buttons are gone. A value that is not valid is not saved, and Feedback says so. See [Chapter 3, Configuration](manual/0300-configuration.md).
+2. Parameters are saved to the ini file as they are changed, so the Save and Refresh buttons are gone. A value that is not valid is not saved, and Feedback says so. See [3 Configuration](manual/0300-configuration.md#3-configuration).
 
 3. AGL remembers the hub and AGL window positions, and restores them on startup. A window whose size is wrong after it moves between screens of different scaling is repaired.
 
@@ -322,7 +318,7 @@ Windows and Linux only. macOS will follow once working and will be enabled throu
 
 **IMPORTANT:**
 
-AGL 25.2.7 is a major update that builds on 25.1.5. The User Manual describes the installation procedure in Section 2.1 for each of the operating platforms. For the upgrade from 25.1.5, AGL needs to do a major reorganisation plus upgrade the runtime environment. This means that AGL can no longer run out of the current Java25 folder, and it needs to completely remove all files in that folder associated with previous releases. You will see the following prompt when you first try to upgrade. Entering **Y** will make a clean test install of the new version and will not touch your current install. You can use this if you would like to have a look at the new version, whilst still using the old version.
+AGL 25.2.7 is a major update that builds on 25.1.5. The User Manual describes the installation procedure in Section [2.1 Installing and Upgrading AGL 25](manual/0200-installing-agl.md#21-installing-and-upgrading-agl-25) for each of the operating platforms. For the upgrade from 25.1.5, AGL needs to do a major reorganisation plus upgrade the runtime environment. This means that AGL can no longer run out of the current Java25 folder, and it needs to completely remove all files in that folder associated with previous releases. You will see the following prompt when you first try to upgrade. Entering **Y** will make a clean test install of the new version and will not touch your current install. You can use this if you would like to have a look at the new version, whilst still using the old version.
 
 ![The installer prompt shown before the upgrade](img/upgrade-installer-prompt.png)
 
@@ -338,15 +334,15 @@ Once you have upgraded to 25.2.7, the AGL launcher will manage upgrades as descr
 
 2. Usability of date spinner improved. Date spinner now moves between the components with Tab, shift-Tab and a mouse click.
 
-3. Releases now come from GitHub and the installer has been rewritten. It is started from a link in the User Manual, works the same way on Windows, Linux and macOS (aarch64 only), and no longer needs environment variables. Refer to section 2.1 of the User Manual.
+3. Releases now come from GitHub and the installer has been rewritten. It is started from a link in the User Manual, works the same way on Windows, Linux and macOS (aarch64 only), and no longer needs environment variables. Refer to section [2.1 Installing and Upgrading AGL 25](manual/0200-installing-agl.md#21-installing-and-upgrading-agl-25) of the User Manual.
 
 4. The installer is split into components (application, Java runtime, libraries, launcher, map tiles and documents) and only gets what it needs. A file already in your Downloads folder is re-used only if it is the current version. Clean installs and patching are now the same process.
 
-5. A cleaner script removes AGL’s settings, shortcuts and program files, so the computer looks as if AGL had never been installed. Race folders and map tiles are never removed. Refer to section 2.2 of the User Manual.
+5. A cleaner script removes AGL’s settings, shortcuts and program files, so the computer looks as if AGL had never been installed. Race folders and map tiles are never removed. Refer to section [2.2 Completely Removing AGL](manual/0200-installing-agl.md#22-completely-removing-agl) of the User Manual.
 
 6. Documents are no longer named by version. The installer adds the current User Manual and Release Notes to the install folder (in Italian if your computer is set to Italian) and puts a link to each on the desktop. The title of each document shows the release it applies to, and the release version is controlled by the GitHub release.
 
-7. AGL checks for a newer version each time it starts and, when you confirm, closes and runs the installer. If other AGL sessions are running, it asks to close them for you; each one closes as if you had clicked its close button, so its settings are saved. AGL cannot be started while an update is running. Refer to section 2.4 of the User Manual.
+7. AGL checks for a newer version each time it starts and, when you confirm, closes and runs the installer. If other AGL sessions are running, it asks to close them for you; each one closes as if you had clicked its close button, so its settings are saved. AGL cannot be started while an update is running. Refer to section [2.4 Updating AGL](manual/0200-installing-agl.md#24-updating-agl) of the User Manual.
 
 8. A release can require AGL to be cleaned before it is installed, for example when upgrading from an old version. AGL does this after you confirm, keeping your race folders and map tiles.
 
@@ -446,7 +442,7 @@ Once you have upgraded to 25.2.7, the AGL launcher will manage upgrades as descr
 
 ### Enhancements
 
-1. DC Data Table now supports the import of qtVlm and Expedition gpx files in route format. Read Section 6 in the user manual before using the DC Data Table.
+1. DC Data Table now supports the import of qtVlm and Expedition gpx files in route format. Read Section [6 DC Data Table](manual/0600-dc-data-table.md#6-dc-data-table) in the user manual before using the DC Data Table.
 
 2. File chooser now uses the directory of the current file as the default folder.
 
