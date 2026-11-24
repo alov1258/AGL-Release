@@ -2,7 +2,11 @@
 
 The Chats tab in AGL is a replication of the SOL chats. In addition, it has Pushover and Telegram rooms that send you messages about key events such as BBQs, missed marks and Wx arrival, and Telegram lets you answer from your phone. When AGL starts the chats for the first time, it will open with the Pushover and English chats set.
 
-<img src="../img/manual/image174.png" alt="">
+The Chats tab is for members only.
+
+<img src="../img/screens/main.chats.png" alt="">
+
+At the top of the tab is a strip of boat boxes laid out as on the DC Checker tab: **SOG**, **COG**, **TWA**, **PL**, **Position**, **DBL** and **Server Jump (s)**. They update when the DC Checker boxes do and cannot be edited, so you can watch your boat while you chat. Below it is the **Messaging** box, which holds the settings for the messages AGL sends you (see [8.1.4 In Each Race](#814-in-each-race)). Pushover, Telegram and the messages are set once in the hub, and every race uses them.
 
 ## 8.1 Managing Chats
 
@@ -41,6 +45,8 @@ An emoticon is only changed when it stands on its own: at the start of the messa
 | XD | 😆 | :\* :-\* | 😘 | (y) (Y) | 👍 |
 | ;) ;-) | 😉 | :S :s :-S :-s | 😖 | (n) (N) | 👎 |
 
+Right-click in the message list for **Reply to** *name* (first in the menu, for the message you clicked), **Copy** and **Select All**. **Select All** selects the message you clicked, not the whole room. The entry box has the full edit menu (Undo, Redo, Cut, Copy, Paste, Delete, Select All). Every text box in AGL has the same right-click menu; in boxes you cannot type in, only Copy and Select All are available.
+
 ### 8.1.2 Setting Up Pushover
 
 1. At **pushover.net**, make an account and an application for AGL. Upload an icon for the application on the same page, so AGL's messages carry it on your phone: use `agl.png` from your Java25 install folder (it is 150 x 150 and can be uploaded as it is). The icon is set on the Pushover website, not in AGL. The application gives you an **API token**. Your **user key** is on the Pushover home page. Both are 30 letters and digits.
@@ -49,21 +55,21 @@ An emoticon is only changed when it stands on its own: at the start of the messa
 
    <img src="../img/screens/po.application.png" alt="">
 
-2. In the hub, open the **Pushover** menu and choose **Setup...**.
+2. In the hub, open the **Messaging** menu. The window has three tabs: **Pushover**, **Telegram** and **Messages**. Start on the **Pushover** tab. The window can stay open while you work. Your changes are saved a moment after your last key and sent to every running race, so every race uses the same Pushover details.
 
-   <img src="../img/screens/hub.pushover-menu.png" alt="" width="900">
+   <img src="../img/screens/hub.menu-bar.png" alt="" width="600">
 
-3. Enter the **Application API token** and your **User key**. If the key is a delivery group key, tick **Group**: AGL then puts the boat name in front of every message, so the people in the group know whose it is. Tick **Show the token and key** if you want to check what you typed.
+3. On the **Pushover** tab, enter the **Application API token** and your **User key**. If the key is a delivery group key, tick **Group**: AGL then puts the boat name in front of every message, so the people in the group know whose it is. Tick **Show the token and key** if you want to check what you typed.
 
-   <img src="../img/screens/hub.hub-pushover-setup.png" alt="" width="995">
-
+   <img src="../img/screens/hub.hub-pushover-setup-tab.png" alt="" width="900">
+   
 4. Leave **Device name(s)** empty to send to all your devices, or enter one or more names separated by commas. It is not used with a group key.
 
 5. **Message title** is the title above each message on the phone.
 
 6. **Emergency messages** repeat every number of seconds you set, and give up after the number of minutes you set.
 
-7. Press **Send test message**. The phone should show "TEST: Pushover is working". Then **OK**.
+7. Press **Send test message**. The phone should show "TEST: Pushover is working".
 
    <img src="../img/screens/po.message.png" alt="" width="400">
 
@@ -89,9 +95,7 @@ You need a Telegram bot of your own. It takes a few minutes.
 
    <img src="../img/screens/tg.botfather-token.png" alt="" width="500">
 
-6. In the hub, open the **Telegram** menu and choose **Setup...**.
-
-   <img src="../img/screens/hub_TG.png" alt="" width="900">
+6. In the hub, open the **Messaging** menu and click the **Telegram** tab.
    
 7. Paste the token into **Bot token**, and tick **Activate Telegram**. The hub reads the bot only while this is ticked. The status should change to **running**.
 
@@ -101,11 +105,11 @@ You need a Telegram bot of your own. It takes a few minutes.
 
 10. Press **Send test**. The phone should show the test message.
 
-   <img src="../img/screens/hub.hub-telegram-setup.png" alt="" width="801">
+   <img src="../img/screens/hub.hub-telegram-tab.png" alt="" width="900">
 
 11. Once the test is successful, you can set the bot picture to `agl.png` by clicking on **Set bot picture**. Messages from AGL will carry the AGL icon.
 
-Also on this form:
+Also on this tab:
 
 - **Delete old messages from the phone** keeps the Telegram thread short. The oldest messages, and your own commands, are deleted (Telegram only allows this for 48 hours).
 - **Keep** *n* **suggestions and** *n* **other messages for each race**: the suggestions with buttons that are kept, and the messages of every other kind (alerts, replies and your commands). A new suggestion always replaces the one still open.
@@ -115,25 +119,30 @@ Things to know:
 
 - **One bot serves all the races.** Start a command with the race number (for example `1 cc 140`), or send `GET` to see the races. You can also set the race first with `SET`.
 - **Only one program can read a bot at a time.** Do not use the same bot with another hub.
-- In the hub, the Telegram menu lists the races, with an **Active** tick for each. Telegram is used only for the races that are ticked.
+- In each race, the **Telegram** tick in the Messaging box on the Chats tab switches Telegram on for that race. Telegram is used only for the races that are ticked.
 
 ### 8.1.4 In Each Race
 
-On the Chats tab, tick **Activate Pushover** to switch Pushover on for the race. **Active times** sets when Pushover may send; a window that ends earlier than it starts runs over midnight, for example 22:00 to 06:00.
+The **Messaging** box on the Chats tab holds the message settings of the race. **Use Hub** is ticked for a new race: the race uses the settings made in the hub (the **Messaging** menu, **Messages** tab) for whether Pushover is active, the active times and every message, and they show greyed out here. Untick **Use Hub** to give this race settings of its own.
+
+If a race already had settings of its own that differ from the hub's, AGL asks once, *Messaging settings differ from the hub*. **Use Hub** makes the race follow the hub. **Use Race** keeps the race's own settings (**Use Hub** is unticked) and AGL does not ask again. If the settings are the same, the race follows the hub without asking.
+
+<img src="../img/screens/dlg.messaging-the-settings-differ-from-the-hub-use-hub-use-race.png" alt="" width="350">
+
+Tick **Activate Pushover** to switch Pushover on for the race. **Active times** sets when Pushover and Telegram may send, in your computer's local time; a window that ends earlier than it starts runs over midnight, for example 22:00 to 06:00. While the race uses the hub, the button reads **Hub:** and the hub's times. In the picker, tick **Use the hub's active times** to follow the hub, or untick it to set times for this race. The times only hold back what AGL sends to you: commands you send from the phone are always accepted.
+
 <img src="../img/screens/main.chats-active-times.png" alt="" width ="500"> 
 
-**Message Config** shows the messages. For each one you can:
+**Message Config** shows the messages (the same table is on the **Messages** tab of the hub Messaging window, where it sets the messages for every race that uses the hub). For each one you can:
 
 - tick **Pushover** and **Telegram** to choose where it goes,
 - change the **text**. Leave it empty for the standard text. `<time left>` and `<time>` are filled in with how long it is to the event and when, and `<mark name>` with the mark,
 - set the **priority**: Lowest sends no alert on the phone, Low is quiet, Normal, High ignores the phone's quiet hours, and Emergency repeats until you acknowledge it,
-- set the **active times**: follow the global times, any time, or only in windows you choose,
+- set the **active times**: follow the active times above, any time, or only in windows you choose (a message's own times override the race and hub times),
 - set the **lead**, in minutes, for the messages that have one,
 - press the test button to send the message now, as a test.
 
 The Pushover and Telegram rooms on the Chats tab show what has been sent, and what has not been sent and why. Type a text below the room and press **Send** to test that it works.
-
-<img src="../img/screens/main.chats.png" alt="">
 
 ### 8.1.5 Answering from Your Phone
 
@@ -144,6 +153,8 @@ Telegram suggestions arrive with **Apply** and **Dismiss** buttons. A suggestion
 On pressing **Apply**, the correction is applied and the message is update with the new boat information.
 
 <img src="../img/screens/tg.apply.png" alt="" width = "500">
+
+**DCs edited, not set** warns you when the DC area has been edited and not set for the number of minutes in its **lead** (15 by default; the message is off until you tick it). Pushover gets a notice. The message has three buttons, on Telegram and in the dialog on the screen: **Set Now** sets the DCs, **Refresh** reads the DC area from the server again and drops your edits, and **Leave** closes the message and keeps the DC area as it is, still edited (the X on the screen dialog does the same). On Telegram, **Refresh** is answered with "Refreshing the DCs", and typing `TG D` means Leave for this message. Each new edit restarts the time.
 
 You can also send commands back to AGL to control your boat. Commands start with the race number, or you can `SET` the race first. They are for members only. `HELP` lists them; the main ones are:
 
@@ -166,7 +177,7 @@ Steering from the phone needs **In Control** to be ticked in AGL.
 
 ### 8.1.6 Testing Telegram
 
-Before turning the live messaging on, it is advisable to use the [Simulator](0900-simulator.md) to test what is going to happen with each event, both on the console and with Telegram. We suggest you do the following tests on any race that has finished or is yet to start.
+Before turning the live messaging on, it is advisable to use the [9 Simulator](0900-simulator.md#9-simulator) to test what is going to happen with each event, both on the console and with Telegram. We suggest you do the following tests on any race that has finished or is yet to start.
 
 #### 8.1.6.1 BBQ Checking
 

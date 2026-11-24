@@ -4,35 +4,33 @@ Ora sei pronto per configurare e compilare i campi come segue:
 
 ## 3.1 Accesso e regata
 
-**Usa SOL come ID di accesso:** Seleziona questa opzione se vuoi accedere come SOL.
+**Usa l'accesso dell'hub:** Selezionato all'inizio. L'hub accede a SailOnline per questa regata con l'accesso che gli hai dato (vedi [2.3.3.9 L'Accesso SOL](0200-installing-agl.md#2339-laccesso-sol)), e le caselle **Nome utente** e **Password** sono in grigio. Deselezionalo per accedere come un altro utente, ad esempio per far regatare una barca per conto di qualcun altro; la regata usa allora il **Nome utente** e la **Password** qui sotto. Puoi selezionarlo o deselezionarlo anche in una regata in esecuzione. La regata ottiene un nuovo accesso e i DC vengono caricati di nuovo, quindi non serve chiudere la regata.
 
-***Nota*:** Se il tuo **User name** non è **sol** e questa opzione è selezionata, verrai automaticamente disconnesso come **sol** e connesso con il tuo **Nome utente** una volta iniziata la regata.
+**Usa SOL come ID di accesso:** Seleziona questa opzione se vuoi accedere come SOL, per guardare una regata a cui non sei ancora iscritto. La finestra della regata ha una cornice viola finché è selezionata (vedi [2.3.3.11 Colori della Cornice delle Finestre](0200-installing-agl.md#23311-colori-della-cornice-delle-finestre)). AGL ricorda l'impostazione tra un avvio e l'altro, e la deseleziona quando l'hub ti iscrive alla regata.
 
-**Nome utente:** Il tuo username SOL (nome della barca)
+***Nota*:** Se il tuo **Nome utente** non è **sol** e questa opzione è selezionata, verrai automaticamente disconnesso come **sol** e connesso con il tuo **Nome utente** una volta iniziata la regata.
 
-**Password:** La tua password SOL
+**Nome utente:** Il tuo username SOL (nome della barca). Viene usato solo quando **Usa l'accesso dell'hub** non è selezionato.
 
-**Regata:** Utilizzando il menu a tendina Race, seleziona la regata corrente. Questo compilerà automaticamente l'ID della regata.
+**Password:** La tua password SOL, usata solo quando **Usa l'accesso dell'hub** non è selezionato. Seleziona **Mostra password** per vedere ciò che viene digitato.
 
-<img src="../img/manual/image60.png" alt="" width="900">
+**Regata:** Utilizzando il menu a tendina Regata, seleziona la regata corrente. Questo compilerà automaticamente l'ID della regata.
+
+<img src="../img/screens/main.params-login-race.png" alt="" width="300">
+
+<img src="../img/screens/main.race-dropdown.png" alt="" width="300">
 
 ***Nota*:** Se non ci sono regate nell'elenco, molto probabilmente si tratta di un errore di connessione a internet. Controlla la connessione, chiudi l'app e riavviala.
 
-## 3.2 Percorso e waypoint
+## 3.2 Waypoint
 
-**File di waypoint:** Nome del file di waypoint da utilizzare; può essere un file gpx.
-
-**File di waypoint del percorso:** Consente di caricare un file in formato waypoint o gpx come waypoint aggiuntivi del percorso. Seleziona l'icona <img src="../img/icons/document-open-2.png" alt="" class="inline-icon" height="18"> che aprirà il selettore file.
-
-<img src="../img/manual/image61.png" alt="" width="450">
-
-Seleziona il file da utilizzare e fai clic su **Apri**. Selezionando **Annulla** verrà cancellato il file attualmente selezionato. Questo file verrà ora utilizzato automaticamente ogni volta che si usa il DC Checker.
+AGL non legge né scrive più file di waypoint. I percorsi e i waypoint di una regata sono conservati nel database dell'hub, e importi ed esporti i file GPX dal modulo Percorsi (vedi [5 Utilizzo di AGL](0500-using-agl.md#5-utilizzo-di-agl)).
 
 **Tolleranza VMG:** Utilizzato dalla routine Waypoint to DC per determinare con quanta precisione rispettare un waypoint durante una virata o una strambata verso un waypoint. Si tratta di un processo iterativo: più fine è la tolleranza, più tempo richiederà (e potrebbe anche fallire).
 
-**Segui: distanza dalla costa (m):** Quanto al largo dalla costa, in metri, il comando Follow mette i suoi waypoint. Il valore predefinito è 10.
+**Segui: distanza dalla costa (m):** Quanto al largo dalla costa, in metri, il comando Segui mette i suoi waypoint. Il valore predefinito è 10.
 
-**Segui: distanza lungo la traccia (m):** Di quanto, in metri, i waypoint di Follow vengono poi spostati lungo la direzione di marcia. Il valore predefinito è 0.
+**Segui: distanza lungo la traccia (m):** Di quanto, in metri, i waypoint di Segui vengono poi spostati lungo la direzione di marcia. Il valore predefinito è 0.
 
 ## 3.3 Polari
 
@@ -58,31 +56,25 @@ Seleziona il file da utilizzare e fai clic su **Apri**. Selezionando **Annulla**
 
 Alla selezione, l'anno verrà evidenziato. Usa le frecce sinistra e destra, oppure Tab e Shift-Tab, per spostarti tra i componenti di data e ora. Puoi anche fare clic con il mouse su ciascun componente. Quando un componente è evidenziato, le frecce su e giù ne aumentano e diminuiscono rispettivamente il valore. Lo stesso vale per le frecce alla fine del campo.
 
-<img src="../img/manual/image64.png" alt="" width="900">
+<img src="../img/screens/main.date-spinner.png" alt="" width="450">
 
 **Usa la partenza della regata:** Consente all'utente di controllare i DC fin dall'inizio. Se selezionato, il checker presumerà che la barca si trovi al waypoint di partenza e che l'orario sia quello di partenza. Eventuali DC successivi a tale orario verranno elaborati nella produzione della rotta. Se deselezionato, l'orario di partenza sarà quello attuale.
 
-**Mostra la posizione della barca:** Utilizzato quando la barca si trova molto lontana dai DC di interesse. Non verrà tracciata né considerata nella produzione della rotta. Più applicabile quando **Use these start coordinates** è selezionato.
-
-**Use these start coordinates:** La rotta verrà calcolata presupponendo che la barca si trovi alle **Start coords (lat, lon)**, e l'orario verrà portato avanti fino all'orario del primo DC.
-
-**Start coords (lat, lon):** Le coordinate di partenza per la rotta. Sono nel formato che può essere incollato direttamente dal client SOL. Per copiare le coordinate dal client SOL, tieni premuto il tasto Alt e fai clic con il pulsante sinistro del mouse. Questo copia le coordinate del mirino negli appunti.
+**Mostra la posizione della barca:** Utilizzato quando la barca si trova molto lontana dai DC di interesse. Non verrà tracciata né considerata nella produzione della rotta.
 
 ## 3.5 DC
-
-**Make DC using CC:** Utilizzato dal convertitore da waypoint a DC per determinare come dirigersi verso il waypoint successivo. Dovrebbe essere lasciato selezionato.
 
 **DC di risveglio:** Se selezionato, verranno inseriti DC aggiuntivi al tempo definito prima che il DC successivo debba scattare. Se per un po' non vengono eseguiti DC, il jump del server si allunga fino a 30 secondi. Questo può essere un problema nei giri di boa, poiché si crea un'incertezza di 30 secondi su quando scatterà il DC. Questa opzione serve a far "svegliare" il server nei giri di boa, in modo che i DC scattino a intervalli di 10 secondi.
 
 **Risveglio (min):** Il tempo in minuti per inserire un DC aggiuntivo prima che scatti il successivo. 5 minuti è una buona durata.
 
-**Mark clearance (m):** Di quanto, in metri, la barca deve passare al largo di una boa del percorso perché conti come girata, e di quanto oltre la boa deve attivarsi il DC che fa virare la barca. Il valore predefinito è 5.
+**Tempo di sicurezza DC (s):** Il server può far scattare un DC fino a questo tempo in anticipo. Le correzioni restano lontane dalla terraferma, e le boe vengono girate, con un DC così in anticipo. Il valore predefinito è 10. Un tempo più piccolo fa modifiche più piccole ma comporta più rischio.
 
-**Controllo BBQ:** Se selezionato, AGL controlla lungo la rotta della barca e i tuoi DC alla ricerca di terraferma, invia i messaggi BBQ e propone soluzioni. Richiede anche che In Control sia attivo.
+**Controllo BBQ:** Se selezionato, il BBQ Checker controlla lungo i tuoi DC e la rotta della barca alla ricerca di terraferma e propone soluzioni. I messaggi BBQ in tempo reale richiedono che **In controllo** sia attivo; questa casella non li attiva.
 
-**Anticipo BBQ (min):** Quanto in anticipo, in minuti, Check for BBQ guarda lungo la rotta o i DC. Il valore predefinito è 60.
+**Anticipo BBQ (min):** Quanto in anticipo, in minuti, Controllo BBQ guarda lungo la rotta o i DC. Il valore predefinito è 60.
 
-**Controllo delle boe:** Se selezionato, AGL ti avvisa quando la barca sta per mancare la prossima boa che deve girare. Richiede anche che In Control sia attivo.
+**Controllo delle boe:** Se selezionato, il BBQ Checker controlla anche le girate delle boe, e ti avvisa quando la barca sta per mancare una boa che deve girare. L'avviso in tempo reale di boa mancata richiede che **In controllo** sia attivo; questa casella non lo attiva.
 
 **Anticipo boa (min):** Quanto in anticipo, in minuti, il controllo delle boe cerca la boa. Il valore predefinito è 15.
 
@@ -90,7 +82,7 @@ Alla selezione, l'anno verrà evidenziato. Usa le frecce sinistra e destra, oppu
 
 **Formato data di importazione DC:** Utilizzato per specificare il formato data del file di importazione dei DC. Nell'esportazione della rotta da qtVlm, questi saranno tipicamente dd/MM/yyyy HH:mm oppure MM/dd/yyyy HH:mm. Altri formati possono essere definiti come indicato in [SimpleDateFormat (Java SE 25 & JDK 25) (oracle.com)](https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/text/SimpleDateFormat.html).
 
-La DC Data Table è spiegata nella sezione [6 DC Data Table](0600-dc-data-table.md).
+La DC Data Table è spiegata nella sezione [6 DC Data Table](0600-dc-data-table.md#6-dc-data-table).
 
 **Attenzione:** un formato di data non valido causerà un'eccezione di analisi della data e può mandare in crash il DC Table Editor definito più avanti. Un metodo migliore è esportare la rotta come gpx e lasciare che AGL ricalcoli i DC usando il grib attuale.
 
@@ -208,7 +200,7 @@ Per forzare una nuova esecuzione dell'integrazione, elimina semplicemente il fil
 
 L'integrazione delle regate Production è sostanzialmente lo stesso processo. Dopo aver verificato che l'istanza Test funzioni, puoi avviare AGL in una cartella di regata esistente oppure crearne una nuova. Poi segui i passaggi per l'ambiente Test e seleziona **Produzione** invece di **Prova**.
 
-Quando viene mostrato il selettore di cartelle, vai all'installazione Production di qtVlm e poi segui i passaggi descritti in 3.7.1 Passaggi di Integrazione – Ambiente Test.
+Quando viene mostrato il selettore di cartelle, vai all'installazione Production di qtVlm e poi segui i passaggi descritti in [3.7.1 Passaggi di Integrazione – Ambiente Test](0300-configuration.md#371-passaggi-di-integrazione-ambiente-test).
 
 ### 3.7.3 Aggiornamento di qtVlm
 
@@ -286,10 +278,6 @@ Se fai clic su **Annulla**, AGL mantiene la porta originale e attende che si lib
 
 **Controlla i messaggi di regata:** Questo monitorerà il feed dei messaggi della regata e, se arriva un nuovo messaggio, le informazioni sulla regata verranno aggiornate
 
-**Make mayday calls:** Se selezionato, verrà attivata la funzione di soccorso BBQ. La funzione è descritta in dettaglio più avanti.
-
-**Mayday respondents:** Chi può rispondere alle tue chiamate mayday. Trattato più avanti.
-
 **Elenco barche AIS:** L'elenco delle barche le cui informazioni AIS verranno inviate nel feed NMEA. Se vuoto, vengono inviate tutte le barche. Selezionando l'<img src="../img/icons/ais16.png" alt="" class="inline-icon" height="18">icona si apre l'AIS Boat Chooser. Seleziona le barche desiderate e fai clic su Add. Quindi fai clic su Apply per aggiornare l'elenco delle barche AIS. L'icona si trova sia nella scheda Parametri che nella scheda Controllo DC.
 
 ***Nota:***
@@ -308,7 +296,7 @@ Se fai clic su **Annulla**, AGL mantiene la porta originale e attende che si lib
 
 **Includi la pressione (PRMSL):** Scarica anche la pressione al livello medio del mare oltre ai dati del vento?
 
-**Nota:** Il comportamento del server NOAA è spiegato più avanti in **Server NOAA**.
+**Nota:** Il comportamento del server NOAA è spiegato in [7 Server NOAA](0700-noaa-server.md#7-server-noaa).
 
 **Riduci il grib:** Se selezionato, i grib SOL e NOAA verranno ridotti in modo da essere di poco più grandi dell'area di regata. Anche la mappa verrà creata di poco più grande dell'area di regata. Selezionando questa opzione si riduce il traffico di download per NOAA e si velocizza il funzionamento di AGL.
 
@@ -337,6 +325,10 @@ AGL ora crea un grib chiamato current_grib.grb che è una replica esatta di ciò
 **Spaziatura barbe del vento (px):** La spaziatura in pixel con cui verranno disegnate le barbe del vento.
 
 **Dimensione barbe del vento (px):** La dimensione in pixel con cui verranno disegnate le barbe del vento.
+
+I valori di spaziatura e dimensione delle barbe si possono cambiare anche nel modulo [5.3.2 Opzioni di vista](0500-using-agl.md#532-opzioni-di-vista).
+
+**Passo dello zoom:** Di quanto zooma un clic su **Ingrandisci** o **Riduci** nella barra degli strumenti della grafica. Deve essere maggiore di 1. Il valore predefinito è 1,5, cioè un terzo della vista a ogni clic.
 
 **Dimensione testo:** La dimensione del testo e dei pulsanti nelle finestre di AGL. Font - e Font + cambiano la dimensione di 1, e mostrano la nuova dimensione accanto a quella in uso. Apply Font la applica. Il font è sempre Dialog, quindi non c'è un font da scegliere.
 
@@ -377,6 +369,8 @@ Max TWA: TWA al quale si verifica la velocità massima della barca
 Max Speed: La velocità massima in nodi
 
 **Nota:** Il file di log può essere caricato nel checker grafico.
+
+**Registra gli orari di partenza dei DC:** Se selezionato, AGL scrive un file chiamato dc_timing_&lt;regata&gt;.csv nella cartella logs della cartella della regata. Confronta l'orario in cui ogni DC è stato impostato con quello in cui il server lo ha eseguito davvero, per mostrare quanto in anticipo o in ritardo il server fa scattare i DC. Serve solo se l'autore te lo chiede.
 
 **Crea il file di log AIS:** Se selezionato, l'applicazione creerà automaticamente un file di log con tutti i dati delle barche AIS a ogni jump del server. Questo intervallo varia da 10 a 30 secondi.
 
@@ -465,64 +459,6 @@ Se il client si disconnette, l'applicazione interromperà la trasmissione e atte
 ***Nota:*** L'avvio del flusso di dati può richiedere fino a 30 secondi. I waypoint verranno inviati immediatamente, ma il flusso di dati attende il jump successivo del server per iniziare.
 
 Per avviare l'applicazione, seleziona **Applica**. Verranno applicate le impostazioni e avviati i componenti selezionati.
-
-I parametri vengono scritti in un file .ini, che per impostazione predefinita si chiama **autoGribLoader.ini**. L'applicazione supporta diversi file .ini in due modi. Per impostazione predefinita, il file AGL_run.bat specifica il file .ini come argomento a riga di comando alla fine del file .bat, in questo modo:
-
-*"!INSTALL_DIR!\windows_jre%AGL_GEN%\bin\java.exe" ^*
-
-*-Dsun.java2d.uiScale.enabled=false ^*
-
-*-Dfile.encoding=UTF8 ^*
-
-*--enable-native-access=ALL-UNNAMED ^*
-
-*--add-opens=java.base/sun.nio.ch=ALL-UNNAMED ^*
-
-*--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED ^*
-
-*--add-exports=java.base/java.lang=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.awt=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.java2d=ALL-UNNAMED ^*
-
-*-classpath "!INSTALL_DIR!\\VERSION!.jar;!INSTALL_DIR!\agl%AGL_GEN%\_lib\\;" ^*
-
-*main.AGMain ^*
-
-***autoGribLoader.ini***
-
-Puoi modificare il file .bat con un editor di testo e specificare un file .ini diverso, oppure nessuno. Se non viene specificato alcun file .ini, come mostrato di seguito,
-
-*"!INSTALL_DIR!\windows_jre%AGL_GEN%\bin\java.exe" ^*
-
-*-Dsun.java2d.uiScale.enabled=false ^*
-
-*-Dfile.encoding=UTF8 ^*
-
-*--enable-native-access=ALL-UNNAMED ^*
-
-*--add-opens=java.base/sun.nio.ch=ALL-UNNAMED ^*
-
-*--add-opens=java.base/jdk.internal.ref=ALL-UNNAMED ^*
-
-*--add-exports=java.base/java.lang=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.awt=ALL-UNNAMED ^*
-
-*--add-exports=java.desktop/sun.java2d=ALL-UNNAMED ^*
-
-*-classpath "!INSTALL_DIR!\\VERSION!.jar;!INSTALL_DIR!\agl%AGL_GEN%\_lib\\;" ^*
-
-*main.AGMain*
-
-verrà visualizzato un selettore file quando esegui il file .bat, e sarà possibile selezionare il file ini come mostrato di seguito.
-
-Per Linux e macOS, gli script AGL_run.sh contengono un comando simile alla fine del file e possono essere modificati allo stesso modo.
-
-<img src="../img/manual/image86.png" alt="" width="341">
-
-Seleziona il file oppure Cancel per uscire completamente.
 
 Le modifiche ai parametri vengono salvate nel file ini man mano che le fai: una casella di testo viene salvata quando premi Invio o Tab, oppure fai clic in un altro campo. Se un valore non è valido non viene salvato: la casella torna all'ultimo valore valido e un messaggio in Riscontro lo segnala.
 

@@ -13,9 +13,9 @@ There are four ways to start it. Commands are not case sensitive and can be ente
 - **SIM HERE**, typed in the **Command** box of the **Sim** tab. The same as **Simulator on**.
 - **SIM LAST**, typed in the **Command** box. The boat starts again at the last position you placed with the right click Sim, even from an earlier run. It also puts the boat back there if the Simulator is already running.
 
-You can also type a position as `SIM lat,lon`, or paste `SIM ,CP,lat,lon` as the graphics copy it. **SIM START** (see [9.3](#93-how-the-boat-behaves)) also starts the Simulator, at the boat's position, if it is not running.
+You can also type a position as `SIM lat,lon`, or paste `SIM ,CP,lat,lon` as the graphics copy it. **SIM START** (see [9.3 How the Boat Behaves](#93-how-the-boat-behaves)) also starts the Simulator, at the boat's position, if it is not running.
 
-A boat placed this way is stopped (TWA 0) with 100% performance, and the wind is the wind at that place. AGL then advises which leg is active (see [9.4](#94-marks-and-the-finish)).
+A boat placed this way is stopped (TWA 0) with 100% performance, and the wind is the wind at that place. AGL then advises which leg is active (see [9.4 Marks and the Finish](#94-marks-and-the-finish)).
 
 <img src="../img/screens/sim.leg-confirmation.png" alt="">
 
@@ -45,6 +45,8 @@ The Simulator moves the boat the way the SOL server does: polar speed times perf
 - **Performance loss.** A boat you stop yourself (TWA 0) gets the normal loss from TWA 0 to its new TWA. A boat that is stopped by the coast restarts with 80% performance.
 
 - **The coast.** A boat that reaches the coast stops where it is, with TWA 0. The next command that moves it starts it again with 80% performance.
+
+- **Nothing is recorded.** While the Simulator is running, nothing it does is kept. Sets made in the Simulator are not stored (they do not appear in [5.3.3.2 Stored Sets](0500-using-agl.md#5332-stored-sets)), and simulated DCs are not sent to the hub, so they never appear in [5.3.3.3 Race DC Trace](0500-using-agl.md#5333-race-dc-trace). The traces and the graphics update as usual.
 
 - **Wind.** The wind comes from the grib. **SIM WIND** *twd,tws* sets a fixed wind in degrees and knots, and **SIM WIND OFF** goes back to the grib.
 
@@ -84,6 +86,7 @@ When the boat crosses the finish line, the Simulator stops it and marks it finis
 | `SIM START` *n* | The race start *n* minutes from now, with no dialog. Behave the same way. |
 | `SIM START CLEAR` | Removes the Simulator's start time. The real start is back, and the boat goes back to where it was placed |
 | `SIM RESET` | Restores the original race information. All Simulator changes are removed. |
+| `SIM MARKS RESET` | Deletes the saved copy of the moved marks, so the next Simulator starts with the real marks |
 | `SIM OFF` | Stops the Simulator |
 | `CC` *degrees* | Steers a course |
 | `CP` *degrees* | As `CC`, with performance loss for the turn |
@@ -95,7 +98,7 @@ When the boat crosses the finish line, the Simulator stops it and marks it finis
 | `MD` [*+* \| *-*] | As `MU`, for the best downwind angle |
 | `CD` | Sets the first DC in the DC list now, without waiting for its time |
 
-The boat commands above are the ones you would type in the command box of a race. They are sent to the Simulator only while it is on, and `TM`, `GM`, `MU` and `MD` ask you to confirm before they go. The `TG` and `PO` test commands are in [9.6](#96-testing-telegram-and-pushover). Any other command on this tab is refused.
+The boat commands above are the ones you would type in the command box of a race. They are sent to the Simulator only while it is on, and `TM`, `GM`, `MU` and `MD` ask you to confirm before they go. The `TG` and `PO` test commands are in [9.6 Testing Telegram and Pushover](#96-testing-telegram-and-pushover). Any other command on this tab is refused.
 
 ## 9.6 Testing Telegram and Pushover
 

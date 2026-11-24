@@ -1,6 +1,6 @@
 # 4 Inizializzazione
 
-Applicando i parametri, e a condizione che tu abbia inserito username, password e regata corretti (devi essere iscritto a quella regata), l'applicazione eseguirà un processo di inizializzazione che potrebbe richiedere fino a 30 secondi per completarsi. Se non vedi quanto segue nella finestra di feedback, controlla la regata, lo username e la password, e riprova. Nota che lo stesso risultato può verificarsi anche in assenza di connessione a internet.
+Applicando i parametri, e a condizione che l'accesso sia corretto e tu abbia scelto la regata (devi essere iscritto a quella regata), l'applicazione eseguirà un processo di inizializzazione che potrebbe richiedere fino a 30 secondi per completarsi. Se non vedi quanto segue nella finestra di feedback, controlla la regata e l'accesso, e riprova. L'accesso è l'accesso SOL dell'hub, oppure il nome utente e la password della regata stessa se **Usa l'accesso dell'hub** è deselezionato. Nota che lo stesso risultato può verificarsi anche in assenza di connessione a internet.
 
 **Nota:** Il download delle informazioni di regata (che include la polare della barca) e delle informazioni meteo può bloccarsi. Dopo circa due minuti, l'applicazione dovrebbe interrompere questi download per timeout e riprovare. Se ciò non accade, chiudi l'applicazione e ricomincia.
 
@@ -22,13 +22,13 @@ L'applicazione aggiunge anche le estremità della linea di arrivo, ma non le inc
 
 ## 4.3 Scheda Dati barca attuali
 
-Una volta completata l'inizializzazione, l'applicazione inizierà a riportare i dati attuali della barca in questa scheda. I dati si presentano così. Tutti i dati sono espressi in gradi decimali, miglia nautiche e nodi.
+Una volta completata l'inizializzazione, l'applicazione inizierà a riportare i dati attuali della barca in questa scheda. I dati si presentano così. Latitudine e longitudine sono in gradi, minuti e secondi. Tutti gli altri dati sono espressi in gradi decimali, miglia nautiche e nodi.
 
-<img src="../img/manual/image88.png" alt="" width="900">
+<img src="../img/screens/main.boat-stats.png" alt="" width="595">
 
 Viene inoltre calcolata la durata attuale del jump del server (varia da circa 10 a 30 secondi) e il tempo mancante al prossimo aggiornamento previsto. La data e l'ora dei dati sono accurate a circa un secondo.
 
-Nota che il TWA è stato evidenziato poiché è al di fuori dell'intervallo 42,0 - 145,0.
+Nota che il TWA è stato evidenziato poiché è al di fuori dell'intervallo 47,096 - 133,604.
 
 ## 4.4 Scheda Parametri
 

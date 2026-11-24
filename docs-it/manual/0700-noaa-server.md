@@ -32,6 +32,8 @@ Se un download viene interrotto (AGL viene chiuso, il computer va in sospensione
 
 I frame già presenti sul disco vengono messi subito in memoria, quindi sono disponibili per il routing e per i controlli mentre il resto è ancora in download.
 
+Se il computer va in sospensione durante l'orario in cui è atteso un nuovo grib NOAA, al risveglio AGL ricalcola il grib NOAA attuale e lo segnala nel Riscontro.
+
 ## 7.3 I File
 
 Il server crea file nella cartella grib, e nella cartella NOAA sotto di essa.
@@ -41,7 +43,7 @@ Il server crea file nella cartella grib, e nella cartella NOAA sotto di essa.
 3.  GFS_NOAA\_{race id}\_{grib_time}\_1p00.grb2. Questi sono i dati grezzi a 1 grado per le ore da 192 a 384, nella cartella grib\NOAA.
 4.  CFS_NOAA\_{race id}\_{cfs_cycle_time}\_1p00.grb2. Solo per i membri. Sono i dati CFS, un file per ogni ciclo CFS, nella cartella grib\NOAA.
 
-Nota che il grib A può essere caricato e usato non appena viene creato, quindi non c'è bisogno di aspettare il completamento del download NOAA. Conterrà solo i frame fino all'ultimo frame scaricato. Per avere più frame, vedi [current_grib.grb](#731-current_gribgrb).
+Nota che il grib A può essere caricato e usato non appena viene creato, quindi non c'è bisogno di aspettare il completamento del download NOAA. Conterrà solo i frame fino all'ultimo frame scaricato. Per avere più frame, vedi [7.3.1 current_grib.grb](#731-current_gribgrb).
 
 ### 7.3.1 current_grib.grb
 
@@ -49,4 +51,18 @@ AGL conserva nella cartella grib anche un altro file, **current_grib.grb** (form
 
 In memoria un nuovo grib SOL sostituisce i frame NOAA sul proprio intervallo, ma i frame NOAA oltre la fine del grib SOL restano finché un ciclo NOAA più recente non li sostituisce.
 
-Per il routing a lungo raggio in qtVlm, carica **current_grib.grb** nello slot 1. È sempre il Wx più recente e più lungo che AGL possiede, quindi non c'è bisogno di scegliere il grib A giusto né di ricaricarlo mentre il download procede. Quando apri Routing settings in qtVlm, AGL controlla la prima data del grib che qtVlm ha caricato e ti avvisa se è più vecchia di quella che AGL sta usando.
+Per il routing a lungo raggio in qtVlm, carica **current_grib.grb** nello slot 1. È sempre il Wx più recente e più lungo che AGL possiede, quindi non c'è bisogno di scegliere il grib A giusto né di ricaricarlo mentre il download procede. Quando apri Routing settings in qtVlm, AGL controlla la prima data del grib che qtVlm ha caricato e ti avvisa se è più vecchia di quella che AGL sta usando., così sai che devi aggiornare il grib in qtVlm prima del routing.
+
+<img src="../img/screens/qt.stale-grib.png" alt="" width="700">
+
+## 7.4 Memoria
+
+I grib NOAA, e il CFS più di tutti, richiedono molta memoria. AGL ti avvisa in due casi.
+
+**Prima del download.** Se AGL calcola che il grib NOAA richiede più memoria di quella disponibile, lo dice quando il download sta per iniziare, con le due cifre.
+
+<img src="../img/screens/dlg.noaa-grib-not-enough-memory.png" alt="" width="700">
+
+**Durante il download.** Se AGL esaurisce la memoria mentre carica il grib NOAA, interrompe il download e lo dice in un messaggio e nel Riscontro ("NOAA grib download stopped - out of memory"). Riprova più tardi.
+
+In entrambi i casi il grib già caricato resta in uso, ma non viene aggiornato. Per dare più memoria ad AGL, modifica `AGL_start.bat` e imposta `AGL_HEAP_OPT`, per esempio `set AGL_HEAP_OPT=-Xmx6g` per 6 GB, oppure chiudi altri programmi. Poi riavvia AGL.

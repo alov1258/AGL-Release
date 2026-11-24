@@ -1,19 +1,9 @@
 # 10 Problemi e Bug Noti
 
-1.  Cambiare l'elenco delle barche AIS può non causare l'aggiornamento delle tracce per le nuove barche. È necessario riavviare.
+Non ci sono bug noti.
 
-2.  Ci sono blocchi occasionali causati da problemi di livello più basso nel sistema operativo e nel Java Runtime Environment. Quando succede, di solito viene generata un'eccezione nella finestra dei comandi o nel Terminale. Variano, ma di solito sono simili a questa:
+Se qualcosa va storto, AGL mostra un'eccezione, in rosso, nella scheda della regata nell'hub (e nella finestra dei comandi o nel Terminale). Inizia con "Uncaught exception in thread" ed è seguita da righe che iniziano con "at". L'esempio qui sotto è un'eccezione di prova.
 
-*Exception in thread "Thread-2" java.lang.NullPointerException: Cannot invoke "String.length()" because "text" is null*
+<img src="../img/screens/hub.hub-exception.png" alt="">
 
-*at java.base/java.text.SimpleDateFormat.parse(SimpleDateFormat.java:1471)*
-
-*at java.base/java.text.DateFormat.parse(DateFormat.java:394)*
-
-*at grib.GribFactory.waitForGrib(GribFactory.java:332)*
-
-*at grib.GribFactory.run(GribFactory.java:154)*
-
-*at java.base/java.lang.Thread.run(Thread.java:832)*
-
-In genere è necessario riavviare.
+Se ne vedi una, o qualcosa non funziona come dovrebbe, scegli **Aiuto > Invia i log...**. AGL comprime in uno zip il log dell'hub e i log delle tue regate, senza chiavi e password, apre un nuovo messaggio indirizzato all'autore e ti mostra lo zip da allegare. Scrivi cosa stavi facendo quando è successo, poi invia l'email con lo zip allegato.

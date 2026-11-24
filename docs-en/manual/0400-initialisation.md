@@ -1,6 +1,6 @@
 # 4 Initialisation
 
-On applying the parameters, and provided you have given the correct username, password and race (you must be registered in that race), the application will go through an initialisation process that could take up to 30 seconds to complete. If you do not see the following in the feedback window, check the race, username and password, and try again. Note that the same result can happen if there is no internet connection.
+On applying the parameters, and provided the login is correct and you have chosen the race (you must be registered in that race), the application will go through an initialisation process that could take up to 30 seconds to complete. The login is the hub's SOL login, or the race's own user name and password if **Use the hub login** is cleared. If you do not see the following in the feedback window, check the race and the login, and try again. Note that the same result can happen if there is no internet connection.
 
 **Note:** Downloading the race information (which includes the boat polar) and the weather information can hang. After about two minutes, the application should time out these downloads and try again. If that does not happen, close the application and start again.
 
@@ -10,9 +10,9 @@ After a successful login, you will be taken to the DC Checker Tab. Buttons and t
 
 **Note:** The application window title will update to show the boat, race name and race ID. This can be used to check which race this instance applies to. Multiple instances of the application can be run on the same computer, but they should each be run in their own folder.
 
-## 4.1 QtVLM and Expedition Boat Polars
+## 4.1 qtVlm and Expedition Boat Polars
 
-Part of the initialisation process is to create detailed QtVLM and Expedition-style boat polar files, if they do not already exist. The application creates a directory called ***polar*** and places the file in that folder. It is named &lt;Boat Type&gt;\_polar.csv, for example *Twister_28_polar.csv.* This file can be copied to the polar folder in Qt and used. For Expedition, it is named &lt;Boat Type&gt;\_expd_polar.csv, for example *Twister_28_expd_polar.csv.*
+Part of the initialisation process is to create detailed qtVlm and Expedition-style boat polar files, if they do not already exist. The application creates a directory called ***polar*** and places the file in that folder. It is named &lt;Boat Type&gt;\_polar.csv, for example *Twister_28_polar.csv.* This file can be copied to the polar folder in Qt and used. For Expedition, it is named &lt;Boat Type&gt;\_expd_polar.csv, for example *Twister_28_expd_polar.csv.*
 
 ## 4.2 Course Waypoints GPX
 
@@ -22,13 +22,13 @@ The application also adds in the finish line ends, but does not include these in
 
 ## 4.3 Current Boat Data Tab
 
-Once initialisation is complete, the application will start to report the current boat data on this tab. The data looks like this. All data is in decimal degrees, nautical miles and knots.
+Once initialisation is complete, the application will start to report the current boat data on this tab. The data looks like this. Latitude and Longitude are in degrees, minutes and seconds. All other data is in decimal degrees, nautical miles and knots.
 
-<img src="../img/manual/image88.png" alt="" width="595">
+<img src="../img/screens/main.boat-stats.png" alt="" width="595">
 
 Also calculated is the current server jump duration (ranges from ~10 to 30 seconds) and how long until the next update is due. The date and time of the data is accurate to about one second.
 
-Note that TWA has been highlighted as it is outside the range 42.0 to 145.0.
+Note that TWA has been highlighted as it is outside the range 47.096 to 133.604.
 
 ## 4.4 Parameters Tab
 

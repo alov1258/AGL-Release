@@ -13,9 +13,9 @@ Ci sono quattro modi per avviarlo. I comandi non distinguono tra maiuscole e min
 - **SIM HERE**, digitato nella casella **Comando** della scheda **Simulatore**. Uguale a **Simulatore attivo**.
 - **SIM LAST**, digitato nella casella **Comando**. La barca riparte dall'ultima posizione che hai indicato con il Sim del tasto destro, anche di una sessione precedente. Se il Simulatore è già in esecuzione, rimette anche la barca lì.
 
-Puoi anche digitare una posizione come `SIM lat,lon`, oppure incollare `SIM ,CP,lat,lon` come la copia la grafica. **SIM START** (vedi [9.3](#93-comportamento-della-barca)) avvia anch'esso il Simulatore, nella posizione della barca, se non è in esecuzione.
+Puoi anche digitare una posizione come `SIM lat,lon`, oppure incollare `SIM ,CP,lat,lon` come la copia la grafica. **SIM START** (vedi [9.3 Comportamento della Barca](#93-comportamento-della-barca)) avvia anch'esso il Simulatore, nella posizione della barca, se non è in esecuzione.
 
-Una barca posizionata in questo modo è ferma (TWA 0) con prestazioni al 100%, e il vento è quello di quel punto. AGL ti indica poi quale tratto è attivo (vedi [9.4](#94-boe-e-arrivo)).
+Una barca posizionata in questo modo è ferma (TWA 0) con prestazioni al 100%, e il vento è quello di quel punto. AGL ti indica poi quale tratto è attivo (vedi [9.4 Boe e Arrivo](#94-boe-e-arrivo)).
 
 <img src="../img/screens/sim.leg-confirmation.png" alt="">
 
@@ -45,6 +45,8 @@ Il Simulatore muove la barca come fa il server SOL: velocità della polare per l
 - **Perdita di prestazioni.** Una barca che fermi tu (TWA 0) subisce la normale perdita dal TWA 0 al suo nuovo TWA. Una barca fermata dalla costa riparte con l'80% di prestazioni.
 
 - **La costa.** Una barca che raggiunge la costa si ferma dove si trova, con TWA 0. Il comando successivo che la muove la fa ripartire con l'80% di prestazioni.
+
+- **Non viene registrato nulla.** Mentre il Simulatore è in esecuzione, nulla di ciò che fa viene conservato. I Set fatti nel Simulatore non vengono memorizzati (non compaiono in [5.3.3.2 Set Salvati](0500-using-agl.md#5332-set-salvati)) e i DC simulati non vengono inviati all'hub, quindi non compaiono mai in [5.3.3.3 Traccia DC della Regata](0500-using-agl.md#5333-traccia-dc-della-regata). Le tracce e la grafica si aggiornano come al solito.
 
 - **Vento.** Il vento viene dal grib. **SIM WIND** *twd,tws* imposta un vento fisso in gradi e nodi, e **SIM WIND OFF** torna al grib.
 
@@ -84,6 +86,7 @@ Quando la barca attraversa la linea di arrivo, il Simulatore la ferma e la segna
 | `SIM START` *n* | La partenza della regata *n* minuti da adesso, senza finestra di dialogo. Si comporta allo stesso modo. |
 | `SIM START CLEAR` | Rimuove l'orario di partenza del Simulatore. La partenza reale torna, e la barca torna dove era stata posizionata |
 | `SIM RESET` | Ripristina le informazioni originali della regata. Tutte le modifiche del Simulatore vengono rimosse. |
+| `SIM MARKS RESET` | Elimina la copia salvata delle boe spostate, così il Simulatore successivo parte con le boe reali |
 | `SIM OFF` | Ferma il Simulatore |
 | `CC` *gradi* | Imposta una rotta |
 | `CP` *gradi* | Come `CC`, con perdita di prestazioni per la virata |
@@ -95,7 +98,7 @@ Quando la barca attraversa la linea di arrivo, il Simulatore la ferma e la segna
 | `MD` [*+* \| *-*] | Come `MU`, per il miglior angolo di poppa |
 | `CD` | Imposta subito il primo DC dell'elenco, senza attendere il suo orario |
 
-I comandi della barca qui sopra sono quelli che digiteresti nella casella dei comandi di una regata. Vengono inviati al Simulatore solo mentre è attivo, e `TM`, `GM`, `MU` e `MD` chiedono conferma prima di partire. I comandi di prova `TG` e `PO` sono in [9.6](#96-prove-di-telegram-e-pushover). Qualsiasi altro comando in questa scheda viene rifiutato.
+I comandi della barca qui sopra sono quelli che digiteresti nella casella dei comandi di una regata. Vengono inviati al Simulatore solo mentre è attivo, e `TM`, `GM`, `MU` e `MD` chiedono conferma prima di partire. I comandi di prova `TG` e `PO` sono in [9.6 Prove di Telegram e Pushover](#96-prove-di-telegram-e-pushover). Qualsiasi altro comando in questa scheda viene rifiutato.
 
 ## 9.6 Prove di Telegram e Pushover
 
